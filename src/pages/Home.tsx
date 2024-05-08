@@ -1,32 +1,35 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { SettingContext } from "../contexts/Setting";
+import { Header } from "../components/Header/Header";
 import { Main } from "../components/Main/Main";
 import { Aside } from "../components/Aside/Aside";
+import { Footer } from "../components/Footer/Footer";
+import { Title } from "../components/Title/Title";
 
 // @todo
 import { Button } from "../library/Button/Button";
 
 export default function HomePage() {
-  const [count, setCount] = useState<number>(0);
+  const { setting, setSetting } = useContext(SettingContext);
+  const [mode, setMode] = useState<string>(setting.mode);
   const [aside, setAside] = useState<boolean>(false);
+
+  const toggleMode = (mode: string) => {
+    setSetting({ ...setting, mode: mode });
+    setMode(mode);
+  };
 
   return (
     <>
-      <header role="banner" className="header">
-        <div className="inner">
-          <Button />
-        </div>
-      </header>
+      <Header />
       <Main>
         <h1>Vite + React</h1>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-          <button onClick={() => setAside(!aside)}>open/close</button>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
+        <br />
+        <Button />
+        <button onClick={() => setAside(!aside)}>open/close</button>
+        <button onClick={() => toggleMode("dark")}>mode dark</button>
+        <button onClick={() => toggleMode("light")}>mode light</button>
+        {mode === "dark" ? "dark" : "light"}
         <div style={{ height: "2000px" }}></div>
         <p className="read-the-docs">
           Click on the Vite and React logos to learn more
@@ -38,9 +41,8 @@ export default function HomePage() {
           setAside(false);
         }}
       />
-      <footer role="contentinfo" className="footer">
-        Atomic Design <span>way</span>
-      </footer>
+      <Footer />
+      <Title title="My Page Title" />
     </>
   );
 }
