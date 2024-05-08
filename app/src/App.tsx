@@ -4,7 +4,6 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 import { Button } from "react-design-system/src/components/Button/Button";
-// import Button from "../node_modules/react-design-system/src/components/Button/Button";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,9 +12,7 @@ function App() {
     <>
       <div>
         <Button />
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
+        <a href="https://vitejs.dev" target="_blank"><img src={viteLogo} className="logo" alt="Vite logo" /></a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>

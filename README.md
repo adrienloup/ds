@@ -7,15 +7,16 @@
 - `node` : `^18.18.2`
 - `npm` : `^9.8.1`
 
-```bash
-nvm use
-```
-
 ## Code Formatting Check
 
 ```bash
+nvm use
 npm format
 ```
+
+## What’s Inside?
+* [Library](https://github.com/adrienloup/ds/tree/master/library)
+* [Documentation](https://github.com/reduxjs/redux)
 
 ## Resources
 
