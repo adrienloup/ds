@@ -11,11 +11,10 @@
 nvm use
 ```
 
-## Code Quality Check
+## Code Formatting Check
 
 ```bash
-npm run lint
-npm run lint:fix
+npm format
 ```
 
 ## Resources
