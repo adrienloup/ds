@@ -6,7 +6,6 @@
 }
 
 @mixin colors {
-  --color-primary: #fff500;
   --color-neutral-1: #1b1b1b;
   --color-neutral-2: #2b2b2b;
   --color-neutral-3: #969696;
@@ -22,8 +21,8 @@
   --color-cyan-hover: #05adb3;
   --color-chartreuse: #7fff00;
   --color-chartreuse-hover: #5fbe00;
-  --color-yellow: #ffd000;
-  --color-yellow-hover: #d4ad00;
+  --color-yellow: #fff500;
+  --color-yellow-hover: #dad300;
   --color-orange: #ff7300;
   --color-orange-hover: #cf5d00;
   --color-red: #ff1100;

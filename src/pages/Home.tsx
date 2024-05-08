@@ -5,6 +5,7 @@ import { Main } from "../components/Main/Main";
 import { Aside } from "../components/Aside/Aside";
 import { Footer } from "../components/Footer/Footer";
 import { Title } from "../components/Title/Title";
+import { TodoList } from "../components/TodoList/TodoList";
 
 // @todo
 import { Button } from "../library/Button/Button";
@@ -14,7 +15,7 @@ export default function HomePage() {
   const [mode, setMode] = useState<string>(setting.mode);
   const [aside, setAside] = useState<boolean>(false);
 
-  const toggleMode = (mode: string) => {
+  const onMode = (mode: string) => {
     setSetting({ ...setting, mode: mode });
     setMode(mode);
   };
@@ -27,9 +28,14 @@ export default function HomePage() {
         <br />
         <Button />
         <button onClick={() => setAside(!aside)}>open/close</button>
-        <button onClick={() => toggleMode("dark")}>mode dark</button>
-        <button onClick={() => toggleMode("light")}>mode light</button>
+        <button onClick={() => onMode("dark")}>mode dark</button>
+        <button onClick={() => onMode("light")}>mode light</button>
         {mode === "dark" ? "dark" : "light"}
+        <br />
+        <br />
+        <TodoList />
+        <br />
+        <br />
         <div style={{ height: "2000px" }}></div>
         <p className="read-the-docs">
           Click on the Vite and React logos to learn more
