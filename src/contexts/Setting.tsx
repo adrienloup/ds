@@ -6,14 +6,14 @@ export const SettingContext = createContext({
     mode: "light",
     nav: "",
     theme: "purple",
-    todo: ["todo1", "todo2"],
+    todo: [{ id: 1, label: "todo1" }],
   },
   setSetting: (setting: {
     dir: string;
     mode: string;
     nav: string;
     theme: string;
-    todo: string[];
+    todo: { id: number; label: string }[];
   }) => {
     setting;
   },
