@@ -23,8 +23,7 @@ jobs:
           working-directory: app
 
       - name: Build project
-        run: cd ../library && npm link && cd ../app && npm link react-design-system
-        run: npm run build
+        run: cd ../library && npm link && cd ../app && npm link react-design-system && npm run build
         working-directory: app
 
       - name: Upload production-ready build files
