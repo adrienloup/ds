@@ -21,11 +21,11 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Build Library
-        run: npm run build
+        run: npm link
         working-directory: library
 
       - name: Build project
-        run: cd ../library && npm link && cd ../app && npm link react-design-system && npm run build
+        run: npm link react-design-system && npm run build
         working-directory: app
 
       - name: Upload production-ready build files
