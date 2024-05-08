@@ -1,4 +1,4 @@
-# React Design System
+# React Design System (app)
 
 [Demo](https://adrienloup.github.io/ds/)
 
@@ -7,21 +7,32 @@
 - `node` : `^18.18.2`
 - `npm` : `^9.8.1`
 
-## Code Formatting Check
+## Installation
 
 ```bash
 nvm use
-npm format
+npm install
 ```
 
-## What’s Inside?
-* [Library](https://github.com/adrienloup/ds/tree/master/library)
-* [Documentation](https://github.com/reduxjs/redux)
+## Development
 
-## Resources
+```bash
+npm run dev
+```
 
-- [React](https://react.dev)
-- [Vite](https://vitejs.dev)
-- [VitePWA](https://www.npmjs.com/package/vite-plugin-pwa)
-- [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site)
-- [GitHub Actions](https://docs.github.com/en/actions)
+## Production
+
+```bash
+npm run build
+```
+
+```bash
+npm run preview
+```
+
+## Code Quality Check
+
+```bash
+npm run lint
+npm run lint:fix
+```
