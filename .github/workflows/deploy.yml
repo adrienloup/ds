@@ -21,8 +21,8 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Build project
-        path: app
         run: npm run build
+          working-directory: ./app
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
