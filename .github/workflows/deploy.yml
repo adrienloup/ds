@@ -19,8 +19,6 @@ jobs:
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-        with:
-          working-directory: app
 
       - name: Build project
         run: cd ../library && npm link && cd ../app && npm link react-design-system && npm run build
