@@ -1,4 +1,4 @@
-# React Design System (app)
+# React Design System
 
 [Demo](https://adrienloup.github.io/ds/)
 
@@ -24,9 +24,6 @@ npm run dev
 
 ```bash
 npm run build
-```
-
-```bash
 npm run preview
 ```
 
@@ -36,3 +33,11 @@ npm run preview
 npm run lint
 npm run lint:fix
 ```
+
+## Resources
+
+- [React](https://react.dev)
+- [Vite](https://vitejs.dev)
+- [VitePWA](https://www.npmjs.com/package/vite-plugin-pwa)
+- [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site)
+- [GitHub Actions](https://docs.github.com/en/actions)
