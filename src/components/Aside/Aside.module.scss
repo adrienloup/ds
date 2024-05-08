@@ -1,0 +1,17 @@
+.aside {
+  position: absolute;
+  top: -5rem;
+  right: 0;
+  z-index: 1;
+  width: 100vw;
+  background-color: green;
+  border-bottom: 0.2rem solid var(--color-4);
+  transition-property: height, top;
+  transition-duration: 0.5s;
+  transition-timing-function: var(--easy-in-out-quad);
+  will-change: height, top;
+}
+
+.inner {
+  padding: 2rem;
+}
