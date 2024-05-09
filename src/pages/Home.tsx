@@ -5,10 +5,12 @@ import { Main } from "../components/Main/Main";
 import { Aside } from "../components/Aside/Aside";
 import { Footer } from "../components/Footer/Footer";
 import { Title } from "../components/Title/Title";
+import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
+import { ToolBar } from "../components/ToolBar/ToolBar";
 import { TodoList } from "../components/TodoList/TodoList";
 
 // @todo
-import { Button } from "../library/Button/Button";
+import { DsButton } from "../library/Button/Button";
 
 export default function HomePage() {
   const { setting, setSetting } = useContext(SettingContext);
@@ -24,9 +26,10 @@ export default function HomePage() {
     <>
       <Header />
       <Main>
+        <ToolBar onClick={() => setAside(!aside)} />
         <h1>Vite + React</h1>
         <br />
-        <Button />
+        <DsButton />
         <button onClick={() => setAside(!aside)}>open/close</button>
         <button onClick={() => onMode("dark")}>mode dark</button>
         <button onClick={() => onMode("light")}>mode light</button>
@@ -49,6 +52,7 @@ export default function HomePage() {
       />
       <Footer />
       <Title title="My Page Title" />
+      <ScrollToTop />
     </>
   );
 }
