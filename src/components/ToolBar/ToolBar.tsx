@@ -1,5 +1,10 @@
+import { useContext, useState } from "react";
+import { createPortal } from "react-dom";
+import { SettingContext } from "../../contexts/Setting";
+import { TodoList } from "../TodoList/TodoList";
 import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
+import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
 import style from "./ToolBar.module.scss";
 
@@ -8,6 +13,9 @@ type ToolBarProps = {
 };
 
 export const ToolBar = ({ onClick }: ToolBarProps) => {
+  const [modal, setModal] = useState<boolean>(false);
+  const { setting } = useContext(SettingContext);
+
   return (
     <div className={style.toolbar}>
       <Button
@@ -22,14 +30,28 @@ export const ToolBar = ({ onClick }: ToolBarProps) => {
           ></path>
         </svg>
       </Button>
-      <Badge value={10} max={9} cssClass={style.badge}>
-        <Button ariaLabel={"Notifications"} cssClass={style.button}>
+      <Badge value={setting.todo.length} max={9} cssClass={style.badge}>
+        <Button
+          ariaLabel={"Notifications"}
+          cssClass={style.button}
+          onClick={() => setModal(!modal)}
+        >
           <Icon name="notifications" />
         </Button>
       </Badge>
       <Button ariaLabel={"Settings"} cssClass={style.button} onClick={onClick}>
         <Icon name={"settings"}></Icon>
       </Button>
+      {modal &&
+        createPortal(
+          <Modal
+            head={<h3>Breaking news</h3>}
+            body={<TodoList />}
+            open={modal}
+            onClick={() => setModal(false)}
+          />,
+          document.body
+        )}
     </div>
   );
 };

@@ -1,9 +1,26 @@
 .todolist {
-  background-color: red;
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding-bottom: 0.5rem;
+  }
 }
 
 .todo {
-  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid var(--color-4);
+
+  .button {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
 }
 
 .form {

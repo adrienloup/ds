@@ -28,7 +28,7 @@ export const Aside = ({ open = false, onClick = () => {} }: AsideProps) => {
   useEffect(() => {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, [open]);
+  });
 
   useEffect(() => onResize());
 

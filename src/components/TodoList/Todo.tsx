@@ -1,3 +1,4 @@
+import { Button } from "../Button/Button";
 import style from "./TodoList.module.scss";
 
 type TodoProps = {
@@ -12,7 +13,9 @@ export const Todo = ({ todo, onDelete }: TodoProps) => {
   return (
     <div className={style.todo}>
       <span>{todo.label}</span>
-      <button onClick={onDelete}>x</button>
+      <Button cssClass={style.button} onClick={onDelete}>
+        Delete
+      </Button>
     </div>
   );
 };
