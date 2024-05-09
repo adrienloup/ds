@@ -8,6 +8,8 @@ import { Title } from "../components/Title/Title";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBar } from "../components/ToolBar/ToolBar";
 import { TodoList } from "../components/TodoList/TodoList";
+import { Promote } from "../components/Promote/Promote";
+import { Button } from "../components/Button/Button";
 
 // @todo
 import { DsButton } from "../library/Button/Button";
@@ -27,8 +29,25 @@ export default function HomePage() {
       <Header />
       <Main>
         <ToolBar onClick={() => setAside(!aside)} />
-        <h1>Vite + React</h1>
-        <br />
+        <h1>
+          A pretty good library{" "}
+          <span>of components for Web application's UI</span>
+        </h1>
+        <Promote
+          body={
+            <p>
+              DS offers a comprehensive suite of free UI tools to help you ship
+              new features faster Start with fully-loaded component library, or
+              bring your own design system to our production-ready components.
+            </p>
+          }
+          foot={
+            <>
+              <Button>button1</Button>
+              <Button>button2</Button>
+            </>
+          }
+        />
         <DsButton />
         <button onClick={() => setAside(!aside)}>open/close</button>
         <button onClick={() => onMode("dark")}>mode dark</button>
