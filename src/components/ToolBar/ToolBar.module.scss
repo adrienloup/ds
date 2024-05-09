@@ -1,0 +1,18 @@
+.toolbar {
+  text-align: right;
+  background-color: var(--color-3);
+  border-bottom: 0.2rem solid var(--color-4);
+}
+
+.button {
+  width: 5rem;
+  height: 4rem;
+  border-width: 0 0 0 0.2rem;
+  border-style: solid;
+  border-color: var(--color-4);
+  font-size: 2rem;
+
+  svg {
+    width: 2rem;
+  }
+}
