@@ -6,7 +6,7 @@ export const SettingContext = createContext({
     mode: "light",
     nav: "",
     theme: "purple",
-    todo: [{ id: 1, label: "todo1" }],
+    todo: [{ id: 1, label: "Make the mobile version" }],
   },
   setSetting: (setting: {
     dir: string;
