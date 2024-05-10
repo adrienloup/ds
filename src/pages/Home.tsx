@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { pages } from "../data/pages.json";
 import { SettingContext } from "../contexts/Setting";
 import { Header } from "../components/Header/Header";
 import { Main } from "../components/Main/Main";
@@ -10,9 +11,6 @@ import { ToolBar } from "../components/ToolBar/ToolBar";
 import { TodoList } from "../components/TodoList/TodoList";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
-
-// @todo
-import { DsButton } from "../library/Button/Button";
 
 export default function HomePage() {
   const { setting, setSetting } = useContext(SettingContext);
@@ -26,7 +24,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Header />
+      <Header pages={pages} />
       <Main>
         <ToolBar onClick={() => setAside(!aside)} />
         <h1>
@@ -48,7 +46,6 @@ export default function HomePage() {
             </>
           }
         />
-        <DsButton />
         <button onClick={() => setAside(!aside)}>open/close</button>
         <button onClick={() => onMode("dark")}>mode dark</button>
         <button onClick={() => onMode("light")}>mode light</button>

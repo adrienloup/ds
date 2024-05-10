@@ -1,0 +1,104 @@
+{
+  "pages": [
+    {
+      "title": "Overview",
+      "text": "It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box, and features a suite of customization options.",
+      "path": "/react-design-system/overview",
+      "category": "getting_started"
+    },
+    {
+      "title": "Usage",
+      "text": "Since DS library components are built to function in isolation, they don't require any kind of globally scoped styles.",
+      "path": "/react-design-system/usage",
+      "category": "getting_started"
+    },
+    {
+      "title": "Customization",
+      "text": "",
+      "path": "/react-design-system/customization",
+      "category": "getting_started"
+    },
+    {
+      "title": "Alert",
+      "text": "Alerts display brief messages for the user",
+      "path": "/react-design-system/alert",
+      "category": "feedback"
+    },
+    {
+      "title": "Badge",
+      "text": "Badge generates a small badge to the top-right of its child(ren)",
+      "path": "/react-design-system/badge",
+      "category": "feedback"
+    },
+    {
+      "title": "Breadcrumbs",
+      "text": "A breadcrumbs is a list of links that help visualize a page's location",
+      "path": "/react-design-system/breadcrumbs",
+      "category": "navigation"
+    },
+    {
+      "title": "Button",
+      "text": "Buttons allow users to take actions, and make choices, with a single tap",
+      "path": "/react-design-system/button",
+      "category": "action"
+    },
+    {
+      "title": "FAB",
+      "text": "A floating action button (FAB)",
+      "path": "/react-design-system/fab",
+      "category": "action",
+      "novelty": true
+    },
+    {
+      "title": "Progress",
+      "text": "Progress used to indicate the current advancement state of a process",
+      "path": "/react-design-system/progress",
+      "category": "feedback"
+    },
+    {
+      "title": "Modal",
+      "text": "The modal component provides a solid foundation for creating dialogs",
+      "path": "/react-design-system/modal",
+      "category": "pattern",
+      "novelty": true
+    },
+    {
+      "title": "Select",
+      "text": "The Selectcomponent provides a compact way to present a list of choices to the user.",
+      "path": "/react-design-system/select",
+      "category": "forms",
+      "novelty": true
+    },
+    {
+      "title": "Stepper",
+      "text": "Steppers convey progress through numbered steps. It provides a wizard-like workflow",
+      "path": "/react-design-system/stepper",
+      "category": "navigation"
+    },
+    {
+      "title": "Switch",
+      "text": "Switches toggle the state of a single setting on or off",
+      "path": "/react-design-system/switch",
+      "category": "forms"
+    },
+    {
+      "title": "Tag",
+      "text": "Used for marking and categorization",
+      "path": "/react-design-system/tag",
+      "category": "feedback"
+    },
+    {
+      "title": "TextField",
+      "text": "TextFields let users enter and edit text",
+      "path": "/react-design-system/textfield",
+      "category": "forms"
+    },
+    {
+      "title": "TextArea",
+      "text": "TextArea is a resizable input used to prompt the user for a parapraph of text",
+      "path": "/react-design-system/textarea",
+      "category": "forms",
+      "novelty": true
+    }
+  ]
+}
