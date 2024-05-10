@@ -1,12 +1,15 @@
 import { useContext, useState } from "react";
 import { createPortal } from "react-dom";
-import { SettingContext } from "../../contexts/Setting";
-import { TodoList } from "../TodoList/TodoList";
+import { DataContext } from "../../contexts/DataContext";
+import { useAuth } from "../../hooks/useAuth";
+import { NotificationList } from "../NotificationList/NotificationList";
 import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
 import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
 import style from "./ToolBar.module.scss";
+// @TODO
+import { Link } from "react-router-dom";
 
 type ToolBarProps = {
   onClick?: () => void;
@@ -14,10 +17,13 @@ type ToolBarProps = {
 
 export const ToolBar = ({ onClick }: ToolBarProps) => {
   const [modal, setModal] = useState<boolean>(false);
-  const { setting } = useContext(SettingContext);
+  const { data } = useContext(DataContext);
+  const { user } = useAuth();
 
   return (
     <div className={style.toolbar}>
+      {JSON.stringify(user)}
+      <Link to={"/ds/login"}>Login</Link>
       <Button
         href={"https://github.com/adrienloup/ds"}
         ariaLabel={"Github"}
@@ -30,7 +36,7 @@ export const ToolBar = ({ onClick }: ToolBarProps) => {
           ></path>
         </svg>
       </Button>
-      <Badge value={setting.todo.length} max={9} cssClass={style.badge}>
+      <Badge value={data.notifications.length} max={9} cssClass={style.badge}>
         <Button
           ariaLabel={"Notifications"}
           cssClass={style.button}
@@ -46,7 +52,7 @@ export const ToolBar = ({ onClick }: ToolBarProps) => {
         createPortal(
           <Modal
             head={<h3>Breaking news</h3>}
-            body={<TodoList />}
+            body={<NotificationList />}
             open={modal}
             onClick={() => setModal(false)}
           />,

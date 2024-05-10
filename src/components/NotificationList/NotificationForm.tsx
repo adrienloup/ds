@@ -1,12 +1,12 @@
 import { useState } from "react";
-import style from "./TodoList.module.scss";
+import style from "./NotificationList.module.scss";
 
-type TodoFormProps = {
-  onAdd: ({ id, label }: { id: any; label: any }) => void;
+type FormProps = {
+  handleAdd: ({ id, label }: { id: any; label: any }) => void;
 };
 
-export const TodoForm = ({ onAdd }: TodoFormProps) => {
-  const [value, setValue] = useState("");
+export const NotificationForm = ({ handleAdd }: FormProps) => {
+  const [value, setValue] = useState<string>("");
 
   const onChange = (e: { target: { value: string } }) => {
     setValue(e.target.value);
@@ -14,9 +14,11 @@ export const TodoForm = ({ onAdd }: TodoFormProps) => {
 
   const onSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
+
     const id = new Date().getTime();
     const label = value;
-    onAdd({ id, label });
+
+    handleAdd({ id, label });
     setValue("");
   };
 
@@ -24,7 +26,7 @@ export const TodoForm = ({ onAdd }: TodoFormProps) => {
     <form action="submit" onSubmit={onSubmit} className={style.form}>
       <input
         type="text"
-        placeholder="Add todo..."
+        placeholder="Add notification..."
         value={value}
         onChange={onChange}
       />
