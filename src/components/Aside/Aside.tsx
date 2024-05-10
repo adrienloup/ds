@@ -13,16 +13,13 @@ export const Aside = ({ open = false, onClick = () => {} }: AsideProps) => {
   const onResize = () => {
     if (!asideRef.current || !innerRef.current) return;
 
-    asideRef.current.style.height = open
-      ? `${innerRef.current.offsetHeight}px`
-      : "auto";
+    const innerHeight = innerRef.current.offsetHeight;
 
-    asideRef.current.style.top = `${
-      !open ? -(innerRef.current.offsetHeight / 2) : 0
-    }px`;
+    asideRef.current.style.height = innerHeight + "px";
+    asideRef.current.style.top = `${!open ? -(innerHeight / 2) : 0}px`;
 
     document.getElementById("_ds_y0y09_10")!.style.paddingTop =
-      `${open ? innerRef.current.offsetHeight : 0}px`; // Root
+      `${open ? innerHeight : 0}px`; // Root
   };
 
   useEffect(() => {
