@@ -25,7 +25,7 @@ $tablet-portrait: 769px;
 .name {
   position: relative;
   display: block;
-  padding: 1.25rem 0.25rem;
+  padding: 1.25rem 0.5rem;
   line-height: 6rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
@@ -44,14 +44,10 @@ $tablet-portrait: 769px;
   span {
     position: absolute;
     right: 1rem;
-    bottom: 1rem;
+    bottom: 0.75rem;
     letter-spacing: 0;
     line-height: 1rem;
     font-size: 1rem;
-
-    @media (max-width: $tablet-portrait) {
-      bottom: 0.5rem;
-    }
   }
 
   &:hover {
