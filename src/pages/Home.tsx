@@ -34,9 +34,10 @@ export default function HomePage() {
         <Promote
           body={
             <p>
-              DS offers a comprehensive suite of free UI tools to help you ship
-              new features faster Start with fully-loaded component library, or
-              bring your own design system to our production-ready components.
+              DS library offers a comprehensive suite of free UI tools to help
+              you ship new features faster Start with fully-loaded component
+              library, or bring your own design system to our production-ready
+              components.
             </p>
           }
           foot={

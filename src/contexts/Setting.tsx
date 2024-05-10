@@ -18,3 +18,16 @@ export const SettingContext = createContext({
     setting;
   },
 });
+
+/*
+  settings: {
+    dir: "ltr",
+    mode: "light",
+    theme: "purple",
+  },
+  auth: {
+    user: false,
+    admin: false,
+  }
+  notifications: [{ id: 1, label: "The mobile version will be available soon }]
+*/
