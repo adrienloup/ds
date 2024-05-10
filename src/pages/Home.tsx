@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { pages } from "../data/pages.json";
-import { SettingContext } from "../contexts/Setting";
+import { DataContext } from "../contexts/DataContext";
+import { DataType } from "../models//Data";
 import { Header } from "../components/Header/Header";
 import { Main } from "../components/Main/Main";
 import { Aside } from "../components/Aside/Aside";
@@ -8,17 +9,18 @@ import { Footer } from "../components/Footer/Footer";
 import { Title } from "../components/Title/Title";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBar } from "../components/ToolBar/ToolBar";
-import { TodoList } from "../components/TodoList/TodoList";
+import { NotificationList } from "../components/NotificationList/NotificationList";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
 
 export default function HomePage() {
-  const { setting, setSetting } = useContext(SettingContext);
-  const [mode, setMode] = useState<string>(setting.mode);
+  const { data, setData } = useContext<DataType>(DataContext);
+  const [mode, setMode] = useState<string>(data.settings.mode);
   const [aside, setAside] = useState<boolean>(false);
 
-  const onMode = (mode: string) => {
-    setSetting({ ...setting, mode: mode });
+  const handleMode = (mode: string) => {
+    data.settings.mode = mode;
+    setData({ ...data });
     setMode(mode);
   };
 
@@ -26,6 +28,7 @@ export default function HomePage() {
     <>
       <Header pages={pages} />
       <Main>
+        {/* @TODO: change the event optimally */}
         <ToolBar onClick={() => setAside(!aside)} />
         <h1>
           A pretty good library{" "}
@@ -48,12 +51,12 @@ export default function HomePage() {
           }
         />
         <button onClick={() => setAside(!aside)}>open/close</button>
-        <button onClick={() => onMode("dark")}>mode dark</button>
-        <button onClick={() => onMode("light")}>mode light</button>
+        <button onClick={() => handleMode("dark")}>mode dark</button>
+        <button onClick={() => handleMode("light")}>mode light</button>
         {mode === "dark" ? "dark" : "light"}
         <br />
         <br />
-        <TodoList />
+        <NotificationList />
         <br />
         <br />
         <div style={{ height: "2000px" }}></div>
