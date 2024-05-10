@@ -36,10 +36,11 @@ $tablet-portrait: 769px;
   gap: 1rem;
 
   & > button {
-    padding: 1.25rem 1.75rem;
+    padding: 1rem 1.5rem;
     background-color: var(--color-yellow);
     border: 0;
     border-radius: 0.5rem;
+    color: var(--color-neutral-1);
 
     &:hover {
       background-color: var(--color-yellow-hover);

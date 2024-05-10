@@ -1,7 +1,13 @@
+$tablet-portrait: 769px;
+
 .toolbar {
   text-align: right;
   background-color: var(--color-3);
   border-bottom: 0.2rem solid var(--color-4);
+
+  @media (max-width: $tablet-portrait) {
+    display: none;
+  }
 }
 
 .button {
