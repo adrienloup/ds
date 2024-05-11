@@ -20,7 +20,7 @@ export default function HomePage() {
 
   const listed = () => {
     return pages.filter(
-      (page: { typology: string }) => page.typology !== "getting_started"
+      (page: { typology: string }) => page.typology !== "getting_started",
     );
   };
 
@@ -55,8 +55,8 @@ export default function HomePage() {
           update={(value: string) =>
             setList(
               listed().filter((page: { title: string }) =>
-                page.title.toLowerCase().includes(value)
-              )
+                page.title.toLowerCase().includes(value),
+              ),
             )
           }
         />

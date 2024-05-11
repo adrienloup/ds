@@ -17,7 +17,7 @@ export default function OverviewPage() {
 
   const listed = () => {
     return pages.filter(
-      (page: { typology: string }) => page.typology === "getting_started"
+      (page: { typology: string }) => page.typology === "getting_started",
     );
   };
 

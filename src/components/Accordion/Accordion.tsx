@@ -41,7 +41,7 @@ export const AccordionComponent = ({
   return (
     <div
       className={[style.accordion, expanded ? ` ${style.expanded}` : ""].join(
-        ""
+        "",
       )}
     >
       <button

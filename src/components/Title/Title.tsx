@@ -7,7 +7,7 @@ type TileProps = {
 export const TitleComponent = ({ title = "My Page Title" }: TileProps) => {
   useEffect(() => {
     document.title = title;
-  }, []);
+  }, [title]);
 
   return null;
 };

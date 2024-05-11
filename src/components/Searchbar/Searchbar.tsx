@@ -21,7 +21,7 @@ export const SearchbarComponent = ({
   return (
     <div
       className={[`${style.searchbar}`, focus ? ` ${style.focus}` : ""].join(
-        ""
+        "",
       )}
     >
       <label

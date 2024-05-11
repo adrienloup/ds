@@ -6,7 +6,7 @@ export const useAlert = () => {
   const [alertIds, setAlertIds] = useState<string[]>([]);
   const alertIdsRef = useRef(alertIds);
   const { addAlert, removeAlert } = useContext(
-    AlertContext
+    AlertContext,
   ) as AlertContextType;
 
   const addAlertWithId = (alert: AlertType) => {

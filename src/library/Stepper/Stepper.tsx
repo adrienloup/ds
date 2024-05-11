@@ -21,7 +21,7 @@ export const DsStepper = ({
       {prev && (
         <button
           className={[style.prev, active < 2 ? ` ${style.disabled}` : ""].join(
-            ""
+            "",
           )}
           onClick={() => {
             update(active - 1);

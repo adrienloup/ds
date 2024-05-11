@@ -7,7 +7,7 @@ export const useAuth = () => {
   const { data, setData } = useContext<DataType>(DataContext);
   const [user, setUser] = useState<UserType | null>(data.user);
 
-  const login = (user: any) => {
+  const login = (user: UserType | null) => {
     setData({ ...data, user: user });
     setUser(user);
   };

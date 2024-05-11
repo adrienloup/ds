@@ -13,11 +13,11 @@ import { ButtonComponent } from "../components/Button/Button";
 
 export default function LoginPage() {
   const [settings, setSettings] = useState<boolean>(false);
-  const { user, login, logout } = useAuth();
+  const { login, logout } = useAuth();
 
   const handleLogin = () => {
     login({
-      id: 1,
+      id: "1",
       name: "Adrien",
     });
   };

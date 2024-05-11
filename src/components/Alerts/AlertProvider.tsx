@@ -36,7 +36,7 @@ export const AlertProvider = ({ children }: SlotType) => {
               />
             ))}
           </AlertsComponent>,
-          document.body
+          document.body,
         )}
       {children}
     </AlertContext.Provider>

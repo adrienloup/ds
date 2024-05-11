@@ -13,7 +13,7 @@ export const NotificationsComponent = () => {
 
   const handleDelete = (id: number) => {
     const listed = notifications.filter(
-      (notification) => notification.id !== id
+      (notification) => notification.id !== id,
     );
     setData({ ...data, notifications: [...listed] });
     setNotifications([...listed]);
