@@ -7,6 +7,10 @@ $tablet-portrait: 769px;
   z-index: 2;
   background-color: var(--color-3);
 
+  @media (max-width: $tablet-portrait) {
+    min-height: calc(100vh - 115px);
+  }
+
   & > h1 {
     max-width: 65rem;
     margin: 5rem 5rem 4rem;

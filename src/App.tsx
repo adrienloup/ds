@@ -3,6 +3,7 @@ import { DataContext } from "./contexts/DataContext";
 import { useData } from "./hooks/useData";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
 import "./App.scss";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/ds/" element={<Home />} />
           <Route path="/ds/login" element={<Login />} />
+          <Route path="/ds/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </DataContext.Provider>

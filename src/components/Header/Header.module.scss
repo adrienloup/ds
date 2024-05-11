@@ -12,6 +12,7 @@ $tablet-portrait: 769px;
   left: 0;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
   background-color: var(--color-3);
   border-right: 0.2rem solid var(--color-4);
 
