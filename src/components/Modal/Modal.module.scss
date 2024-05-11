@@ -33,7 +33,7 @@
 }
 
 .head {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   font-family: var(--font-text-black);
   font-size: 2rem;
@@ -88,7 +88,7 @@
 
 @keyframes Swell {
   0% {
-    transform: translateY(5rem) scale(0.25);
+    transform: translateY(2.5rem) scale(0.25);
     opacity: 0;
   }
 }

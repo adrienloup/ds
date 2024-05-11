@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  max-width: 25rem;
+  max-width: 20rem;
 
   @media (max-width: 769px) {
     top: 0.25rem;
@@ -71,18 +71,18 @@
   }
 
   &.warning {
-    background-color: var(--color-yellow);
+    background-color: var(--color-primary);
 
     .close {
-      border-color: var(--color-yellow-hover);
+      border-color: var(--color-primary-hover);
 
       &:hover {
-        background-color: var(--color-yellow-hover);
+        background-color: var(--color-primary-hover);
       }
     }
 
     .progress {
-      background-color: var(--color-yellow-hover);
+      background-color: var(--color-primary-hover);
     }
   }
 
@@ -130,25 +130,24 @@
   display: flex;
   flex-direction: column;
   padding-right: 0.75rem;
-  font-family: var(--font-text-bold);
   line-height: 1.2;
 }
 
 .title {
   margin: 0.25rem 0 0.5rem;
-  font-size: 1.5rem;
+  font-family: var(--font-text-bold);
+  font-size: 1.25rem;
 }
 
 .text {
   margin: 0.25rem 0 0;
-  font-size: 1.15rem;
 }
 
 .icon {
   position: relative;
   z-index: 1;
   margin-right: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .progress {
