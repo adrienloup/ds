@@ -1,5 +1,7 @@
 @mixin if-purple {
-  @content;
+  .purple {
+    @content;
+  }
 }
 
 @mixin purple {
