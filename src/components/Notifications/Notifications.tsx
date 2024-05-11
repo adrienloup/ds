@@ -26,16 +26,20 @@ export const NotificationsComponent = () => {
 
   return (
     <div className={style.notifications}>
-      <ul>
-        {notifications.map((notification) => (
-          <li key={notification.id}>
-            <NotificationComponent
-              notification={notification}
-              handleDelete={() => handleDelete(notification.id)}
-            />
-          </li>
-        ))}
-      </ul>
+      {notifications.length > 0 ? (
+        <ul>
+          {notifications.map((notification) => (
+            <li key={notification.id}>
+              <NotificationComponent
+                notification={notification}
+                handleDelete={() => handleDelete(notification.id)}
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={style.empty}>No new but don't give up :)</p>
+      )}
       {user && <NotificationFormComponent handleAdd={handleAdd} />}
     </div>
   );

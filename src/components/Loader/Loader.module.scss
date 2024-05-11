@@ -17,13 +17,17 @@ html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: var(--color-2);
-  color: var(--color-3);
-  transition: transform 1s var(--easy-in-out-expo) 1s;
-  will-change: transform;
+  background-color: var(--color-1);
+  color: var(--color-2);
+  transition-property: transform, visibility;
+  transition-duration: 1s, 0s;
+  transition-timing-function: var(--easy-in-out-expo);
+  transition-delay: 1s, 1.9s;
+  will-change: transform, visibility;
 
   .loaded & {
     transform: translateY(-100%);
+    visibility: hidden;
   }
 }
 
@@ -59,7 +63,7 @@ html {
   }
 
   span {
-    -webkit-text-stroke: 0.08rem var(--color-3);
+    -webkit-text-stroke: 0.08rem var(--color-2);
     color: transparent;
   }
 

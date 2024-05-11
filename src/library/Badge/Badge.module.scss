@@ -1,0 +1,76 @@
+.badge {
+  position: relative;
+  display: inline-block;
+  color: var(--color-1);
+}
+
+.content {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.25rem;
+  font-family: var(--font-text-bold);
+  user-select: none;
+  color: var(--color-2);
+}
+
+.small {
+  .content {
+    top: -0.1rem;
+    right: -0.2rem;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    min-width: 0.625rem;
+    min-height: 0.625rem;
+    border-radius: 50%;
+    font-size: 0;
+  }
+}
+
+.medium {
+  .content {
+    top: -0.15rem;
+    right: -0.25rem;
+    min-width: 1.5rem;
+    min-height: 1.15rem;
+    border-radius: 0.875rem;
+    font-size: 0.75rem;
+  }
+}
+
+.large {
+  .content {
+    top: 0;
+    right: -0.6rem;
+    min-width: 2.5rem;
+    min-height: 1.75rem;
+    border-radius: 0.875rem;
+    font-size: 1rem;
+  }
+}
+
+.info {
+  .content {
+    background-color: var(--color-blue);
+  }
+}
+
+.success {
+  .content {
+    background-color: var(--color-chartreuse);
+  }
+}
+
+.warning {
+  .content {
+    background-color: var(--color-orange);
+  }
+}
+
+.error {
+  .content {
+    background-color: var(--color-red);
+  }
+}

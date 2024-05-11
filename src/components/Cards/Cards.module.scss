@@ -13,7 +13,7 @@ $tablet-portrait: 769px;
 
 .empty {
   margin: 1rem;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   background-color: var(--color-red);
   font-family: var(--font-text-bold);
   font-size: 1.75rem;
@@ -26,7 +26,7 @@ $tablet-portrait: 769px;
   padding: 1rem;
   backface-visibility: hidden;
   transform-origin: 10% 50%;
-  animation: Appear 0.5s var(--easy-in-out-quad);
+  animation: Appear 0.25s var(--easy-in-out-quad);
 
   @media (max-width: $desktop) {
     width: 50%;
@@ -37,7 +37,7 @@ $tablet-portrait: 769px;
   }
 
   &:nth-child(odd) {
-    animation-duration: 1s;
+    animation-duration: 0.75s;
   }
 }
 
@@ -46,16 +46,15 @@ $tablet-portrait: 769px;
   height: 100%;
   padding: 2rem;
   border-radius: 0.5rem;
-  border: 0.2rem solid var(--color-4);
+  border: 0.2rem solid var(--color-3);
   text-decoration: none;
 
   &:hover {
-    background-color: var(--color-4);
+    background-color: var(--color-3);
   }
 
   &:focus-visible {
     outline: 0.2rem solid var(--color-orange);
-    outline-offset: 0.125rem;
   }
 }
 
@@ -64,7 +63,7 @@ $tablet-portrait: 769px;
   align-items: center;
   font-family: var(--font-text-bold);
   font-size: 1.75rem;
-  color: var(--color-2);
+  color: var(--color-1);
 
   span {
     display: flex;
@@ -72,7 +71,7 @@ $tablet-portrait: 769px;
     justify-content: center;
     margin-left: 0.5rem;
     padding: 0.25rem;
-    background-color: var(--color-primary);
+    background-color: var(--color-yellow);
     border-radius: 0.25rem;
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -84,7 +83,7 @@ $tablet-portrait: 769px;
   margin-top: 1rem;
   line-height: 1.5rem;
   font-size: 1.15rem;
-  color: var(--color-2);
+  color: var(--color-1);
 }
 
 @keyframes Appear {

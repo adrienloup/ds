@@ -1,20 +1,20 @@
 .footer {
   grid-area: footer;
-  background-color: var(--color-3);
+  background-color: var(--color-2);
 }
 
 .inner {
   padding: 1rem;
-  border-top: 0.2rem solid var(--color-4);
+  border-top: 0.2rem solid var(--color-3);
   letter-spacing: 0.075rem;
   text-align: right;
   text-transform: uppercase;
   font-family: var(--font-text-black);
   font-size: 1.5rem;
-  color: var(--color-2);
+  color: var(--color-1);
 
   span {
-    -webkit-text-stroke: 0.08rem var(--color-2);
+    -webkit-text-stroke: 0.08rem var(--color-1);
     color: transparent;
   }
 }

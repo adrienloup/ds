@@ -1,15 +1,67 @@
-import { useState } from "react";
+import { ReactNode } from "react";
 import style from "./Button.module.scss";
 
-export const DsButton = () => {
-  const [count, setCount] = useState<number>(0);
+type ButtonProps = {
+  children: ReactNode;
+  variant?: "contained" | "outlined";
+  status?: "info" | "success" | "warning" | "error";
+  size?: "small" | "medium" | "large";
+  type?: "button" | "submit" | "reset";
+  ariaLabel?: string;
+  disabled?: boolean;
+  cssClass?: string;
+  href?: string;
+  onClick?: () => void;
+};
 
-  return (
-    <button
-      onClick={() => setCount((count) => count + 1)}
-      className={style.button}
+export const DsButton = ({
+  children,
+  variant = "contained",
+  status,
+  size = "medium",
+  type = "button",
+  ariaLabel,
+  disabled = false,
+  cssClass,
+  href,
+  onClick = () => {},
+}: ButtonProps) => {
+  const a = (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener"
+      aria-label={ariaLabel}
+      tabIndex={disabled ? -1 : 0}
+      className={[
+        style.button,
+        ` ${style[variant]}`,
+        ` ${style[size]}`,
+        status ? ` ${style[status]}` : "",
+        disabled ? ` ${style.disabled}` : "",
+        cssClass ? ` ${cssClass}` : "",
+      ].join("")}
     >
-      count is {count}
+      {children}
+    </a>
+  );
+  const button = (
+    <button
+      type={type}
+      aria-label={ariaLabel}
+      tabIndex={disabled ? -1 : 0}
+      className={[
+        style.button,
+        ` ${style[variant]}`,
+        ` ${style[size]}`,
+        status ? ` ${style[status]}` : "",
+        disabled ? ` ${style.disabled}` : "",
+        cssClass ? ` ${cssClass}` : "",
+      ].join("")}
+      onClick={onClick}
+    >
+      {children}
     </button>
   );
+  return href ? a : button;
 };

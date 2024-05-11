@@ -80,40 +80,52 @@ export const SettingsComponent = ({
               cssClass={[`${style.button}`, ` ${style.active}`].join("")}
               onClick={() => {
                 addAlert({
-                  status: "error",
                   text: "There is an error with the direction adjustment",
                   timeout: 2,
+                  status: "error",
                 });
               }}
             >
-              Left
+              Right to Left
             </ButtonComponent>
             <ButtonComponent
               cssClass={style.button}
               onClick={() => {
                 addAlert({
-                  status: "error",
                   text: "There is an error with the direction adjustment",
                   timeout: 2,
+                  status: "error",
                 });
               }}
             >
-              Right
+              Left to Right
             </ButtonComponent>
           </div>
-          <div className={style.theme}>
-            <div className={style.title}>Theme</div>
+          <div className={style.accessibility}>
+            <div className={style.title}>Accessibility</div>
             <ButtonComponent
               cssClass={style.button}
               onClick={() => {
                 addAlert({
-                  status: "error",
-                  text: "There is an error with the theme adjustment",
+                  text: "There is an error with the increasing text size",
                   timeout: 2,
+                  status: "error",
                 });
               }}
             >
-              Edit color
+              A+
+            </ButtonComponent>
+            <ButtonComponent
+              cssClass={style.button}
+              onClick={() => {
+                addAlert({
+                  text: "There is an error with the increasing text size",
+                  timeout: 2,
+                  status: "error",
+                });
+              }}
+            >
+              A-
             </ButtonComponent>
           </div>
         </div>

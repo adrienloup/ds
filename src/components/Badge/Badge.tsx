@@ -19,7 +19,9 @@ export const BadgeComponent = ({
 
   return (
     <div className={[style.badge, cssClass ? ` ${cssClass}` : ""].join("")}>
-      <span className={style.content}>{valueMax(value, max)}</span>
+      {value > 0 && (
+        <span className={style.content}>{valueMax(value, max)}</span>
+      )}
       {children}
     </div>
   );

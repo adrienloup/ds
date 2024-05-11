@@ -1,0 +1,146 @@
+.modal {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.open {
+  pointer-events: initial;
+}
+
+.content {
+  position: absolute;
+  z-index: 2;
+  max-width: 60rem;
+  width: calc(100% - 2rem);
+  min-height: 2rem;
+  padding: 2rem;
+  background-color: var(--color-neutral-6);
+  border-radius: 0.75rem;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  .top & {
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .middle & {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bottom & {
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  color: var(--color-neutral-1);
+
+  & > h3 {
+    margin-bottom: 1rem;
+    padding-right: 3.5rem;
+    line-height: 1.1;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-family: var(--font-text-black);
+    font-size: 2.5rem;
+
+    span {
+      -webkit-text-stroke: 0.08rem var(--color-1);
+      color: transparent;
+    }
+  }
+
+  & > p {
+    padding-right: 3rem;
+    line-height: 1.25;
+    font-family: var(--font-text-bold);
+    font-size: 1.55rem;
+
+    a {
+      color: var(--color-1);
+    }
+  }
+}
+
+.button {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  border-radius: 0.5rem;
+
+  &.contained {
+    background-color: transparent;
+    border-color: var(--color-neutral-5);
+    color: var(--color-neutral-1);
+
+    &:hover,
+    &:active,
+    &:focus-visible:not(.disabled) {
+      background-color: var(--color-neutral-5);
+      border-color: var(--color-neutral-5);
+    }
+  }
+
+  &.small {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: var(--color-neutral-1);
+  opacity: 0.25;
+}
+
+.border {
+  .content {
+    border: 0.2rem solid var(--color-3);
+  }
+}
+
+.transition {
+  &.open {
+    .content {
+      transform-origin: top left;
+      animation: Swell 0.2s cubic-bezier(0.22, 0.44, 0, 1);
+    }
+
+    .backdrop {
+      animation: Appear 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}
+
+@keyframes Appear {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes Swell {
+  0% {
+    transform: translateY(-5rem) scale(0.25);
+    opacity: 0;
+  }
+}

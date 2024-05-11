@@ -23,7 +23,7 @@
   width: calc(100% - 2rem);
   min-height: 2rem;
   padding: 2rem;
-  background-color: var(--color-3);
+  background-color: var(--color-2);
   border-radius: 1rem;
 
   .open & {
@@ -37,6 +37,11 @@
   text-transform: uppercase;
   font-family: var(--font-text-black);
   font-size: 2rem;
+
+  span {
+    -webkit-text-stroke: 0.08rem var(--color-1);
+    color: transparent;
+  }
 }
 
 .body {
@@ -50,13 +55,14 @@
   right: 2rem;
   z-index: 2;
   padding: 0.25rem 0.5rem;
-  background-color: var(--color-3);
-  border: 0.2rem solid var(--color-4);
+  background-color: var(--color-2);
+  border: 0.2rem solid var(--color-3);
   border-radius: 0.5rem;
   font-size: 1.25rem;
+  color: var(--color-1);
 
   &:hover {
-    background-color: var(--color-4);
+    background-color: var(--color-3);
   }
 
   &:focus-visible {
@@ -72,7 +78,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: var(--color-2);
+  background-color: var(--color-1);
   opacity: 0.25;
 
   .open & {

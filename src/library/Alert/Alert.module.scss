@@ -1,0 +1,183 @@
+.alerts {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .alert {
+    margin: 1rem;
+
+    & + .alert {
+      margin-top: 0;
+    }
+  }
+}
+
+.alert {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  color: var(--color-2);
+
+  &.animate {
+    animation: Appear 800ms cubic-bezier(0.16, 1, 0.22, 1);
+  }
+
+  &.small {
+    padding: 0.75rem;
+
+    .title,
+    .text {
+      font-size: 1rem;
+    }
+
+    .icon {
+      margin-right: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .progress {
+      height: 0.35rem;
+    }
+  }
+
+  &.medium {
+    padding: 1rem;
+
+    .title,
+    .text {
+      font-size: 1.15rem;
+    }
+
+    .icon {
+      margin-right: 0.75rem;
+      font-size: 2rem;
+    }
+
+    .progress {
+      height: 0.5rem;
+    }
+  }
+
+  &.large {
+    padding: 1.5rem;
+
+    .title,
+    .text {
+      font-size: 1.25rem;
+    }
+
+    .icon {
+      margin-right: 0.75rem;
+      font-size: 2rem;
+    }
+
+    .progress {
+      height: 0.75rem;
+    }
+  }
+
+  &.info {
+    background-color: var(--color-blue);
+
+    .progress {
+      background-color: var(--color-blue-hover);
+    }
+  }
+
+  &.success {
+    background-color: var(--color-chartreuse);
+
+    .progress {
+      background-color: var(--color-chartreuse-hover);
+    }
+  }
+
+  &.warning {
+    background-color: var(--color-orange);
+
+    .progress {
+      background-color: var(--color-orange-hover);
+    }
+  }
+
+  &.error {
+    background-color: var(--color-red);
+
+    .progress {
+      background-color: var(--color-red-hover);
+    }
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.5rem;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-text-bold);
+}
+
+.text {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+}
+
+.button {
+  position: relative;
+  z-index: 1;
+
+  &.small {
+    padding: 0.15rem;
+  }
+
+  &.medium {
+    padding: 0.25rem;
+  }
+
+  &.large {
+    padding: 0.5rem;
+  }
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  animation: Progress var(--timeout) linear;
+}
+
+@keyframes Appear {
+  0% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes Progress {
+  0% {
+    width: 1px;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

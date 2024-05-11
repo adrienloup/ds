@@ -1,3 +1,197 @@
 .button {
-  background-color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 0.25rem;
+  letter-spacing: 0.05rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: var(--font-text-bold);
+  cursor: pointer;
+
+  &.contained {
+    background-color: var(--color-purple);
+    border-color: var(--color-purple);
+    color: var(--color-neutral-5);
+
+    &:hover,
+    &:active {
+      background-color: var(--color-purple-hover);
+      border-color: var(--color-purple-hover);
+    }
+
+    &:focus-visible:not(.disabled) {
+      background-color: var(--color-purple-hover);
+      border-color: var(--color-purple-hover);
+      outline: 0.2rem solid var(--color-purple-hover);
+      outline-offset: 0.125rem;
+    }
+
+    &.info:not(.disabled) {
+      background-color: var(--color-blue);
+      border-color: var(--color-blue);
+
+      &:hover,
+      &:active {
+        background-color: var(--color-blue-hover);
+        border-color: var(--color-blue-hover);
+      }
+    }
+
+    &.success:not(.disabled) {
+      background-color: var(--color-chartreuse);
+      border-color: var(--color-chartreuse);
+
+      &:hover,
+      &:active {
+        background-color: var(--color-chartreuse-hover);
+        border-color: var(--color-chartreuse-hover);
+      }
+    }
+
+    &.warning:not(.disabled) {
+      background-color: var(--color-orange);
+      border-color: var(--color-orange);
+
+      &:hover,
+      &:active {
+        background-color: var(--color-orange);
+        border-color: var(--color-orange);
+      }
+    }
+
+    &.error:not(.disabled) {
+      background-color: var(--color-red);
+      border-color: var(--color-red);
+
+      &:hover,
+      &:active {
+        background-color: var(--color-red-hover);
+        border-color: var(--color-red-hover);
+      }
+    }
+
+    &.disabled {
+      background-color: var(--color-neutral-5);
+      border-color: var(--color-neutral-5);
+    }
+  }
+
+  &.outlined {
+    background-color: transparent;
+    border-color: var(--color-purple);
+    color: var(--color-purple);
+
+    &:hover,
+    &:active {
+      border-color: var(--color-purple-hover);
+      color: var(--color-purple-hover);
+    }
+
+    &:focus-visible:not(.disabled) {
+      border-color: var(--color-purple-hover);
+      color: var(--color-purple-hover);
+      outline: 0.2rem solid var(--color-purple-hover);
+      outline-offset: 0.125rem;
+    }
+
+    &.info:not(.disabled) {
+      border-color: var(--color-blue);
+      color: var(--color-blue);
+
+      &:hover,
+      &:active {
+        border-color: var(--color-blue-hover);
+        color: var(--color-blue-hover);
+      }
+    }
+
+    &.success:not(.disabled) {
+      border-color: var(--color-chartreuse);
+      color: var(--color-chartreuse);
+
+      &:hover,
+      &:active {
+        border-color: var(--color-chartreuse-hover);
+        color: var(--color-chartreuse-hover);
+      }
+    }
+
+    &.warning:not(.disabled) {
+      border-color: var(--color-orange);
+      color: var(--color-orange);
+
+      &:hover,
+      &:active {
+        border-color: var(--color-orange-hover);
+        color: var(--color-orange-hover);
+      }
+    }
+
+    &.error:not(.disabled) {
+      border-color: var(--color-red);
+      color: var(--color-red);
+
+      &:hover,
+      &:active {
+        border-color: var(--color-red-hover);
+        color: var(--color-red-hover);
+      }
+    }
+
+    &.disabled {
+      border-color: var(--color-neutral-5);
+    }
+  }
+
+  &.disabled {
+    color: var(--color-neutral-3);
+    outline: none;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &.small {
+    padding: 0.15rem 0.25rem;
+    font-size: 0.75rem;
+
+    span {
+      font-size: 1.5rem;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: auto;
+    }
+  }
+
+  &.medium {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+
+    span {
+      font-size: 1.75rem;
+    }
+
+    svg {
+      width: 1.75rem;
+      height: auto;
+    }
+  }
+
+  &.large {
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+
+    span {
+      font-size: 2rem;
+    }
+
+    svg {
+      width: 2rem;
+      height: auto;
+    }
+  }
 }

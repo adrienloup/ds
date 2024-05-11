@@ -1,0 +1,57 @@
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 0.125rem;
+  border-style: solid;
+  border-radius: 0.25rem;
+  letter-spacing: 0.05rem;
+  font-family: var(--font-text-bold);
+  color: var(--color-2);
+}
+
+.small {
+  padding: 0.35rem 0.5rem;
+  font-size: 1rem;
+}
+
+.medium {
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+}
+
+.contained {
+  &.cyan {
+    background-color: var(--color-cyan);
+    border-color: var(--color-cyan);
+  }
+
+  &.magenta {
+    background-color: var(--color-magenta);
+    border-color: var(--color-magenta);
+  }
+
+  &.blue {
+    background-color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+}
+
+.outlined {
+  background-color: var(--color-11);
+
+  &.cyan {
+    border-color: var(--color-cyan);
+    color: var(--color-cyan);
+  }
+
+  &.magenta {
+    border-color: var(--color-magenta);
+    color: var(--color-magenta);
+  }
+
+  &.blue {
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+  }
+}

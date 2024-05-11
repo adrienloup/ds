@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import style from "./Loader.module.scss";
 
 export const Loader = () => {
   const [count, setCount] = useState<number>(0);
   const [percent, setPercent] = useState<number>(0);
+  const ref = useRef<HTMLDivElement>(null);
 
   const counter = useCallback(() => {
     setCount((count) => count + 1);
@@ -20,7 +21,7 @@ export const Loader = () => {
   }, [counter, count]);
 
   return (
-    <div className={style.loader}>
+    <div ref={ref} className={style.loader}>
       <div className={style.label}>
         <div>
           <span>The design system using the logic of</span> Atomic Design

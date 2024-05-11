@@ -13,13 +13,13 @@ $tablet-portrait: 769px;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: var(--color-3);
-  border-right: 0.2rem solid var(--color-4);
+  background-color: var(--color-2);
+  border-right: 0.2rem solid var(--color-3);
 
   @media (max-width: $tablet-portrait) {
     height: auto;
     border-right: 0;
-    border-bottom: 0.2rem solid var(--color-4);
+    border-bottom: 0.2rem solid var(--color-3);
   }
 }
 
@@ -34,7 +34,7 @@ $tablet-portrait: 769px;
   text-decoration: none;
   font-family: var(--font-text-black);
   font-size: 6rem;
-  color: var(--color-2);
+  color: var(--color-1);
 
   @media (max-width: $tablet-portrait) {
     padding: 0.25rem;
@@ -52,7 +52,7 @@ $tablet-portrait: 769px;
   }
 
   &:hover {
-    background-color: var(--color-4);
+    background-color: var(--color-3);
   }
 
   &:focus-visible {
