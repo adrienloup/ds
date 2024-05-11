@@ -5,7 +5,7 @@ export type IconType = {
   cssClass?: string;
 };
 
-export const Icon = ({ name, cssClass }: IconType) => {
+export const IconComponent = ({ name, cssClass }: IconType) => {
   return (
     <span
       aria-hidden={false}

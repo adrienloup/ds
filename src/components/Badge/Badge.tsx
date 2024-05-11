@@ -8,7 +8,7 @@ type BadgeType = {
   value?: number;
 };
 
-export const Badge = ({
+export const BadgeComponent = ({
   children,
   cssClass,
   max = 99,
