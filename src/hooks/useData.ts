@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../contexts/DataContext";
+import { DataType } from "../models/Data";
 import { useLocalStorage } from "./useLocalStorage";
 import dark from "../scss/modes/dark.module.scss";
 
 const LocalData = () => {
-  const { data } = useContext(DataContext);
+  const { data } = useContext<DataType>(DataContext);
   const { getItem } = useLocalStorage();
   return JSON.parse(getItem("_ds_y0y09_10") as string) ?? data;
 };

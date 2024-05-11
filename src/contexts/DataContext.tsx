@@ -5,24 +5,24 @@ import { DataType } from "../models/Data";
 
 export const DataContext = createContext<DataType>({
   data: {
+    category: "",
     notifications: [
-      { id: 1, label: "NPM package locally with npm link" },
-      { id: 2, label: "Make the mobile version" },
+      { id: 1, title: "NPM package locally" },
+      { id: 2, title: "Make the mobile version" },
     ],
     settings: {
       dir: "ltr",
       mode: "light",
-      nav: "",
       theme: "purple",
     },
     user: null,
   },
   setData: (data: {
+    category: string;
     notifications: NotificationType[];
     settings: {
       dir: string;
       mode: string;
-      nav: string;
       theme: string;
     };
     user: UserType | null;

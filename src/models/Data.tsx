@@ -3,21 +3,21 @@ import { UserType } from "./User";
 
 export type DataType = {
   data: {
+    category: string;
     notifications: NotificationType[];
     settings: {
       dir: string;
       mode: string;
-      nav: string;
       theme: string;
     };
     user: UserType | null;
   };
   setData: (data: {
+    category: string;
     notifications: NotificationType[];
     settings: {
       dir: string;
       mode: string;
-      nav: string;
       theme: string;
     };
     user: UserType | null;
