@@ -45,5 +45,10 @@ $tablet-portrait: 769px;
     &:hover {
       background-color: var(--color-yellow-hover);
     }
+
+    &:focus-visible {
+      outline: 0.2rem solid var(--color-orange);
+      outline-offset: 0.125rem;
+    }
   }
 }

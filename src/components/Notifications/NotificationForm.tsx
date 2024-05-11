@@ -1,11 +1,11 @@
 import { useState } from "react";
-import style from "./NotificationList.module.scss";
+import style from "./Notifications.module.scss";
 
 type FormProps = {
-  handleAdd: ({ id, label }: { id: any; label: any }) => void;
+  handleAdd: ({ id, title }: { id: number; title: string }) => void;
 };
 
-export const NotificationForm = ({ handleAdd }: FormProps) => {
+export const NotificationFormComponent = ({ handleAdd }: FormProps) => {
   const [value, setValue] = useState<string>("");
 
   const onChange = (e: { target: { value: string } }) => {
@@ -16,9 +16,9 @@ export const NotificationForm = ({ handleAdd }: FormProps) => {
     e.preventDefault();
 
     const id = new Date().getTime();
-    const label = value;
+    const title = value;
 
-    handleAdd({ id, label });
+    handleAdd({ id, title });
     setValue("");
   };
 

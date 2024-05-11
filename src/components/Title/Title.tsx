@@ -4,7 +4,7 @@ type TileProps = {
   title: string;
 };
 
-export const Title = ({ title = "My Page Title" }: TileProps) => {
+export const TitleComponent = ({ title = "My Page Title" }: TileProps) => {
   useEffect(() => {
     document.title = title;
   }, []);

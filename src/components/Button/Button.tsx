@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import style from "./Button.module.scss";
 
 type ButtonType = {
@@ -6,16 +7,28 @@ type ButtonType = {
   cssClass?: string;
   ariaLabel?: string;
   href?: string;
+  to?: string;
   onClick?: () => void;
 };
 
-export const Button = ({
+export const ButtonComponent = ({
   children,
   cssClass,
   ariaLabel,
   href,
+  to,
   onClick = () => {},
 }: ButtonType) => {
+  const link = (
+    <Link
+      to={to as string}
+      aria-label={ariaLabel}
+      className={[style.button, cssClass ? ` ${cssClass}` : ""].join("")}
+    >
+      {children}
+    </Link>
+  );
+
   const a = (
     <a
       href={href}
@@ -27,6 +40,7 @@ export const Button = ({
       {children}
     </a>
   );
+
   const button = (
     <button
       type="button"
@@ -37,5 +51,6 @@ export const Button = ({
       {children}
     </button>
   );
-  return href ? a : button;
+
+  return href ? a : to ? link : button;
 };

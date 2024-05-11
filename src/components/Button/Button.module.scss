@@ -2,26 +2,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  // background-color: var(--color-3);
-  // border: 0.2rem solid var(--color-4);
   border: 0;
   letter-spacing: 0.075rem;
   text-decoration: none;
   text-transform: uppercase;
   font-family: var(--font-text-bold);
-  // font-size: 1.25rem;
-  // color: var(--color-2);
   cursor: pointer;
-
-  // &:hover {
-  //   background-color: var(--color-4);
-  // }
-
-  &:focus-visible {
-    outline: 0.2rem solid var(--color-orange);
-    outline-offset: -0.25rem;
-  }
 
   svg {
     height: auto;

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { Button } from "../Button/Button";
-import { Icon } from "../Icon/Icon";
+import { ButtonComponent } from "../Button/Button";
+import { IconComponent } from "../Icon/Icon";
 import style from "./Modal.module.scss";
 
 type ModalProps = {
@@ -12,7 +12,7 @@ type ModalProps = {
   onClick: () => void;
 };
 
-export const Modal = ({
+export const ModalComponent = ({
   head,
   body,
   foot,
@@ -32,12 +32,9 @@ export const Modal = ({
       }}
     >
       <div className={style.content}>
-        <Button
-          cssClass={`${style.button} ${style.contained} ${style.small}`}
-          onClick={onClick}
-        >
-          <Icon name="close" />
-        </Button>
+        <ButtonComponent cssClass={style.close} onClick={onClick}>
+          <IconComponent name="close" />
+        </ButtonComponent>
         {head && <div className={style.head}>{head}</div>}
         {body && <div className={style.body}>{body}</div>}
         {foot && <div className={style.foot}>{foot}</div>}

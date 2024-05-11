@@ -1,0 +1,42 @@
+.notifications {
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding-bottom: 0.5rem;
+  }
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 0.2rem solid var(--color-4);
+  line-height: 1.2;
+  font-size: 1.5rem;
+
+  .button {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--color-3);
+    border: 0.2rem solid var(--color-4);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: var(--color-4);
+    }
+
+    &:focus-visible {
+      outline: 0.2rem solid var(--color-orange);
+      outline-offset: 0.125rem;
+    }
+  }
+}
+
+.form {
+  padding-top: 0.5rem;
+  border-top: 0.2rem solid var(--color-4);
+}

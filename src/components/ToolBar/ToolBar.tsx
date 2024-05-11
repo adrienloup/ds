@@ -1,30 +1,35 @@
 import { useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { DataContext } from "../../contexts/DataContext";
-import { useAuth } from "../../hooks/useAuth";
-import { NotificationList } from "../NotificationList/NotificationList";
-import { Button } from "../Button/Button";
-import { Badge } from "../Badge/Badge";
-import { Modal } from "../Modal/Modal";
-import { Icon } from "../Icon/Icon";
+import { DataType } from "../../models/Data";
+import { NotificationsComponent } from "../Notifications/Notifications";
+import { ButtonComponent } from "../Button/Button";
+import { BadgeComponent } from "../Badge/Badge";
+import { ModalComponent } from "../Modal/Modal";
+import { IconComponent } from "../Icon/Icon";
 import style from "./ToolBar.module.scss";
-// @TODO
-import { Link } from "react-router-dom";
 
+// @TODO: change the event optimally
 type ToolBarProps = {
   onClick?: () => void;
 };
 
-export const ToolBar = ({ onClick }: ToolBarProps) => {
+export const ToolBarComponent = ({ onClick }: ToolBarProps) => {
+  const { data } = useContext<DataType>(DataContext);
   const [modal, setModal] = useState<boolean>(false);
-  const { data } = useContext(DataContext);
-  const { user } = useAuth();
 
   return (
     <div className={style.toolbar}>
-      {JSON.stringify(user)}
-      <Link to={"/ds/login"}>Login</Link>
-      <Button
+      {data.user && (
+        <ButtonComponent
+          ariaLabel={"Settings"}
+          cssClass={style.button}
+          to={"/ds/login"}
+        >
+          <IconComponent name={"face_2"} />
+        </ButtonComponent>
+      )}
+      <ButtonComponent
         href={"https://github.com/adrienloup/ds"}
         ariaLabel={"Github"}
         cssClass={style.button}
@@ -35,24 +40,32 @@ export const ToolBar = ({ onClick }: ToolBarProps) => {
             fill="currentColor"
           ></path>
         </svg>
-      </Button>
-      <Badge value={data.notifications.length} max={9} cssClass={style.badge}>
-        <Button
+      </ButtonComponent>
+      <BadgeComponent
+        value={data.notifications.length}
+        max={9}
+        cssClass={style.badge}
+      >
+        <ButtonComponent
           ariaLabel={"Notifications"}
           cssClass={style.button}
           onClick={() => setModal(!modal)}
         >
-          <Icon name="notifications" />
-        </Button>
-      </Badge>
-      <Button ariaLabel={"Settings"} cssClass={style.button} onClick={onClick}>
-        <Icon name={"settings"}></Icon>
-      </Button>
+          <IconComponent name="notifications" />
+        </ButtonComponent>
+      </BadgeComponent>
+      <ButtonComponent
+        ariaLabel={"Settings"}
+        cssClass={style.button}
+        onClick={onClick}
+      >
+        <IconComponent name={"settings"} />
+      </ButtonComponent>
       {modal &&
         createPortal(
-          <Modal
+          <ModalComponent
             head={<h3>Breaking news</h3>}
-            body={<NotificationList />}
+            body={<NotificationsComponent />}
             open={modal}
             onClick={() => setModal(false)}
           />,

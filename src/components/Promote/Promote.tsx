@@ -7,7 +7,7 @@ type PromoteProps = {
   foot?: ReactNode;
 };
 
-export const Promote = ({ head, body, foot }: PromoteProps) => {
+export const PromoteComponent = ({ head, body, foot }: PromoteProps) => {
   return (
     <div className={style.promote}>
       {head && <div className={style.head}>{head}</div>}
