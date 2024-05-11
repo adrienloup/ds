@@ -4,101 +4,106 @@
       "title": "Overview",
       "text": "It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box, and features a suite of customization options.",
       "path": "/ds/overview",
-      "category": "getting_started"
+      "typology": "getting_started",
+      "novelty": false
     },
     {
       "title": "Usage",
       "text": "Since DS library components are built to function in isolation, they don't require any kind of globally scoped styles.",
       "path": "/ds/usage",
-      "category": "getting_started"
-    },
-    {
-      "title": "Customization",
-      "text": "",
-      "path": "/ds/customization",
-      "category": "getting_started"
+      "typology": "getting_started",
+      "novelty": false
     },
     {
       "title": "Alert",
       "text": "Alerts display brief messages for the user",
       "path": "/ds/alert",
-      "category": "feedback",
+      "typology": "feedback",
       "novelty": true
     },
     {
       "title": "Badge",
       "text": "Badge generates a small badge to the top-right of its child(ren)",
       "path": "/ds/badge",
-      "category": "feedback"
+      "typology": "feedback",
+      "novelty": false
     },
     {
       "title": "Breadcrumbs",
       "text": "A breadcrumbs is a list of links that help visualize a page's location",
       "path": "/ds/breadcrumbs",
-      "category": "navigation"
+      "typology": "navigation",
+      "novelty": false
     },
     {
       "title": "Button",
       "text": "Buttons allow users to take actions, and make choices, with a single tap",
       "path": "/ds/button",
-      "category": "action"
+      "typology": "action",
+      "novelty": false
     },
     {
       "title": "FAB",
       "text": "A floating action button (FAB)",
       "path": "/ds/fab",
-      "category": "action",
+      "typology": "action",
       "novelty": true
     },
     {
       "title": "Progress",
       "text": "Progress used to indicate the current advancement state of a process",
       "path": "/ds/progress",
-      "category": "feedback"
+      "typology": "feedback",
+      "novelty": false
     },
     {
       "title": "Modal",
       "text": "The modal component provides a solid foundation for creating dialogs",
       "path": "/ds/modal",
-      "category": "pattern",
+      "typology": "pattern",
       "novelty": true
     },
     {
       "title": "Select",
       "text": "The Selectcomponent provides a compact way to present a list of choices to the user.",
       "path": "/ds/select",
-      "category": "forms"
+      "typology": "forms",
+      "novelty": false
     },
     {
       "title": "Stepper",
       "text": "Steppers convey progress through numbered steps. It provides a wizard-like workflow",
       "path": "/ds/stepper",
-      "category": "navigation"
+      "typology": "navigation",
+      "novelty": false
     },
     {
       "title": "Switch",
       "text": "Switches toggle the state of a single setting on or off",
       "path": "/ds/switch",
-      "category": "forms"
+      "typology": "forms",
+      "novelty": false
     },
     {
       "title": "Tag",
       "text": "Used for marking and categorization",
       "path": "/ds/tag",
-      "category": "feedback",
+      "typology": "feedback",
       "novelty": true
     },
     {
       "title": "TextField",
       "text": "TextFields let users enter and edit text",
       "path": "/ds/textfield",
-      "category": "forms"
+      "typology": "forms",
+      "novelty": false
     },
     {
       "title": "TextArea",
       "text": "TextArea is a resizable input used to prompt the user for a parapraph of text",
       "path": "/ds/textarea",
-      "category": "forms"
+      "typology": "forms",
+      "novelty": false
     }
   ]
 }
