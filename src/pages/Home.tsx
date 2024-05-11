@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { pages } from "../data/pages.json";
+import { categories } from "../data/categories.json";
 import { PageType } from "../models/Page";
 import { HeaderComponent } from "../components/Header/Header";
 import { MainComponent } from "../components/Main/Main";
@@ -17,26 +18,20 @@ export default function HomePage() {
   const [settings, setSettings] = useState<boolean>(false);
   const [list, setList] = useState<PageType[]>([]);
 
-  const listed = (category: string) => {
+  const listed = () => {
     return pages.filter(
-      (page: { category: string }) => page.category === category
+      (page: { typology: string }) => page.typology !== "getting_started"
     );
   };
 
   useEffect(() => {
-    setList([
-      ...listed("action"),
-      ...listed("feedback"),
-      ...listed("forms"),
-      ...listed("navigation"),
-      ...listed("pattern"),
-    ]);
+    setList(listed());
   }, []);
 
   return (
     <>
       <TitleComponent title="Welcome!" />
-      <HeaderComponent pages={pages} />
+      <HeaderComponent pages={pages} categories={categories} />
       <MainComponent>
         <ToolBarComponent onClick={() => setSettings(!settings)} />
         <h1>
@@ -59,13 +54,7 @@ export default function HomePage() {
           placeholder="UI components"
           update={(value: string) =>
             setList(
-              [
-                ...listed("action"),
-                ...listed("feedback"),
-                ...listed("forms"),
-                ...listed("navigation"),
-                ...listed("pattern"),
-              ].filter((page: { title: string }) =>
+              listed().filter((page: { title: string }) =>
                 page.title.toLowerCase().includes(value)
               )
             )
