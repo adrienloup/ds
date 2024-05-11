@@ -64,7 +64,11 @@ export const ToolBarComponent = ({ onClick }: ToolBarProps) => {
       {modal &&
         createPortal(
           <ModalComponent
-            head={<h3>Breaking news</h3>}
+            head={
+              <h3>
+                Breaking <span>news</span>
+              </h3>
+            }
             body={<NotificationsComponent />}
             open={modal}
             onClick={() => setModal(false)}
