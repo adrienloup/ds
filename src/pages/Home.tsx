@@ -1,40 +1,49 @@
-import { useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import { pages } from "../data/pages.json";
-import { DataContext } from "../contexts/DataContext";
-import { DataType } from "../models//Data";
-import { Header } from "../components/Header/Header";
-import { Main } from "../components/Main/Main";
-import { Aside } from "../components/Aside/Aside";
-import { Footer } from "../components/Footer/Footer";
-import { Title } from "../components/Title/Title";
-import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
-import { ToolBar } from "../components/ToolBar/ToolBar";
-import { NotificationList } from "../components/NotificationList/NotificationList";
-import { Promote } from "../components/Promote/Promote";
-import { Button } from "../components/Button/Button";
+import { PageType } from "../models/Page";
+import { HeaderComponent } from "../components/Header/Header";
+import { MainComponent } from "../components/Main/Main";
+import { SettingsComponent } from "../components/Settings/Settings";
+import { FooterComponent } from "../components/Footer/Footer";
+import { TitleComponent } from "../components/Title/Title";
+import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
+import { ToolBarComponent } from "../components/ToolBar/ToolBar";
+import { PromoteComponent } from "../components/Promote/Promote";
+import { SearchbarComponent } from "../components/Searchbar/Searchbar";
+import { CardsComponent } from "../components/Cards/Cards";
+import { ButtonComponent } from "../components/Button/Button";
 
 export default function HomePage() {
-  const { data, setData } = useContext<DataType>(DataContext);
-  const [mode, setMode] = useState<string>(data.settings.mode);
-  const [aside, setAside] = useState<boolean>(false);
+  const [settings, setSettings] = useState<boolean>(false);
+  const [list, setList] = useState<PageType[]>([]);
 
-  const handleMode = (mode: string) => {
-    data.settings.mode = mode;
-    setData({ ...data });
-    setMode(mode);
+  const listed = (category: string) => {
+    return pages.filter(
+      (page: { category: string }) => page.category === category
+    );
   };
+
+  useEffect(() => {
+    setList([
+      ...listed("action"),
+      ...listed("feedback"),
+      ...listed("forms"),
+      ...listed("navigation"),
+      ...listed("pattern"),
+    ]);
+  }, []);
 
   return (
     <>
-      <Header pages={pages} />
-      <Main>
-        {/* @TODO: change the event optimally */}
-        <ToolBar onClick={() => setAside(!aside)} />
+      <TitleComponent title="Welcome!" />
+      <HeaderComponent pages={pages} />
+      <MainComponent>
+        <ToolBarComponent onClick={() => setSettings(!settings)} />
         <h1>
           A pretty good library{" "}
           <span>of components for Web application's UI</span>
         </h1>
-        <Promote
+        <PromoteComponent
           body={
             <p>
               DS library offers a comprehensive suite of free UI tools to help
@@ -45,34 +54,38 @@ export default function HomePage() {
           }
           foot={
             <>
-              <Button>button1</Button>
-              <Button>button2</Button>
+              <ButtonComponent>button1</ButtonComponent>
+              <ButtonComponent>button2</ButtonComponent>
             </>
           }
         />
-        <button onClick={() => setAside(!aside)}>open/close</button>
-        <button onClick={() => handleMode("dark")}>mode dark</button>
-        <button onClick={() => handleMode("light")}>mode light</button>
-        {mode === "dark" ? "dark" : "light"}
-        <br />
-        <br />
-        <NotificationList />
-        <br />
-        <br />
-        <div style={{ height: "2000px" }}></div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
-      </Main>
-      <Aside
-        open={aside}
+        <SearchbarComponent
+          label={`${list.length} component${list.length > 1 ? "s" : ""}`}
+          placeholder="UI components"
+          update={(value: string) =>
+            setList(
+              [
+                ...listed("action"),
+                ...listed("feedback"),
+                ...listed("forms"),
+                ...listed("navigation"),
+                ...listed("pattern"),
+              ].filter((page: { title: string }) =>
+                page.title.toLowerCase().includes(value)
+              )
+            )
+          }
+        />
+        <CardsComponent list={list} />
+      </MainComponent>
+      <SettingsComponent
+        open={settings}
         onClick={() => {
-          setAside(false);
+          setSettings(false);
         }}
       />
-      <Footer />
-      <Title title="My Page Title" />
-      <ScrollToTop />
+      <FooterComponent />
+      <ScrollToTopComponent />
     </>
   );
 }
