@@ -52,12 +52,7 @@ export default function HomePage() {
               components.
             </p>
           }
-          foot={
-            <>
-              <ButtonComponent>button1</ButtonComponent>
-              <ButtonComponent>button2</ButtonComponent>
-            </>
-          }
+          foot={<ButtonComponent to={"/ds/overview"}>Overview</ButtonComponent>}
         />
         <SearchbarComponent
           label={`${list.length} component${list.length > 1 ? "s" : ""}`}
