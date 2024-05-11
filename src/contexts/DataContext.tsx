@@ -13,7 +13,7 @@ export const DataContext = createContext<DataType>({
     settings: {
       dir: "ltr",
       mode: "light",
-      theme: "purple",
+      theme: "yellow",
     },
     user: null,
   },
