@@ -5,7 +5,7 @@ $tablet-portrait: 769px;
   grid-area: main;
   position: relative;
   z-index: 2;
-  background-color: var(--color-3);
+  background-color: var(--color-2);
 
   @media (max-width: $tablet-portrait) {
     min-height: calc(100vh - 115px);
@@ -29,7 +29,7 @@ $tablet-portrait: 769px;
     }
 
     span {
-      -webkit-text-stroke: 0.08rem var(--color-2);
+      -webkit-text-stroke: 0.08rem var(--color-1);
       color: transparent;
     }
   }
@@ -48,8 +48,59 @@ $tablet-portrait: 769px;
     }
 
     span {
-      -webkit-text-stroke: 0.08rem var(--color-2);
+      -webkit-text-stroke: 0.08rem var(--color-1);
       color: transparent;
+    }
+  }
+
+  & > p {
+    max-width: 65rem;
+    margin: 1.5rem 5rem;
+    line-height: 1.25;
+    font-family: var(--font-text-bold);
+    font-size: 1.5rem;
+
+    @media (max-width: $desktop) {
+      margin: 1rem 2.5rem;
+    }
+
+    a {
+      color: var(--color-1);
+    }
+  }
+
+  & > ul {
+    max-width: 65rem;
+    display: flex;
+    margin: 1.5rem 5rem;
+    list-style-type: none;
+    line-height: 1.25;
+    font-family: var(--font-text-bold);
+    font-size: 1.5rem;
+
+    @media (max-width: $desktop) {
+      margin: 1rem 2rem;
+    }
+
+    li + li {
+      margin-left: 1rem;
+    }
+
+    button {
+      padding: 1rem 1.5rem;
+      background-color: var(--color-2);
+      border: 0.2rem solid var(--color-3);
+      border-radius: 0.5rem;
+      font-size: 1.25rem;
+      color: var(--color-1);
+
+      &:hover {
+        background-color: var(--color-3);
+      }
+
+      &:focus-visible {
+        outline: 0.2rem solid var(--color-orange);
+      }
     }
   }
 }
