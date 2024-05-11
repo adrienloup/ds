@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { pages } from "../data/pages.json";
+import { categories } from "../data/categories.json";
 import { HeaderComponent } from "../components/Header/Header";
 import { MainComponent } from "../components/Main/Main";
 import { SettingsComponent } from "../components/Settings/Settings";
@@ -14,7 +15,7 @@ export default function NotFoundPage() {
   return (
     <>
       <TitleComponent title="Page not found" />
-      <HeaderComponent pages={pages} />
+      <HeaderComponent pages={pages} categories={categories} />
       <MainComponent>
         <ToolBarComponent onClick={() => setSettings(!settings)} />
         <h1>

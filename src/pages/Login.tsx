@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { pages } from "../data/pages.json";
+import { categories } from "../data/categories.json";
 import { useAuth } from "../hooks/useAuth";
 import { HeaderComponent } from "../components/Header/Header";
 import { MainComponent } from "../components/Main/Main";
@@ -28,15 +29,20 @@ export default function LoginPage() {
   return (
     <>
       <TitleComponent title="Login" />
-      <HeaderComponent pages={pages} />
+      <HeaderComponent pages={pages} categories={categories} />
       <MainComponent>
         <ToolBarComponent onClick={() => setSettings(!settings)} />
         <h1>
           Login to <span>your account</span>
         </h1>
-        <ButtonComponent onClick={handleLogin}>Login</ButtonComponent>
-        <ButtonComponent onClick={handleLogout}>Logout</ButtonComponent>
-        {user ? JSON.stringify(user) : "no"}
+        <ul>
+          <li>
+            <ButtonComponent onClick={handleLogin}>Login</ButtonComponent>
+          </li>
+          <li>
+            <ButtonComponent onClick={handleLogout}>Logout</ButtonComponent>
+          </li>
+        </ul>
       </MainComponent>
       <SettingsComponent
         open={settings}

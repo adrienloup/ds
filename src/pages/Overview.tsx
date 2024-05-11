@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { pages } from "../data/pages.json";
-import { PageType } from "../models/Page";
+import { categories } from "../data/categories.json";
 import { HeaderComponent } from "../components/Header/Header";
 import { MainComponent } from "../components/Main/Main";
 import { SettingsComponent } from "../components/Settings/Settings";
@@ -12,30 +12,19 @@ import { PromoteComponent } from "../components/Promote/Promote";
 import { CardsComponent } from "../components/Cards/Cards";
 import { ButtonComponent } from "../components/Button/Button";
 
-export default function HomePage() {
+export default function OverviewPage() {
   const [settings, setSettings] = useState<boolean>(false);
-  const [list, setList] = useState<PageType[]>([]);
 
-  const listed = (category: string) => {
+  const listed = () => {
     return pages.filter(
-      (page: { category: string }) => page.category === category
+      (page: { typology: string }) => page.typology === "getting_started"
     );
   };
 
-  useEffect(() => {
-    setList([
-      ...listed("action"),
-      ...listed("feedback"),
-      ...listed("forms"),
-      ...listed("navigation"),
-      ...listed("pattern"),
-    ]);
-  }, []);
-
   return (
     <>
-      <TitleComponent title="Welcome!" />
-      <HeaderComponent pages={pages} />
+      <TitleComponent title="Overview" />
+      <HeaderComponent pages={pages} categories={categories} />
       <MainComponent>
         <ToolBarComponent onClick={() => setSettings(!settings)} />
         <h1>
@@ -56,7 +45,7 @@ export default function HomePage() {
           Get started with DS library today through some of these useful
           resources
         </h2>
-        <CardsComponent list={listed("getting_started")} />
+        <CardsComponent list={listed()} />
       </MainComponent>
       <SettingsComponent
         open={settings}

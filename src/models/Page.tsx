@@ -1,7 +1,7 @@
 export type PageType = {
-  title?: string;
+  title: string;
   text?: string;
-  path?: string;
-  category?: string;
-  novelty?: boolean;
+  path: string;
+  typology: string;
+  novelty: boolean;
 };
