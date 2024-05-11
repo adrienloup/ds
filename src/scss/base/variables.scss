@@ -8,7 +8,7 @@
 @mixin colors {
   --color-neutral-1: #1b1b1b;
   --color-neutral-2: #2b2b2b;
-  --color-neutral-3: #969696;
+  --color-neutral-3: #dadada;
   --color-neutral-4: #eee;
   --color-neutral-5: #fff;
   --color-purple: #ba14d7;
@@ -31,7 +31,7 @@
 
 @mixin easings {
   --easy-in-out-quad: cubic-bezier(0.22, 0.44, 0, 1);
-  // transition: padding-top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  // --easy-out-quad: cubic-bezier(0.4, 0, 0.2, 1);
   // transition: padding-top 0.5s cubic-bezier(0.16, 1, 0.22, 1);
   // transition: padding-top 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 }
