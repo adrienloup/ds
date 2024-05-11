@@ -6,8 +6,8 @@ $tablet-portrait: 769px;
   right: 0;
   z-index: 1;
   width: 100vw;
-  background-color: var(--color-4);
-  // background-color: var(--color-yellow);
+  // background-color: var(--color-4);
+  background-color: var(--color-primary);
   transition-property: height, top;
   transition-duration: 0.35s;
   transition-timing-function: var(--easy-in-out-quad);
@@ -36,24 +36,24 @@ $tablet-portrait: 769px;
   text-transform: uppercase;
   font-family: var(--font-text-bold);
   font-size: 1.25rem;
-  // color: var(--color-neutral-1);
+  color: var(--color-neutral-1);
 }
 
 .button {
   padding: 0.5rem 1rem;
-  background-color: var(--color-4);
-  // background-color: var(--color-yellow);
-  border: 0.2rem solid var(--color-neutral-3);
-  // border: 0.2rem solid var(--color-neutral-1);
+  // background-color: var(--color-4);
+  background-color: var(--color-primary);
+  // border: 0.2rem solid var(--color-neutral-3);
+  border: 0.2rem solid var(--color-neutral-1);
   font-size: 1.25rem;
-  color: var(--color-2);
-  // color: var(--color-neutral-1);
+  // color: var(--color-2);
+  color: var(--color-neutral-1);
 
   &:hover {
-    background-color: var(--color-neutral-3);
-    // background-color: var(--color-neutral-1);
-    // color: var(--color-yellow);
-    color: var(--color-neutral-1);
+    // background-color: var(--color-neutral-3);
+    background-color: var(--color-neutral-1);
+    // color: var(--color-neutral-1);
+    color: var(--color-primary);
   }
 
   &:focus-visible {
@@ -64,10 +64,10 @@ $tablet-portrait: 769px;
   }
 
   &.active {
-    background-color: var(--color-neutral-3);
-    // background-color: var(--color-neutral-1);
-    color: var(--color-neutral-1);
-    // color: var(--color-yellow);
+    // background-color: var(--color-neutral-3);
+    background-color: var(--color-neutral-1);
+    // color: var(--color-neutral-1);
+    color: var(--color-primary);
     cursor: default;
   }
 }
@@ -103,19 +103,19 @@ $tablet-portrait: 769px;
   right: 1rem;
   z-index: 2;
   padding: 0.25rem 0.5rem;
-  background-color: var(--color-4);
-  // background-color: var(--color-yellow);
-  border: 0.2rem solid var(--color-neutral-3);
-  // border: 0.2rem solid var(--color-neutral-1);
+  // background-color: var(--color-4);
+  background-color: var(--color-primary);
+  // border: 0.2rem solid var(--color-neutral-3);
+  border: 0.2rem solid var(--color-neutral-1);
   border-radius: 0.5rem;
   font-size: 1.25rem;
-  // color: var(--color-neutral-1);
-  color: var(--color-2);
+  color: var(--color-neutral-1);
+  // color: var(--color-2);
 
   &:hover {
-    // background-color: var(--color-neutral-1);
-    // color: var(--color-yellow);
-    background-color: var(--color-neutral-3);
+    background-color: var(--color-neutral-1);
+    // background-color: var(--color-neutral-3);
+    color: var(--color-primary);
   }
 
   &:focus-visible {

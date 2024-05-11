@@ -82,7 +82,7 @@ export const SettingsComponent = ({
                 addAlert({
                   status: "error",
                   text: "There is an error with the direction adjustment",
-                  timeout: 3,
+                  timeout: 2,
                 });
               }}
             >
@@ -94,7 +94,7 @@ export const SettingsComponent = ({
                 addAlert({
                   status: "error",
                   text: "There is an error with the direction adjustment",
-                  timeout: 3,
+                  timeout: 2,
                 });
               }}
             >
@@ -109,7 +109,7 @@ export const SettingsComponent = ({
                 addAlert({
                   status: "error",
                   text: "There is an error with the theme adjustment",
-                  timeout: 3,
+                  timeout: 2,
                 });
               }}
             >
