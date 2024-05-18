@@ -13,7 +13,6 @@ import { DsTabPanel } from "../library/Tabs/TabPanel";
 import { DsTabList } from "../library/Tabs/TabList";
 import { DsTabs } from "../library/Tabs/Tabs";
 import { DsTab } from "../library/Tabs/Tab";
-import { DsIcon } from "../library/Icon/Icon";
 
 export default function TabsPage() {
   const [settings, setSettings] = useState<boolean>(false);
