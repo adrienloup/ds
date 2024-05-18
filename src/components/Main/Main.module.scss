@@ -47,6 +47,10 @@ $tablet-portrait: 769px;
       font-size: 2rem;
     }
 
+    @media (max-width: $tablet-portrait) {
+      margin: 1rem;
+    }
+
     span {
       -webkit-text-stroke: 0.08rem var(--color-1);
       color: transparent;
@@ -62,6 +66,10 @@ $tablet-portrait: 769px;
 
     @media (max-width: $desktop) {
       margin: 1rem 2.5rem;
+    }
+
+    @media (max-width: $tablet-portrait) {
+      margin: 1rem;
     }
 
     a {
@@ -80,6 +88,10 @@ $tablet-portrait: 769px;
 
     @media (max-width: $desktop) {
       margin: 1rem 2rem;
+    }
+
+    @media (max-width: $tablet-portrait) {
+      margin: 1rem;
     }
 
     li + li {

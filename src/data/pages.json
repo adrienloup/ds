@@ -85,6 +85,13 @@
       "novelty": false
     },
     {
+      "title": "Tabs",
+      "text": "Tabs are a set of layered sections of content",
+      "path": "/ds/tabs",
+      "typology": "navigation",
+      "novelty": false
+    },
+    {
       "title": "Tag",
       "text": "Used for marking and categorization",
       "path": "/ds/tag",

@@ -16,7 +16,9 @@ import Overview from "./pages/Overview";
 import Progress from "./pages/Progress";
 import Stepper from "./pages/Stepper";
 import Switch from "./pages/Switch";
+import Tabs from "./pages/Tabs";
 import Tag from "./pages/Tag";
+import TextArea from "./pages/TextArea";
 import TextField from "./pages/TextField";
 import "./App.scss";
 
@@ -42,7 +44,9 @@ function App() {
             <Route path="/ds/progress" element={<Progress />} />
             <Route path="/ds/stepper" element={<Stepper />} />
             <Route path="/ds/switch" element={<Switch />} />
+            <Route path="/ds/tabs" element={<Tabs />} />
             <Route path="/ds/tag" element={<Tag />} />
+            <Route path="/ds/textarea" element={<TextArea />} />
             <Route path="/ds/textfield" element={<TextField />} />
           </Routes>
         </BrowserRouter>
