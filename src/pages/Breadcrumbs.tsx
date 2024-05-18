@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsBreadcrumbs } from "../library/Breadcrumbs/Breadcrumbs";
 
 export default function BreadcrumbsPage() {
@@ -132,6 +133,7 @@ export default function BreadcrumbsPage() {
             "<DsBreadcrumbs list='{[{title: 'Home', path: '/'},{title: 'Shopping Cart', path: '/cart'}{title: 'Payment', path: '/cart/payment'}{title: 'Confirmation', path: '/cart/payment/confirmation'}]}' />"
           }
         />
+        <PaginationComponent pages={pages} current="breadcrumbs" />
       </MainComponent>
       <SettingsComponent
         open={settings}

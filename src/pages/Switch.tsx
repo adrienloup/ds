@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsSwitch } from "../library/Switch/Switch";
 
 export default function SwitchPage() {
@@ -118,6 +119,7 @@ export default function SwitchPage() {
           github={"Switch"}
           copy={"<DsSwitch label='Label' checked />"}
         />
+        <PaginationComponent pages={pages} current="switch" />
       </MainComponent>
       <SettingsComponent
         open={settings}

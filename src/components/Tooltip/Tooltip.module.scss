@@ -1,0 +1,22 @@
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  background-color: red;
+
+  &:hover {
+    .content {
+      display: block;
+    }
+  }
+}
+
+.content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  white-space: nowrap;
+  padding: 1rem;
+  background-color: var(--color-3);
+  text-transform: uppercase;
+}

@@ -1,6 +1,6 @@
 import style from "./Icon.module.scss";
 
-export type IconType = {
+type IconType = {
   name: string;
   cssClass?: string;
 };

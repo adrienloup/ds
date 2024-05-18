@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsTag } from "../library/Tag/Tag";
 import { DsIcon } from "../library/Icon/Icon";
 
@@ -300,6 +301,7 @@ export default function TagPage() {
             "<DsTag color='blue'><Icon name='schedule'>Waiting</DsTag>\n<DsTag color='blue'>Stop<Icon name='block'></DsTag>"
           }
         />
+        <PaginationComponent pages={pages} current="tag" />
       </MainComponent>
       <SettingsComponent
         open={settings}

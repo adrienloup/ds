@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsFab } from "../library/Fab/Fab";
 import { DsIcon } from "../library/Icon/Icon";
 
@@ -262,6 +263,7 @@ export default function FabPage() {
             "<DsFab><DsIcon name={'shopping_cart'} /></DsFab>\n<DsFab variant={'outlined'}><DsIcon name={'schedule'} /></DsFab>"
           }
         />
+        <PaginationComponent pages={pages} current="fab" />
       </MainComponent>
       <SettingsComponent
         open={settings}

@@ -1,0 +1,83 @@
+$desktop: 1281px;
+$tablet-portrait: 769px;
+
+.paginationlist {
+  display: flex;
+  align-items: center;
+  max-width: 65rem;
+  margin: 5rem;
+  border-top: 0.2rem solid var(--color-3);
+  border-bottom: 0.2rem solid var(--color-3);
+
+  @media (max-width: $desktop) {
+    margin: 2rem 2.5rem;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    margin: 1rem;
+  }
+}
+
+.previous,
+.next {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-family: var(--font-text-bold);
+  font-size: 1.5rem;
+  color: var(--color-1);
+
+  @media (max-width: $desktop) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    font-size: 1rem;
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  em {
+    margin-top: 0.25rem;
+    font-style: normal;
+    font-size: 1.15rem;
+
+    @media (max-width: $desktop) {
+      font-size: 1rem;
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-3);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+    outline-offset: -0.25rem;
+  }
+}
+
+.previous {
+  align-items: flex-start;
+  margin-right: auto;
+  padding: 2rem 2rem 2rem 3rem;
+
+  .icon {
+    left: 1rem;
+  }
+}
+
+.next {
+  align-items: flex-end;
+  margin-left: auto;
+  padding: 2rem 3.5rem 2rem 2rem;
+
+  .icon {
+    right: 1rem;
+  }
+}

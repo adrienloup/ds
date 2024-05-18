@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsBadge } from "../library/Badge/Badge";
 import { DsIcon } from "../library/Icon/Icon";
 
@@ -270,6 +271,7 @@ export default function BadgePage() {
           github={"Badge"}
           copy={"<DSBadge value={110}><Icon name={'delete'} /></DsBadge>"}
         />
+        <PaginationComponent pages={pages} current="badge" />
       </MainComponent>
       <SettingsComponent
         open={settings}

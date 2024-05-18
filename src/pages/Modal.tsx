@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsModal } from "../library/Modal/Modal";
 
 export default function TagPage() {
@@ -192,6 +193,7 @@ export default function TagPage() {
             height: "260px",
           }}
         />
+        <PaginationComponent pages={pages} current="modal" />
       </MainComponent>
       <SettingsComponent
         open={settings}

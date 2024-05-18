@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsStepper } from "../library/Stepper/Stepper";
 
 export default function StepperPage() {
@@ -123,6 +124,7 @@ export default function StepperPage() {
             "<Stepper steps=\n'['Fill out your name', 'Confirmation', 'Done']\n' prev='Previous' next='Next' />"
           }
         />
+        <PaginationComponent pages={pages} current="stepper" />
       </MainComponent>
       <SettingsComponent
         open={settings}

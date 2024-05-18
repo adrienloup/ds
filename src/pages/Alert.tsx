@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsAlert } from "../library/Alert/Alert";
 
 export default function AlertPage() {
@@ -376,6 +377,7 @@ export default function AlertPage() {
             "<DsAlert text={'Here is confirmation that your action was successful'} status={'success'} />"
           }
         />
+        <PaginationComponent pages={pages} current="alert" />
       </MainComponent>
       <SettingsComponent
         open={settings}

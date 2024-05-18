@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsProgress } from "../library/Progress/Progress";
 
 export default function ProgressPage() {
@@ -268,6 +269,7 @@ export default function ProgressPage() {
             "<DsProgress title='Loading' display='linear' value='{50}'/>\n<DsProgress title='Loading' display='circular' value='{50}'/>"
           }
         />
+        <PaginationComponent pages={pages} current="progress" />
       </MainComponent>
       <SettingsComponent
         open={settings}

@@ -9,6 +9,7 @@ import { TitleComponent } from "../components/Title/Title";
 import { ScrollToTopComponent } from "../components/ScrollToTop/ScrollToTop";
 import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
+import { PaginationComponent } from "../components/Pagination/Pagination";
 import { DsTextField } from "../library/TextField/TextField";
 
 export default function TextFieldPage() {
@@ -204,6 +205,7 @@ export default function TextFieldPage() {
           github={"TextField"}
           copy={"<DsTextField placeholder='Placeholder' />"}
         />
+        <PaginationComponent pages={pages} current="textfield" />
       </MainComponent>
       <SettingsComponent
         open={settings}
