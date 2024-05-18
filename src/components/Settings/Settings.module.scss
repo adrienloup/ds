@@ -2,16 +2,25 @@ $tablet-landscape: 1025px;
 $tablet-portrait: 769px;
 
 .settings {
+  visibility: hidden;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
   width: 100vw;
   background-color: var(--color-3);
-  transition-property: height, top;
-  transition-duration: 0.35s;
+  transition-property: height, top, visibility;
+  transition-duration: 0.35s, 0.35s, 0s;
   transition-timing-function: var(--easy-in-out-quad);
+  transition-delay: 0s, 0s, 0.35s;
   will-change: height, top;
+  pointer-events: none;
+}
+
+.open {
+  transition-delay: 0s;
+  visibility: initial;
+  pointer-events: initial;
 }
 
 .inner {
@@ -26,11 +35,12 @@ $tablet-portrait: 769px;
 
   @media (max-width: $tablet-landscape) {
     gap: 1rem;
+    padding: 2rem;
   }
 
   @media (max-width: $tablet-portrait) {
     flex-direction: column;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
   }
 }
 
@@ -53,7 +63,7 @@ $tablet-portrait: 769px;
   font-size: 1.15rem;
   color: var(--color-1);
 
-  @media (max-width: $tablet-portrait) {
+  @media (max-width: $tablet-landscape) {
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
   }
@@ -83,6 +93,7 @@ $tablet-portrait: 769px;
       border-top-left-radius: 0.5rem;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0.5rem;
+      border-right: 0;
     }
 
     &:nth-child(3) {
@@ -94,24 +105,15 @@ $tablet-portrait: 769px;
   }
 }
 
-.accessibility {
-  .button {
-    &:nth-child(2) {
-      border-right: 0;
-    }
-  }
-}
-
 .close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2;
   padding: 0.25rem 0.5rem;
-  background-color: var(--color-3);
-  border: 0.2rem solid var(--color-4);
-  border-radius: 0.5rem;
-  font-size: 1.25rem;
+  background-color: var(--color-4);
+  font-size: 1.5rem;
   color: var(--color-1);
 
   &:hover {
@@ -120,5 +122,6 @@ $tablet-portrait: 769px;
 
   &:focus-visible {
     outline: 0.2rem solid var(--color-orange);
+    outline-offset: -0.25rem;
   }
 }

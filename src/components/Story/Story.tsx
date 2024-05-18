@@ -28,7 +28,6 @@ export const StoryCompponent = ({
   const copyCode = () => {
     navigator.clipboard.writeText(copy!);
     addAlert({
-      status: "success",
       text: "Copied",
       timeout: 1,
     });

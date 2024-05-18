@@ -19,15 +19,17 @@ html {
   overflow: hidden;
   background-color: var(--color-1);
   color: var(--color-2);
-  transition-property: transform, visibility;
-  transition-duration: 1s, 0s;
-  transition-timing-function: var(--easy-in-out-expo);
-  transition-delay: 1s, 1.9s;
-  will-change: transform, visibility;
+  // transition-property: transform, visibility;
+  // transition-duration: 1s, 0s;
+  // transition-timing-function: var(--easy-in-out-expo);
+  // transition-delay: 1s, 1.9s;
+  // will-change: transform, visibility;
+  transition: transform 1s var(--easy-in-out-expo) 1s;
+  will-change: transform;
 
   .loaded & {
     transform: translateY(-100%);
-    visibility: hidden;
+    // visibility: hidden;
   }
 }
 

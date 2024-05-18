@@ -47,7 +47,11 @@ export const SettingsComponent = ({
   useEffect(() => onResize());
 
   return (
-    <aside role="complementary" ref={asideRef} className={style.settings}>
+    <aside
+      role="complementary"
+      ref={asideRef}
+      className={[style.settings, open ? ` ${style.open}` : ""].join("")}
+    >
       <div ref={innerRef} className={style.inner}>
         <ButtonComponent cssClass={style.close} onClick={onClick}>
           <IconComponent name="close" />
@@ -77,7 +81,7 @@ export const SettingsComponent = ({
           <div className={style.direction}>
             <div className={style.title}>Direction</div>
             <ButtonComponent
-              cssClass={[`${style.button}`, ` ${style.active}`].join("")}
+              cssClass={style.button}
               onClick={() => {
                 addAlert({
                   text: "There is an error with the direction adjustment",

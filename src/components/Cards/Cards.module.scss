@@ -9,6 +9,10 @@ $tablet-portrait: 769px;
   @media (max-width: $desktop) {
     margin: 0 1.5rem 2.5rem;
   }
+
+  @media (max-width: $tablet-portrait) {
+    margin: 0 1rem 1rem;
+  }
 }
 
 .empty {
@@ -34,6 +38,7 @@ $tablet-portrait: 769px;
 
   @media (max-width: $tablet-portrait) {
     width: 100%;
+    padding: 0 0 1rem;
   }
 
   &:nth-child(odd) {

@@ -11,26 +11,27 @@ import { ToolBarComponent } from "../components/ToolBar/ToolBar";
 import { StoryCompponent } from "../components/Story/Story";
 import { DsTextField } from "../library/TextField/TextField";
 
-export default function TextFieldPage() {
+export default function TextAreaPage() {
   const [settings, setSettings] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("");
 
   return (
     <>
-      <TitleComponent title="TextField Component" />
+      <TitleComponent title="TextArea Component" />
       <HeaderComponent pages={pages} categories={categories} />
       <MainComponent>
         <ToolBarComponent onClick={() => setSettings(!settings)} />
         <h1>
-          TextField <span>Component</span>
+          TextArea <span>Component</span>
         </h1>
         <p>
-          TextField component is used to prompt the user for a simple text
-          value, such as personal information for example. The component is
-          built on top of the FormField component. It includes a label, a
-          helperText but also an error handling sytem.
+          The TextArea is a resizable input used to prompt the user for a
+          parapraph of text, such as the description of an item. This is a use
+          case of TextField component. It uses the prop multiline as true to
+          transform the TextField into a TextArea component.
         </p>
         <h2>
-          Basic <span>TextField</span>
+          Basic <span>TextArea</span>
         </h2>
         <p>
           API reference docs for the React TextField component. Learn about the
@@ -39,14 +40,15 @@ export default function TextFieldPage() {
         <StoryCompponent
           demo={
             <div style={{ width: "20rem" }}>
-              <DsTextField />
+              <DsTextField multiline />
             </div>
           }
           code={
             <>
               &lt;<span style={{ color: "#00dc09" }}>DsTextField</span>{" "}
               <span style={{ color: "#00caff" }}>placeholder</span>="
-              <span style={{ color: "#ffeb3b" }}>Placeholder</span>" /&gt;
+              <span style={{ color: "#ffeb3b" }}>Placeholder</span>"{" "}
+              <span style={{ color: "#00caff" }}>multiline</span> /&gt;
             </>
           }
           codepen={"MWRBwYr"}
@@ -54,7 +56,7 @@ export default function TextFieldPage() {
           copy={"<DsTextField placeholder='Placeholder' />"}
         />
         <h2>
-          Label and helper text <span>TextField</span>
+          Label and helper text <span>TextArea</span>
         </h2>
         <p>
           label and helperText props can be used to add a label above the
@@ -64,7 +66,7 @@ export default function TextFieldPage() {
         <StoryCompponent
           demo={
             <div style={{ width: "20rem" }}>
-              <DsTextField label="Label" helperText="Helper text" />
+              <DsTextField multiline label="Label" helperText="Helper text" />
             </div>
           }
           code={
@@ -83,6 +85,9 @@ export default function TextFieldPage() {
               <span style={{ color: "#00caff" }}>helperText</span>="
               <span style={{ color: "#ffeb3b" }}>Helper text</span>"
               <br />
+              {"   "}
+              <span style={{ color: "#00caff" }}>multiline</span>
+              <br />
               /&gt;
             </>
           }
@@ -91,18 +96,21 @@ export default function TextFieldPage() {
           copy={"<DsTextField placeholder='Placeholder' />"}
         />
         <h2>
-          Prefix and suffix <span>TextField</span>
+          Max Length <span>TextArea</span>
         </h2>
         <p>
-          You might want to integrate icons or text to convey a meaning inside
-          of your component. To do so, you can use the both prefix and suffix
-          props to add some text or icons.
+          You can also use the label element or the helperText element to pass
+          information about the currently entered text.
         </p>
         <StoryCompponent
           demo={
             <div style={{ width: "20rem" }}>
-              <DsTextField prefix="person" placeholder="Your name" />
-              <DsTextField suffix="euro" placeholder="Price" />
+              <DsTextField
+                onChange={(e) => setValue(e.target.value)}
+                helperText={`${value.length}/50`}
+                max={50}
+                multiline
+              />
             </div>
           }
           code={
@@ -110,26 +118,37 @@ export default function TextFieldPage() {
               &lt;<span style={{ color: "#00dc09" }}>DsTextField</span>
               <br />
               {"   "}
-              <span style={{ color: "#00caff" }}>label</span>="
-              <span style={{ color: "#ffeb3b" }}>Label</span>"
-              <br />
-              {"   "}
               <span style={{ color: "#00caff" }}>placeholder</span>="
               <span style={{ color: "#ffeb3b" }}>Placeholder</span>"
               <br />
               {"   "}
-              <span style={{ color: "#00caff" }}>messageError</span>="
-              <span style={{ color: "#ffeb3b" }}>Error message</span>"
+              <span style={{ color: "#00caff" }}>onChange</span>=
+              <span style={{ color: "#ffeb3b" }}>
+                &#123;(e) = setValue(e.target.value)&#125;
+              </span>
+              <br />
+              {"   "}
+              <span style={{ color: "#00caff" }}>helperText</span>=
+              <span style={{ color: "#ffeb3b" }}>
+                &#123;`$&#123;value.length&#125;/50`&#125;
+              </span>
+              <br />
+              {"   "}
+              <span style={{ color: "#00caff" }}>max</span>=
+              <span style={{ color: "#ffeb3b" }}>&#123;50&#125;</span>
+              <br />
+              {"   "}
+              <span style={{ color: "#00caff" }}>multiline</span>
               <br />
               /&gt;
             </>
           }
           codepen={"MWRBwYr"}
           github={"TextField"}
-          copy={"<TextField placeholder='Placeholder' />"}
+          copy={"<DsTextField placeholder='Placeholder' />"}
         />
         <h2>
-          Statuses <span>TextField</span>
+          Statuses <span>TextArea</span>
         </h2>
         <p>
           You can set success, warning and error statuses to the input to
@@ -138,9 +157,9 @@ export default function TextFieldPage() {
         <StoryCompponent
           demo={
             <div style={{ width: "20rem" }}>
-              <DsTextField status="success" />
-              <DsTextField status="warning" />
-              <DsTextField status="error" />
+              <DsTextField status="success" multiline />
+              <DsTextField status="warning" multiline />
+              <DsTextField status="error" multiline />
             </div>
           }
           code={
@@ -159,6 +178,9 @@ export default function TextFieldPage() {
               <span style={{ color: "#00caff" }}>messageError</span>="
               <span style={{ color: "#ffeb3b" }}>Error message</span>"
               <br />
+              {"   "}
+              <span style={{ color: "#00caff" }}>multiline</span>
+              <br />
               /&gt;
             </>
           }
@@ -167,7 +189,7 @@ export default function TextFieldPage() {
           copy={"<DsTextField placeholder='Placeholder' />"}
         />
         <h2>
-          Error handling <span>TextField</span>
+          Error handling <span>TextArea</span>
         </h2>
         <p>
           You can handle the error state by using both the error prop and the
@@ -178,7 +200,11 @@ export default function TextFieldPage() {
         <StoryCompponent
           demo={
             <div style={{ width: "20rem" }}>
-              <DsTextField label="Label" errorMessage="Error message" />
+              <DsTextField
+                label="Label"
+                errorMessage="Error message"
+                multiline
+              />
             </div>
           }
           code={
@@ -196,6 +222,9 @@ export default function TextFieldPage() {
               {"   "}
               <span style={{ color: "#00caff" }}>messageError</span>="
               <span style={{ color: "#ffeb3b" }}>Error message</span>"
+              <br />
+              {"   "}
+              <span style={{ color: "#00caff" }}>multiline</span>
               <br />
               /&gt;
             </>

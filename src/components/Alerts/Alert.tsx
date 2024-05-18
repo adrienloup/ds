@@ -44,7 +44,6 @@ export const AlertComponent = ({
         className={[
           style.alert,
           cssClass ? ` ${cssClass}` : "",
-          status ? ` ${style[status]}` : "",
           timeout > 0 ? ` ${style.animate}` : "",
         ].join("")}
         style={

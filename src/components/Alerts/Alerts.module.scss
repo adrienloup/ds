@@ -26,101 +26,41 @@
   overflow: hidden;
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 0.75rem;
+  background-color: var(--color-yellow);
   border-radius: 0.5rem;
   box-shadow:
     rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  color: var(--color-neutral-5);
-
-  &.animate {
-    animation: Appear 800ms var(--easy-in-out-quad);
-  }
-
-  &.info {
-    background-color: var(--color-blue);
-
-    .close {
-      border-color: var(--color-blue-hover);
-
-      &:hover {
-        background-color: var(--color-blue-hover);
-      }
-    }
-
-    .progress {
-      background-color: var(--color-blue-hover);
-    }
-  }
-
-  &.success {
-    background-color: var(--color-chartreuse);
-
-    .close {
-      border-color: var(--color-chartreuse-hover);
-
-      &:hover {
-        background-color: var(--color-chartreuse-hover);
-      }
-    }
-
-    .progress {
-      background-color: var(--color-chartreuse-hover);
-    }
-  }
-
-  &.warning {
-    background-color: var(--color-yellow);
-
-    .close {
-      border-color: var(--color-yellow-hover);
-
-      &:hover {
-        background-color: var(--color-yellow-hover);
-      }
-    }
-
-    .progress {
-      background-color: var(--color-yellow-hover);
-    }
-  }
-
-  &.error {
-    background-color: var(--color-red);
-
-    .close {
-      border-color: var(--color-red-hover);
-
-      &:hover {
-        background-color: var(--color-red-hover);
-      }
-    }
-
-    .progress {
-      background-color: var(--color-red-hover);
-    }
-  }
+  color: var(--color-neutral-1);
 
   .close {
     position: relative;
     z-index: 1;
-    padding: 0.25rem 0.5rem;
-    border-width: 0.2rem;
-    border-style: solid;
+    padding: 0.25rem;
     background-color: transparent;
+    border: 0;
     border-radius: 0.5rem;
-    font-size: 1.25rem;
-    color: var(--color-neutral-5);
+    font-size: 1.5rem;
+    color: var(--color-neutral-1);
 
     &:hover {
-      background-color: var(--color-4);
+      background-color: var(--color-yellow-hover);
     }
 
     &:focus-visible {
       outline: 0.2rem solid var(--color-orange);
       outline-offset: 0.125rem;
     }
+  }
+
+  .progress {
+    background-color: var(--color-yellow-hover);
+  }
+
+  &.animate {
+    animation: Appear 800ms var(--easy-in-out-quad);
   }
 }
 
@@ -130,7 +70,7 @@
   display: flex;
   flex-direction: column;
   padding-right: 0.75rem;
-  font-family: val(--font-text-bold);
+  font-family: var(--font-text-bold);
   line-height: 1.2;
 }
 

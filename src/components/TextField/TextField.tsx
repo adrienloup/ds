@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { DsFormField } from "../FormField/FormField";
-import { DsIcon } from "../Icon/Icon";
+import { FormFieldComponent } from "../FormField/FormField";
+import { IconComponent } from "../Icon/Icon";
 import style from "./TextField.module.scss";
 
 type TextFieldProps = {
@@ -9,6 +9,7 @@ type TextFieldProps = {
   placeholder?: string;
   helperText?: string;
   errorMessage?: string;
+  cssClass?: string;
   max?: number;
   prefix?: string;
   suffix?: string;
@@ -19,12 +20,13 @@ type TextFieldProps = {
   onChange?(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void;
 };
 
-export const DsTextField = ({
+export const TextFieldComponent = ({
   type = "text",
   label,
   placeholder = "Placeholder",
   helperText,
   errorMessage,
+  cssClass,
   max,
   prefix,
   suffix,
@@ -37,7 +39,7 @@ export const DsTextField = ({
   const [focus, setFocus] = useState<boolean>(false);
 
   return (
-    <DsFormField
+    <FormFieldComponent
       label={label}
       helperText={helperText}
       errorMessage={errorMessage}
@@ -49,11 +51,11 @@ export const DsTextField = ({
           status ? ` ${style[status]}` : errorMessage ? ` ${style.error}` : "",
         ].join("")}
       >
-        {prefix && <DsIcon name={prefix} cssClass={style.icon} />}
+        {prefix && <IconComponent name={prefix} cssClass={style.icon} />}
         {multiline ? (
           <textarea
             placeholder={placeholder}
-            className={style.input}
+            className={[style.input, cssClass ? ` ${cssClass}` : ""].join("")}
             maxLength={max}
             cols={cols}
             rows={rows}
@@ -65,15 +67,15 @@ export const DsTextField = ({
           <input
             type={type}
             placeholder={placeholder}
-            className={style.input}
+            className={[style.input, cssClass ? ` ${cssClass}` : ""].join("")}
             maxLength={max}
             onChange={onChange}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
           />
         )}
-        {suffix && <DsIcon name={suffix} cssClass={style.icon} />}
+        {suffix && <IconComponent name={suffix} cssClass={style.icon} />}
       </div>
-    </DsFormField>
+    </FormFieldComponent>
   );
 };

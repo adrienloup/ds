@@ -28,7 +28,7 @@
 
   .open & {
     transform-origin: bottom left;
-    animation: Swell 0.15s cubic-bezier(0.22, 0.44, 0, 1);
+    animation: Swell 0.15s var(--easy-in-out-quad);
   }
 }
 
@@ -58,7 +58,7 @@
   background-color: var(--color-2);
   border: 0.2rem solid var(--color-3);
   border-radius: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--color-1);
 
   &:hover {
@@ -82,7 +82,7 @@
   opacity: 0.25;
 
   .open & {
-    animation: Appear 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: Appear 0.25s var(--easy-in-out-quad);
   }
 }
 

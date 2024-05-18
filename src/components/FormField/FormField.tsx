@@ -9,7 +9,7 @@ type FormFieldProps = {
   cssClass?: string;
 };
 
-export const DsFormField = ({
+export const FormFieldComponent = ({
   children,
   label,
   helperText,

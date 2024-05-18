@@ -6,6 +6,7 @@ import { NotificationsComponent } from "../Notifications/Notifications";
 import { ButtonComponent } from "../Button/Button";
 import { BadgeComponent } from "../Badge/Badge";
 import { ModalComponent } from "../Modal/Modal";
+import { LoginComponent } from "../Login/Login";
 import { IconComponent } from "../Icon/Icon";
 import style from "./ToolBar.module.scss";
 
@@ -17,18 +18,10 @@ type ToolBarProps = {
 export const ToolBarComponent = ({ onClick }: ToolBarProps) => {
   const { data } = useContext<DataType>(DataContext);
   const [modal, setModal] = useState<boolean>(false);
+  const [login, setLogin] = useState<boolean>(false);
 
   return (
     <div className={style.toolbar}>
-      {data.user && (
-        <ButtonComponent
-          ariaLabel={"Settings"}
-          cssClass={style.button}
-          to={"/ds/login"}
-        >
-          <IconComponent name={"face_2"} />
-        </ButtonComponent>
-      )}
       <ButtonComponent
         href={"https://github.com/adrienloup/ds"}
         ariaLabel={"Github"}
@@ -41,6 +34,23 @@ export const ToolBarComponent = ({ onClick }: ToolBarProps) => {
           ></path>
         </svg>
       </ButtonComponent>
+      {data.user ? (
+        <ButtonComponent
+          ariaLabel={"Settings"}
+          cssClass={style.button}
+          to={"/ds/login"}
+        >
+          <IconComponent name={"face_2"} />
+        </ButtonComponent>
+      ) : (
+        <ButtonComponent
+          ariaLabel={"Settings"}
+          cssClass={style.button}
+          onClick={() => setLogin(!login)}
+        >
+          <IconComponent name={"face_2"} />
+        </ButtonComponent>
+      )}
       <BadgeComponent
         value={data.notifications.length}
         max={9}
@@ -73,7 +83,12 @@ export const ToolBarComponent = ({ onClick }: ToolBarProps) => {
             open={modal}
             onClick={() => setModal(false)}
           />,
-          document.body,
+          document.body
+        )}
+      {login &&
+        createPortal(
+          <LoginComponent open={login} handleClick={() => setLogin(false)} />,
+          document.body
         )}
     </div>
   );

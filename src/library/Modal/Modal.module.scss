@@ -79,8 +79,8 @@
 
 .button {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
+  top: 1.75rem;
+  right: 1.75rem;
   z-index: 2;
   border-radius: 0.5rem;
 
@@ -127,7 +127,7 @@
     }
 
     .backdrop {
-      animation: Appear 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: Appear 0.25s cubic-bezier(0.22, 0.44, 0, 1);
     }
   }
 }
