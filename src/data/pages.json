@@ -99,16 +99,16 @@
       "novelty": true
     },
     {
-      "title": "TextField",
-      "text": "TextFields let users enter and edit text",
-      "path": "/ds/textfield",
+      "title": "TextArea",
+      "text": "TextArea is a resizable input used to prompt the user for a parapraph of text",
+      "path": "/ds/textarea",
       "typology": "forms",
       "novelty": false
     },
     {
-      "title": "TextArea",
-      "text": "TextArea is a resizable input used to prompt the user for a parapraph of text",
-      "path": "/ds/textarea",
+      "title": "TextField",
+      "text": "TextFields let users enter and edit text",
+      "path": "/ds/textfield",
       "typology": "forms",
       "novelty": false
     }
