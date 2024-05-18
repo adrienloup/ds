@@ -1,38 +1,23 @@
 # React Design System
 
-[Demo](https://adrienloup.github.io/ds/)
+[Demo Preview](https://adrienloup.github.io/ds/)
 
 ## Requirements
 
 - `node` : `^18.18.2`
 - `npm` : `^9.8.1`
 
-## Installation
+## Code Formatting Check
 
 ```bash
 nvm use
-npm install
+npm format
 ```
 
-## Development
+## What’s Inside?
 
-```bash
-npm run dev
-```
-
-## Production
-
-```bash
-npm run build
-npm run preview
-```
-
-## Code Quality Check
-
-```bash
-npm run lint
-npm run lint:fix
-```
+* [Library](https://github.com/adrienloup/ds/tree/master/library)
+* [Documentation](https://github.com/reduxjs/redux)
 
 ## Resources
 
