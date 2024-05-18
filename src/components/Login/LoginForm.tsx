@@ -27,6 +27,7 @@ export const LoginFormComponent = ({ errorMessage, handleAdd }: FormProps) => {
 
   return (
     <form action="submit" className={style.form}>
+      <div className={style.title}>Login</div>
       <div>
         <TextFieldComponent
           placeholder="Name"
