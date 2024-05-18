@@ -1,24 +1,43 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Compiled output
+**/dist
+**/tmp
+**/out-tsc
+**/bazel-out
 
-node_modules
-dist
-dist-ssr
-*.local
+# Node
+**/node_modules
+**/npm-debug.log
+**/yarn-error.log
+**/.npmrc
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# IDEs and editors
+**/.idea
+**/.project
+**/.classpath
+**/.c9
+**/*.launch
+**/.settings
+**/*.sublime-workspace
+
+# Visual Studio Code
+**/.vscode
+**/.history
+
+# Generated
+**/generated
+**/_generated
+
+# Miscellaneous
+**/.angular/cache
+**/.sass-cache/
+**/connect.lock
+**/coverage
+**/libpeerconnection.log
+**/testem.log
+**/typings
+
+# System files
+**/.DS_Store
+**/Thumbs.db
+**/.tmp
+**/*tmp

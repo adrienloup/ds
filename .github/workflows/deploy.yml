@@ -20,14 +20,19 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
+      - name: Build library
+        run: npm link && npm install 
+        working-directory: library
+
       - name: Build project
-        run: npm run build
+        run: npm link design-system && npm run build
+        working-directory: app
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: ./app/dist
 
   deploy:
     name: Deploy
