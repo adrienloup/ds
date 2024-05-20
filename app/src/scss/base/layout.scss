@@ -1,0 +1,52 @@
+$desktop: 1281px;
+$tablet-portrait: 769px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-1);
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: style;
+  font-family: var(--font-text-regular);
+  font-weight: normal;
+  font-size: 1rem;
+  color: var(--color-1);
+}
+
+#_ds_y0y09_10 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+    "header main" minmax(auto, 1fr)
+    "header footer" minmax(0, auto) / 18rem minmax(0, 1fr);
+  padding-top: 0;
+  transition: padding-top 0.35s var(--easy-in-out-quad);
+  will-change: padding-top;
+
+  @media (max-width: $desktop) {
+    grid-template:
+      "header main" minmax(auto, 1fr)
+      "header footer" minmax(0, auto) / 14rem minmax(0, 1fr);
+  }
+
+  @media (max-width: $tablet-portrait) {
+    display: flex;
+    flex-direction: column;
+  }
+} // Root
