@@ -1,0 +1,114 @@
+[
+  {
+    "name": "overview",
+    "description": "It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box, and features a suite of customization options.",
+    "path": "/ds/overview",
+    "category": "getting started",
+    "new": false
+  },
+  {
+    "name": "usage",
+    "description": "Since DS library components are built to function in isolation, they don't require any kind of globally scoped styles.",
+    "path": "/ds/usage",
+    "category": "getting started",
+    "new": false
+  },
+  {
+    "name": "button",
+    "description": "Buttons allow users to take actions, and make choices, with a single tap",
+    "path": "/ds/button",
+    "category": "action",
+    "new": false
+  },
+  {
+    "name": "fab",
+    "description": "A floating action button (FAB)",
+    "path": "/ds/fab",
+    "category": "action",
+    "new": true
+  },
+  {
+    "name": "alert",
+    "description": "Alerts display brief messages for the user",
+    "path": "/ds/alert",
+    "category": "feedback",
+    "new": true
+  },
+  {
+    "name": "badge",
+    "description": "Badge generates a small badge to the top-right of its child(ren)",
+    "path": "/ds/badge",
+    "category": "feedback",
+    "new": false
+  },
+  {
+    "name": "progress",
+    "description": "Progress used to indicate the current advancement state of a process",
+    "path": "/ds/progress",
+    "category": "feedback",
+    "new": false
+  },
+  {
+    "name": "tag",
+    "description": "Used for marking and categorization",
+    "path": "/ds/tag",
+    "category": "feedback",
+    "new": true
+  },
+  {
+    "name": "select",
+    "description": "The Selectcomponent provides a compact way to present a list of choices to the user.",
+    "path": "/ds/select",
+    "category": "forms",
+    "new": false
+  },
+  {
+    "name": "switch",
+    "description": "Switches toggle the state of a single setting on or off",
+    "path": "/ds/switch",
+    "category": "forms",
+    "new": false
+  },
+  {
+    "name": "textArea",
+    "description": "TextArea is a resizable input used to prompt the user for a parapraph of text",
+    "path": "/ds/textarea",
+    "category": "forms",
+    "new": false
+  },
+  {
+    "name": "textField",
+    "description": "TextFields let users enter and edit text",
+    "path": "/ds/textfield",
+    "category": "forms",
+    "new": false
+  },
+  {
+    "name": "breadcrumbs",
+    "description": "A breadcrumbs is a list of links that help visualize a page's location",
+    "path": "/ds/breadcrumbs",
+    "category": "navigation",
+    "new": false
+  },
+  {
+    "name": "stepper",
+    "description": "Steppers convey progress through numbered steps. It provides a wizard-like workflow",
+    "path": "/ds/stepper",
+    "category": "navigation",
+    "new": false
+  },
+  {
+    "name": "tabs",
+    "description": "Tabs are a set of layered sections of content",
+    "path": "/ds/tabs",
+    "category": "navigation",
+    "new": false
+  },
+  {
+    "name": "modal",
+    "description": "The modal component provides a solid foundation for creating dialogs",
+    "path": "/ds/modal",
+    "category": "pattern",
+    "new": true
+  }
+]

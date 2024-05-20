@@ -1,0 +1,145 @@
+$tablet-landscape: 1025px;
+$tablet-portrait: 769px;
+
+.settings {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 100vw;
+  background-color: var(--color-yellow);
+  // background-color: var(--color-3);
+  // background: linear-gradient(150deg, var(--color-yellow) 20%, #ffc107 100%);
+  transition-property: height, top, visibility;
+  transition-duration: 0.35s, 0.35s, 0s;
+  transition-timing-function: var(--easy-in-out-quad);
+  transition-delay: 0s, 0s, 0.35s;
+  will-change: height, top;
+  pointer-events: none;
+}
+
+.open {
+  transition-delay: 0s;
+  visibility: initial;
+  pointer-events: initial;
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 1rem;
+
+  @media (max-width: $tablet-landscape) {
+    gap: 1rem;
+    padding: 3rem 1.5rem 3rem 1rem;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+}
+
+.title {
+  margin-bottom: 1rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-family: var(--font-text-black);
+  font-size: 1.5rem;
+  color: var(--color-neutral-1);
+
+  @media (max-width: $tablet-landscape) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    font-size: 1rem;
+  }
+}
+
+.button {
+  background: transparent;
+  color: var(--color-neutral-1);
+
+  &:hover {
+    background-color: var(--color-3);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+    outline-offset: -0.25rem;
+  }
+
+  svg {
+    width: 2rem;
+  }
+}
+
+.mode,
+.direction,
+.accessibility {
+  .button {
+    padding: 1rem 1.25rem;
+    border: 0.2rem solid var(--color-1);
+    font-size: 1.25rem;
+
+    @media (max-width: $tablet-landscape) {
+      padding: 0.75rem;
+      font-size: 1.15rem;
+    }
+
+    @media (max-width: $tablet-portrait) {
+      padding: 0.5rem 0.6rem;
+      font-size: 1rem;
+    }
+
+    &:hover {
+      // background-color: var(--color-orange);
+      background-color: var(--color-yellow-hover);
+      // background-color: var(--color-4);
+    }
+
+    &:focus-visible {
+      position: relative;
+      z-index: 2;
+      outline: 0.2rem solid var(--color-orange);
+      outline-offset: 0.03rem;
+    }
+
+    &.active {
+      // background-color: var(--color-4);
+      // background-color: var(--color-yellow-hover);
+      background-color: var(--color-neutral-1);
+      color: var(--color-yellow);
+      cursor: default;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 0.15rem;
+  right: 0.15rem;
+  bottom: 0.15rem;
+  z-index: 2;
+  padding: 0.25rem 0.5rem;
+  border: 0.2rem solid var(--color-1);
+  font-size: 1.5rem;
+
+  &:hover {
+    background-color: var(--color-yellow-hover);
+    // color: var(--color-yellow);
+    // background-color: var(--color-3);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+    // outline-offset: -0.25rem;
+  }
+}

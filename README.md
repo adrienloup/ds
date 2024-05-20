@@ -16,8 +16,8 @@ npm format
 
 ## What’s Inside?
 
-* [Library](https://github.com/adrienloup/ds/tree/master/library)
-* [Documentation](https://github.com/reduxjs/redux)
+- [Library](https://github.com/adrienloup/ds/tree/master/library)
+- [Documentation](https://github.com/reduxjs/redux)
 
 ## Resources
 
