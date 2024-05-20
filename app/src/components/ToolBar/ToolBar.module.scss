@@ -1,0 +1,33 @@
+$tablet-portrait: 769px;
+
+.toolbar {
+  position: relative;
+  z-index: 2;
+  text-align: right;
+  background-color: var(--color-2);
+  border-bottom: 0.2rem solid var(--color-3);
+}
+
+.button {
+  width: 5rem;
+  height: 4rem;
+  background-color: var(--color-2);
+  border-style: solid;
+  border-color: var(--color-3);
+  border-width: 0 0 0 0.2rem;
+  font-size: 2rem;
+  color: var(--color-1);
+
+  &:hover {
+    background-color: var(--color-3);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+    outline-offset: -0.25rem;
+  }
+
+  svg {
+    width: 2rem;
+  }
+}
