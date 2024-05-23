@@ -10,6 +10,8 @@ interface SearchAndFindType {
 }
 
 export const SearchAndFind = ({ cssClass, list }: SearchAndFindType) => {
+  console.log("SearchAndFind");
+
   const [value, setValue] = useState("");
   const [isNew, setNew] = useState(false);
 
@@ -18,8 +20,6 @@ export const SearchAndFind = ({ cssClass, list }: SearchAndFindType) => {
     if (isNew && !page.new) return false;
     return true;
   });
-
-  console.log("SearchAndFind");
 
   return (
     <div

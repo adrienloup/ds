@@ -3,8 +3,8 @@ $tablet-portrait: 769px;
 
 .settings {
   visibility: hidden;
+  pointer-events: none;
   position: absolute;
-  top: 0;
   right: 0;
   z-index: 1;
   width: 100vw;
@@ -16,13 +16,12 @@ $tablet-portrait: 769px;
   transition-timing-function: var(--easy-in-out-quad);
   transition-delay: 0s, 0s, 0.35s;
   will-change: height, top;
-  pointer-events: none;
 }
 
 .open {
-  transition-delay: 0s;
   visibility: initial;
   pointer-events: initial;
+  transition-delay: 0s;
 }
 
 .inner {
@@ -33,16 +32,15 @@ $tablet-portrait: 769px;
 .content {
   display: flex;
   gap: 2rem;
-  padding: 4rem 1rem;
+  padding: 2.5rem 1rem 2.5rem 1rem;
 
   @media (max-width: $tablet-landscape) {
     gap: 1rem;
-    padding: 3rem 1.5rem 3rem 1rem;
+    padding: 2rem 1rem 2rem 1rem;
   }
 
   @media (max-width: $tablet-portrait) {
     flex-direction: column;
-    padding: 2rem 1rem;
   }
 }
 
@@ -86,7 +84,7 @@ $tablet-portrait: 769px;
 .accessibility {
   .button {
     padding: 1rem 1.25rem;
-    border: 0.2rem solid var(--color-1);
+    border: 0.2rem solid var(--color-neutral-1);
     font-size: 1.25rem;
 
     @media (max-width: $tablet-landscape) {
@@ -129,7 +127,7 @@ $tablet-portrait: 769px;
   bottom: 0.15rem;
   z-index: 2;
   padding: 0.25rem 0.5rem;
-  border: 0.2rem solid var(--color-1);
+  border: 0.2rem solid var(--color-neutral-1);
   font-size: 1.5rem;
 
   &:hover {

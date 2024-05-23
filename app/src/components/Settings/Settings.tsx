@@ -12,10 +12,7 @@ interface SettingsProps {
   onClick: () => void;
 }
 
-export const Settings = ({
-  open = false,
-  onClick = () => {},
-}: SettingsProps) => {
+export const Settings = ({ open, onClick }: SettingsProps) => {
   console.log("Settings");
   // const { addAlert } = useAlert();
   // const { data, setData } = useContext<DataType>(DataContext);
