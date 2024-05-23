@@ -13,6 +13,7 @@ const LocalData = () => {
         { id: 3, title: "Make the mobile version" },
       ],
       settings: {
+        open: false,
         dir: "ltr",
         mode: "light",
       },
@@ -25,9 +26,8 @@ export const useData = () => {
   const [data, setData] = useState(LocalData());
   const { setItem } = useLocalStorage();
 
-  setItem("_ds_y0y09_10", JSON.stringify(data));
-
   useEffect(() => {
+    setItem("_ds_y0y09_10", JSON.stringify(data));
     data.settings.mode === "dark"
       ? document.body.classList.add(`${dark.dark}`)
       : document.body.classList.remove(`${dark.dark}`);
