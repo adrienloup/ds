@@ -2,6 +2,7 @@ import { useTitle } from "../hooks/useTitle";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
+import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
 
@@ -42,6 +43,7 @@ function OverviewPage() {
         <div style={{ height: "2000px" }}></div>
       </Main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }
