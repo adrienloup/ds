@@ -8,25 +8,35 @@ $tablet-portrait: 769px;
   background-color: var(--color-2);
 
   @media (max-width: $tablet-portrait) {
-    // min-height: calc(100vh - 115px);
     margin-top: 56px;
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  padding: 5rem;
+  background-color: var(--color-2);
+
+  @media (max-width: $desktop) {
+    padding: 2.5rem;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    padding: 1rem;
   }
 
   & > h1 {
     max-width: 65rem;
-    margin: 5rem 5rem 4rem;
+    margin-bottom: 4rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     font-family: var(--font-text-black);
     font-size: 4.5rem;
 
     @media (max-width: $desktop) {
-      margin: 2rem 2.5rem 1rem;
+      margin-bottom: 2rem;
       font-size: 3.5rem;
-    }
-
-    @media (max-width: $tablet-portrait) {
-      margin: 1rem;
     }
 
     span {
@@ -114,20 +124,5 @@ $tablet-portrait: 769px;
         outline: 0.2rem solid var(--color-orange);
       }
     }
-  }
-}
-
-.inner {
-  position: relative;
-  z-index: 2;
-  padding: 5rem;
-  background-color: var(--color-2);
-
-  @media (max-width: $desktop) {
-    padding: 2.5rem;
-  }
-
-  @media (max-width: $tablet-portrait) {
-    padding: 1rem;
   }
 }
