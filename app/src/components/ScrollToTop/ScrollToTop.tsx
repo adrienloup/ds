@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 
-export const ScrollToTop = () => {
+export const ScrollToTop = memo(() => {
   console.log("ScrollToTop");
 
   useEffect(() => {
@@ -8,4 +8,4 @@ export const ScrollToTop = () => {
   }, []);
 
   return null;
-};
+});

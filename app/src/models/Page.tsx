@@ -3,5 +3,5 @@ export interface PageType {
   description?: string;
   path?: string;
   category?: string;
-  new?: boolean;
+  news?: boolean;
 }

@@ -4,23 +4,28 @@ $tablet-portrait: 769px;
 .promote {
   position: relative;
   max-width: 65rem;
-  // margin: 5rem 5rem 4rem;
+  margin: 4rem 0;
   padding: 2.5rem;
   border: 0.5rem solid var(--color-yellow);
 
-  // @media (max-width: $desktop) {
-  //   margin: 2rem 2rem 1rem;
-  // }
-
-  // @media (max-width: $tablet-portrait) {
-  //   margin: 1rem;
-  // }
+  @media (max-width: $desktop) {
+    margin: 2rem 0;
+  }
 }
 
 .head {
   margin-bottom: 1rem;
-  font-family: var(--font-text-black);
-  font-size: 2rem;
+
+  h2 {
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-family: var(--font-text-black);
+    font-size: 3rem;
+
+    @media (max-width: $desktop) {
+      font-size: 2.5rem;
+    }
+  }
 }
 
 .body {
@@ -35,13 +40,13 @@ $tablet-portrait: 769px;
 
   a,
   button {
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem;
     background-color: var(--color-yellow);
     font-size: 1.5rem;
     color: var(--color-neutral-1);
 
     &:hover {
-      background-color: var(--color-yellow-hover);
+      background-color: var(--color-yellow-darked);
     }
 
     &:focus-visible {

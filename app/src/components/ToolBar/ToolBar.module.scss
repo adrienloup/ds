@@ -6,6 +6,10 @@ $tablet-portrait: 769px;
   text-align: right;
   background-color: var(--color-2);
   border-bottom: 0.2rem solid var(--color-3);
+
+  @media (max-width: $tablet-portrait) {
+    margin-top: 59px;
+  }
 }
 
 .button {
@@ -18,6 +22,12 @@ $tablet-portrait: 769px;
   font-size: 2rem;
   color: var(--color-1);
 
+  @media (max-width: $tablet-portrait) {
+    width: 4rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+
   &:hover {
     background-color: var(--color-3);
   }
@@ -29,5 +39,9 @@ $tablet-portrait: 769px;
 
   svg {
     width: 2rem;
+
+    @media (max-width: $tablet-portrait) {
+      width: 1.5rem;
+    }
   }
 }

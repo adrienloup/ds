@@ -1,3 +1,9 @@
 .checkbox {
-  background-color: red;
+  background-color: transparent;
+}
+
+.label {
+  text-transform: uppercase;
+  font-family: var(--font-text-bold);
+  font-size: 1.25rem;
 }

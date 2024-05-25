@@ -1,0 +1,28 @@
+$desktop: 1281px;
+
+.formfield {
+  font-family: var(--font-text-bold);
+}
+
+.label {
+  margin-bottom: 1rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: var(--font-text-black);
+  font-size: 3rem;
+
+  @media (max-width: $desktop) {
+    font-size: 2.5rem;
+  }
+}
+
+.helpertext {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.errormessage {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--color-red);
+}

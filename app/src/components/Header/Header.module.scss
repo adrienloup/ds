@@ -6,10 +6,7 @@ $tablet-portrait: 769px;
   z-index: 2;
 
   @media (max-width: $tablet-portrait) {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+    border-bottom: 0.2rem solid var(--color-3);
   }
 }
 
@@ -26,7 +23,6 @@ $tablet-portrait: 769px;
   @media (max-width: $tablet-portrait) {
     height: auto;
     border-right: 0;
-    border-bottom: 0.2rem solid var(--color-3);
   }
 }
 

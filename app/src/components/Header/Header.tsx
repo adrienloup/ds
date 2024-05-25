@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { version } from "../../../package.json";
+import { Menu } from "../Menu/Menu";
 import style from "./Header.module.scss";
 
 export const Header = () => {
@@ -11,6 +12,7 @@ export const Header = () => {
         <Link className={style.name} to={"/ds/"}>
           DS<span>v{version}</span>
         </Link>
+        <Menu />
       </div>
     </header>
   );
