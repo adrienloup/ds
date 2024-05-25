@@ -3,16 +3,26 @@ import style from "./Button.module.scss";
 
 type ButtonType = {
   children: ReactNode;
-  cssClass?: string;
+  variant?: string;
+  status?: "info" | "success" | "warning" | "error";
+  size?: "small" | "medium" | "large";
+  type?: "button" | "submit" | "reset";
   ariaLabel?: string;
+  disabled?: boolean;
+  cssClass?: string;
   href?: string;
   onClick?: () => void;
 };
 
 export const DsButton = ({
   children,
-  cssClass,
+  variant = "contained",
+  status,
+  size = "medium",
+  type = "button",
   ariaLabel,
+  disabled = false,
+  cssClass,
   href,
   onClick = () => {},
 }: ButtonType) => {
@@ -22,22 +32,36 @@ export const DsButton = ({
       target="_blank"
       rel="noopener"
       aria-label={ariaLabel}
-      className={[style["ds-button"], cssClass ? ` ${cssClass}` : ""].join("")}
+      tabIndex={disabled ? -1 : 0}
+      className={[
+        style["ds-button"],
+        ` ${style[variant]}`,
+        ` ${style[size]}`,
+        status ? ` ${style[status]}` : "",
+        disabled ? ` ${style.disabled}` : "",
+        cssClass ? ` ${cssClass}` : "",
+      ].join("")}
     >
       {children}
     </a>
   );
-
   const button = (
     <button
-      type="button"
+      type={type}
       aria-label={ariaLabel}
-      className={[style["ds-button"], cssClass ? ` ${cssClass}` : ""].join("")}
+      tabIndex={disabled ? -1 : 0}
+      className={[
+        style["ds-button"],
+        ` ${style[variant]}`,
+        ` ${style[size]}`,
+        status ? ` ${style[status]}` : "",
+        disabled ? ` ${style.disabled}` : "",
+        cssClass ? ` ${cssClass}` : "",
+      ].join("")}
       onClick={onClick}
     >
       {children}
     </button>
   );
-
   return href ? a : button;
 };
