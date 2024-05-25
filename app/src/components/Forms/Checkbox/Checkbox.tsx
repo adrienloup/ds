@@ -26,6 +26,7 @@ export const Checkbox = ({
         onChange={(e) => onChange(e.target.checked)}
       />
       <label htmlFor={id} className={style.label}>
+        <span className={style.check}></span>
         {label}
       </label>
     </div>
