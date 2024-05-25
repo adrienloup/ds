@@ -1,4 +1,3 @@
-import { useCallback, useState } from "react";
 import { useTitle } from "../hooks/useTitle";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
@@ -8,17 +7,9 @@ import { Promote } from "../components/Promote/Promote";
 import { PageList1 } from "../components/PageList/PageList1";
 import { Button } from "../components/Button/Button";
 
-import { DsButton } from "design-system/src/components/Button/Button";
-
 function HomePage() {
   console.log("HomePage");
   useTitle("Home Page");
-
-  const [count, setCount] = useState(0);
-
-  const handleClick = useCallback(() => {
-    console.log("handleClick", count);
-  }, []);
 
   return (
     <>
@@ -43,27 +34,6 @@ function HomePage() {
           }
           foot={<Button to={"/ds/overview"}>Overview</Button>}
         />
-        <div>
-          <DsButton />
-          <DsButton />
-        </div>
-
-        <div>
-          <button
-            onClick={() => {
-              handleClick();
-            }}
-          >
-            count
-          </button>
-          <button
-            onClick={() => {
-              setCount((count) => count + 1);
-            }}
-          >
-            count is {count}
-          </button>
-        </div>
         <PageList1 />
       </Main>
       <Footer />
