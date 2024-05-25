@@ -1,0 +1,7 @@
+@use "../../scss/index.scss" as *;
+
+.ds-icon {
+  fill: currentcolor;
+  text-transform: initial;
+  font-family: var(--font-icon);
+}

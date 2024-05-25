@@ -1,3 +1,4 @@
+import { memo } from "react";
 import style from "./Icon.module.scss";
 
 interface IconType {
@@ -5,7 +6,7 @@ interface IconType {
   cssClass?: string;
 }
 
-export const Icon = ({ name, cssClass }: IconType) => {
+export const Icon = memo(({ name, cssClass }: IconType) => {
   return (
     <span
       aria-hidden={false}
@@ -14,4 +15,4 @@ export const Icon = ({ name, cssClass }: IconType) => {
       {name}
     </span>
   );
-};
+});

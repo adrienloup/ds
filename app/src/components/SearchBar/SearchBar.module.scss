@@ -1,3 +1,15 @@
+$desktop: 1281px;
+$tablet-portrait: 769px;
+
 .searchbar {
-  background-color: red;
+  max-width: 65rem;
+  margin: 4rem 0;
+
+  @media (max-width: $desktop) {
+    margin: 2rem 0;
+  }
+}
+
+.checkbox {
+  margin-top: 1rem;
 }

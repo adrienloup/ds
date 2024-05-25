@@ -3,26 +3,23 @@ $tablet-portrait: 769px;
 
 .settings {
   visibility: hidden;
+  pointer-events: none;
   position: absolute;
-  top: 0;
   right: 0;
   z-index: 1;
   width: 100vw;
   background-color: var(--color-yellow);
-  // background-color: var(--color-3);
-  // background: linear-gradient(150deg, var(--color-yellow) 20%, #ffc107 100%);
   transition-property: height, top, visibility;
   transition-duration: 0.35s, 0.35s, 0s;
   transition-timing-function: var(--easy-in-out-quad);
   transition-delay: 0s, 0s, 0.35s;
   will-change: height, top;
-  pointer-events: none;
 }
 
 .open {
-  transition-delay: 0s;
   visibility: initial;
   pointer-events: initial;
+  transition-delay: 0s;
 }
 
 .inner {
@@ -33,16 +30,15 @@ $tablet-portrait: 769px;
 .content {
   display: flex;
   gap: 2rem;
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
 
   @media (max-width: $tablet-landscape) {
     gap: 1rem;
-    padding: 3rem 1.5rem 3rem 1rem;
+    padding: 2rem 1rem;
   }
 
   @media (max-width: $tablet-portrait) {
     flex-direction: column;
-    padding: 2rem 1rem;
   }
 }
 
@@ -50,17 +46,9 @@ $tablet-portrait: 769px;
   margin-bottom: 1rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
-  font-family: var(--font-text-black);
-  font-size: 1.5rem;
+  font-family: var(--font-text-bold);
+  font-size: 1.25rem;
   color: var(--color-neutral-1);
-
-  @media (max-width: $tablet-landscape) {
-    font-size: 1.25rem;
-  }
-
-  @media (max-width: $tablet-portrait) {
-    font-size: 1rem;
-  }
 }
 
 .button {
@@ -85,24 +73,17 @@ $tablet-portrait: 769px;
 .direction,
 .accessibility {
   .button {
-    padding: 1rem 1.25rem;
-    border: 0.2rem solid var(--color-1);
+    padding: 0.75rem 1.25rem;
+    border: 0.2rem solid var(--color-neutral-1);
     font-size: 1.25rem;
 
     @media (max-width: $tablet-landscape) {
-      padding: 0.75rem;
-      font-size: 1.15rem;
-    }
-
-    @media (max-width: $tablet-portrait) {
-      padding: 0.5rem 0.6rem;
+      padding: 0.5rem 0.75rem;
       font-size: 1rem;
     }
 
     &:hover {
-      // background-color: var(--color-orange);
-      background-color: var(--color-yellow-hover);
-      // background-color: var(--color-4);
+      background-color: var(--color-yellow-darked);
     }
 
     &:focus-visible {
@@ -113,8 +94,6 @@ $tablet-portrait: 769px;
     }
 
     &.active {
-      // background-color: var(--color-4);
-      // background-color: var(--color-yellow-hover);
       background-color: var(--color-neutral-1);
       color: var(--color-yellow);
       cursor: default;
@@ -124,22 +103,20 @@ $tablet-portrait: 769px;
 
 .close {
   position: absolute;
-  top: 0.15rem;
-  right: 0.15rem;
-  bottom: 0.15rem;
+  top: 0.25rem;
+  right: 0.25rem;
+  bottom: 0.25rem;
   z-index: 2;
   padding: 0.25rem 0.5rem;
-  border: 0.2rem solid var(--color-1);
+  border: 0.2rem solid var(--color-neutral-1);
   font-size: 1.5rem;
 
   &:hover {
-    background-color: var(--color-yellow-hover);
-    // color: var(--color-yellow);
-    // background-color: var(--color-3);
+    background-color: var(--color-yellow-darked);
   }
 
   &:focus-visible {
     outline: 0.2rem solid var(--color-orange);
-    // outline-offset: -0.25rem;
+    outline-offset: 0.03rem;
   }
 }

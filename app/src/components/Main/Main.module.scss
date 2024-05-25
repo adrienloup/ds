@@ -8,25 +8,35 @@ $tablet-portrait: 769px;
   background-color: var(--color-2);
 
   @media (max-width: $tablet-portrait) {
-    // min-height: calc(100vh - 115px);
-    margin-top: 56px;
+    margin-top: -59px;
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  padding: 5rem;
+  background-color: var(--color-2);
+
+  @media (max-width: $desktop) {
+    padding: 2.5rem;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    padding: 1rem;
   }
 
   & > h1 {
     max-width: 65rem;
-    margin: 5rem 5rem 4rem;
+    margin-bottom: 4rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     font-family: var(--font-text-black);
     font-size: 4.5rem;
 
     @media (max-width: $desktop) {
-      margin: 2rem 2.5rem 1rem;
+      margin-bottom: 2rem;
       font-size: 3.5rem;
-    }
-
-    @media (max-width: $tablet-portrait) {
-      margin: 1rem;
     }
 
     span {
@@ -37,19 +47,15 @@ $tablet-portrait: 769px;
 
   & > h2 {
     max-width: 65rem;
-    margin: 5rem 5rem 2rem;
+    margin: 4rem 0;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     font-family: var(--font-text-black);
-    font-size: 2.5rem;
+    font-size: 3rem;
 
     @media (max-width: $desktop) {
-      margin: 2.5rem 2.5rem 1rem;
-      font-size: 2rem;
-    }
-
-    @media (max-width: $tablet-portrait) {
-      margin: 1rem;
+      margin: 2rem 0;
+      font-size: 2.5rem;
     }
 
     span {
@@ -60,16 +66,12 @@ $tablet-portrait: 769px;
 
   & > p {
     max-width: 65rem;
-    margin: 1.5rem 5rem;
+    margin: 1.5rem 0;
     line-height: 1.25;
     font-size: 1.5rem;
 
     @media (max-width: $desktop) {
-      margin: 1rem 2.5rem;
-    }
-
-    @media (max-width: $tablet-portrait) {
-      margin: 1rem;
+      margin: 1rem 0;
     }
 
     a {
@@ -99,35 +101,20 @@ $tablet-portrait: 769px;
     }
 
     button {
-      padding: 1rem 1.5rem;
-      background-color: var(--color-2);
-      border: 0.2rem solid var(--color-3);
-      border-radius: 0.5rem;
-      font-size: 1.25rem;
-      color: var(--color-1);
+      padding: 1.5rem;
+      background-color: var(--color-yellow);
+      border: 0;
+      font-size: 1.5rem;
+      color: var(--color-neutral-1);
 
       &:hover {
-        background-color: var(--color-3);
+        background-color: var(--color-yellow-darked);
       }
 
       &:focus-visible {
         outline: 0.2rem solid var(--color-orange);
+        outline-offset: 0.125rem;
       }
     }
-  }
-}
-
-.inner {
-  position: relative;
-  z-index: 2;
-  padding: 5rem;
-  background-color: var(--color-2);
-
-  @media (max-width: $desktop) {
-    padding: 2.5rem;
-  }
-
-  @media (max-width: $tablet-portrait) {
-    padding: 1rem;
   }
 }

@@ -1,13 +1,12 @@
-// import { useContext, useEffect, useState } from "react";
-// import { DataContext } from "../../contexts/DataContext";
-// import { DataType } from "../../models/Data";
-import { useData } from "../../hooks/useData";
-// import { NotificationsComponent } from "../Notifications/Notifications";
-// import { TooltipComponent } from "../Tooltip/Tooltip";
+import { useContext, useState } from "react";
+import { createPortal } from "react-dom";
+import { DataContext } from "../../contexts/DataContext";
+import { DataType } from "../../models/Data";
+import { Notifications } from "../Notifications/Notifications";
 import { Button } from "../Button/Button";
-// import { BadgeComponent } from "../Badge/Badge";
-// import { ModalComponent } from "../Modal/Modal";
-// import { LoginComponent } from "../Login/Login";
+import { Badge } from "../Badge/Badge";
+import { Modal } from "../Modal/Modal";
+import { Login } from "../Login/Login";
 import { Icon } from "../Icon/Icon";
 import style from "./ToolBar.module.scss";
 
@@ -17,8 +16,9 @@ interface ToolBarType {
 
 export const ToolBar = ({ onSettings }: ToolBarType) => {
   console.log("ToolBar");
-
-  const { data } = useData();
+  const { data } = useContext<DataType>(DataContext);
+  const [modal, setModal] = useState(false);
+  const [login, setLogin] = useState(false);
 
   return (
     <div className={style.toolbar}>
@@ -35,31 +35,27 @@ export const ToolBar = ({ onSettings }: ToolBarType) => {
         </svg>
       </Button>
       {data.user ? (
-        <Button ariaLabel={"Settings"} cssClass={style.button} to={"/ds/login"}>
+        <Button ariaLabel={"Logout"} cssClass={style.button} to={"/ds/login"}>
           <Icon name={"face_2"} />
         </Button>
       ) : (
         <Button
-          ariaLabel={""}
+          ariaLabel={"Login"}
           cssClass={style.button}
-          // onClick={() => setLogin(!login)}
+          onClick={() => setLogin(!login)}
         >
           <Icon name={"face_2"} />
         </Button>
       )}
-      {/* <BadgeComponent
-        value={data.notifications.length}
-        max={9}
-        cssClass={style.badge}
-      > */}
-      <Button
-        ariaLabel={"Notifications"}
-        cssClass={style.button}
-        // onClick={() => setModal(!modal)}
-      >
-        <Icon name="notifications" />
-      </Button>
-      {/* </BadgeComponent> */}
+      <Badge value={data.notifications.length} max={9} cssClass={style.badge}>
+        <Button
+          ariaLabel={"Notifications"}
+          cssClass={style.button}
+          onClick={() => setModal(!modal)}
+        >
+          <Icon name="notifications" />
+        </Button>
+      </Badge>
       <Button
         ariaLabel={"Settings"}
         cssClass={style.button}
@@ -67,27 +63,25 @@ export const ToolBar = ({ onSettings }: ToolBarType) => {
       >
         <Icon name={"settings"} />
       </Button>
-      {/*{modal &&
+      {modal &&
         createPortal(
-          <ModalComponent
+          <Modal
             head={
               <h3>
                 Breaking <span>news</span>
               </h3>
             }
-            body={<NotificationsComponent />}
+            body={<Notifications />}
             open={modal}
             onClick={() => setModal(false)}
           />,
           document.body
-        )}*/}
-      {/* <Settings open={sittings} onClick={() => setSittings(false)} /> */}
-      {/*
+        )}
       {login &&
         createPortal(
-          <LoginComponent open={login} handleClick={() => setLogin(false)} />,
+          <Login open={login} handleClick={() => setLogin(false)} />,
           document.body
-        )} */}
+        )}
     </div>
   );
 };

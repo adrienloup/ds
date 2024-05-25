@@ -1,0 +1,36 @@
+@mixin fonts {
+  --font-icon: "Material-Icons", sans-serif;
+  --font-text-black: "Prompt-Black", sans-serif;
+  --font-text-bold: "Prompt-Bold", sans-serif;
+  --font-text-regular: "Prompt-Regular", sans-serif;
+}
+
+@mixin colors {
+  --color-neutral-1: #1b1b1b;
+  --color-neutral-2: #2b2b2b;
+  --color-neutral-3: #5e5e5e;
+  --color-neutral-4: #c3c3c3;
+  --color-neutral-5: #eee;
+  --color-neutral-6: #fff;
+  --color-purple: #ba14d7;
+  --color-purple-darked: #a310bd;
+  --color-magenta: #f4008f;
+  --color-magenta-darked: #cb0076;
+  --color-blue: #002bff;
+  --color-blue-darked: #0120b9;
+  --color-cyan: #08d9e1;
+  --color-cyan-darked: #05adb3;
+  --color-chartreuse: #1dcc45;
+  --color-chartreuse-darked: #42b883;
+  --color-yellow: #fff500;
+  --color-yellow-darked: #e9e100;
+  --color-orange: #ff7300;
+  --color-orange-darked: #cf5d00;
+  --color-red: #ff1100;
+  --color-red-darked: #cc0e00;
+}
+
+:root {
+  @include fonts();
+  @include colors();
+}

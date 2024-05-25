@@ -1,0 +1,75 @@
+$tablet-landscape: 1025px;
+
+.card {
+  width: 50%;
+  padding: 1rem;
+  backface-visibility: hidden;
+  transform-origin: 10% 50%;
+  animation: Appear 0.25s var(--easy-in-out-quad);
+
+  @media (max-width: $tablet-landscape) {
+    width: 100%;
+  }
+}
+
+.link {
+  position: relative;
+  display: block;
+  height: 100%;
+  padding: 2.5rem;
+  border: 0.2rem solid var(--color-3);
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--color-3);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+  }
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: var(--font-text-black);
+  font-size: 1.75rem;
+  color: var(--color-1);
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    padding: 0.25rem;
+    background-color: var(--color-yellow);
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    font-family: var(--font-text-bold);
+    font-size: 0.75rem;
+    color: var(--color-neutral-1);
+  }
+}
+
+.description {
+  margin-top: 1rem;
+  line-height: 1.3;
+  font-size: 1.5rem;
+  color: var(--color-1);
+}
+
+.icon {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.25rem;
+  font-size: 2rem;
+  color: var(--color-1);
+}
+
+@keyframes Appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}

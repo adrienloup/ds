@@ -3,7 +3,7 @@ import { TextField } from "../Forms/TextField/TextField";
 import style from "./SearchBar.module.scss";
 
 interface SearchBarType {
-  cssClass?: string;
+  label?: string;
   value: string;
   checked: boolean;
   onChange: (e: string) => void;
@@ -11,16 +11,24 @@ interface SearchBarType {
 }
 
 export const SearchBar = ({
-  cssClass,
+  label,
   value,
   checked,
   onChange,
   onCheck,
 }: SearchBarType) => {
   return (
-    <div className={[style.searchBar, cssClass ? ` ${cssClass}` : ""].join("")}>
-      <TextField value={value} onChange={onChange} placeholder="Search..." />
+    <div className={style.searchbar}>
+      <TextField
+        cssClass={style.textfield}
+        label={label}
+        value={value}
+        onChange={onChange}
+        placeholder="UI components"
+        prefix="manage_search"
+      />
       <Checkbox
+        cssClass={style.checkbox}
         checked={checked}
         onChange={onCheck}
         label="Only show new components"

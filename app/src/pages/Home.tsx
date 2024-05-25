@@ -1,47 +1,43 @@
-import { useState } from "react";
 import { useTitle } from "../hooks/useTitle";
-import { useFetch } from "../hooks/useFetch";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
-import { SearchAndFind } from "../components/SearchAndFind/SearchAndFind";
-
-import { Button } from "design-system/src/components/Button/Button";
+import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
+import { Promote } from "../components/Promote/Promote";
+import { PageList1 } from "../components/PageList/PageList1";
+import { Button } from "../components/Button/Button";
 
 function HomePage() {
-  const [count, setCount] = useState(0);
-  const { loading, data } = useFetch("src/data/pages.json");
-
   console.log("HomePage");
-
   useTitle("Home Page");
 
   return (
     <>
       <Header />
       <Main>
-        <h1>HomePage</h1>
-        <p>High waisted skinny jeans with fading - Abercrombie and Fitch</p>
-        <div>
-          <Button />
-          <Button />
-        </div>
-
-        <div>
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-        </div>
-
-        {loading && <div style={{ background: "red" }}>Loading...</div>}
-        {data && (
-          <div>
-            <SearchAndFind list={data} />
-            {JSON.stringify(data)}
-          </div>
-        )}
+        <h1>
+          A pretty good library{" "}
+          <span>of components for Web application's UI</span>
+        </h1>
+        <Promote
+          head={<h2>Unlock the full power</h2>}
+          body={
+            <>
+              <p>
+                It includes a comprehensive collection of prebuilt components
+                that are ready for use in production right out of the box, and
+                features a suite of customization options that make it easy to
+                implement your own custom design system on top of our
+                components.
+              </p>
+            </>
+          }
+          foot={<Button to={"/ds/overview"}>Overview</Button>}
+        />
+        <PageList1 />
       </Main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

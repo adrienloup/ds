@@ -1,8 +1,8 @@
-import { useEffect, useState, useRef } from "react";
-// import { DataContext } from "../../contexts/DataContext";
-// import { DataType } from "../../models/Data";
-import { useData } from "../../hooks/useData";
-// import { useAlert } from "../../hooks/useAlert";
+import { useContext, useEffect, useState, useRef } from "react";
+import { DataContext } from "../../contexts/DataContext";
+import { DataType } from "../../models/Data";
+// import { useData } from "../../hooks/useData";
+import { useAlert } from "../../hooks/useAlert";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import style from "./Settings.module.scss";
@@ -12,14 +12,12 @@ interface SettingsProps {
   onClick: () => void;
 }
 
-export const Settings = ({
-  open = false,
-  onClick = () => {},
-}: SettingsProps) => {
+export const Settings = ({ open, onClick }: SettingsProps) => {
   console.log("Settings");
-  // const { addAlert } = useAlert();
+  const { addAlert } = useAlert();
   // const { data, setData } = useContext<DataType>(DataContext);
-  const { data, setData } = useData();
+  // const { data, setData } = useData();
+  const { data, setData } = useContext<DataType>(DataContext);
   const [mode, setMode] = useState(data.settings.mode);
   const asideRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -130,13 +128,13 @@ export const Settings = ({
             </Button>
             <Button
               cssClass={style.button}
-              // onClick={() => {
-              //   addAlert({
-              //     text: "There is an error with the increasing text size",
-              //     timeout: 2,
-              //     status: "error",
-              //   });
-              // }}
+              onClick={() => {
+                addAlert({
+                  text: "There is an error with the increasing text size",
+                  timeout: 2,
+                  status: "error",
+                });
+              }}
             >
               A-
             </Button>

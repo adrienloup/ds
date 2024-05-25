@@ -50,7 +50,7 @@ html {
   }
 
   @media (max-width: $tablet-portrait) {
-    font-size: 3rem;
+    display: none;
   }
 
   div {
@@ -83,12 +83,12 @@ html {
     font-family: var(--font-text-bold);
     font-size: 4rem;
 
-    @media (max-width: $tablet-landscape) {
-      font-size: 3rem;
-    }
+    // @media (max-width: $tablet-landscape) {
+    //   font-size: 3rem;
+    // }
 
-    @media (max-width: $tablet-portrait) {
-      font-size: 2rem;
-    }
+    // @media (max-width: $tablet-portrait) {
+    //   font-size: 2rem;
+    // }
   }
 }

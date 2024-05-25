@@ -3,20 +3,22 @@ import { UserType } from "./User";
 
 export interface DataType {
   data: {
-    typology: string;
+    category: string;
     notifications: NotificationType[];
     settings: {
       dir: string;
       mode: string;
+      open: boolean;
     };
     user: UserType | null;
   };
   setData: (data: {
-    typology: string;
+    category: string;
     notifications: NotificationType[];
     settings: {
       dir: string;
       mode: string;
+      open: boolean;
     };
     user: UserType | null;
   }) => void;
