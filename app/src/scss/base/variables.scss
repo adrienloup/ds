@@ -1,8 +1,7 @@
 @mixin fonts {
   --font-icon: "Material-Icons", sans-serif;
-  --font-text-black: "Prompt-Black", sans-serif;
-  --font-text-bold: "Prompt-Bold", sans-serif;
-  --font-text-regular: Futura, "Trebuchet MS", Arial, sans-serif;
+  --font-text-bold: "Prompt-Black", sans-serif;
+  --font-text-regular: "Prompt-Bold", sans-serif;
 }
 
 @mixin colors {

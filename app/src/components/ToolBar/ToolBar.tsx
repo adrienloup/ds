@@ -6,7 +6,6 @@ import { Notifications } from "../Notifications/Notifications";
 import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
 import { Modal } from "../Modal/Modal";
-import { Login } from "../Login/Login";
 import { Icon } from "../Icon/Icon";
 import style from "./ToolBar.module.scss";
 
@@ -16,9 +15,9 @@ interface ToolBarType {
 
 export const ToolBar = ({ onSettings }: ToolBarType) => {
   console.log("ToolBar");
+
   const { data } = useContext<DataType>(DataContext);
   const [modal, setModal] = useState(false);
-  const [login, setLogin] = useState(false);
 
   return (
     <div className={style.toolbar}>
@@ -34,19 +33,6 @@ export const ToolBar = ({ onSettings }: ToolBarType) => {
           ></path>
         </svg>
       </Button>
-      {data.user ? (
-        <Button ariaLabel={"Logout"} cssClass={style.button} to={"/ds/login"}>
-          <Icon name={"face_2"} />
-        </Button>
-      ) : (
-        <Button
-          ariaLabel={"Login"}
-          cssClass={style.button}
-          onClick={() => setLogin(!login)}
-        >
-          <Icon name={"face_2"} />
-        </Button>
-      )}
       <Badge value={data.notifications.length} max={9} cssClass={style.badge}>
         <Button
           ariaLabel={"Notifications"}
@@ -75,11 +61,6 @@ export const ToolBar = ({ onSettings }: ToolBarType) => {
             open={modal}
             onClick={() => setModal(false)}
           />,
-          document.body
-        )}
-      {login &&
-        createPortal(
-          <Login open={login} handleClick={() => setLogin(false)} />,
           document.body
         )}
     </div>

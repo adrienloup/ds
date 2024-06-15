@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
 import { useAuth } from "../hooks/useAuth";
 import { Header } from "../components/Header/Header";
@@ -10,17 +11,12 @@ function LoginPage() {
   console.log("LoginPage");
   useTitle("Login Page");
 
-  const { login, logout } = useAuth();
-
-  const handleLogin = () => {
-    login({
-      id: "1",
-      name: "Adrien",
-    });
-  };
+  const navigate = useNavigate();
+  const { logout } = useAuth();
 
   const handleLogout = () => {
     logout();
+    navigate("/ds/");
   };
 
   return (
@@ -28,16 +24,11 @@ function LoginPage() {
       <Header />
       <Main>
         <h1>
-          Login to <span>your account</span>
+          <span>Disconnect or</span> learn more about React{" "}
+          <span>just for pleasure :)</span>
         </h1>
-        <ul>
-          <li>
-            <Button onClick={handleLogin}>Login</Button>
-          </li>
-          <li>
-            <Button onClick={handleLogout}>Logout</Button>
-          </li>
-        </ul>
+        <Button onClick={handleLogout}>Logout</Button>
+        <Button to={"/ds/test"}>learning</Button>
       </Main>
       <Footer />
       <ScrollToTop />

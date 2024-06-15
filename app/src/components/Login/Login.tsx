@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import { LoginForm } from "./LoginForm";
@@ -11,6 +12,7 @@ interface LoginType {
 export const Login = ({ open, handleClick }: LoginType) => {
   const [height, setHeight] = useState<number>(0);
   const [error, setError] = useState<string>("");
+  const navigate = useNavigate();
   const { login } = useAuth();
 
   const handleAdd = ({
@@ -24,12 +26,12 @@ export const Login = ({ open, handleClick }: LoginType) => {
   }) => {
     const user = { id, name, password };
 
-    if (user.name === "adrien" && user.password === "1234") {
+    if (user.name === "adrien" && user.password === "loup") {
       login({
         id: user.id,
         name: "adrien",
       });
-      handleClick();
+      navigate("/ds/login/");
     } else {
       setError("errorMessage");
     }

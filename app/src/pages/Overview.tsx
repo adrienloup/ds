@@ -16,7 +16,7 @@ function OverviewPage() {
       <Header />
       <Main>
         <h1>
-          DS is an open-source <span>React component library</span>
+          An open-source <span>React component library for pleasure</span>
         </h1>
         <Promote
           head={<h2>Unlock the full power</h2>}

@@ -33,7 +33,7 @@ $tablet-landscape: 1025px;
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font-family: var(--font-text-black);
+  font-family: var(--font-text-bold);
   font-size: 1.75rem;
   color: var(--color-1);
 
@@ -44,9 +44,8 @@ $tablet-landscape: 1025px;
     margin-left: 0.5rem;
     padding: 0.25rem;
     background-color: var(--color-yellow);
-    border-radius: 0.25rem;
     text-transform: uppercase;
-    font-family: var(--font-text-bold);
+    font-family: var(--font-text-regular);
     font-size: 0.75rem;
     color: var(--color-neutral-1);
   }

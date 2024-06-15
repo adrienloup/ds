@@ -15,8 +15,6 @@ interface SettingsProps {
 export const Settings = ({ open, onClick }: SettingsProps) => {
   console.log("Settings");
   const { addAlert } = useAlert();
-  // const { data, setData } = useContext<DataType>(DataContext);
-  // const { data, setData } = useData();
   const { data, setData } = useContext<DataType>(DataContext);
   const [mode, setMode] = useState(data.settings.mode);
   const asideRef = useRef<HTMLDivElement>(null);

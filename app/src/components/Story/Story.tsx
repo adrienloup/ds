@@ -86,7 +86,7 @@ export const Story = ({
             </Button>
             <Button
               cssClass={`${style.button} ${style.contained} ${style.small}`}
-              href={`https://github.com/adrienloup/ds/tree/master/src/components/${github}`}
+              href={`https://github.com/adrienloup/ds/tree/master/library/src/components/${github}`}
               ariaLabel={"Code Source"}
             >
               <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24">

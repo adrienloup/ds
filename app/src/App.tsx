@@ -7,6 +7,7 @@ import ButtonPage from "./pages/Button";
 import LoginPage from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import OverviewPage from "./pages/Overview";
+import TestPage from "./pages/Test";
 import "./App.scss";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/ds/login" element={<LoginPage />} />
             <Route path="/ds/*" element={<NotFound />} />
             <Route path="/ds/overview" element={<OverviewPage />} />
+            <Route path="/ds/test" element={<TestPage />} />
           </Routes>
         </BrowserRouter>
       </AlertContextProvider>
