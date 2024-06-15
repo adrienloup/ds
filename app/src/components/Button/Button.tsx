@@ -5,6 +5,7 @@ import style from "./Button.module.scss";
 interface ButtonType {
   children: ReactNode;
   cssClass?: string;
+  type?: "button" | "submit" | "reset";
   ariaLabel?: string;
   href?: string;
   to?: string;
@@ -19,6 +20,7 @@ export const Button = memo(
   ({
     children,
     cssClass,
+    type = "button",
     ariaLabel,
     href,
     to,
@@ -54,7 +56,7 @@ export const Button = memo(
 
     const button = (
       <button
-        type="button"
+        type={type}
         aria-label={ariaLabel}
         className={[style.button, cssClass ? ` ${cssClass}` : ""].join("")}
         onClick={onClick}
@@ -68,5 +70,5 @@ export const Button = memo(
     );
 
     return href ? a : to ? link : button;
-  },
+  }
 );

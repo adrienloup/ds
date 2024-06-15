@@ -16,8 +16,8 @@ function HomePage() {
       <Header />
       <Main>
         <h1>
-          A pretty good library{" "}
-          <span>of components for Web application's UI</span>
+          <span>A pretty good library of</span> React components{" "}
+          <span>for Web application's UI</span>
         </h1>
         <Promote
           head={<h2>Unlock the full power</h2>}

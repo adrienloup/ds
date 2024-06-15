@@ -19,7 +19,7 @@ $tablet-portrait: 769px;
   h2 {
     letter-spacing: 0.1rem;
     text-transform: uppercase;
-    font-family: var(--font-text-black);
+    font-family: var(--font-text-bold);
     font-size: 3rem;
 
     @media (max-width: $desktop) {
@@ -29,8 +29,9 @@ $tablet-portrait: 769px;
 }
 
 .body {
-  line-height: 1.2;
+  line-height: 1.25;
   font-size: 1.75rem;
+  font-weight: bold;
 }
 
 .foot {
@@ -42,6 +43,7 @@ $tablet-portrait: 769px;
   button {
     padding: 1.5rem;
     background-color: var(--color-yellow);
+    border: 0;
     font-size: 1.5rem;
     color: var(--color-neutral-1);
 

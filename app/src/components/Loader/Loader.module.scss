@@ -41,7 +41,7 @@ html {
   text-transform: uppercase;
   font-size: 5rem;
   opacity: 1;
-  font-family: var(--font-text-black);
+  font-family: var(--font-text-bold);
   transition: transform 1s var(--easy-in-out-expo) 1s;
   will-change: transform;
 
@@ -83,12 +83,8 @@ html {
     font-family: var(--font-text-bold);
     font-size: 4rem;
 
-    // @media (max-width: $tablet-landscape) {
-    //   font-size: 3rem;
-    // }
-
-    // @media (max-width: $tablet-portrait) {
-    //   font-size: 2rem;
-    // }
+    @media (max-width: $tablet-portrait) {
+      font-size: 3rem;
+    }
   }
 }

@@ -8,7 +8,8 @@ $tablet-portrait: 769px;
   right: 0;
   z-index: 1;
   width: 100vw;
-  background-color: var(--color-yellow);
+  // background-color: var(--color-yellow);
+  background-color: var(--color-2);
   transition-property: height, top, visibility;
   transition-duration: 0.35s, 0.35s, 0s;
   transition-timing-function: var(--easy-in-out-quad);
@@ -48,12 +49,12 @@ $tablet-portrait: 769px;
   text-transform: uppercase;
   font-family: var(--font-text-bold);
   font-size: 1.25rem;
-  color: var(--color-neutral-1);
+  color: var(--color-1);
 }
 
 .button {
   background: transparent;
-  color: var(--color-neutral-1);
+  color: var(--color-1);
 
   &:hover {
     background-color: var(--color-3);
@@ -74,16 +75,12 @@ $tablet-portrait: 769px;
 .accessibility {
   .button {
     padding: 0.75rem 1.25rem;
-    border: 0.2rem solid var(--color-neutral-1);
+    border: 0.2rem solid var(--color-3);
     font-size: 1.25rem;
 
     @media (max-width: $tablet-landscape) {
       padding: 0.5rem 0.75rem;
       font-size: 1rem;
-    }
-
-    &:hover {
-      background-color: var(--color-yellow-darked);
     }
 
     &:focus-visible {
@@ -94,8 +91,7 @@ $tablet-portrait: 769px;
     }
 
     &.active {
-      background-color: var(--color-neutral-1);
-      color: var(--color-yellow);
+      background-color: var(--color-3);
       cursor: default;
     }
   }
@@ -103,16 +99,16 @@ $tablet-portrait: 769px;
 
 .close {
   position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
-  bottom: 0.25rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.7rem;
   z-index: 2;
   padding: 0.25rem 0.5rem;
-  border: 0.2rem solid var(--color-neutral-1);
+  border: 0.2rem solid var(--color-3);
   font-size: 1.5rem;
 
   &:hover {
-    background-color: var(--color-yellow-darked);
+    background-color: var(--color-3);
   }
 
   &:focus-visible {

@@ -1,7 +1,6 @@
 .checkbox {
   background-color: transparent;
   display: flex;
-  overflow: hidden;
   position: relative;
 }
 
@@ -16,6 +15,7 @@
 .label {
   display: flex;
   align-items: center;
+  padding-right: 0.25rem;
   text-transform: uppercase;
   font-family: var(--font-text-bold);
   font-size: 1.25rem;
@@ -26,8 +26,14 @@
   position: absolute;
   top: -100%;
   left: -100%;
+  opacity: 0;
 
   &:checked + .label .check {
     background-color: var(--color-yellow);
+  }
+
+  &:focus-visible + .label {
+    outline: 0.2rem solid var(--color-orange);
+    outline-offset: 0.125rem;
   }
 }

@@ -4,12 +4,37 @@
 }
 
 .inner {
+  position: relative;
   padding: 1rem;
   border-top: 0.2rem solid var(--color-3);
   letter-spacing: 0.075rem;
   text-align: right;
   text-transform: uppercase;
-  font-family: var(--font-text-black);
+  font-family: var(--font-text-bold);
   font-size: 1.5rem;
   color: var(--color-1);
+}
+
+.button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 1rem;
+  height: 1rem;
+  background: none;
+  border: none;
+  font-size: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  // &:focus-within {
+  //   outline: 2px solid green;
+  // }
+
+  // &:focus-visible {
+  //   outline: 2px solid red;
+  // }
 }

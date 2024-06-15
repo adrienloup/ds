@@ -10,6 +10,17 @@ $tablet-portrait: 769px;
   @media (max-width: $tablet-portrait) {
     margin-top: -59px;
   }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -0.2rem;
+    left: -100%;
+    z-index: 2;
+    width: 200%;
+    height: 0.2rem;
+    background-color: var(--color-3);
+  }
 }
 
 .inner {
@@ -31,12 +42,16 @@ $tablet-portrait: 769px;
     margin-bottom: 4rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
-    font-family: var(--font-text-black);
-    font-size: 4.5rem;
+    font-family: var(--font-text-bold);
+    font-size: 5rem;
 
     @media (max-width: $desktop) {
       margin-bottom: 2rem;
-      font-size: 3.5rem;
+      font-size: 4rem;
+    }
+
+    @media (max-width: $tablet-portrait) {
+      font-size: 3rem;
     }
 
     span {
@@ -50,12 +65,39 @@ $tablet-portrait: 769px;
     margin: 4rem 0;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
-    font-family: var(--font-text-black);
-    font-size: 3rem;
+    font-family: var(--font-text-bold);
+    font-size: 3.5rem;
 
     @media (max-width: $desktop) {
       margin: 2rem 0;
+      font-size: 3rem;
+    }
+
+    @media (max-width: $tablet-portrait) {
       font-size: 2.5rem;
+    }
+
+    span {
+      -webkit-text-stroke: 0.08rem var(--color-1);
+      color: transparent;
+    }
+  }
+
+  & > h3 {
+    max-width: 65rem;
+    margin: 4rem 0;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-family: var(--font-text-bold);
+    font-size: 2.5rem;
+
+    @media (max-width: $desktop) {
+      margin: 2rem 0;
+      font-size: 2rem;
+    }
+
+    @media (max-width: $tablet-portrait) {
+      font-size: 1.5rem;
     }
 
     span {
@@ -69,6 +111,7 @@ $tablet-portrait: 769px;
     margin: 1.5rem 0;
     line-height: 1.25;
     font-size: 1.5rem;
+    font-weight: bold;
 
     @media (max-width: $desktop) {
       margin: 1rem 0;
@@ -79,42 +122,27 @@ $tablet-portrait: 769px;
     }
   }
 
-  & > ul {
-    max-width: 65rem;
-    display: flex;
-    margin: 1.5rem 5rem;
-    list-style-type: none;
+  & > button,
+  & > a {
+    padding: 1.5rem;
+    background-color: var(--color-yellow);
+    border: 0;
     line-height: 1.25;
-    font-family: var(--font-text-bold);
     font-size: 1.5rem;
+    color: var(--color-neutral-1);
 
-    @media (max-width: $desktop) {
-      margin: 1rem 2rem;
+    &:hover {
+      background-color: var(--color-yellow-darked);
     }
 
-    @media (max-width: $tablet-portrait) {
-      margin: 1rem;
+    &:focus-visible {
+      outline: 0.2rem solid var(--color-orange);
+      outline-offset: 0.125rem;
     }
 
-    li + li {
-      margin-left: 1rem;
-    }
-
-    button {
-      padding: 1.5rem;
-      background-color: var(--color-yellow);
-      border: 0;
-      font-size: 1.5rem;
-      color: var(--color-neutral-1);
-
-      &:hover {
-        background-color: var(--color-yellow-darked);
-      }
-
-      &:focus-visible {
-        outline: 0.2rem solid var(--color-orange);
-        outline-offset: 0.125rem;
-      }
+    & + button,
+    & + a {
+      margin-left: 2rem;
     }
   }
 }
