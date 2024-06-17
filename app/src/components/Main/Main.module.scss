@@ -8,6 +8,7 @@ $tablet-portrait: 769px;
   background-color: var(--color-2);
 
   @media (max-width: $tablet-portrait) {
+    min-height: calc(100vh - 59px);
     margin-top: -59px;
   }
 

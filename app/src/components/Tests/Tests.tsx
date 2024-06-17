@@ -1,10 +1,13 @@
 import { TestAddDataAndAriaAttr } from "./TestAddDataAndAriaAttr/TestAddDataAndAriaAttr";
 import { TestInverseDataFlow } from "./TestInverseDataFlow/TestInverseDataFlow";
 import { TestListSearchable } from "./TestListSearchable/TestListSearchable";
-import { TestUseEffect } from "./TestUseEffect/TestUseEffect";
+import { TestUseCallback } from "./TestUseCallback/TestUseCallback";
 import { TestCustomHook } from "./TestCustomHook/TestCustomHook";
+import { TestUseEffect } from "./TestUseEffect/TestUseEffect";
 import { TestUseMemo } from "./TestUseMemo/TestUseMemo";
+import { TestUseRef } from "./TestUseRef/TestUseRef";
 import { TestCount } from "./TestCount/TestCount";
+import { TestMemo } from "./TestMemo/TestMemo";
 import style from "./Tests.module.scss";
 
 export const Tests = () => {
@@ -54,6 +57,29 @@ export const Tests = () => {
       <div className={style.test}>
         <div className={style.title}>useMemo</div>
         <TestUseMemo />
+      </div>
+
+      {/* USEREF */}
+      <div className={style.test}>
+        <div className={style.title}>useRef</div>
+        <TestUseRef />
+      </div>
+
+      {/* USECALLBACK */}
+      <div className={style.test}>
+        <div className={style.title}>useCallback</div>
+        <TestUseCallback />
+      </div>
+
+      {/* USEREDUCER */}
+      <div className={style.test}>
+        <div className={style.title}>useReducer</div>
+      </div>
+
+      {/* MEMO */}
+      <div className={style.test}>
+        <div className={style.title}>Memo</div>
+        <TestMemo />
       </div>
     </div>
   );

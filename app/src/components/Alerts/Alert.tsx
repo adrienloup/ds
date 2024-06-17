@@ -43,8 +43,9 @@ export const Alert = ({
         role="alert"
         className={[
           style.alert,
-          cssClass ? ` ${cssClass}` : "",
+          ` ${style[status]}`,
           timeout > 0 ? ` ${style.animate}` : "",
+          cssClass ? ` ${cssClass}` : "",
         ].join("")}
         style={
           {

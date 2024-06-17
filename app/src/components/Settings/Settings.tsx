@@ -14,6 +14,7 @@ interface SettingsProps {
 
 export const Settings = ({ open, onClick }: SettingsProps) => {
   console.log("Settings");
+
   const { addAlert } = useAlert();
   const { data, setData } = useContext<DataType>(DataContext);
   const [mode, setMode] = useState(data.settings.mode);
@@ -87,25 +88,25 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
             <div className={style.title}>Direction</div>
             <Button
               cssClass={[`${style.button}`, ` ${style.active}`].join("")}
-              // onClick={() => {
-              //   addAlert({
-              //     text: "There is an error with the direction adjustment",
-              //     timeout: 2,
-              //     status: "error",
-              //   });
-              // }}
+              onClick={() => {
+                addAlert({
+                  text: "Error with the direction adjustment",
+                  timeout: 3,
+                  status: "error",
+                });
+              }}
             >
               Right to Left
             </Button>
             <Button
               cssClass={style.button}
-              // onClick={() => {
-              //   addAlert({
-              //     text: "There is an error with the direction adjustment",
-              //     timeout: 2,
-              //     status: "error",
-              //   });
-              // }}
+              onClick={() => {
+                addAlert({
+                  text: "Error with the direction adjustment",
+                  timeout: 3,
+                  status: "error",
+                });
+              }}
             >
               Left to Right
             </Button>
@@ -114,13 +115,13 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
             <div className={style.title}>Accessibility</div>
             <Button
               cssClass={[`${style.button}`, ` ${style.active}`].join("")}
-              // onClick={() => {
-              //   addAlert({
-              //     text: "There is an error with the increasing text size",
-              //     timeout: 2,
-              //     status: "error",
-              //   });
-              // }}
+              onClick={() => {
+                addAlert({
+                  text: "Error with the increasing text size",
+                  timeout: 3,
+                  status: "error",
+                });
+              }}
             >
               A+
             </Button>
@@ -128,8 +129,8 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
               cssClass={style.button}
               onClick={() => {
                 addAlert({
-                  text: "There is an error with the increasing text size",
-                  timeout: 2,
+                  text: "Error with the increasing text size",
+                  timeout: 3,
                   status: "error",
                 });
               }}

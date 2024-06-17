@@ -21,11 +21,9 @@ export function TestUseEffect() {
       </label>
       {show && <TestUseEffectTitle />}
       <TestUseEffectTimer />
-      <p style={{ fontSize: "1.5rem", color: "red", marginTop: "1rem" }}>
-        No setters at first level of useEffect, favor an external manager
-      </p>
-      <p style={{ fontSize: "1.5rem", color: "red" }}>
-        Remove event listener from useEffect
+      <p style={{ fontSize: "2rem", color: "red", marginTop: "1rem" }}>
+        No setters at first level of useEffect, favor an external manager.
+        Remove event listener from useEffect.
       </p>
     </>
   );

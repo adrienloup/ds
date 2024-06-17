@@ -23,7 +23,7 @@ export function TestCustomHook() {
     <div style={{ display: "flex", alignItems: "center" }}>
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
-      <div style={{ padding: "1rem", fontSize: "1.25rem" }}>{state}</div>
+      <div style={{ paddingLeft: "1rem" }}>{state}</div>
     </div>
   );
 }

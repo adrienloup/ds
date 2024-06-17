@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { createPortal } from "react-dom";
-import { DataContext } from "../../contexts/DataContext";
-import { DataType } from "../../models/Data";
+import { NotificationContext } from "../../contexts/NotificationContext";
+import { NotificationsType } from "../../models/Notification";
 import { Notifications } from "../Notifications/Notifications";
 import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
@@ -16,7 +16,8 @@ interface ToolBarType {
 export const ToolBar = ({ onSettings }: ToolBarType) => {
   console.log("ToolBar");
 
-  const { data } = useContext<DataType>(DataContext);
+  const { dataNotifications } =
+    useContext<NotificationsType>(NotificationContext);
   const [modal, setModal] = useState(false);
 
   return (
@@ -33,7 +34,7 @@ export const ToolBar = ({ onSettings }: ToolBarType) => {
           ></path>
         </svg>
       </Button>
-      <Badge value={data.notifications.length} max={9} cssClass={style.badge}>
+      <Badge value={dataNotifications.length} max={9} cssClass={style.badge}>
         <Button
           ariaLabel={"Notifications"}
           cssClass={style.button}

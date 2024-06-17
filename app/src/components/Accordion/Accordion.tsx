@@ -16,6 +16,7 @@ export const Accordion = ({
   onClick,
 }: AccordionProps) => {
   console.log("Accordion");
+
   const [isAnimated, setAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const titleId = useId();
