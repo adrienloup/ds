@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../contexts/DataContext";
 import { DataType } from "../models/Data";
 import { useLocalStorage } from "./useLocalStorage";
-import dark from "../scss/modes/dark.module.scss";
 
 const LocalData = () => {
   const { data } = useContext<DataType>(DataContext);
@@ -16,10 +15,6 @@ export const useData = () => {
 
   useEffect(() => {
     setItem("_ds_y0y09_10", JSON.stringify(data));
-
-    data.settings.mode === "dark"
-      ? document.body.classList.add(`${dark.dark}`)
-      : document.body.classList.remove(`${dark.dark}`);
   }, [data, setData]);
 
   return { data, setData };
