@@ -6,21 +6,9 @@ import { useData } from "../hooks/useData";
 
 export const DataContext = createContext<DataType>({
   data: {
-    settings: {
-      dir: "ltr",
-      mode: "dark",
-      open: false,
-    },
     user: null,
   },
-  setData: (data: {
-    settings: {
-      dir: string;
-      mode: string;
-      open: boolean;
-    };
-    user: UserType | null;
-  }) => {
+  setData: (data: { user: UserType | null }) => {
     data;
   },
 });

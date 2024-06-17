@@ -1,21 +1,21 @@
 import { useContext, useState } from "react";
-import { DataContext } from "../../contexts/DataContext";
-import { DataType } from "../../models/Data";
+import { SettingContext } from "../../contexts/SettingContext";
+import { SettingType } from "../../models/Setting";
 import { SlotType } from "../../models/Slot";
 import { ToolBar } from "../ToolBar/ToolBar";
 import { Settings } from "../Settings/Settings";
-
 import style from "./Main.module.scss";
 
 export const Main = ({ children }: SlotType) => {
   console.log("Main");
 
-  const { data, setData } = useContext<DataType>(DataContext);
-  const [settings, setSettings] = useState(data.settings.open);
+  const { dataSettings, setDataSetting } =
+    useContext<SettingType>(SettingContext);
+  const [settings, setSettings] = useState(dataSettings.open);
 
   const handleSettings = (open: boolean) => {
-    data.settings.open = open;
-    setData({ ...data });
+    dataSettings.open = open;
+    setDataSetting({ ...dataSettings });
     setSettings(open);
   };
 

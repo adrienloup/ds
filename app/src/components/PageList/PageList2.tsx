@@ -7,7 +7,7 @@ export const PageList2 = () => {
   console.log("PageList2");
 
   const listed = pages.filter(
-    (page: PageType) => page.category === "getting started"
+    (page: PageType) => page.category === "getting started",
   );
 
   return (
