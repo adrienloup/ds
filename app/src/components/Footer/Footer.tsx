@@ -8,6 +8,7 @@ import style from "./Footer.module.scss";
 
 export const Footer = () => {
   console.log("Footer");
+
   const { data } = useContext<DataType>(DataContext);
   const [login, setLogin] = useState(false);
 

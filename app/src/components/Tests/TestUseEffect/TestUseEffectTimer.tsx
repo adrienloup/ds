@@ -29,13 +29,13 @@ export function TestUseEffectTimer() {
 
   return (
     <div style={{ marginTop: "2rem" }}>
+      <div style={{ marginBottom: "1rem" }}>Countdown {secondsLeft}</div>
       <input
         type="text"
         value={duration}
         onChange={(e) => handleChange(Number(e.target.value))}
         placeholder="Timer"
       />
-      <p style={{ marginTop: "1rem" }}>Countdown: {secondsLeft}</p>
     </div>
   );
 }

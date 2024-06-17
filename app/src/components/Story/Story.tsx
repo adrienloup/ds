@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode, useState } from "react";
-// import { useAlert } from "../../hooks/useAlert";
+import { useAlert } from "../../hooks/useAlert";
 import { Button } from "../../components/Button/Button";
 import { Icon } from "../../components/Icon/Icon";
 import style from "./Story.module.scss";
@@ -23,14 +23,14 @@ export const Story = ({
   css,
 }: StoryType) => {
   const [expanded, setExpanded] = useState<boolean>(true);
-  // const { addAlert } = useAlert();
+  const { addAlert } = useAlert();
 
   const copyCode = () => {
     navigator.clipboard.writeText(copy!);
-    // addAlert({
-    //   text: "Copied",
-    //   timeout: 1,
-    // });
+    addAlert({
+      text: "Copied",
+      timeout: 1,
+    });
   };
 
   return (

@@ -1,15 +1,16 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../../contexts/DataContext";
-import { DataType } from "../../models/Data";
+import { MenuContext } from "../../contexts/MenuContext";
+import { MenuType } from "../../models/Menu";
 import { Accordion } from "../Accordion/Accordion";
 import pages from "../../data/pages.json";
 import style from "./Menu.module.scss";
 
 export const Menu = () => {
   console.log("Menu");
-  const { data, setData } = useContext<DataType>(DataContext);
-  const [expanded, setExpanded] = useState<string | boolean>(data.category);
+
+  const { dataMenu, setDataMenu } = useContext<MenuType>(MenuContext);
+  const [expanded, setExpanded] = useState<string | boolean>(dataMenu);
 
   const categoryList = () => {
     const list = [];
@@ -38,7 +39,7 @@ export const Menu = () => {
   };
 
   const onClick = (category: string) => {
-    setData({ ...data, category: expanded !== category ? category : "" });
+    setDataMenu(expanded !== category ? category : "");
     setExpanded(expanded !== category ? category : false);
   };
 

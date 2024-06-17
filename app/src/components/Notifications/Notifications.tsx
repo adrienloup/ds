@@ -1,26 +1,29 @@
 import { useContext, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
-import { DataContext } from "../../contexts/DataContext";
-import { DataType } from "../../models/Data";
+import { NotificationContext } from "../../contexts/NotificationContext";
+import { NotificationsType } from "../../models/Notification";
 import { NotificationForm } from "./NotificationForm";
 import { Notification } from "./Notification";
 import style from "./Notifications.module.scss";
 
 export const Notifications = () => {
-  const { data, setData } = useContext<DataType>(DataContext);
-  const [notifications, setNotifications] = useState(data.notifications);
+  console.log("Notifications");
+
+  const { dataNotifications, setDataNotification } =
+    useContext<NotificationsType>(NotificationContext);
+  const [notifications, setNotifications] = useState(dataNotifications);
   const { user } = useAuth();
 
   const handleDelete = (id: number) => {
     const listed = notifications.filter(
       (notification) => notification.id !== id
     );
-    setData({ ...data, notifications: [...listed] });
+    setDataNotification([...listed]);
     setNotifications([...listed]);
   };
 
   const handleAdd = ({ id, title }: { id: number; title: string }) => {
-    setData({ ...data, notifications: [...notifications, { id, title }] });
+    setDataNotification([...dataNotifications, { id, title }]);
     setNotifications([...notifications, { id, title }]);
   };
 

@@ -1,4 +1,4 @@
-import { memo, ReactNode } from "react";
+import { ReactNode } from "react";
 import style from "./Promote.module.scss";
 
 interface PromoteType {
@@ -7,7 +7,7 @@ interface PromoteType {
   foot?: ReactNode;
 }
 
-export const Promote = memo(({ head, body, foot }: PromoteType) => {
+export const Promote = ({ head, body, foot }: PromoteType) => {
   console.log("promote");
 
   return (
@@ -17,4 +17,4 @@ export const Promote = memo(({ head, body, foot }: PromoteType) => {
       {foot && <div className={style.foot}>{foot}</div>}
     </div>
   );
-});
+};

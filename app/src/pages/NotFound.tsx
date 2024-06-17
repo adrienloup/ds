@@ -13,7 +13,7 @@ function NotFoundPage() {
       <Header />
       <Main>
         <h1>
-          <span>The page is not found or it is under construction</span> but
+          <span>The page is not found or it is under construction but</span>{" "}
           don't give up :)
         </h1>
       </Main>

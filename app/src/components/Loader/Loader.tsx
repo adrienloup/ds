@@ -1,23 +1,21 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import style from "./Loader.module.scss";
 
 export const Loader = () => {
+  console.log("Loader");
+
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const percent = Math.round((count * 100) / 3);
-
-  const counter = useCallback(() => {
-    setCount((count) => count + 1);
-  }, []);
 
   useEffect(() => {
     if (count >= 3) {
       document.documentElement.classList.add(`${style.loaded}`);
       return;
     }
-    const interval = setInterval(counter, 300);
+    const interval = setInterval(() => setCount((count) => count + 1), 300);
     return () => clearInterval(interval);
-  }, [counter, count]);
+  }, [count]);
 
   return (
     <div ref={ref} className={style.loader}>
