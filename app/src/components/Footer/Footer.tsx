@@ -33,7 +33,7 @@ export const Footer = () => {
       {login &&
         createPortal(
           <Login open={login} handleClick={() => setLogin(false)} />,
-          document.body
+          document.body,
         )}
     </footer>
   );

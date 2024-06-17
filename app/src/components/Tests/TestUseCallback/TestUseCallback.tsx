@@ -43,5 +43,5 @@ const TestUseCallbackTodos = memo(
         </button>
       </>
     );
-  }
+  },
 );

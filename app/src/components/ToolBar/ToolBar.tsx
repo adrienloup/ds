@@ -62,7 +62,7 @@ export const ToolBar = ({ onSettings }: ToolBarType) => {
             open={modal}
             onClick={() => setModal(false)}
           />,
-          document.body
+          document.body,
         )}
     </div>
   );

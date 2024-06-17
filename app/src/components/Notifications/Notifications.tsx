@@ -16,7 +16,7 @@ export const Notifications = () => {
 
   const handleDelete = (id: number) => {
     const listed = notifications.filter(
-      (notification) => notification.id !== id
+      (notification) => notification.id !== id,
     );
     setDataNotification([...listed]);
     setNotifications([...listed]);

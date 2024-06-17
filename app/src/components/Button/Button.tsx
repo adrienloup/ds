@@ -70,5 +70,5 @@ export const Button = memo(
     );
 
     return href ? a : to ? link : button;
-  }
+  },
 );
