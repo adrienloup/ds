@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useAuth } from "../../hooks/useAuth";
+import { useUser } from "../../hooks/useUser";
 import { NotificationContext } from "../../contexts/NotificationContext";
 import { NotificationsType } from "../../models/Notification";
 import { NotificationForm } from "./NotificationForm";
@@ -12,11 +12,11 @@ export const Notifications = () => {
   const { dataNotifications, setDataNotification } =
     useContext<NotificationsType>(NotificationContext);
   const [notifications, setNotifications] = useState(dataNotifications);
-  const { user } = useAuth();
+  const { user } = useUser();
 
   const handleDelete = (id: number) => {
     const listed = notifications.filter(
-      (notification) => notification.id !== id,
+      (notification) => notification.id !== id
     );
     setDataNotification([...listed]);
     setNotifications([...listed]);

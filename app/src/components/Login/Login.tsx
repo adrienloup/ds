@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useAuth } from "../../hooks/useAuth";
+import { useUser } from "../../hooks/useUser";
 import { LoginForm } from "./LoginForm";
 import style from "./Login.module.scss";
 
@@ -13,7 +13,7 @@ export const Login = ({ open, handleClick }: LoginType) => {
   const [height, setHeight] = useState<number>(0);
   const [error, setError] = useState<string>("");
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login } = useUser();
 
   const handleAdd = ({
     id,
@@ -29,8 +29,9 @@ export const Login = ({ open, handleClick }: LoginType) => {
     if (user.name === "adrien" && user.password === "loup") {
       login({
         id: user.id,
-        name: "adrien",
+        name: user.name,
       });
+      handleClick();
       navigate("/ds/login/");
     } else {
       setError("errorMessage");

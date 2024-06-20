@@ -1,21 +1,21 @@
-import { useContext, useState } from "react";
-import { DataContext } from "../contexts/DataContext";
-import { DataType } from "../models/Data";
-import { UserType } from "../models/User";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import { AuthType } from "../models/Auth";
+import { useLocalStorage } from "./useLocalStorage";
+
+const LocalData = () => {
+  const { dataAuth } = useContext<AuthType>(AuthContext);
+  const { getItem } = useLocalStorage();
+  return JSON.parse(getItem("_ds_y0y09_10_auth") as string) ?? dataAuth;
+};
 
 export const useAuth = () => {
-  const { data, setData } = useContext<DataType>(DataContext);
-  const [user, setUser] = useState<UserType | null>(data.user);
+  const [dataAuth, setDataAuth] = useState(LocalData());
+  const { setItem } = useLocalStorage();
 
-  const login = (user: UserType | null) => {
-    setData({ ...data, user: user });
-    setUser(user);
-  };
+  useEffect(() => {
+    setItem("_ds_y0y09_10_auth", JSON.stringify(dataAuth));
+  }, [dataAuth, setDataAuth]);
 
-  const logout = () => {
-    setData({ ...data, user: null });
-    setUser(null);
-  };
-
-  return { user, login, logout };
+  return { dataAuth, setDataAuth };
 };

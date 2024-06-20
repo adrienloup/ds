@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { DataContextProvider } from "./contexts/DataContext";
+import { AuthContextProvider } from "./contexts/AuthContext";
 import { SettingContextProvider } from "./contexts/SettingContext";
 import { MenuContextProvider } from "./contexts/MenuContext";
 import { NotificationContextProvider } from "./contexts/NotificationContext";
@@ -15,7 +15,7 @@ import "./App.scss";
 
 function App() {
   return (
-    <DataContextProvider>
+    <AuthContextProvider>
       <SettingContextProvider>
         <MenuContextProvider>
           <NotificationContextProvider>
@@ -35,7 +35,7 @@ function App() {
           </NotificationContextProvider>
         </MenuContextProvider>
       </SettingContextProvider>
-    </DataContextProvider>
+    </AuthContextProvider>
   );
 }
 

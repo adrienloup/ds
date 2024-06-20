@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { createPortal } from "react-dom";
-import { DataContext } from "../../contexts/DataContext";
-import { DataType } from "../../models/Data";
+import { AuthContext } from "../../contexts/AuthContext";
+import { AuthType } from "../../models/Auth";
 import { Button } from "../Button/Button";
 import { Login } from "../Login/Login";
 import style from "./Footer.module.scss";
@@ -9,14 +9,18 @@ import style from "./Footer.module.scss";
 export const Footer = () => {
   console.log("Footer");
 
-  const { data } = useContext<DataType>(DataContext);
+  const { dataAuth } = useContext<AuthType>(AuthContext);
   const [login, setLogin] = useState(false);
 
   return (
     <footer role="contentinfo" className={style.footer}>
       <div className={style.inner}>
-        {data.user ? (
-          <Button ariaLabel={"Logout"} cssClass={style.button} to={"/ds/login"}>
+        {dataAuth.user ? (
+          <Button
+            ariaLabel={"Logout"}
+            cssClass={style.button}
+            to={"/ds/login/"}
+          >
             Logout
           </Button>
         ) : (
@@ -33,7 +37,7 @@ export const Footer = () => {
       {login &&
         createPortal(
           <Login open={login} handleClick={() => setLogin(false)} />,
-          document.body,
+          document.body
         )}
     </footer>
   );
