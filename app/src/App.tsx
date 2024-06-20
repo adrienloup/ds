@@ -6,6 +6,7 @@ import { NotificationsContextProvider } from "./contexts/Notifications";
 import { AlertContextProvider } from "./contexts/Alert";
 import { Loader } from "./components/Loader/Loader";
 import HomePage from "./pages/Home";
+import BadgePage from "./pages/Badge";
 import ButtonPage from "./pages/Button";
 import FabPage from "./pages/Fab";
 import LoginPage from "./pages/Login";
@@ -25,6 +26,7 @@ function App() {
               <BrowserRouter>
                 <Routes>
                   <Route path="/ds/" element={<HomePage />} />
+                  <Route path="/ds/badge" element={<BadgePage />} />
                   <Route path="/ds/button" element={<ButtonPage />} />
                   <Route path="/ds/fab" element={<FabPage />} />
                   <Route path="/ds/login" element={<LoginPage />} />

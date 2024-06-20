@@ -22,15 +22,11 @@ export function TestMemo() {
 const GoodMemo = memo(function Good() {
   console.log("TestMemo > Good");
 
-  return <div style={{ marginTop: "1rem" }}>Good</div>;
+  return <div style={{ marginTop: "1rem" }}>Good Memo</div>;
 });
 
 const BadMemo = memo(function Bad({ demo }: { demo: string }) {
   console.log("TestMemo > Bad");
 
-  return (
-    <div style={{ marginTop: "1rem" }}>
-      Bad {demo ? "Restored despite memorization" : ""}
-    </div>
-  );
+  return <div style={{ marginTop: "1rem" }}>Bad Meno ({demo})</div>;
 });
