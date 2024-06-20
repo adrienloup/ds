@@ -1,4 +1,4 @@
-import style from "./Icon.module.scss";
+import "./Icon.scss";
 
 export interface DsIconType {
   name: string;
@@ -9,7 +9,7 @@ export const DsIcon = ({ name, cssClass }: DsIconType) => {
   return (
     <span
       aria-hidden={false}
-      className={[style["ds-icon"], cssClass ? ` ${cssClass}` : ""].join("")}
+      className={["ds-icon", cssClass ? ` ${cssClass}` : ""].join("")}
     >
       {name}
     </span>

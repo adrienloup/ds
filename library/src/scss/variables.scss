@@ -1,32 +1,32 @@
 @mixin fonts {
-  --font-icon: "Material-Icons", sans-serif;
-  --font-text-bold: "Prompt-Bold", sans-serif;
-  --font-text-regular: "Prompt-Regular", sans-serif;
+  --ds-font-icon: "Material-Icons", sans-serif;
+  --ds-font-text-bold: "Prompt-Bold", sans-serif;
+  --ds-font-text-regular: "Prompt-Regular", sans-serif;
 }
 
 @mixin colors {
-  --color-neutral-1: #1b1b1b;
-  --color-neutral-2: #2b2b2b;
-  --color-neutral-3: #5e5e5e;
-  --color-neutral-4: #c3c3c3;
-  --color-neutral-5: #eee;
-  --color-neutral-6: #fff;
-  --color-purple: #ba14d7;
-  --color-purple-darked: #a310bd;
-  --color-magenta: #f4008f;
-  --color-magenta-darked: #cb0076;
-  --color-blue: #002bff;
-  --color-blue-darked: #0120b9;
-  --color-cyan: #08d9e1;
-  --color-cyan-darked: #05adb3;
-  --color-chartreuse: #1dcc45;
-  --color-chartreuse-darked: #42b883;
-  --color-yellow: #fff500;
-  --color-yellow-darked: #e9e100;
-  --color-orange: #ff7300;
-  --color-orange-darked: #cf5d00;
-  --color-red: #ff1100;
-  --color-red-darked: #cc0e00;
+  --ds-color-neutral-1: #1b1b1b;
+  --ds-color-neutral-2: #2b2b2b;
+  --ds-color-neutral-3: #5e5e5e;
+  --ds-color-neutral-4: #c3c3c3;
+  --ds-color-neutral-5: #eee;
+  --ds-color-neutral-6: #fff;
+  --ds-color-purple: #ba14d7;
+  --ds-color-purple-darked: #a310bd;
+  --ds-color-magenta: #f4008f;
+  --ds-color-magenta-darked: #cb0076;
+  --ds-color-blue: #002bff;
+  --ds-color-blue-darked: #0120b9;
+  --ds-color-cyan: #08d9e1;
+  --ds-color-cyan-darked: #05adb3;
+  --ds-color-chartreuse: #1dcc45;
+  --ds-color-chartreuse-darked: #42b883;
+  --ds-color-yellow: #fff500;
+  --ds-color-yellow-darked: #e9e100;
+  --ds-color-orange: #ff7300;
+  --ds-color-orange-darked: #cf5d00;
+  --ds-color-red: #ff1100;
+  --ds-color-red-darked: #cc0e00;
 }
 
 :root {

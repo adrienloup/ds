@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import style from "./Button.module.scss";
+import "./Button.scss";
 
 export interface DsButtonType {
   children: ReactNode;
@@ -36,11 +36,12 @@ export const DsButton = ({
       aria-label={ariaLabel}
       tabIndex={disabled ? -1 : 0}
       className={[
-        style["ds-button"],
-        ` ${style[variant]}`,
-        ` ${style[size]}`,
-        status ? ` ${style[status]}` : "",
-        disabled ? ` ${style.disabled}` : "",
+        "ds-button",
+        ` ds-button-${variant}`,
+        ` ds-button-${size}`,
+        ,
+        status ? ` ds-button-${status}` : "",
+        disabled ? ` ds-button-disabled` : "",
         cssClass ? ` ${cssClass}` : "",
       ].join("")}
       {...buttonProps}
@@ -54,11 +55,12 @@ export const DsButton = ({
       aria-label={ariaLabel}
       tabIndex={disabled ? -1 : 0}
       className={[
-        style["ds-button"],
-        ` ${style[variant]}`,
-        ` ${style[size]}`,
-        status ? ` ${style[status]}` : "",
-        disabled ? ` ${style.disabled}` : "",
+        "ds-button",
+        ` ds-button-${variant}`,
+        ` ds-button-${size}`,
+        ,
+        status ? ` ds-button-${status}` : "",
+        disabled ? ` ds-button-disabled` : "",
         cssClass ? ` ${cssClass}` : "",
       ].join("")}
       onClick={onClick}

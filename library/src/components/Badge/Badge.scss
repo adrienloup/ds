@@ -1,0 +1,81 @@
+@use "../../scss/index.scss" as *;
+
+.ds-badge {
+  position: relative;
+  display: inline-block;
+
+  &_content {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ds-font-text-regular);
+    user-select: none;
+    color: var(--ds-color-neutral-6);
+  }
+
+  &-small {
+    .ds-badge_content {
+      top: -0.2rem;
+      right: -0.3rem;
+      width: 0.75rem;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      font-size: 0;
+    }
+  }
+
+  &-medium {
+    .ds-badge_content {
+      top: -0.15rem;
+      right: -0.5rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.875rem;
+      font-size: 0.75rem;
+    }
+
+    .ds-icon {
+      font-size: 2.75rem;
+    }
+  }
+
+  &-large {
+    .ds-badge_content {
+      top: 0;
+      right: -0.6rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 0.875rem;
+      font-size: 1rem;
+    }
+
+    .ds-icon {
+      font-size: 3.75rem;
+    }
+  }
+
+  &-info {
+    .ds-badge_content {
+      background-color: var(--ds-color-blue);
+    }
+  }
+
+  &-success {
+    .ds-badge_content {
+      background-color: var(--ds-color-chartreuse);
+      color: var(--ds-color-neutral-1);
+    }
+  }
+
+  &-warning {
+    .ds-badge_content {
+      background-color: var(--ds-color-orange);
+    }
+  }
+
+  &-error {
+    .ds-badge_content {
+      background-color: var(--ds-color-red);
+    }
+  }
+}
