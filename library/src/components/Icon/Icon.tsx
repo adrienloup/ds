@@ -1,11 +1,11 @@
 import style from "./Icon.module.scss";
 
-interface IconType {
+export interface DsIconType {
   name: string;
   cssClass?: string;
 }
 
-export const DsIcon = ({ name, cssClass }: IconType) => {
+export const DsIcon = ({ name, cssClass }: DsIconType) => {
   return (
     <span
       aria-hidden={false}

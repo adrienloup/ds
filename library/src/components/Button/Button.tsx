@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import style from "./Button.module.scss";
 
-type ButtonType = {
+export interface DsButtonType {
   children: ReactNode;
   variant?: string;
   status?: "info" | "success" | "warning" | "error";
@@ -11,8 +11,9 @@ type ButtonType = {
   disabled?: boolean;
   cssClass?: string;
   href?: string;
+  buttonProps?: object;
   onClick?: () => void;
-};
+}
 
 export const DsButton = ({
   children,
@@ -24,8 +25,9 @@ export const DsButton = ({
   disabled = false,
   cssClass,
   href,
+  buttonProps,
   onClick = () => {},
-}: ButtonType) => {
+}: DsButtonType) => {
   const a = (
     <a
       href={href}
@@ -41,6 +43,7 @@ export const DsButton = ({
         disabled ? ` ${style.disabled}` : "",
         cssClass ? ` ${cssClass}` : "",
       ].join("")}
+      {...buttonProps}
     >
       {children}
     </a>
@@ -59,6 +62,7 @@ export const DsButton = ({
         cssClass ? ` ${cssClass}` : "",
       ].join("")}
       onClick={onClick}
+      {...buttonProps}
     >
       {children}
     </button>
