@@ -1,10 +1,9 @@
 import { ReactNode } from "react";
-import style from "./Button.module.scss";
+import style from "./Fab.module.scss";
 
-export interface DsButtonType {
+export interface DsFabProps {
   children: ReactNode;
-  variant?: string;
-  status?: "info" | "success" | "warning" | "error";
+  variant?: "contained";
   size?: "small" | "medium" | "large";
   type?: "button" | "submit" | "reset";
   ariaLabel?: string;
@@ -15,10 +14,9 @@ export interface DsButtonType {
   onClick?: () => void;
 }
 
-export const DsButton = ({
+export const DsFab = ({
   children,
   variant = "contained",
-  status,
   size = "medium",
   type = "button",
   ariaLabel,
@@ -27,7 +25,7 @@ export const DsButton = ({
   href,
   buttonProps,
   onClick = () => {},
-}: DsButtonType) => {
+}: DsFabProps) => {
   const a = (
     <a
       href={href}
@@ -36,10 +34,9 @@ export const DsButton = ({
       aria-label={ariaLabel}
       tabIndex={disabled ? -1 : 0}
       className={[
-        style["ds-button"],
+        style.fab,
         ` ${style[variant]}`,
         ` ${style[size]}`,
-        status ? ` ${style[status]}` : "",
         disabled ? ` ${style.disabled}` : "",
         cssClass ? ` ${cssClass}` : "",
       ].join("")}
@@ -54,10 +51,9 @@ export const DsButton = ({
       aria-label={ariaLabel}
       tabIndex={disabled ? -1 : 0}
       className={[
-        style["ds-button"],
+        style.fab,
         ` ${style[variant]}`,
         ` ${style[size]}`,
-        status ? ` ${style[status]}` : "",
         disabled ? ` ${style.disabled}` : "",
         cssClass ? ` ${cssClass}` : "",
       ].join("")}
