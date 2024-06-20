@@ -10,7 +10,12 @@ export function TestUseEffect() {
   return (
     <>
       <label
-        style={{ display: "flex", alignItems: "center", marginTop: "1rem" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "1rem",
+          marginTop: "1rem",
+        }}
       >
         <input
           type="checkbox"

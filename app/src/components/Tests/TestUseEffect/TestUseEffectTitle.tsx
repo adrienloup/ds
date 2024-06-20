@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 export function TestUseEffectTitle() {
+  console.log("TestUseEffectTitle");
+
   const [title, setTitle] = useState("Title page");
   const [anotherState, setAnotherState] = useState("Another state");
   const [Y, setY] = useState(0);

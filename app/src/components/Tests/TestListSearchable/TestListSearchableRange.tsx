@@ -6,7 +6,14 @@ export function TestListSearchableRange({
   onChange: (v: string) => void;
 }) {
   return (
-    <div style={{ marginBottom: "1rem" }}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "1rem",
+        marginBottom: "1rem",
+      }}
+    >
       <input
         type="range"
         min="0"

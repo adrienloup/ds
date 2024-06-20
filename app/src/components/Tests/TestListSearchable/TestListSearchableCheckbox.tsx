@@ -8,7 +8,7 @@ export function TestListSearchableCheckbox({
   onChange: (v: boolean) => void;
 }) {
   return (
-    <label style={{ display: "flex", alignItems: "center" }}>
+    <label style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
       <input
         type="checkbox"
         checked={checked}

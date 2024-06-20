@@ -9,6 +9,7 @@ import { TestUseRef } from "./TestUseRef/TestUseRef";
 import { TestCount } from "./TestCount/TestCount";
 import { TestMemo } from "./TestMemo/TestMemo";
 import style from "./Tests.module.scss";
+import { TestUseReducer } from "./TestUseReducer/TestUseReducer";
 
 export const Tests = () => {
   console.log("Tests");
@@ -74,6 +75,7 @@ export const Tests = () => {
       {/* USEREDUCER */}
       <div className={style.test}>
         <div className={style.title}>useReducer</div>
+        <TestUseReducer />
       </div>
 
       {/* MEMO */}
