@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { DataContextProvider } from "./contexts/DataContext";
-import { SettingContextProvider } from "./contexts/SettingContext";
-import { MenuContextProvider } from "./contexts/MenuContext";
-import { NotificationContextProvider } from "./contexts/NotificationContext";
-import { AlertContextProvider } from "./contexts/AlertContext";
+import { AuthContextProvider } from "./contexts/Auth";
+import { SettingsContextProvider } from "./contexts/Settings";
+import { MenuContextProvider } from "./contexts/Menu";
+import { NotificationsContextProvider } from "./contexts/Notifications";
+import { AlertContextProvider } from "./contexts/Alert";
 import { Loader } from "./components/Loader/Loader";
 import HomePage from "./pages/Home";
 import ButtonPage from "./pages/Button";
@@ -15,10 +15,10 @@ import "./App.scss";
 
 function App() {
   return (
-    <DataContextProvider>
-      <SettingContextProvider>
+    <AuthContextProvider>
+      <SettingsContextProvider>
         <MenuContextProvider>
-          <NotificationContextProvider>
+          <NotificationsContextProvider>
             <AlertContextProvider>
               <Loader />
               <BrowserRouter>
@@ -32,10 +32,10 @@ function App() {
                 </Routes>
               </BrowserRouter>
             </AlertContextProvider>
-          </NotificationContextProvider>
+          </NotificationsContextProvider>
         </MenuContextProvider>
-      </SettingContextProvider>
-    </DataContextProvider>
+      </SettingsContextProvider>
+    </AuthContextProvider>
   );
 }
 

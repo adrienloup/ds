@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState, useRef } from "react";
-import { SettingContext } from "../../contexts/SettingContext";
-import { SettingType } from "../../models/Setting";
+import { SettingsContext } from "../../contexts/Settings";
+import { SettingsType } from "../../models/Settings";
 import { useAlert } from "../../hooks/useAlert";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
@@ -15,15 +15,15 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
   console.log("Settings");
 
   const { addAlert } = useAlert();
-  const { dataSettings, setDataSetting } =
-    useContext<SettingType>(SettingContext);
+  const { dataSettings, setDataSettings } =
+    useContext<SettingsType>(SettingsContext);
   const [mode, setMode] = useState(dataSettings.mode);
   const asideRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
 
   const handleMode = (mode: string) => {
     dataSettings.mode = mode;
-    setDataSetting({ ...dataSettings });
+    setDataSettings({ ...dataSettings });
     setMode(mode);
   };
 

@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
-import { useAuth } from "../hooks/useAuth";
+import { AuthContext } from "../contexts/Auth";
+import { AuthType } from "../models/Auth";
+import { useUser } from "../hooks/useUser";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
@@ -11,8 +14,9 @@ function LoginPage() {
   console.log("LoginPage");
   useTitle("Login Page");
 
+  const { dataAuth } = useContext<AuthType>(AuthContext);
   const navigate = useNavigate();
-  const { logout } = useAuth();
+  const { logout } = useUser();
 
   const handleLogout = () => {
     logout();
@@ -23,12 +27,21 @@ function LoginPage() {
     <>
       <Header />
       <Main>
-        <h1>
-          <span>Disconnect or</span> learn more about React{" "}
-          <span>just for pleasure :)</span>
-        </h1>
-        <Button onClick={handleLogout}>Logout</Button>
-        <Button to={"/ds/test"}>learning</Button>
+        {dataAuth.user ? (
+          <>
+            <h1>
+              <span>Disconnect or</span> learn more about React{" "}
+              <span>just for pleasure :)</span>
+            </h1>
+            <Button onClick={handleLogout}>Logout</Button>
+            <Button to={"/ds/test"}>learning</Button>
+          </>
+        ) : (
+          <h1>
+            <span>The page is not found or it is under construction but</span>{" "}
+            don't give up :)
+          </h1>
+        )}
       </Main>
       <Footer />
       <ScrollToTop />

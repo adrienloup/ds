@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import { useAuth } from "../../hooks/useAuth";
-import { NotificationContext } from "../../contexts/NotificationContext";
-import { NotificationsType } from "../../models/Notification";
+import { useUser } from "../../hooks/useUser";
+import { NotificationsContext } from "../../contexts/Notifications";
+import { NotificationsType } from "../../models/Notifications";
 import { NotificationForm } from "./NotificationForm";
 import { Notification } from "./Notification";
 import style from "./Notifications.module.scss";
@@ -9,21 +9,21 @@ import style from "./Notifications.module.scss";
 export const Notifications = () => {
   console.log("Notifications");
 
-  const { dataNotifications, setDataNotification } =
-    useContext<NotificationsType>(NotificationContext);
+  const { dataNotifications, setDataNotifications } =
+    useContext<NotificationsType>(NotificationsContext);
   const [notifications, setNotifications] = useState(dataNotifications);
-  const { user } = useAuth();
+  const { user } = useUser();
 
   const handleDelete = (id: number) => {
     const listed = notifications.filter(
-      (notification) => notification.id !== id,
+      (notification) => notification.id !== id
     );
-    setDataNotification([...listed]);
+    setDataNotifications([...listed]);
     setNotifications([...listed]);
   };
 
   const handleAdd = ({ id, title }: { id: number; title: string }) => {
-    setDataNotification([...dataNotifications, { id, title }]);
+    setDataNotifications([...dataNotifications, { id, title }]);
     setNotifications([...notifications, { id, title }]);
   };
 

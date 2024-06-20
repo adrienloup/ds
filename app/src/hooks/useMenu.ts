@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { MenuContext } from "../contexts/MenuContext";
+import { MenuContext } from "../contexts/Menu";
 import { MenuType } from "../models/Menu";
 import { useLocalStorage } from "./useLocalStorage";
 
