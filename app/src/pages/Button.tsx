@@ -435,6 +435,40 @@ function ButtonPage() {
             "<DsButton variant='contained' size='small'>Small</DsButton>\n<Button variant='contained' size='medium'>Medium</DsButton>\n<Button variant='contained' size='large'>Large</DsButton>\n<Button variant='outlined' size='small'>Small</DsButton>\n<Button variant='outlined' size='medium'>Medium</DsButton>\n<Button variant='outlined' size='large'>Large</DsButton>"
           }
         />
+        <h2>
+          More Attributes <span>Button</span>
+        </h2>
+        <p>
+          When a label can't be used, it's necessary to add an attribute
+          directly to the input component. In this case, you can apply the
+          additional attribute (for example aria-label, aria-labelledby, title)
+          via the inputProps prop.
+        </p>
+        <Story
+          demo={
+            <DsButton buttonProps={{ "aria-label": "Button A" }}>
+              Button
+            </DsButton>
+          }
+          code={
+            <>
+              &lt;<span style={{ color: "#00dc09" }}>DsButton</span>{" "}
+              <span style={{ color: "#00caff" }}>buttonProps</span>
+              =&#123;&#123;
+              <br />
+              {"   "}
+              <span style={{ color: "#ffeb3b" }}>'aria-label': 'Button A'</span>
+              <br />
+              &#125;&#125;&gt;Button&lt;/
+              <span style={{ color: "#00dc09" }}>DsButton</span>&gt;
+            </>
+          }
+          codepen={"qBwmYpM"}
+          github={"Button"}
+          copy={
+            "<DsButton variant='contained' size='small'>Small</DsButton>\n<Button variant='contained' size='medium'>Medium</DsButton>\n<Button variant='contained' size='large'>Large</DsButton>\n<Button variant='outlined' size='small'>Small</DsButton>\n<Button variant='outlined' size='medium'>Medium</DsButton>\n<Button variant='outlined' size='large'>Large</DsButton>"
+          }
+        />
       </Main>
       <Footer />
       <ScrollToTop />
