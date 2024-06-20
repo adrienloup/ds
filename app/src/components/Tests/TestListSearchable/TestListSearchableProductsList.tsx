@@ -24,7 +24,7 @@ export function TestListSearchableProductsList({
     lastCategory = product.category;
   }
 
-  for (let category of categories) {
+  for (const category of categories) {
     if (!singleCategories.includes(category)) {
       singleCategories.push(category);
     }
@@ -35,7 +35,7 @@ export function TestListSearchableProductsList({
       <TestListSearchableCategory
         key={singleCategories[i]}
         name={singleCategories[i]}
-      />,
+      />
     );
     for (let j = 0; j < products.length; j++) {
       if (products[j].category === singleCategories[i]) {
@@ -43,7 +43,7 @@ export function TestListSearchableProductsList({
           <TestListSearchableProduct
             key={products[j].name}
             product={products[j]}
-          />,
+          />
         );
       }
     }

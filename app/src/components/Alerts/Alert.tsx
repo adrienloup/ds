@@ -20,7 +20,7 @@ const icon = (status: string) => {
 };
 
 export const Alert = ({
-  text = "No content",
+  text,
   title,
   status = "info",
   cssClass,
@@ -35,7 +35,7 @@ export const Alert = ({
       }, timeout * 1e3);
       return () => clearTimeout(timer);
     }
-  }, [timeout]);
+  }, []);
 
   return (
     text?.length && (

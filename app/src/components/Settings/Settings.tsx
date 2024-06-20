@@ -30,24 +30,33 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
   const onResize = () => {
     if (!asideRef.current || !innerRef.current) return;
 
-    const innerHeight = innerRef.current.offsetHeight;
+    const height = innerRef.current.clientHeight;
 
-    asideRef.current.style.height = innerHeight + "px";
-    asideRef.current.style.top = `${
-      open ? -innerHeight : -(innerHeight / 2)
-    }px`;
+    asideRef.current.style.height = height + "px";
+    asideRef.current.style.top = `-${open ? height : height / 2}px`;
 
     document.getElementById("_ds_y0y09_10")!.style.paddingTop = `${
-      open ? innerHeight : 0
+      open ? height : 0
     }px`;
   };
 
   useEffect(() => {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  });
+  }, []);
 
-  useEffect(() => onResize());
+  useEffect(() => {
+    onResize();
+  }, [open]);
+
+  // @TODO: there is a problem observed one in three times.
+  // A delta of 6 pixels causing a modification of the 'height' value of '.settings'
+  // and the 'padding-top' of '#_ds_y0y09_10'.
+  // useEffect(() => {
+  //   setTimeout(function () {
+  //     onResize();
+  //   }, 100);
+  // }, []);
 
   return (
     <aside
