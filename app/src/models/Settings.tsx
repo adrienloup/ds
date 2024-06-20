@@ -1,10 +1,10 @@
-export interface SettingType {
+export interface SettingsType {
   dataSettings: {
     dir: string;
     mode: string;
     open: boolean;
   };
-  setDataSetting: (dataSettings: {
+  setDataSettings: (dataSettings: {
     dir: string;
     mode: string;
     open: boolean;

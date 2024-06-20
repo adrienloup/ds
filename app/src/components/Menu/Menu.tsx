@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { MenuContext } from "../../contexts/MenuContext";
+import { MenuContext } from "../../contexts/Menu";
 import { MenuType } from "../../models/Menu";
 import { Accordion } from "../Accordion/Accordion";
 import pages from "../../data/pages.json";

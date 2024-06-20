@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { createPortal } from "react-dom";
-import { AuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/Auth";
 import { AuthType } from "../../models/Auth";
 import { Button } from "../Button/Button";
 import { Login } from "../Login/Login";

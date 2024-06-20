@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { createPortal } from "react-dom";
-import { NotificationContext } from "../../contexts/NotificationContext";
-import { NotificationsType } from "../../models/Notification";
+import { NotificationsContext } from "../../contexts/Notifications";
+import { NotificationsType } from "../../models/Notifications";
 import { Notifications } from "../Notifications/Notifications";
 import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
@@ -17,7 +17,7 @@ export const ToolBar = ({ onSettings }: ToolBarType) => {
   console.log("ToolBar");
 
   const { dataNotifications } =
-    useContext<NotificationsType>(NotificationContext);
+    useContext<NotificationsType>(NotificationsContext);
   const [modal, setModal] = useState(false);
 
   return (
@@ -62,7 +62,7 @@ export const ToolBar = ({ onSettings }: ToolBarType) => {
             open={modal}
             onClick={() => setModal(false)}
           />,
-          document.body,
+          document.body
         )}
     </div>
   );

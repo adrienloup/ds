@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
-import { AuthContext } from "../contexts/AuthContext";
+import { AuthContext } from "../contexts/Auth";
 import { AuthType } from "../models/Auth";
 import { useUser } from "../hooks/useUser";
 import { Header } from "../components/Header/Header";
