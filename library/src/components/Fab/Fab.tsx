@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import style from "./Fab.module.scss";
+import "./Fab.scss";
 
 export interface DsFabProps {
   children: ReactNode;
@@ -34,10 +34,11 @@ export const DsFab = ({
       aria-label={ariaLabel}
       tabIndex={disabled ? -1 : 0}
       className={[
-        style.fab,
-        ` ${style[variant]}`,
-        ` ${style[size]}`,
-        disabled ? ` ${style.disabled}` : "",
+        "ds-fab",
+        ` ds-fab-${variant}`,
+        ` ds-fab-${size}`,
+        ,
+        disabled ? ` ds-fab-disabled` : "",
         cssClass ? ` ${cssClass}` : "",
       ].join("")}
       {...buttonProps}
@@ -51,10 +52,11 @@ export const DsFab = ({
       aria-label={ariaLabel}
       tabIndex={disabled ? -1 : 0}
       className={[
-        style.fab,
-        ` ${style[variant]}`,
-        ` ${style[size]}`,
-        disabled ? ` ${style.disabled}` : "",
+        "ds-fab",
+        ` ds-fab-${variant}`,
+        ` ds-fab-${size}`,
+        ,
+        disabled ? ` ds-fab-disabled` : "",
         cssClass ? ` ${cssClass}` : "",
       ].join("")}
       onClick={onClick}

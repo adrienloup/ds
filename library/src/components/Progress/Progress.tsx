@@ -1,19 +1,19 @@
 import { useId } from "react";
-import style from "./Progress.module.scss";
+import "./Progress.scss";
 
-type ProgressProps = {
+export interface DsProgressType {
   value: number;
   title?: string;
   size?: "medium" | "large";
   display?: "circular" | "linear";
-};
+}
 
 export const DsProgress = ({
   title,
   size = "medium",
   display = "linear",
   value,
-}: ProgressProps) => {
+}: DsProgressType) => {
   const uId = useId();
   const formatedValue: number = Math.abs(value);
   const thickness = size === "large" ? 10 : 7;
@@ -25,52 +25,52 @@ export const DsProgress = ({
   return (
     <div
       className={[
-        `${style.progress}`,
-        ` ${style[size]}`,
-        ` ${style[display]}`,
+        "ds-progress",
+        ` ds-progress-${display}`,
+        ` ds-progress-${size}`,
       ].join("")}
     >
       {display === "linear" ? (
-        <div className={style.inner}>
-          <span className={style.value}>{formatedValue}%</span>
+        <div className={"ds-progress_inner"}>
+          <span className={"ds-progress_value"}>{formatedValue}%</span>
           <div
-            className={style.progressbar}
+            className={"ds-progress_progressbar"}
             role="progressbar"
             aria-labelledby={uId}
             aria-valuenow={formatedValue}
           >
             <div
-              className={style.width}
+              className={"ds-progress_width"}
               style={{ width: `${formatedValue}%` }}
             ></div>
           </div>
-          <span id={uId} className={style.label}>
+          <span id={uId} className={"ds-progress_label"}>
             {title}
           </span>
         </div>
       ) : (
         <>
           <div
-            className={style.progressbar}
+            className={"ds-progress_progressbar"}
             role="progressbar"
             aria-labelledby={uId}
             aria-valuenow={formatedValue}
           >
             <svg
-              className={style.svg}
+              className={"ds-progress_svg"}
               width={diameter}
               height={diameter}
               viewBox={`0 0 ${diameter} ${diameter}`}
             >
               <circle
-                className={style.circle}
+                className={"ds-progress_circle"}
                 cx={diameter / 2}
                 cy={diameter / 2}
                 r={(diameter - thickness) / 2}
                 strokeWidth={`${thickness}px`}
               />
               <circle
-                className={style.width}
+                className={"ds-progress_width"}
                 cx={diameter / 2}
                 cy={diameter / 2}
                 r={(diameter - thickness) / 2}
@@ -82,9 +82,9 @@ export const DsProgress = ({
                 }}
               />
             </svg>
-            <span className={style.value}>{formatedValue}%</span>
+            <span className={"ds-progress_value"}>{formatedValue}%</span>
           </div>
-          <span id={uId} className={style.label}>
+          <span id={uId} className={"ds-progress_label"}>
             {title}
           </span>
         </>

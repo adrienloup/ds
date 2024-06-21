@@ -1,0 +1,126 @@
+@use "../../scss/index.scss" as *;
+
+.ds-progress {
+  text-align: left;
+
+  &_label,
+  &_value {
+    font-family: var(--font-text-bold);
+  }
+
+  &_value {
+    color: var(--color-purple);
+  }
+
+  &-linear {
+    display: flex;
+    justify-content: center;
+
+    .ds-progress_inner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ds-progress_progressbar {
+      width: 100%;
+      margin: 1rem 0;
+      background-color: var(--color-neutral-5);
+    }
+
+    .ds-progress_width {
+      width: 0%;
+      height: 100%;
+      background-color: var(--color-purple);
+    }
+  }
+
+  &-circular {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ds-progress_value {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ds-progress_progressbar {
+      position: relative;
+    }
+
+    .ds-progress_svg {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ds-progress_circle,
+    .ds-progress_width {
+      fill: none;
+    }
+
+    .ds-progress_circle {
+      stroke: var(--color-neutral-5);
+    }
+
+    .ds-progress_width {
+      stroke: var(--color-purple);
+      stroke-linecap: butt;
+      stroke-linejoin: round;
+    }
+  }
+
+  &-medium {
+    .ds-progress_label {
+      font-size: 1.25rem;
+    }
+
+    .ds-progress_value {
+      font-size: 1rem;
+    }
+
+    &.ds-progress-circular {
+      .ds-progress_label {
+        padding-left: 1rem;
+      }
+    }
+
+    &.ds-progress-linear {
+      .ds-progress_progressbar {
+        height: 0.5rem;
+      }
+    }
+  }
+
+  &-large {
+    .ds-progress_label {
+      font-size: 1.5rem;
+    }
+
+    .ds-progress_value {
+      font-size: 1.5rem;
+    }
+
+    &.ds-progress-circular {
+      flex-direction: column;
+
+      .ds-progress_label {
+        padding-top: 1rem;
+      }
+    }
+
+    &.ds-progress-linear {
+      .ds-progress_progressbar {
+        height: 0.75rem;
+      }
+    }
+  }
+}
