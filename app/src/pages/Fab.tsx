@@ -4,7 +4,6 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Story } from "../components/Story/Story";
-
 import { DsIcon } from "design-system/src/components/Icon/Icon";
 import { DsFab } from "design-system/src/components/Fab/Fab";
 

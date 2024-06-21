@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Promote } from "../components/Promote/Promote";
-import { PageList2 } from "../components/PageList/PageList2";
+import { Cards } from "../components/Card/Cards";
 import { Button } from "../components/Button/Button";
 
 function OverviewPage() {
@@ -37,7 +37,7 @@ function OverviewPage() {
           Get started with DS library{" "}
           <span>today through some of these useful resources</span>
         </h2>
-        <PageList2 />
+        <Cards />
       </Main>
       <Footer />
       <ScrollToTop />

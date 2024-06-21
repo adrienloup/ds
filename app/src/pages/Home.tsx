@@ -3,8 +3,8 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
+import { CardsSearchable } from "../components/Card/CardsSearchable";
 import { Promote } from "../components/Promote/Promote";
-import { PageList1 } from "../components/PageList/PageList1";
 import { Button } from "../components/Button/Button";
 
 function HomePage() {
@@ -34,7 +34,7 @@ function HomePage() {
           }
           foot={<Button to={"/ds/overview"}>Overview</Button>}
         />
-        <PageList1 />
+        <CardsSearchable />
       </Main>
       <Footer />
       <ScrollToTop />

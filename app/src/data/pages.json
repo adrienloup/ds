@@ -25,7 +25,7 @@
     "description": "A floating action button (FAB)",
     "path": "/ds/fab",
     "category": "action",
-    "news": true
+    "news": false
   },
   {
     "name": "alert",

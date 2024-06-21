@@ -4,7 +4,6 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Story } from "../components/Story/Story";
-
 import { DsProgress } from "design-system/src/components/Progress/Progress";
 
 function ProgressPage() {

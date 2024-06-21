@@ -9,10 +9,10 @@ $desktop: 1281px;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   font-family: var(--font-text-bold);
-  font-size: 3rem;
+  font-size: 3.5rem;
 
   @media (max-width: $desktop) {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 

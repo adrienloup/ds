@@ -49,15 +49,6 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
     onResize();
   }, [open]);
 
-  // @TODO: there is a problem observed one in three times.
-  // A delta of 6 pixels causing a modification of the 'height' value of '.settings'
-  // and the 'padding-top' of '#_ds_y0y09_10'.
-  // useEffect(() => {
-  //   setTimeout(function () {
-  //     onResize();
-  //   }, 100);
-  // }, []);
-
   return (
     <aside
       role="complementary"

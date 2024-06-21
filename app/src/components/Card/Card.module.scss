@@ -1,5 +1,12 @@
 $tablet-landscape: 1025px;
 
+.cardlist {
+  max-width: 65rem;
+  display: flex;
+  flex-flow: row wrap;
+  margin: -1rem;
+}
+
 .card {
   width: 50%;
   padding: 1rem;
@@ -64,6 +71,16 @@ $tablet-landscape: 1025px;
   bottom: 0.25rem;
   font-size: 2rem;
   color: var(--color-1);
+}
+
+.empty {
+  margin: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-red);
+  font-family: var(--font-text-regular);
+  font-size: 1.75rem;
+  color: var(--color-12);
+  animation: Appear 0.5s var(--easy-in-out-quad);
 }
 
 @keyframes Appear {
