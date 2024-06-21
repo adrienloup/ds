@@ -36,7 +36,7 @@ export const DsBadge = ({
         cssClass ? ` ${cssClass}` : "",
       ].join("")}
     >
-      <span className={"ds-badge_content"} {...rest}>
+      <span className="ds-badge_content" {...rest}>
         {valueMax(value, max)}
       </span>
       {children}

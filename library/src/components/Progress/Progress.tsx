@@ -31,46 +31,46 @@ export const DsProgress = ({
       ].join("")}
     >
       {display === "linear" ? (
-        <div className={"ds-progress_inner"}>
-          <span className={"ds-progress_value"}>{formatedValue}%</span>
+        <div className="ds-progress_inner">
+          <span className="ds-progress_value">{formatedValue}%</span>
           <div
-            className={"ds-progress_progressbar"}
+            className="ds-progress_progressbar"
             role="progressbar"
             aria-labelledby={uId}
             aria-valuenow={formatedValue}
           >
             <div
-              className={"ds-progress_width"}
+              className="ds-progress_width"
               style={{ width: `${formatedValue}%` }}
             ></div>
           </div>
-          <span id={uId} className={"ds-progress_label"}>
+          <span id={uId} className="ds-progress_label">
             {title}
           </span>
         </div>
       ) : (
         <>
           <div
-            className={"ds-progress_progressbar"}
+            className="ds-progress_progressbar"
             role="progressbar"
             aria-labelledby={uId}
             aria-valuenow={formatedValue}
           >
             <svg
-              className={"ds-progress_svg"}
+              className="ds-progress_svg"
               width={diameter}
               height={diameter}
               viewBox={`0 0 ${diameter} ${diameter}`}
             >
               <circle
-                className={"ds-progress_circle"}
+                className="ds-progress_circle"
                 cx={diameter / 2}
                 cy={diameter / 2}
                 r={(diameter - thickness) / 2}
                 strokeWidth={`${thickness}px`}
               />
               <circle
-                className={"ds-progress_width"}
+                className="ds-progress_width"
                 cx={diameter / 2}
                 cy={diameter / 2}
                 r={(diameter - thickness) / 2}
@@ -82,9 +82,9 @@ export const DsProgress = ({
                 }}
               />
             </svg>
-            <span className={"ds-progress_value"}>{formatedValue}%</span>
+            <span className="ds-progress_value">{formatedValue}%</span>
           </div>
-          <span id={uId} className={"ds-progress_label"}>
+          <span id={uId} className="ds-progress_label">
             {title}
           </span>
         </>
