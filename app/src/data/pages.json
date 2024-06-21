@@ -74,35 +74,35 @@
     "description": "TextArea is a resizable input used to prompt the user for a parapraph of text",
     "path": "/ds/textarea",
     "category": "forms",
-    "news": false
+    "news": true
   },
   {
     "name": "textField",
     "description": "TextFields let users enter and edit text",
     "path": "/ds/textfield",
     "category": "forms",
-    "news": false
+    "news": true
   },
   {
     "name": "breadcrumbs",
     "description": "A breadcrumbs is a list of links that help visualize a page's location",
     "path": "/ds/breadcrumbs",
     "category": "navigation",
-    "news": false
+    "news": true
   },
   {
     "name": "stepper",
     "description": "Steppers convey progress through numbered steps. It provides a wizard-like workflow",
     "path": "/ds/stepper",
     "category": "navigation",
-    "news": false
+    "news": true
   },
   {
     "name": "tabs",
     "description": "Tabs are a set of layered sections of content",
     "path": "/ds/tabs",
     "category": "navigation",
-    "news": false
+    "news": true
   },
   {
     "name": "modal",

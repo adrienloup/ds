@@ -12,6 +12,7 @@ import FabPage from "./pages/Fab";
 import LoginPage from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import OverviewPage from "./pages/Overview";
+import ProgressPage from "./pages/Progress";
 import TestPage from "./pages/Test";
 import "./App.scss";
 
@@ -30,9 +31,10 @@ function App() {
                   <Route path="/ds/button" element={<ButtonPage />} />
                   <Route path="/ds/fab" element={<FabPage />} />
                   <Route path="/ds/login" element={<LoginPage />} />
-                  <Route path="/ds/*" element={<NotFound />} />
                   <Route path="/ds/overview" element={<OverviewPage />} />
+                  <Route path="/ds/progress" element={<ProgressPage />} />
                   <Route path="/ds/test" element={<TestPage />} />
+                  <Route path="/ds/*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>
             </AlertContextProvider>
