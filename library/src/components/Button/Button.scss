@@ -10,147 +10,147 @@
   letter-spacing: 0.05rem;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: var(--ds-font-text-bold);
+  font-family: var(--font-text-bold);
   cursor: pointer;
 
   &-contained {
-    background-color: var(--ds-color-purple);
-    border-color: var(--ds-color-purple);
-    color: var(--ds-color-neutral-6);
+    background-color: var(--color-purple);
+    border-color: var(--color-purple);
+    color: var(--color-neutral-6);
 
     &:hover,
     &:active {
-      background-color: var(--ds-color-purple-darked);
-      border-color: var(--ds-color-purple-darked);
+      background-color: var(--color-purple-darked);
+      border-color: var(--color-purple-darked);
     }
 
     &:focus-visible:not(.ds-button-disabled) {
-      background-color: var(--ds-color-purple-darked);
-      border-color: var(--ds-color-purple-darked);
-      outline: 0.2rem solid var(--ds-color-orange);
+      background-color: var(--color-purple-darked);
+      border-color: var(--color-purple-darked);
+      outline: 0.2rem solid var(--color-orange);
       outline-offset: 0.125rem;
     }
 
     &.ds-button-info:not(.ds-button-disabled) {
-      background-color: var(--ds-color-blue);
-      border-color: var(--ds-color-blue);
+      background-color: var(--color-blue);
+      border-color: var(--color-blue);
 
       &:hover,
       &:active {
-        background-color: var(--ds-color-blue-darked);
-        border-color: var(--ds-color-blue-darked);
+        background-color: var(--color-blue-darked);
+        border-color: var(--color-blue-darked);
       }
     }
 
     &.ds-button-success:not(.ds-button-disabled) {
-      background-color: var(--ds-color-chartreuse);
-      border-color: var(--ds-color-chartreuse);
+      background-color: var(--color-chartreuse);
+      border-color: var(--color-chartreuse);
 
       &:hover,
       &:active {
-        background-color: var(--ds-color-chartreuse-darked);
-        border-color: var(--ds-color-chartreuse-darked);
+        background-color: var(--color-chartreuse-darked);
+        border-color: var(--color-chartreuse-darked);
       }
     }
 
     &.ds-button-warning:not(.ds-button-disabled) {
-      background-color: var(--ds-color-yellow);
-      border-color: var(--ds-color-yellow);
-      color: var(--ds-color-neutral-1);
+      background-color: var(--color-yellow);
+      border-color: var(--color-yellow);
+      color: var(--color-neutral-1);
 
       &:hover,
       &:active {
-        background-color: var(--ds-color-yellow-darked);
-        border-color: var(--ds-color-yellow-darked);
+        background-color: var(--color-yellow-darked);
+        border-color: var(--color-yellow-darked);
       }
     }
 
     &.ds-button-error:not(.ds-button-disabled) {
-      background-color: var(--ds-color-red);
-      border-color: var(--ds-color-red);
+      background-color: var(--color-red);
+      border-color: var(--color-red);
 
       &:hover,
       &:active {
-        background-color: var(--ds-color-red-darked);
-        border-color: var(--ds-color-red-darked);
+        background-color: var(--color-red-darked);
+        border-color: var(--color-red-darked);
       }
     }
 
     &.ds-button-disabled {
-      background-color: var(--ds-color-neutral-4);
-      border-color: var(--ds-color-neutral-4);
+      background-color: var(--color-neutral-4);
+      border-color: var(--color-neutral-4);
     }
   }
 
   &-outlined {
     background-color: transparent;
-    border-color: var(--ds-color-purple);
-    color: var(--ds-color-purple);
+    border-color: var(--color-purple);
+    color: var(--color-purple);
 
     &:hover,
     &:active {
-      border-color: var(--ds-color-purple-darked);
-      color: var(--ds-color-purple-darked);
+      border-color: var(--color-purple-darked);
+      color: var(--color-purple-darked);
     }
 
     &:focus-visible:not(.ds-button-disabled) {
-      border-color: var(--ds-color-purple-darked);
-      color: var(--ds-color-purple-darked);
-      outline: 0.2rem solid var(--ds-color-orange);
+      border-color: var(--color-purple-darked);
+      color: var(--color-purple-darked);
+      outline: 0.2rem solid var(--color-orange);
       outline-offset: 0.125rem;
     }
 
     &.ds-button-info:not(.ds-button-disabled) {
-      border-color: var(--ds-color-blue);
-      color: var(--ds-color-blue);
+      border-color: var(--color-blue);
+      color: var(--color-blue);
 
       &:hover,
       &:active {
-        border-color: var(--ds-color-blue-darked);
-        color: var(--ds-color-blue-darked);
+        border-color: var(--color-blue-darked);
+        color: var(--color-blue-darked);
       }
     }
 
     &.ds-button-success:not(.ds-button-disabled) {
-      border-color: var(--ds-color-chartreuse);
-      color: var(--ds-color-chartreuse);
+      border-color: var(--color-chartreuse);
+      color: var(--color-chartreuse);
 
       &:hover,
       &:active {
-        border-color: var(--ds-color-chartreuse-darked);
-        color: var(--ds-color-chartreuse-darked);
+        border-color: var(--color-chartreuse-darked);
+        color: var(--color-chartreuse-darked);
       }
     }
 
     &.ds-button-warning:not(.ds-button-disabled) {
-      border-color: var(--ds-color-yellow);
-      color: var(--ds-color-yellow);
+      border-color: var(--color-yellow);
+      color: var(--color-yellow);
 
       &:hover,
       &:active {
-        border-color: var(--ds-color-yellow-darked);
-        color: var(--ds-color-yellow-darked);
+        border-color: var(--color-yellow-darked);
+        color: var(--color-yellow-darked);
       }
     }
 
     &.ds-button-error:not(.ds-button-disabled) {
-      border-color: var(--ds-color-red);
-      color: var(--ds-color-red);
+      border-color: var(--color-red);
+      color: var(--color-red);
 
       &:hover,
       &:active {
-        border-color: var(--ds-color-red-darked);
-        color: var(--ds-color-red-darked);
+        border-color: var(--color-red-darked);
+        color: var(--color-red-darked);
       }
     }
 
     &.ds-button-disabled {
-      border-color: var(--ds-color-neutral-4);
+      border-color: var(--color-neutral-4);
     }
   }
 
   &-disabled {
-    color: var(--ds-color-neutral-3);
+    color: var(--color-neutral-3);
     outline: none;
     pointer-events: none;
     cursor: default;

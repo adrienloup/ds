@@ -10,9 +10,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--ds-font-text-regular);
+    font-family: var(--font-text-regular);
     user-select: none;
-    color: var(--ds-color-neutral-6);
+    color: var(--color-neutral-6);
   }
 
   &-small {
@@ -56,26 +56,26 @@
 
   &-info {
     .ds-badge_content {
-      background-color: var(--ds-color-blue);
+      background-color: var(--color-blue);
     }
   }
 
   &-success {
     .ds-badge_content {
-      background-color: var(--ds-color-chartreuse);
-      color: var(--ds-color-neutral-1);
+      background-color: var(--color-chartreuse);
+      color: var(--color-neutral-1);
     }
   }
 
   &-warning {
     .ds-badge_content {
-      background-color: var(--ds-color-orange);
+      background-color: var(--color-orange);
     }
   }
 
   &-error {
     .ds-badge_content {
-      background-color: var(--ds-color-red);
+      background-color: var(--color-red);
     }
   }
 }
