@@ -3,7 +3,7 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
-import { CardsSearchable } from "../components/Card/CardsSearchable";
+import { Cards } from "../components/Card/Cards";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
 
@@ -34,7 +34,11 @@ function HomePage() {
           }
           foot={<Button to={"/ds/overview"}>Overview</Button>}
         />
-        <CardsSearchable />
+        <h2>
+          Get started with DS library{" "}
+          <span>today through some of these useful resources</span>
+        </h2>
+        <Cards />
       </Main>
       <Footer />
       <ScrollToTop />

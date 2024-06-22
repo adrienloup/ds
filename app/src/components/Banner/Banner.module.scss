@@ -1,0 +1,50 @@
+$tablet-portrait: 769px;
+
+.banner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 4.25rem 1rem 1.5rem;
+  background-color: var(--color-chartreuse);
+  color: var(--color-neutral-1);
+
+  p {
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-family: var(--font-text-bold);
+    font-size: 2rem;
+  }
+}
+
+.icon {
+  font-size: 4rem;
+
+  @media (max-width: $tablet-portrait) {
+    display: none;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  z-index: 2;
+  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  border: 0.2rem solid var(--color-neutral-1);
+  font-size: 1.5rem;
+  color: var(--color-neutral-1);
+
+  &:hover {
+    background-color: var(--color-neutral-1);
+    color: var(--color-chartreuse);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+    outline-offset: 0.03rem;
+  }
+}

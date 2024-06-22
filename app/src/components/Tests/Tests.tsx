@@ -1,15 +1,18 @@
+import { TestIntersectionObserver } from "./TestIntersectionObserver/TestIntersectionObserver";
+import { TestHigherOrderComponent } from "./TestHigherOrderComponent/TestHigherOrderComponent";
 import { TestAddDataAndAriaAttr } from "./TestAddDataAndAriaAttr/TestAddDataAndAriaAttr";
 import { TestInverseDataFlow } from "./TestInverseDataFlow/TestInverseDataFlow";
 import { TestListSearchable } from "./TestListSearchable/TestListSearchable";
 import { TestUseCallback } from "./TestUseCallback/TestUseCallback";
 import { TestCustomHook } from "./TestCustomHook/TestCustomHook";
+import { TestUseReducer } from "./TestUseReducer/TestUseReducer";
+import { TestNoRerender } from "./TestNoRerender/TestNoRerender";
 import { TestUseEffect } from "./TestUseEffect/TestUseEffect";
+import { TestCounter } from "./TestCounter/TestCounter";
 import { TestUseMemo } from "./TestUseMemo/TestUseMemo";
 import { TestUseRef } from "./TestUseRef/TestUseRef";
-import { TestCount } from "./TestCount/TestCount";
 import { TestMemo } from "./TestMemo/TestMemo";
 import style from "./Tests.module.scss";
-import { TestUseReducer } from "./TestUseReducer/TestUseReducer";
 
 export const Tests = () => {
   console.log("Tests");
@@ -19,7 +22,7 @@ export const Tests = () => {
       {/* COUNT */}
       <div className={style.test}>
         <div className={style.title}>Count</div>
-        <TestCount />
+        <TestCounter />
       </div>
 
       {/* CUSTOM HOOKS */}
@@ -82,6 +85,24 @@ export const Tests = () => {
       <div className={style.test}>
         <div className={style.title}>Memo</div>
         <TestMemo />
+      </div>
+
+      {/* INTERSECTION OBSERVER */}
+      <div className={style.test}>
+        <div className={style.title}>Intersection Observer</div>
+        <TestIntersectionObserver />
+      </div>
+
+      {/* NO RE-RENDER */}
+      <div className={style.test}>
+        <div className={style.title}>No re-render</div>
+        <TestNoRerender />
+      </div>
+
+      {/* HIGHER-ORDER COMPONENT */}
+      <div className={style.test}>
+        <div className={style.title}>Higher-Order Component</div>
+        <TestHigherOrderComponent />
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ export const Menu = () => {
     return pages.filter((page) => page.category === category);
   };
 
-  const pageNews = (category: string) => {
+  const newsPerCategory = (category: string) => {
     return pages.filter((page) => {
       if (page.category !== category) return false;
       if (page.category === category && !page.news) return false;
@@ -51,7 +51,7 @@ export const Menu = () => {
           title={
             <>
               {category}
-              {pageNews(category).length > 0 && (
+              {newsPerCategory(category).length > 0 && (
                 <span className={style.new}>new</span>
               )}
             </>
@@ -63,6 +63,9 @@ export const Menu = () => {
                   <Link to={page.path} className={style.link}>
                     {page.name}{" "}
                     {page.news && <span className={style.new}>new</span>}
+                    {page.soon && (
+                      <span className={style.soon}>coming soon</span>
+                    )}
                   </Link>
                 </li>
               ))}

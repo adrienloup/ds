@@ -38,3 +38,15 @@
   font-size: 0.75rem;
   color: var(--color-neutral-1);
 }
+
+.soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.2rem;
+  background-color: var(--color-yellow);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-neutral-1);
+}

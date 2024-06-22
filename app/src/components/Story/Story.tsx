@@ -42,7 +42,7 @@ export const Story = ({
       </div>
       {code && (
         <>
-          <div className={style.toolbar}>
+          <div className={style.ToolsBar}>
             <Button
               cssClass={`${style.button} ${style.contained} ${style.small}`}
               ariaLabel={"Code Source"}

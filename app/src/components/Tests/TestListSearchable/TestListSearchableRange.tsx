@@ -5,6 +5,8 @@ export function TestListSearchableRange({
   value: string;
   onChange: (v: string) => void;
 }) {
+  console.log("TestListSearchableRange");
+
   return (
     <div
       style={{

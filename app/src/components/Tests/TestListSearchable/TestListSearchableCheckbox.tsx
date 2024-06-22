@@ -7,6 +7,8 @@ export function TestListSearchableCheckbox({
   checked: boolean;
   onChange: (v: boolean) => void;
 }) {
+  console.log("TestListSearchableCheckbox");
+
   return (
     <label style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
       <input

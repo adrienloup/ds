@@ -3,6 +3,8 @@ export function TestListSearchableProduct({
 }: {
   product: { name: string; price: string; icon: string; stocked: boolean };
 }) {
+  console.log("TestListSearchableProduct");
+
   const style = product.stocked ? undefined : { color: "red" };
 
   return (

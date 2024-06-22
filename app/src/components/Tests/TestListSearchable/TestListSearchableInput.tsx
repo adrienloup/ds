@@ -5,6 +5,8 @@ export function TestListSearchableInput({
   value: string;
   onChange: (v: string) => void;
 }) {
+  console.log("TestListSearchableInput");
+
   return (
     <div style={{ marginBottom: "1rem" }}>
       <input

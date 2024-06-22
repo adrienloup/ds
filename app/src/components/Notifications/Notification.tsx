@@ -13,6 +13,8 @@ export const Notification = ({
   notification,
   handleDelete,
 }: NotificationType) => {
+  console.log("Notification");
+
   return (
     <div className={style.notification}>
       <span>{notification.title}</span>

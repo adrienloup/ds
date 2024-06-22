@@ -1,4 +1,6 @@
 export function TestListSearchableCategory({ name }: { name: string }) {
+  console.log("TestListSearchableCategory");
+
   return (
     <div
       style={{

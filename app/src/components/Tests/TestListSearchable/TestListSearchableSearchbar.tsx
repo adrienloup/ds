@@ -17,6 +17,8 @@ export function TestListSearchableSearchbar({
   searchPrice: string;
   searchPriceChange: (v: string) => void;
 }) {
+  console.log("TestListSearchableSearchbar");
+
   return (
     <>
       <TestListSearchableInput

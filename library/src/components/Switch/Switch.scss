@@ -22,10 +22,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--color-2);
     border-width: 0.125rem;
     border-style: solid;
-    border-color: var(--color-3);
+    border-color: var(--color-neutral-2);
     border-radius: 2rem;
     cursor: pointer;
 
@@ -41,8 +40,6 @@
     }
 
     &:hover {
-      background-color: var(--color-3);
-
       &::before {
         background-color: var(--color-purple-darked);
       }
@@ -52,7 +49,7 @@
   &_on {
     position: relative;
     z-index: 1;
-    background-color: var(--color-1);
+    background-color: var(--color-neutral-6);
   }
 
   &_off {
@@ -68,7 +65,7 @@
       background-color: var(--color-purple);
 
       &::before {
-        background-color: var(--color-2);
+        background-color: var(--color-neutral-1);
       }
 
       &:hover {
@@ -76,7 +73,7 @@
       }
 
       .ds-switch_on {
-        background-color: var(--color-1);
+        background-color: var(--color-neutral-6);
       }
     }
   }

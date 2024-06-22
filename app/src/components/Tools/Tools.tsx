@@ -7,21 +7,17 @@ import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
 import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
-import style from "./ToolBar.module.scss";
+import style from "./Tools.module.scss";
 
-interface ToolBarType {
-  onSettings?: () => void;
-}
-
-export const ToolBar = ({ onSettings }: ToolBarType) => {
-  console.log("ToolBar");
+export const Tools = ({ onSettings }: { onSettings: () => void }) => {
+  console.log("Tools");
 
   const { dataNotifications } =
     useContext<NotificationsType>(NotificationsContext);
   const [modal, setModal] = useState(false);
 
   return (
-    <div className={style.toolbar}>
+    <div className={style.tools}>
       <Button
         href={"https://github.com/adrienloup/ds"}
         ariaLabel={"Github"}
@@ -55,6 +51,9 @@ export const ToolBar = ({ onSettings }: ToolBarType) => {
           <Modal
             head={
               <h3>
+                {dataNotifications.length > 0
+                  ? `${dataNotifications.length} `
+                  : ""}
                 Breaking <span>news</span>
               </h3>
             }

@@ -1,3 +1,5 @@
+$tablet-portrait: 769px;
+
 .alerts {
   position: fixed;
   top: 0;
@@ -8,7 +10,7 @@
   align-items: flex-end;
   max-width: 40rem;
 
-  @media (max-width: 769px) {
+  @media (max-width: $tablet-portrait) {
     top: 0.25rem;
     right: 0.25rem;
   }
@@ -30,7 +32,7 @@
   background-color: var(--color-yellow);
 
   &.animate {
-    animation: Appear 0.15s var(--easy-in-out-quad);
+    animation: Appear 0.25s var(--easy-in-out-quad);
   }
 
   .close {
@@ -160,7 +162,6 @@
 @keyframes Appear {
   0% {
     transform: translateY(-1rem);
-    opacity: 0;
   }
 }
 

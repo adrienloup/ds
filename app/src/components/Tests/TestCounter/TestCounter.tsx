@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export function TestCount() {
-  console.log("TestCount");
+export function TestCounter() {
+  console.log("TestCounter");
   const [count, setCount] = useState(0);
 
   return (

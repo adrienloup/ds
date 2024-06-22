@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export function TestUseRefHeight() {
   console.log("TestUseRefHeight");
+
   const [height, setHeight] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 

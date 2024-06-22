@@ -12,6 +12,8 @@ export function TestListSearchableProductsList({
     stocked: boolean;
   }[];
 }) {
+  console.log("TestListSearchableProductsList");
+
   const categories: string[] = [];
   const singleCategories: string[] = [];
   const categoriesAndProducts: JSX.Element[] = [];

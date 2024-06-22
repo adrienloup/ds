@@ -50,7 +50,7 @@ function BadgePage() {
               ="
               <span style={{ color: "#ffeb3b" }}>notifications</span>" /&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
+              &lt;/<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
             </>
           }
           codepen={"WNWyqeK"}
@@ -96,7 +96,7 @@ function BadgePage() {
               ="
               <span style={{ color: "#ffeb3b" }}>notifications</span>" /&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
+              &lt;/<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
               <br />
               &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>{" "}
               <span style={{ color: "#00caff" }}>size</span>
@@ -109,7 +109,7 @@ function BadgePage() {
               ="
               <span style={{ color: "#ffeb3b" }}>notifications</span>" /&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
+              &lt;/<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
               <br />
               &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>{" "}
               <span style={{ color: "#00caff" }}>size</span>
@@ -122,7 +122,7 @@ function BadgePage() {
               ="
               <span style={{ color: "#ffeb3b" }}>notifications</span>" /&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
+              &lt;/<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
             </>
           }
           codepen={"WNWyqeK"}
@@ -199,7 +199,7 @@ function BadgePage() {
               ="
               <span style={{ color: "#ffeb3b" }}>notifications</span>" /&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
+              &lt;/<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
               <br />
               &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>{" "}
               <span style={{ color: "#00caff" }}>status</span>
@@ -212,7 +212,7 @@ function BadgePage() {
               ="
               <span style={{ color: "#ffeb3b" }}>notifications</span>" /&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
+              &lt;/<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
               <br />
               &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>{" "}
               <span style={{ color: "#00caff" }}>status</span>
@@ -225,7 +225,7 @@ function BadgePage() {
               ="
               <span style={{ color: "#ffeb3b" }}>notifications</span>" /&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
+              &lt;/<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
               <br />
               &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>{" "}
               <span style={{ color: "#00caff" }}>status</span>
@@ -238,7 +238,7 @@ function BadgePage() {
               ="
               <span style={{ color: "#ffeb3b" }}>notifications</span>" /&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
+              &lt;/<span style={{ color: "#00dc09" }}>DsBadge</span>&gt;
             </>
           }
           codepen={"WNWyqeK"}

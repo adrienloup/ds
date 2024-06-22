@@ -14,6 +14,8 @@ import NotFound from "./pages/NotFound";
 import OverviewPage from "./pages/Overview";
 import ProgressPage from "./pages/Progress";
 import SwitchPage from "./pages/Switch";
+import TabsPage from "./pages/Tabs";
+import TagPage from "./pages/Tag";
 import TestPage from "./pages/Test";
 import "./App.scss";
 
@@ -34,8 +36,10 @@ function App() {
                   <Route path="/ds/login" element={<LoginPage />} />
                   <Route path="/ds/overview" element={<OverviewPage />} />
                   <Route path="/ds/progress" element={<ProgressPage />} />
-                  <Route path="/ds/test" element={<TestPage />} />
                   <Route path="/ds/switch" element={<SwitchPage />} />
+                  <Route path="/ds/tabs" element={<TabsPage />} />
+                  <Route path="/ds/tag" element={<TagPage />} />
+                  <Route path="/ds/test" element={<TestPage />} />
                   <Route path="/ds/*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>

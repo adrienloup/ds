@@ -6,6 +6,8 @@ interface FormType {
 }
 
 export const NotificationForm = ({ handleAdd }: FormType) => {
+  console.log("NotificationForm");
+
   const [value, setValue] = useState<string>("");
 
   const onChange = (e: { target: { value: string } }) => {

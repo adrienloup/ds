@@ -22,7 +22,7 @@ function ButtonPage() {
           Buttons allow users to take actions, and make choices, with a single
           tap. Buttons communicate actions that users can take. They are
           typically placed throughout your UI, in places like: Modal windows,
-          Forms, Cards, Toolbars.
+          Forms, Cards, ToolsBars.
         </p>
         <p>
           This unstyled version of the component is the ideal choice for heavy
@@ -301,7 +301,7 @@ function ButtonPage() {
           Icon <span>Button</span>
         </h2>
         <p>
-          Icon Buttons are commonly found in app bars and toolbars. Icons are
+          Icon Buttons are commonly found in app bars and ToolsBars. Icons are
           also appropriate for toggle Buttons that allow a single choice to be
           selected or deselected, such as adding or removing a star to an item.
           Icon Buttons use{" "}

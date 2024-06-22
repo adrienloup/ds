@@ -12,7 +12,6 @@ $tablet-landscape: 1025px;
   padding: 1rem;
   backface-visibility: hidden;
   transform-origin: 10% 50%;
-  animation: Appear 0.25s var(--easy-in-out-quad);
 
   @media (max-width: $tablet-landscape) {
     width: 100%;
