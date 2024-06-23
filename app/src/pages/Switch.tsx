@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Story } from "../components/Story/Story";
+import { Navigation } from "../components/Navigation/Navigation";
 import { DsSwitch } from "design-system/src/components/Switch/Switch";
 
 function SwitchPage() {
@@ -112,6 +113,7 @@ function SwitchPage() {
           github={"Switch"}
           copy={"<DsSwitch label='Label' checked />"}
         />
+        <Navigation prev="select" next="textarea" />
       </Main>
       <Footer />
       <ScrollToTop />

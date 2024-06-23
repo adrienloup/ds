@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Story } from "../components/Story/Story";
+import { Navigation } from "../components/Navigation/Navigation";
 import { DsIcon } from "design-system/src/components/Icon/Icon";
 import { DsFab } from "design-system/src/components/Fab/Fab";
 
@@ -256,6 +257,7 @@ function FabPage() {
             "<DsFab><DsIcon name={'shopping_cart'} /></DsFab>\n<DsFab variant={'outlined'}><DsIcon name={'schedule'} /></DsFab>"
           }
         />
+        <Navigation prev="button" next="alert" />
       </Main>
       <Footer />
       <ScrollToTop />

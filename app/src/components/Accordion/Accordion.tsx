@@ -17,7 +17,7 @@ export const Accordion = ({
 }: AccordionProps) => {
   console.log("Accordion");
 
-  const [isAnimated, setAnimated] = useState(false);
+  const [animated, setAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const panelId = useId();
@@ -43,7 +43,7 @@ export const Accordion = ({
   return (
     <div
       className={[style.accordion, expanded ? ` ${style.expanded}` : ""].join(
-        "",
+        ""
       )}
     >
       <button
@@ -51,9 +51,7 @@ export const Accordion = ({
         type="button"
         aria-controls={panelId}
         className={style.title}
-        onClick={() => {
-          onClick(), setAnimated(true);
-        }}
+        onClick={() => (onClick(), setAnimated(true))}
       >
         {title}
         <Icon
@@ -68,7 +66,7 @@ export const Accordion = ({
         aria-labelledby={titleId}
         className={[
           style.panel,
-          expanded || isAnimated ? ` ${style.animated}` : "",
+          expanded || animated ? ` ${style.animated}` : "",
         ].join("")}
       >
         {panel}

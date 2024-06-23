@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Story } from "../components/Story/Story";
+import { Navigation } from "../components/Navigation/Navigation";
 import { DsButton } from "design-system/src/components/Button/Button";
 import { DsIcon } from "design-system/src/components/Icon/Icon";
 
@@ -468,6 +469,7 @@ function ButtonPage() {
             "<DsButton variant='contained' size='small'>Small</DsButton>\n<Button variant='contained' size='medium'>Medium</DsButton>\n<Button variant='contained' size='large'>Large</DsButton>\n<Button variant='outlined' size='small'>Small</DsButton>\n<Button variant='outlined' size='medium'>Medium</DsButton>\n<Button variant='outlined' size='large'>Large</DsButton>"
           }
         />
+        <Navigation next="fab" />
       </Main>
       <Footer />
       <ScrollToTop />

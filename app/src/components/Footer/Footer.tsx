@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { AuthContext } from "../../contexts/Auth";
+import { ScrollTo } from "../ScrollTo/ScrollTo";
 import { AuthType } from "../../models/Auth";
 import { Button } from "../Button/Button";
 import { Login } from "../Login/Login";
@@ -15,6 +16,7 @@ export const Footer = () => {
   return (
     <footer role="contentinfo" className={style.footer}>
       <div className={style.inner}>
+        <ScrollTo top={0} />
         {dataAuth.user ? (
           <Button
             ariaLabel={"Logout"}

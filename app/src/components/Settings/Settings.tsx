@@ -22,8 +22,7 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
   const innerRef = useRef<HTMLDivElement>(null);
 
   const handleMode = (mode: string) => {
-    dataSettings.mode = mode;
-    setDataSettings({ ...dataSettings });
+    setDataSettings({ ...dataSettings, mode });
     setMode(mode);
   };
 
@@ -66,20 +65,22 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
             <Button
               cssClass={[
                 `${style.button}`,
-                mode === "dark" ? ` ${style.active}` : "",
-              ].join("")}
-              onClick={() => handleMode("dark")}
-            >
-              Dark
-            </Button>
-            <Button
-              cssClass={[
-                `${style.button}`,
                 mode === "light" ? ` ${style.active}` : "",
               ].join("")}
               onClick={() => handleMode("light")}
             >
+              <Icon name="light_mode" />
               Light
+            </Button>
+            <Button
+              cssClass={[
+                `${style.button}`,
+                mode === "dark" ? ` ${style.active}` : "",
+              ].join("")}
+              onClick={() => handleMode("dark")}
+            >
+              <Icon name="mode_night" />
+              Dark
             </Button>
           </div>
           <div className={style.direction}>
@@ -94,6 +95,7 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
                 });
               }}
             >
+              <Icon cssClass={style.icon} name="format_textdirection_l_to_r" />
               Right to Left
             </Button>
             <Button
@@ -106,34 +108,8 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
                 });
               }}
             >
+              <Icon cssClass={style.icon} name="format_textdirection_r_to_l" />
               Left to Right
-            </Button>
-          </div>
-          <div className={style.accessibility}>
-            <div className={style.title}>Accessibility</div>
-            <Button
-              cssClass={[`${style.button}`, ` ${style.active}`].join("")}
-              onClick={() => {
-                addAlert({
-                  text: "Error with the increasing text size",
-                  timeout: 3,
-                  status: "error",
-                });
-              }}
-            >
-              A+
-            </Button>
-            <Button
-              cssClass={style.button}
-              onClick={() => {
-                addAlert({
-                  text: "Error with the increasing text size",
-                  timeout: 3,
-                  status: "error",
-                });
-              }}
-            >
-              A-
             </Button>
           </div>
         </div>

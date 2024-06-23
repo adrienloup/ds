@@ -20,6 +20,8 @@ export const Modal = ({
   cssClass,
   onClick,
 }: ModalType) => {
+  console.log("Modal");
+
   return (
     <div
       className={[

@@ -22,7 +22,10 @@ export const Story = ({
   copy,
   css,
 }: StoryType) => {
-  const [expanded, setExpanded] = useState<boolean>(true);
+  console.log("Story");
+
+  const [expanded, setExpanded] = useState(true);
+  const [animated, setAnimated] = useState(false);
   const { addAlert } = useAlert();
 
   const copyCode = () => {
@@ -35,7 +38,11 @@ export const Story = ({
 
   return (
     <div
-      className={[style.story, expanded ? ` ${style.expanded}` : ""].join("")}
+      className={[
+        style.story,
+        expanded ? ` ${style.expanded}` : "",
+        animated ? ` ${style.animated}` : "",
+      ].join("")}
     >
       <div className={style.demo} style={css}>
         {demo}
@@ -46,7 +53,7 @@ export const Story = ({
             <Button
               cssClass={`${style.button} ${style.contained} ${style.small}`}
               ariaLabel={"Code Source"}
-              onClick={() => setExpanded(!expanded)}
+              onClick={() => (setExpanded(!expanded), setAnimated(true))}
             >
               <Icon name={expanded ? "code" : "code_off"} />
             </Button>

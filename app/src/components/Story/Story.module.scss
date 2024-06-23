@@ -51,7 +51,11 @@ $tablet-portrait: 769px;
 
   .expanded & {
     display: block;
+  }
+
+  .animated & {
     animation: Appear 0.15s var(--easy-in-out-expo);
+    will-change: opacity, transform;
   }
 }
 
@@ -82,6 +86,6 @@ $tablet-portrait: 769px;
 @keyframes Appear {
   0% {
     opacity: 0;
-    transform: translate3d(0, -10%, 0);
+    transform: translate3d(0, -0.25rem, 0);
   }
 }

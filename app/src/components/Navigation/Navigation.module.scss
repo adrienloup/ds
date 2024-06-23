@@ -1,0 +1,45 @@
+$desktop: 1281px;
+$tablet-portrait: 769px;
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rem;
+  border: 0.2rem solid var(--color-3);
+
+  @media (max-width: $desktop) {
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    margin-top: 1rem;
+  }
+}
+
+.button {
+  width: 50%;
+  align-items: center;
+  font-size: 1.25rem;
+  color: var(--color-1);
+
+  &:hover {
+    background-color: var(--color-3);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+    outline-offset: 0.125rem;
+  }
+}
+
+.prev {
+  padding: 1.25rem;
+  justify-content: flex-start;
+}
+
+.next {
+  margin-left: auto;
+  padding: 1.25rem;
+  justify-content: flex-end;
+}

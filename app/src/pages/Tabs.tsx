@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Story } from "../components/Story/Story";
+import { Navigation } from "../components/Navigation/Navigation";
 import { DsTabs } from "design-system/src/components/Tabs/Tabs";
 import { DsTabPanel } from "design-system/src/components/Tabs/TabPanel";
 
@@ -211,6 +212,7 @@ function TabsPage() {
             "<DsTabs> <DsTabPanel title='Tab 1'> Content of Tab 1 </DsTabPanel> <DsTabPanel title='Tab 2'> Content of Tab 2 </DsTabPanel> <DsTabPanel title='Tab 3'> Content of Tab 3 </DsTabPanel> <DsTabs>"
           }
         />
+        <Navigation prev="stepper" next="modal" />
       </Main>
       <Footer />
       <ScrollToTop />

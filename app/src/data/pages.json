@@ -28,7 +28,7 @@
     "description": "A floating action button (FAB)",
     "path": "/ds/fab",
     "category": "action",
-    "news": false,
+    "news": true,
     "soon": false
   },
   {
@@ -60,7 +60,7 @@
     "description": "Used for marking and categorization",
     "path": "/ds/tag",
     "category": "feedback",
-    "news": true,
+    "news": false,
     "soon": false
   },
   {
@@ -100,7 +100,7 @@
     "description": "A breadcrumbs is a list of links that help visualize a page's location",
     "path": "/ds/breadcrumbs",
     "category": "navigation",
-    "news": true,
+    "news": false,
     "soon": false
   },
   {
@@ -108,8 +108,8 @@
     "description": "Steppers convey progress through numbered steps. It provides a wizard-like workflow",
     "path": "/ds/stepper",
     "category": "navigation",
-    "news": false,
-    "soon": true
+    "news": true,
+    "soon": false
   },
   {
     "name": "tabs",

@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Story } from "../components/Story/Story";
+import { Navigation } from "../components/Navigation/Navigation";
 import { DsBadge } from "design-system/src/components/Badge/Badge";
 import { DsIcon } from "design-system/src/components/Icon/Icon";
 
@@ -245,6 +246,7 @@ function BadgePage() {
           github={"Badge"}
           copy={"<DSBadge value={110}><Icon name={'delete'} /></DsBadge>"}
         />
+        <Navigation prev="alert" next="progress" />
       </Main>
       <Footer />
       <ScrollToTop />

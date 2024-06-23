@@ -9,18 +9,17 @@ export const ToolsBar = () => {
 
   const { dataSettings, setDataSettings } =
     useContext<SettingsType>(SettingsContext);
-  const [settings, setSettings] = useState(dataSettings.open);
+  const [open, setOpen] = useState(dataSettings.open);
 
   const handleSettings = (open: boolean) => {
-    dataSettings.open = open;
-    setDataSettings({ ...dataSettings });
-    setSettings(open);
+    setDataSettings({ ...dataSettings, open });
+    setOpen(open);
   };
 
   return (
     <>
-      <Tools onSettings={() => handleSettings(!settings)} />
-      <Settings open={settings} onClick={() => handleSettings(false)} />
+      <Tools onSettings={() => handleSettings(!open)} />
+      <Settings open={open} onClick={() => handleSettings(false)} />
     </>
   );
 };

@@ -1,4 +1,5 @@
 import { Button } from "../Button/Button";
+import { Icon } from "../Icon/Icon";
 import style from "./Notifications.module.scss";
 
 interface NotificationType {
@@ -19,7 +20,7 @@ export const Notification = ({
     <div className={style.notification}>
       <span>{notification.title}</span>
       <Button cssClass={style.button} onClick={handleDelete}>
-        Delete
+        <Icon cssClass={style.icon} name="delete" />
       </Button>
     </div>
   );

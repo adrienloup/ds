@@ -28,6 +28,8 @@ export const Alert = ({
   button = false,
   handleRemove = () => {},
 }: AlertType) => {
+  console.log("Alert");
+
   useEffect(() => {
     if (timeout > 0 && handleRemove) {
       const timer = setTimeout(() => {

@@ -38,7 +38,7 @@ export const Menu = () => {
     });
   };
 
-  const onClick = (category: string) => {
+  const onToggleExpanded = (category: string) => {
     setDataMenu(expanded !== category ? category : "");
     setExpanded(expanded !== category ? category : false);
   };
@@ -71,7 +71,7 @@ export const Menu = () => {
               ))}
             </ul>
           }
-          onClick={() => onClick(category)}
+          onClick={() => onToggleExpanded(category)}
           expanded={expanded === category}
         />
       ))}

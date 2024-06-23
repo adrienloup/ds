@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Story } from "../components/Story/Story";
+import { Navigation } from "../components/Navigation/Navigation";
 import { DsProgress } from "design-system/src/components/Progress/Progress";
 
 function ProgressPage() {
@@ -262,6 +263,7 @@ function ProgressPage() {
             "<DsProgress title='Loading' display='linear' value='{50}'/>\n<DsProgress title='Loading' display='circular' value='{50}'/>"
           }
         />
+        <Navigation prev="badge" next="tag" />
       </Main>
       <Footer />
       <ScrollToTop />

@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Story } from "../components/Story/Story";
+import { Navigation } from "../components/Navigation/Navigation";
 import { DsTag } from "design-system/src/components/Tag/Tag";
 import { DsIcon } from "design-system/src/components/Icon/Icon";
 
@@ -294,6 +295,7 @@ function TagPage() {
             "<DsTag color='blue'><Icon name='schedule'>Waiting</DsTag>\n<DsTag color='blue'>Stop<Icon name='block'></DsTag>"
           }
         />
+        <Navigation prev="progress" next="select" />
       </Main>
       <Footer />
       <ScrollToTop />

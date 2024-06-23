@@ -70,9 +70,9 @@ $tablet-portrait: 769px;
 }
 
 .mode,
-.direction,
-.accessibility {
+.direction {
   .button {
+    gap: 0.75rem;
     padding: 0.75rem 1.25rem;
     border: 0.2rem solid var(--color-3);
     font-size: 1.25rem;
@@ -93,13 +93,17 @@ $tablet-portrait: 769px;
       background-color: var(--color-3);
       cursor: default;
     }
+
+    .icon {
+      font-size: 1.5rem;
+    }
   }
 }
 
 .close {
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
+  right: 0.7rem;
   bottom: 0.7rem;
   z-index: 2;
   padding: 0.25rem 0.5rem;
