@@ -3,10 +3,6 @@ $tablet-portrait: 769px;
 .accordion {
   overflow: hidden;
   border-top: 0.2rem solid var(--color-3);
-
-  @media (max-width: $tablet-portrait) {
-    display: none;
-  }
 }
 
 .title {

@@ -11,15 +11,15 @@ export const ToolsBar = () => {
     useContext<SettingsType>(SettingsContext);
   const [open, setOpen] = useState(dataSettings.open);
 
-  const handleSettings = (open: boolean) => {
+  const handleChangeSettings = (open: boolean) => {
     setDataSettings({ ...dataSettings, open });
     setOpen(open);
   };
 
   return (
     <>
-      <Tools onSettings={() => handleSettings(!open)} />
-      <Settings open={open} onClick={() => handleSettings(false)} />
+      <Tools onSettings={() => handleChangeSettings(!open)} />
+      <Settings open={open} onClick={() => handleChangeSettings(false)} />
     </>
   );
 };

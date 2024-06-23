@@ -14,12 +14,12 @@ interface SettingsProps {
 export const Settings = ({ open, onClick }: SettingsProps) => {
   console.log("Settings");
 
-  const { addAlert } = useAlert();
   const { dataSettings, setDataSettings } =
     useContext<SettingsType>(SettingsContext);
   const [mode, setMode] = useState(dataSettings.mode);
-  const asideRef = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
+  const asideRef = useRef<HTMLDivElement | null>(null);
+  const innerRef = useRef<HTMLDivElement | null>(null);
+  const { addAlert } = useAlert();
 
   const handleMode = (mode: string) => {
     setDataSettings({ ...dataSettings, mode });
@@ -42,7 +42,7 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
   useEffect(() => {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, []);
+  });
 
   useEffect(() => onResize());
 

@@ -10,8 +10,8 @@ interface LoginType {
 }
 
 export const Login = ({ open, handleClick }: LoginType) => {
-  const [height, setHeight] = useState<number>(0);
-  const [error, setError] = useState<string>("");
+  const [height, setHeight] = useState(0);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const { login } = useUser();
 
@@ -38,14 +38,14 @@ export const Login = ({ open, handleClick }: LoginType) => {
     }
   };
 
-  const handleResize = () => setHeight(document.body.offsetHeight);
+  const onResize = () => setHeight(document.body.offsetHeight);
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   });
 
-  useEffect(() => handleResize());
+  useEffect(() => onResize());
 
   return (
     <div

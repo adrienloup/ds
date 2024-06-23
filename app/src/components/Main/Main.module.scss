@@ -8,8 +8,8 @@ $tablet-portrait: 769px;
   background-color: var(--color-2);
 
   @media (max-width: $tablet-portrait) {
-    min-height: calc(100vh - 59px);
-    margin-top: -59px;
+    display: flex;
+    flex-direction: column;
   }
 
   &::after {
@@ -21,6 +21,10 @@ $tablet-portrait: 769px;
     width: 200%;
     height: 0.2rem;
     background-color: var(--color-3);
+
+    @media (max-width: $tablet-portrait) {
+      top: -62px;
+    }
   }
 }
 

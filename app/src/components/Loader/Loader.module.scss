@@ -82,9 +82,5 @@ html {
     right: 1rem;
     font-family: var(--font-text-bold);
     font-size: 4rem;
-
-    @media (max-width: $tablet-portrait) {
-      font-size: 3rem;
-    }
   }
 }

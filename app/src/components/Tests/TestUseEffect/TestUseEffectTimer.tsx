@@ -6,19 +6,21 @@ export function TestUseEffectTimer() {
   const [duration, setDuration] = useState(0);
   const [secondsLeft, setSecondsLeft] = useState(duration);
 
-  const handleChange = (v: number) => {
-    setDuration(v);
-    setSecondsLeft(v);
+  const handleChange = (value: number) => {
+    setDuration(value);
+    setSecondsLeft(value);
   };
 
   useEffect(() => {
+    console.log("TestUseEffectTimer > useEffect [duration]");
     const timer = setInterval(() => {
-      setSecondsLeft((v) => {
-        if (v <= 1) {
+      console.log("TestUseEffectTimer > setInterval id", timer);
+      setSecondsLeft((value) => {
+        if (value <= 1) {
           clearInterval(timer);
           return 0;
         }
-        return v - 1;
+        return value - 1;
       });
     }, 1e3);
 

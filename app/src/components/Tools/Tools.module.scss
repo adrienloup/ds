@@ -6,10 +6,6 @@ $tablet-portrait: 769px;
   text-align: right;
   background-color: var(--color-2);
   border-bottom: 0.2rem solid var(--color-3);
-
-  @media (max-width: $tablet-portrait) {
-    margin-top: 59px;
-  }
 }
 
 .button {

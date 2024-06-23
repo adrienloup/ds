@@ -10,6 +10,7 @@ import { TestNoRerender } from "./TestNoRerender/TestNoRerender";
 import { TestUseEffect } from "./TestUseEffect/TestUseEffect";
 import { TestCounter } from "./TestCounter/TestCounter";
 import { TestUseMemo } from "./TestUseMemo/TestUseMemo";
+import { TestContext } from "./TestContext/TestContext";
 import { TestUseRef } from "./TestUseRef/TestUseRef";
 import { TestMemo } from "./TestMemo/TestMemo";
 import style from "./Tests.module.scss";
@@ -103,6 +104,12 @@ export const Tests = () => {
       <div className={style.test}>
         <div className={style.title}>Higher-Order Component</div>
         <TestHigherOrderComponent />
+      </div>
+
+      {/* CONTEXT */}
+      <div className={style.test}>
+        <div className={style.title}>Context</div>
+        <TestContext />
       </div>
     </div>
   );
