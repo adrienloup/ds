@@ -1,0 +1,78 @@
+.ds-breadcrumbs {
+  padding: 0.5rem 1rem;
+
+  &_list {
+    display: flex;
+    flex-flow: wrap;
+    list-style-type: none;
+  }
+
+  &_item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-family: var(--font-text-bold);
+  }
+
+  &_link {
+    position: relative;
+    padding: 0.25rem;
+    text-decoration: none;
+    color: var(--color-purple);
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0.25rem;
+      bottom: -0.15rem;
+      left: 0.25rem;
+      height: 0.125rem;
+      background-color: var(--color-purple);
+    }
+
+    &:hover {
+      color: var(--color-purple-darked);
+
+      &::after {
+        background-color: var(--color-purple-darked);
+      }
+    }
+
+    &:focus-visible {
+      border-radius: 0.25rem;
+      outline: 0.2rem solid var(--color-purple-darked);
+      outline-offset: 0.125rem;
+      color: var(--color-purple-darked);
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &_current {
+      color: var(--color-1);
+      cursor: default;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &_icon {
+    margin: 0 0.25rem;
+    color: var(--color-1);
+  }
+
+  &-small {
+    .ds-breadcrumbs_item {
+      font-size: 1rem;
+    }
+  }
+
+  &-medium {
+    .ds-breadcrumbs_item {
+      font-size: 1.25rem;
+    }
+  }
+}

@@ -27,7 +27,7 @@
     &:focus-visible:not(.ds-button-disabled) {
       background-color: var(--color-purple-darked);
       border-color: var(--color-purple-darked);
-      outline: 0.2rem solid var(--color-orange);
+      outline: 0.2rem solid var(--color-purple-darked);
       outline-offset: 0.125rem;
     }
 
@@ -96,7 +96,7 @@
     &:focus-visible:not(.ds-button-disabled) {
       border-color: var(--color-purple-darked);
       color: var(--color-purple-darked);
-      outline: 0.2rem solid var(--color-orange);
+      outline: 0.2rem solid var(--color-purple-darked);
       outline-offset: 0.125rem;
     }
 

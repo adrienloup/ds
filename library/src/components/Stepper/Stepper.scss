@@ -1,0 +1,125 @@
+.ds-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &_inner {
+    display: flex;
+    padding: 0 1rem;
+  }
+
+  &_prev,
+  &_next {
+    position: relative;
+    padding: 0 0.25rem;
+    background: none;
+    border: 0;
+    font-family: var(--font-text-bold);
+    font-size: 1.15rem;
+    color: var(--color-purple);
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0.25rem;
+      bottom: -0.15rem;
+      left: 0.25rem;
+      height: 0.125rem;
+      background-color: var(--color-purple);
+    }
+
+    &:hover {
+      color: var(--color-purple-darked);
+
+      &::after {
+        background-color: var(--color-purple-darked);
+      }
+    }
+
+    &:focus-visible:not(.ds-stepper_disabled) {
+      border-radius: 0.25rem;
+      outline: 0.2rem solid var(--color-purple-darked);
+      outline-offset: 0.125rem;
+      color: var(--color-purple-darked);
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .ds-stepper_disabled {
+    outline: 0;
+    color: var(--color-5);
+    pointer-events: none;
+    cursor: default;
+
+    &::after {
+      background-color: var(--color-5);
+    }
+  }
+}
+
+.ds-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0%;
+  padding: 1rem;
+  text-align: center;
+
+  &_label {
+    margin-top: 0.5rem;
+    font-family: var(--font-text-bold);
+    font-size: 1.15rem;
+  }
+
+  &_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: var(--color-11);
+    border-radius: 50%;
+    border: 3px solid var(--color-13);
+    font-family: var(--font-text-bold);
+    font-size: 1.15rem;
+    color: var(--color-1);
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 0.2rem solid var(--color-purple-darked);
+      outline-offset: 0.125rem;
+    }
+
+    &:hover {
+      background-color: var(--color-2);
+      border-color: var(--color-2);
+      color: var(--color-11);
+    }
+  }
+
+  &-active {
+    .ds-step_button {
+      background-color: var(--color-purple);
+      border-color: var(--color-purple);
+      color: var(--color-neutral-5);
+    }
+  }
+
+  &-complete {
+    .ds-step_button {
+      background-color: var(--color-purple);
+      border-color: var(--color-purple);
+      color: var(--color-neutral-5);
+      font-size: 1.75rem;
+
+      &:hover {
+        background-color: var(--color-purple-darked);
+        border-color: var(--color-purple-darked);
+      }
+    }
+  }
+}
