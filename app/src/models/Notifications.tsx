@@ -1,8 +1,8 @@
-export interface NotificationsType {
+export type NotificationsType = {
   dataNotifications: NotificationType[];
   setDataNotifications: (dataNotifications: NotificationType[]) => void;
-}
-export interface NotificationType {
+};
+export type NotificationType = {
   id: number;
   title: string;
-}
+};

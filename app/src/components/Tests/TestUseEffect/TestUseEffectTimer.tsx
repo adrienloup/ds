@@ -6,15 +6,15 @@ export function TestUseEffectTimer() {
   const [duration, setDuration] = useState(0);
   const [secondsLeft, setSecondsLeft] = useState(duration);
 
-  const handleChange = (value: number) => {
-    setDuration(value);
-    setSecondsLeft(value);
+  const handleValueChange = <T,>(value: T): void => {
+    setDuration(Number(value));
+    setSecondsLeft(Number(value));
   };
 
   useEffect(() => {
-    console.log("TestUseEffectTimer > useEffect [duration]");
+    console.log("TestUseEffectTimer > 1");
     const timer = setInterval(() => {
-      console.log("TestUseEffectTimer > setInterval id", timer);
+      console.log("TestUseEffectTimer > 2");
       setSecondsLeft((value) => {
         if (value <= 1) {
           clearInterval(timer);
@@ -35,7 +35,7 @@ export function TestUseEffectTimer() {
       <input
         type="text"
         value={duration}
-        onChange={(e) => handleChange(Number(e.target.value))}
+        onChange={(e) => handleValueChange<string>(e.target.value)}
         placeholder="Timer"
       />
     </div>

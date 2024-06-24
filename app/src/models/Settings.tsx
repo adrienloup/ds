@@ -1,4 +1,4 @@
-export interface SettingsType {
+export type SettingsType = {
   dataSettings: {
     dir: string;
     mode: string;
@@ -9,4 +9,4 @@ export interface SettingsType {
     mode: string;
     open: boolean;
   }) => void;
-}
+};

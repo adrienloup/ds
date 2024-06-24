@@ -1,4 +1,4 @@
-export interface AlertType {
+export type AlertType = {
   text: string;
   id?: string;
   title?: string;
@@ -7,10 +7,10 @@ export interface AlertType {
   timeout?: number;
   button?: boolean;
   handleRemove?: () => void;
-}
+};
 
-export interface AlertsType {
+export type AlertsType = {
   alerts: AlertType[];
   addAlert: (alert: AlertType) => string;
   removeAlert: (id: string) => void;
-}
+};

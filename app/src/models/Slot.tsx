@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export interface SlotType {
+export type SlotType = {
   children: ReactNode;
-}
+};
