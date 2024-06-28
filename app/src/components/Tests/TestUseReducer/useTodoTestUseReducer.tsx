@@ -1,6 +1,9 @@
 import { useCallback, useReducer } from "react";
 
-function todoReducer(state, action) {
+function todoReducer(
+  state: { todos: any[]; showCompleted: any },
+  action: { type: string; payload: any }
+) {
   if (action.type === "DELETE_TODO") {
     return {
       ...state,
@@ -56,19 +59,27 @@ export function useTodoTestUseReducer() {
   return {
     todoList: todoList,
     deleteTodo: useCallback(
-      (todo) => dispatch({ type: "DELETE_TODO", payload: todo }),
+      (todo: any) => dispatch({ type: "DELETE_TODO", payload: todo }),
       []
     ),
     toggleTodo: useCallback(
-      (todo) => dispatch({ type: "TOGGLE_TODO", payload: todo }),
+      (todo: any) => dispatch({ type: "TOGGLE_TODO", payload: todo }),
       []
     ),
     clearCompleted: useCallback(
-      () => dispatch({ type: "CLEAR_COMPLETED" }),
+      () =>
+        dispatch({
+          type: "CLEAR_COMPLETED",
+          payload: undefined,
+        }),
       []
     ),
     toggleCompleted: useCallback(
-      () => dispatch({ type: "TOGGLE_COMPLETED" }),
+      () =>
+        dispatch({
+          type: "TOGGLE_COMPLETED",
+          payload: undefined,
+        }),
       []
     ),
     showCompleted: state.showCompleted,
