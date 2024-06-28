@@ -29,14 +29,15 @@ export const Alert = ({
   handleRemove = () => {},
 }: AlertType) => {
   console.log("Alert");
+  let timer: number | undefined;
 
   useEffect(() => {
     if (timeout > 0 && handleRemove) {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         handleRemove();
       }, timeout * 1e3);
-      return () => clearTimeout(timer);
     }
+    return () => clearTimeout(timer);
   }, []);
 
   return (

@@ -1,15 +1,10 @@
-import { Dispatch, createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { tasksReducer } from "../reducers/Tasks";
 import { SlotType } from "../models/Slot";
 import { TaskType } from "../models/Task";
 
 const TasksContext = createContext<TaskType[]>([]);
-const TasksDispatchContext = createContext<Dispatch<{
-  type: string;
-  id: number;
-  text: string;
-  task: TaskType;
-}> | null>(null);
+const TasksDispatchContext = createContext<any>(null);
 
 export function TasksProvider({ children }: SlotType) {
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
