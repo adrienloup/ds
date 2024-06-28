@@ -1,16 +1,16 @@
 import { useCallback, useReducer } from "react";
 
-function todoReducer(state: any, action: any) {
+function todoReducer(state, action) {
   if (action.type === "DELETE_TODO") {
     return {
       ...state,
-      todos: state.todos.filter((todo: any) => todo !== action.payload),
+      todos: state.todos.filter((todo) => todo !== action.payload),
     };
   }
   if (action.type === "TOGGLE_TODO") {
     return {
       ...state,
-      todos: state.todos.map((todo: any) =>
+      todos: state.todos.map((todo) =>
         todo === action.payload ? { ...todo, checked: !todo.checked } : todo
       ),
     };
@@ -18,7 +18,7 @@ function todoReducer(state: any, action: any) {
   if (action.type === "CLEAR_COMPLETED") {
     return {
       ...state,
-      todos: state.todos.filter((todo: any) => !todo.checked),
+      todos: state.todos.filter((todo) => !todo.checked),
     };
   }
   if (action.type === "TOGGLE_COMPLETED") {
@@ -51,16 +51,16 @@ export function useTodoTestUseReducer() {
 
   const todoList = state.showCompleted
     ? state.todos
-    : state.todos.filter((todo: any) => !todo.checked);
+    : state.todos.filter((todo) => !todo.checked);
 
   return {
     todoList: todoList,
     deleteTodo: useCallback(
-      (todo: any) => dispatch({ type: "DELETE_TODO", payload: todo }),
+      (todo) => dispatch({ type: "DELETE_TODO", payload: todo }),
       []
     ),
     toggleTodo: useCallback(
-      (todo: any) => dispatch({ type: "TOGGLE_TODO", payload: todo }),
+      (todo) => dispatch({ type: "TOGGLE_TODO", payload: todo }),
       []
     ),
     clearCompleted: useCallback(

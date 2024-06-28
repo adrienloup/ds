@@ -4,14 +4,14 @@ import { SettingsType } from "../models/Settings";
 import { useLocalStorage } from "./useLocalStorage";
 import dark from "../scss/modes/dark.module.scss";
 
-const data = () => {
+const Data = () => {
   const { dataSettings } = useContext<SettingsType>(SettingsContext);
   const { getItem } = useLocalStorage();
   return JSON.parse(getItem("_ds_y0y09_10_settings") as string) ?? dataSettings;
 };
 
 export const useSettings = () => {
-  const [dataSettings, setDataSettings] = useState(data());
+  const [dataSettings, setDataSettings] = useState(Data());
   const { setItem } = useLocalStorage();
 
   useEffect(() => {

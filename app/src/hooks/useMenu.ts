@@ -3,14 +3,14 @@ import { MenuContext } from "../contexts/Menu";
 import { MenuType } from "../models/Menu";
 import { useLocalStorage } from "./useLocalStorage";
 
-const data = () => {
+const Data = () => {
   const { dataMenu } = useContext<MenuType>(MenuContext);
   const { getItem } = useLocalStorage();
   return JSON.parse(getItem("_ds_y0y09_10_menu") as string) ?? dataMenu;
 };
 
 export const useMenu = () => {
-  const [dataMenu, setDataMenu] = useState(data());
+  const [dataMenu, setDataMenu] = useState(Data());
   const { setItem } = useLocalStorage();
 
   useEffect(() => {
