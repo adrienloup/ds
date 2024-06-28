@@ -22,8 +22,8 @@ export const CardsSearchable = () => {
       <SearchBar
         value={value}
         checked={isNews}
-        onChange={setValue}
-        onCheck={setNews}
+        onChange={(e) => setValue(e.target.value)}
+        onCheck={(e) => setNews(e.target.checked)}
         label={`${list.length} React component${list.length > 1 ? "s" : ""}`}
       />
       <CardList list={list} />

@@ -10,6 +10,7 @@ $tablet-portrait: 769px;
   @media (max-width: $tablet-portrait) {
     display: flex;
     flex-direction: column;
+    min-height: calc(100vh - 60px - 63px);
   }
 
   &::after {

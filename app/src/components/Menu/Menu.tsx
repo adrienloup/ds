@@ -6,7 +6,7 @@ import { Accordion } from "../Accordion/Accordion";
 import pages from "../../data/pages.json";
 import style from "./Menu.module.scss";
 
-export const Menu = () => {
+export const Menu = ({ open }: { open: boolean }) => {
   console.log("Menu");
 
   const { dataMenu, setDataMenu } = useContext<MenuType>(MenuContext);
@@ -44,7 +44,7 @@ export const Menu = () => {
   };
 
   return (
-    <div className={style.menu}>
+    <div className={[style.menu, open ? ` ${style.open}` : ""].join("")}>
       {categoryList().map((category, index) => (
         <Accordion
           key={index}

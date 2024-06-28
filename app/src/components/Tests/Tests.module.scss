@@ -13,6 +13,21 @@ $tablet-portrait: 769px;
   @media (max-width: $desktop) {
     margin-top: 2rem;
   }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+  }
+
+  input[type="text"] {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+  }
+
+  input[type="checkbox"] {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
 }
 
 .title {
@@ -36,19 +51,4 @@ $tablet-portrait: 769px;
     -webkit-text-stroke: 0.08rem var(--color-1);
     color: transparent;
   }
-}
-
-button {
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-}
-
-input[type="text"] {
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-}
-
-input[type="checkbox"] {
-  width: 1.75rem;
-  height: 1.75rem;
 }

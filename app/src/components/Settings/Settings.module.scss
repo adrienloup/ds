@@ -16,7 +16,7 @@ $tablet-portrait: 769px;
   will-change: height, top;
 
   @media (max-width: $tablet-portrait) {
-    margin-top: -59px;
+    margin-top: -60px;
   }
 }
 
@@ -34,15 +34,19 @@ $tablet-portrait: 769px;
 .content {
   display: flex;
   gap: 2rem;
-  padding: 3rem 1rem 3.75rem;
+  align-items: center;
+  height: 12rem;
 
   @media (max-width: $tablet-landscape) {
     gap: 1rem;
-    padding: 2rem 1rem 2.75rem;
+    height: 10rem;
   }
 
   @media (max-width: $tablet-portrait) {
+    height: 14rem;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
 

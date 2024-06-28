@@ -124,7 +124,7 @@
     "description": "The modal component provides a solid foundation for creating dialogs",
     "path": "/ds/modal",
     "category": "pattern",
-    "news": false,
-    "soon": true
+    "news": true,
+    "soon": false
   }
 ]

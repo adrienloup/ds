@@ -6,8 +6,8 @@ interface SearchBarType {
   label?: string;
   value: string;
   checked: boolean;
-  onChange: (e: string) => void;
-  onCheck: (e: boolean) => void;
+  onChange: (e: { target: { value: string } }) => void;
+  onCheck: (e: { target: { checked: boolean } }) => void;
 }
 
 export const SearchBar = ({

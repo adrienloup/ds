@@ -13,7 +13,7 @@ interface TextFieldType {
   prefix?: string;
   suffix?: string;
   status?: "info" | "success" | "warning" | "error";
-  onChange: (e: string) => void;
+  onChange: (e: { target: { value: string } }) => void;
 }
 
 export const TextField = ({
@@ -50,7 +50,7 @@ export const TextField = ({
           className={style.input}
           placeholder={placeholder}
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={onChange}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
         />

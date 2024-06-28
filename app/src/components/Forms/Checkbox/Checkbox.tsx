@@ -2,30 +2,32 @@ import { useId } from "react";
 import style from "./Checkbox.module.scss";
 
 interface CheckboxType {
+  id?: string;
   cssClass?: string;
   checked: boolean;
-  label: string;
-  onChange: (e: boolean) => void;
+  label?: string;
+  onChange: (e: { target: { checked: boolean } }) => void;
 }
 
 export const Checkbox = ({
+  id,
   cssClass,
   checked = false,
   label,
   onChange,
 }: CheckboxType) => {
-  const id = useId();
+  const uId = useId();
 
   return (
     <div className={[style.checkbox, cssClass ? ` ${cssClass}` : ""].join("")}>
       <input
-        id={id}
+        id={id ? id : uId}
         type="checkbox"
         className={style.input}
         checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
+        onChange={onChange}
       />
-      <label htmlFor={id} className={style.label}>
+      <label htmlFor={id ? id : uId} className={style.label}>
         <span className={style.check}></span>
         {label}
       </label>

@@ -1,8 +1,7 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
-import { NotificationsContext } from "../../contexts/Notifications";
-import { NotificationsType } from "../../models/Notifications";
-import { Notifications } from "../Notifications/Notifications";
+import { useTasks } from "../../contexts/Tasks";
+import { TasksApp } from "../Tasks/TasksApp";
 import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
 import { Modal } from "../Modal/Modal";
@@ -12,9 +11,8 @@ import style from "./Tools.module.scss";
 export const Tools = ({ onSettings }: { onSettings: () => void }) => {
   console.log("Tools");
 
-  const { dataNotifications } =
-    useContext<NotificationsType>(NotificationsContext);
-  const [modal, setModal] = useState(false);
+  const tasks = useTasks();
+  const [tasksModal, setTasksModal] = useState(false);
 
   return (
     <div className={style.tools}>
@@ -30,11 +28,11 @@ export const Tools = ({ onSettings }: { onSettings: () => void }) => {
           ></path>
         </svg>
       </Button>
-      <Badge value={dataNotifications.length} max={9} cssClass={style.badge}>
+      <Badge value={tasks!.length} max={9} cssClass={style.badge}>
         <Button
           ariaLabel={"Notifications"}
           cssClass={style.button}
-          onClick={() => setModal(!modal)}
+          onClick={() => setTasksModal(!tasksModal)}
         >
           <Icon name="notifications" />
         </Button>
@@ -46,20 +44,18 @@ export const Tools = ({ onSettings }: { onSettings: () => void }) => {
       >
         <Icon name={"settings"} />
       </Button>
-      {modal &&
+      {tasksModal &&
         createPortal(
           <Modal
             head={
               <h3>
-                {dataNotifications.length > 0
-                  ? `${dataNotifications.length} `
-                  : ""}
-                Breaking <span>news</span>
+                {tasks && tasks.length > 0 ? tasks.length : ""} Breaking{" "}
+                <span>news</span>
               </h3>
             }
-            body={<Notifications />}
-            open={modal}
-            onClick={() => setModal(false)}
+            body={<TasksApp />}
+            open={tasksModal}
+            onClick={() => setTasksModal(false)}
           />,
           document.body
         )}

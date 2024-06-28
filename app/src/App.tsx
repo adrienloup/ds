@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/Auth";
 import { SettingsContextProvider } from "./contexts/Settings";
 import { MenuContextProvider } from "./contexts/Menu";
-import { NotificationsContextProvider } from "./contexts/Notifications";
 import { AlertContextProvider } from "./contexts/Alert";
+import { TasksProvider } from "./contexts/Tasks";
 import { Loader } from "./components/Loader/Loader";
 import HomePage from "./pages/Home";
 import BadgePage from "./pages/Badge";
@@ -12,6 +12,7 @@ import ButtonPage from "./pages/Button";
 import FabPage from "./pages/Fab";
 import LoginPage from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import ModalPage from "./pages/Modal";
 import OverviewPage from "./pages/Overview";
 import ProgressPage from "./pages/Progress";
 import StepperPage from "./pages/Stepper";
@@ -26,7 +27,7 @@ function App() {
     <AuthContextProvider>
       <SettingsContextProvider>
         <MenuContextProvider>
-          <NotificationsContextProvider>
+          <TasksProvider>
             <AlertContextProvider>
               <Loader />
               <BrowserRouter>
@@ -37,6 +38,7 @@ function App() {
                   <Route path="/ds/button" element={<ButtonPage />} />
                   <Route path="/ds/fab" element={<FabPage />} />
                   <Route path="/ds/login" element={<LoginPage />} />
+                  <Route path="/ds/modal" element={<ModalPage />} />
                   <Route path="/ds/overview" element={<OverviewPage />} />
                   <Route path="/ds/progress" element={<ProgressPage />} />
                   <Route path="/ds/stepper" element={<StepperPage />} />
@@ -48,7 +50,7 @@ function App() {
                 </Routes>
               </BrowserRouter>
             </AlertContextProvider>
-          </NotificationsContextProvider>
+          </TasksProvider>
         </MenuContextProvider>
       </SettingsContextProvider>
     </AuthContextProvider>

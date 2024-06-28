@@ -44,7 +44,9 @@ export const Settings = ({ open, onClick }: SettingsProps) => {
     return () => window.removeEventListener("resize", onResize);
   });
 
-  useEffect(() => onResize());
+  useEffect(() => {
+    onResize();
+  });
 
   return (
     <aside
