@@ -3,7 +3,7 @@ import { tasksReducer } from "../reducers/Tasks";
 import { SlotType } from "../models/Slot";
 import { TaskType } from "../models/Task";
 
-const TasksContext = createContext<TaskType[] | null>(null);
+const TasksContext = createContext<TaskType[]>([]);
 const TasksDispatchContext = createContext<Dispatch<{
   type: string;
   id: number;

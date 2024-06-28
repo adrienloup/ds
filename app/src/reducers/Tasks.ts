@@ -1,9 +1,6 @@
 import { TaskType } from "../models/Task";
 
-export function tasksReducer(
-  tasks: TaskType[],
-  action: { type: string; id: number; text: string; task: TaskType }
-) {
+export function tasksReducer(tasks: TaskType[], action: any) {
   switch (action.type) {
     case "added": {
       return [
