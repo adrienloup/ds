@@ -13,7 +13,6 @@ import StepperPage from "./pages/Stepper";
 import SwitchPage from "./pages/Switch";
 import TabsPage from "./pages/Tabs";
 import TagPage from "./pages/Tag";
-import UsagePage from "./pages/Usage";
 import "./App.scss";
 
 function App() {
@@ -33,7 +32,6 @@ function App() {
         <Route path="/ds/switch" element={<SwitchPage />} />
         <Route path="/ds/tabs" element={<TabsPage />} />
         <Route path="/ds/tag" element={<TagPage />} />
-        <Route path="/ds/usage" element={<UsagePage />} />
         <Route path="/ds/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
