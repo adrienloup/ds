@@ -3,18 +3,31 @@ import { createPortal } from "react-dom";
 import { useSettings } from "../../hooks/useSettings";
 import { useTask } from "../../hooks/useTask";
 import { useAuth } from "../../hooks/useAuth";
+import { PageType } from "../../models/Page";
+import { Select } from "../Forms/Select/Select";
 import { TaskForm } from "../Task/TaskForm";
 import { TaskList } from "../Task/TaskList";
 import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
 import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
+import pages from "../../data/pages.json";
 import style from "./ToolsBar.module.scss";
+
+const options = [
+  { label: "1", value: 1 },
+  { label: "2", value: 2 },
+  { label: "3", value: 3 },
+  { label: "4", value: 4 },
+  { label: "5", value: 5 },
+];
 
 export const ToolsBar = () => {
   // console.log("ToolsBar");
-  const [showTask, setShowTask] = useState(false);
   const { settings, setSettings } = useSettings();
+  const [modalTask, setModalTask] = useState(false);
+  // const [value, setValue] = useState({ name: "", path: "" });
+  const [value, setValue] = useState("");
   const { user } = useAuth();
   const tasks = useTask();
 
@@ -22,8 +35,22 @@ export const ToolsBar = () => {
     setSettings({ ...settings, open });
   };
 
+  const options = pages.filter((page: PageType) => {
+    if (page.category === "getting started") return false;
+    if (value && !page.name.includes(value)) return false;
+    return true;
+  });
+
+  console.log("options ", options);
+
   return (
     <div className={style.toolsbar}>
+      <Select
+        options={options}
+        value={value}
+        handleValueChange={(e) => setValue(e.target.value)}
+        // handleOptionChange={(option) => setValue(option.name)}
+      />
       <Button
         href={"https://github.com/adrienloup/ds"}
         ariaLabel={"Github"}
@@ -40,7 +67,7 @@ export const ToolsBar = () => {
         <Button
           ariaLabel={"Notifications"}
           cssClass={style.button}
-          onClick={() => setShowTask(!showTask)}
+          onClick={() => setModalTask(!modalTask)}
         >
           <Icon name="notifications" />
         </Button>
@@ -52,7 +79,7 @@ export const ToolsBar = () => {
       >
         <Icon name={"settings"} />
       </Button>
-      {showTask &&
+      {modalTask &&
         createPortal(
           <Modal
             head={
@@ -67,8 +94,8 @@ export const ToolsBar = () => {
                 <TaskList />
               </>
             }
-            open={showTask}
-            onClick={() => setShowTask(false)}
+            open={modalTask}
+            onClick={() => setModalTask(false)}
           />,
           document.body
         )}

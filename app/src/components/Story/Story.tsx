@@ -4,7 +4,7 @@ import { Button } from "../../components/Button/Button";
 import { Icon } from "../../components/Icon/Icon";
 import style from "./Story.module.scss";
 
-interface StoryType {
+type StoryType = {
   demo: ReactNode;
   code?: ReactNode;
   codepen?: string;
@@ -12,7 +12,7 @@ interface StoryType {
   story?: string;
   copy?: string;
   css?: CSSProperties;
-}
+};
 
 export const Story = ({
   demo,
@@ -23,7 +23,6 @@ export const Story = ({
   css,
 }: StoryType) => {
   // console.log("Story");
-
   const [expanded, setExpanded] = useState(true);
   const [animated, setAnimated] = useState(false);
   const { addAlert } = useAlert();

@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { LoginForm } from "./LoginForm";
 import style from "./Login.module.scss";
 
-interface LoginType {
+type LoginType = {
   open: boolean;
   handleClick: () => void;
-}
+};
 
 export const Login = ({ open, handleClick }: LoginType) => {
   const [height, setHeight] = useState(0);

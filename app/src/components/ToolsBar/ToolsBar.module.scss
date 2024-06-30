@@ -2,8 +2,9 @@ $tablet-portrait: 769px;
 
 .toolsbar {
   position: relative;
-  z-index: 2;
-  text-align: right;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-end;
   background-color: var(--color-2);
   border-bottom: 0.2rem solid var(--color-3);
 }

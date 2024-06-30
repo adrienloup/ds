@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 import style from "./FormField.module.scss";
 
-interface FormFieldType {
+type FormFieldType = {
   children: ReactNode;
   label?: string;
   helperText?: string;
   errorMessage?: string;
   cssClass?: string;
-}
+};
 
 export const FormField = ({
   children,

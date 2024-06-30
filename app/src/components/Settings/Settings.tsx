@@ -7,7 +7,6 @@ import style from "./Settings.module.scss";
 
 export const Settings = () => {
   // console.log("Settings");
-
   const asideRef = useRef<HTMLDivElement | null>(null);
   const innerRef = useRef<HTMLDivElement | null>(null);
   const { settings, setSettings } = useSettings();

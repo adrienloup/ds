@@ -3,7 +3,7 @@ import { FormField } from "../FormField/FormField";
 import { Icon } from "../../Icon/Icon";
 import style from "./TextField.module.scss";
 
-interface TextFieldType {
+type TextFieldType = {
   cssClass?: string;
   label?: string;
   placeholder?: string;
@@ -14,7 +14,7 @@ interface TextFieldType {
   suffix?: string;
   status?: "info" | "success" | "warning" | "error";
   onChange: (e: { target: { value: string } }) => void;
-}
+};
 
 export const TextField = ({
   cssClass,

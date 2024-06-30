@@ -50,7 +50,7 @@ export const LoginForm = ({ onClick }: { onClick: () => void }) => {
   };
 
   return (
-    <form action="submit" className={style.form}>
+    <form id="" action="" name="" className={style.form}>
       <div>
         <TextField
           placeholder="Name"

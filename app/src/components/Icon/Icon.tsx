@@ -1,9 +1,9 @@
 import style from "./Icon.module.scss";
 
-interface IconType {
+type IconType = {
   name: string;
   cssClass?: string;
-}
+};
 
 export const Icon = ({ name, cssClass }: IconType) => {
   return (

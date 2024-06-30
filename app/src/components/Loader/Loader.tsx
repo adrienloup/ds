@@ -3,7 +3,6 @@ import style from "./Loader.module.scss";
 
 export const Loader = () => {
   // console.log("Loader");
-
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const percent = Math.round((count * 100) / 3);

@@ -1,10 +1,10 @@
 import { Button } from "../Button/Button";
 import style from "./Navigation.module.scss";
 
-interface NavigationType {
+type NavigationType = {
   prev?: string;
   next?: string;
-}
+};
 
 export const Navigation = ({ prev, next }: NavigationType) => {
   return (

@@ -2,13 +2,13 @@ import { Checkbox } from "../Forms/Checkbox/Checkbox";
 import { TextField } from "../Forms/TextField/TextField";
 import style from "./SearchBar.module.scss";
 
-interface SearchBarType {
+type SearchBarType = {
   label?: string;
   value: string;
   checked: boolean;
   onChange: (e: { target: { value: string } }) => void;
   onCheck: (e: { target: { checked: boolean } }) => void;
-}
+};
 
 export const SearchBar = ({
   label,

@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import style from "./Promote.module.scss";
 
-interface PromoteType {
+type PromoteType = {
   head?: ReactNode;
   body?: ReactNode;
   foot?: ReactNode;
-}
+};
 
 export const Promote = ({ head, body, foot }: PromoteType) => {
   // console.log("promote");

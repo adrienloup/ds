@@ -23,7 +23,6 @@ function LoginPage() {
     <>
       <Header />
       <Main>
-        tutu
         {user.name ? (
           <>
             <h1>

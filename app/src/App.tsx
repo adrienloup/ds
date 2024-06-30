@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Loader } from "./components/Loader/Loader";
 import HomePage from "./pages/Home";
 import BadgePage from "./pages/Badge";
 import BreadcrumbsPage from "./pages/Breadcrumbs";
@@ -17,24 +18,27 @@ import "./App.scss";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/ds/" element={<HomePage />} />
-        <Route path="/ds/badge" element={<BadgePage />} />
-        <Route path="/ds/breadcrumbs" element={<BreadcrumbsPage />} />
-        <Route path="/ds/button" element={<ButtonPage />} />
-        <Route path="/ds/fab" element={<FabPage />} />
-        <Route path="/ds/login" element={<LoginPage />} />
-        <Route path="/ds/modal" element={<ModalPage />} />
-        <Route path="/ds/overview" element={<OverviewPage />} />
-        <Route path="/ds/progress" element={<ProgressPage />} />
-        <Route path="/ds/stepper" element={<StepperPage />} />
-        <Route path="/ds/switch" element={<SwitchPage />} />
-        <Route path="/ds/tabs" element={<TabsPage />} />
-        <Route path="/ds/tag" element={<TagPage />} />
-        <Route path="/ds/*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/ds/" element={<HomePage />} />
+          <Route path="/ds/badge" element={<BadgePage />} />
+          <Route path="/ds/breadcrumbs" element={<BreadcrumbsPage />} />
+          <Route path="/ds/button" element={<ButtonPage />} />
+          <Route path="/ds/fab" element={<FabPage />} />
+          <Route path="/ds/login" element={<LoginPage />} />
+          <Route path="/ds/modal" element={<ModalPage />} />
+          <Route path="/ds/overview" element={<OverviewPage />} />
+          <Route path="/ds/progress" element={<ProgressPage />} />
+          <Route path="/ds/stepper" element={<StepperPage />} />
+          <Route path="/ds/switch" element={<SwitchPage />} />
+          <Route path="/ds/tabs" element={<TabsPage />} />
+          <Route path="/ds/tag" element={<TagPage />} />
+          <Route path="/ds/*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+      <Loader />
+    </>
   );
 }
 

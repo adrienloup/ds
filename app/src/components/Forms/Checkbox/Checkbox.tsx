@@ -1,13 +1,13 @@
 import { useId } from "react";
 import style from "./Checkbox.module.scss";
 
-interface CheckboxType {
+type CheckboxType = {
   id?: string;
   cssClass?: string;
   checked: boolean;
   label?: string;
   onChange: (e: { target: { checked: boolean } }) => void;
-}
+};
 
 export const Checkbox = ({
   id,

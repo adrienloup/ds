@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 import style from "./Badge.module.scss";
 
-interface BadgeType {
+type BadgeType = {
   children: ReactNode;
   cssClass?: string;
   max?: number;
   value?: number;
-}
+};
 
 export const Badge = ({
   children,

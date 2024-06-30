@@ -2,7 +2,7 @@ import { memo, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import style from "./Button.module.scss";
 
-interface ButtonType {
+type ButtonType = {
   children: ReactNode;
   cssClass?: string;
   type?: "button" | "submit" | "reset";
@@ -14,7 +14,7 @@ interface ButtonType {
   onMouseLeave?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
-}
+};
 
 export const Button = memo(
   ({
@@ -31,7 +31,6 @@ export const Button = memo(
     onBlur,
   }: ButtonType) => {
     // console.log("Button");
-
     const link = (
       <Link
         to={to as string}

@@ -23,7 +23,7 @@ export const TaskForm = () => {
           cssClass={style.button}
           onClick={() => {
             setText("");
-            dispatch({
+            dispatch!({
               type: "added",
               id: nextId++,
               text: text,

@@ -3,14 +3,14 @@ import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import style from "./Modal.module.scss";
 
-interface ModalType {
+type ModalType = {
   head?: ReactNode;
   body?: ReactNode;
   foot?: ReactNode;
   open: boolean;
   cssClass?: string;
   onClick: () => void;
-}
+};
 
 export const Modal = ({
   head,

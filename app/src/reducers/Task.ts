@@ -1,5 +1,8 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-export function tasksReducer(tasks: any[], action: any) {
+export function tasksReducer(
+  tasks: { id: number; text: string; done: boolean }[],
+  action: { type: string; id?: number; text?: string; task?: any }
+) {
   switch (action.type) {
     case "added": {
       return [

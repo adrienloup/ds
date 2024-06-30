@@ -2,13 +2,12 @@ import { CardType } from "../../models/Card";
 import { CardItem } from "./CardItem";
 import style from "./Card.module.scss";
 
-interface CardListType {
+type CardListType = {
   list: CardType[];
-}
+};
 
 export const CardList = ({ list }: CardListType) => {
   // console.log("CardList");
-
   return (
     <div className={style.cardlist}>
       {list.length > 0 ? (

@@ -1,9 +1,9 @@
 import { PageType } from "../../models/Page";
 import { CardItem } from "../Card/CardItem";
 
-interface PageListType {
+type PageListType = {
   list: PageType[];
-}
+};
 
 export const PageList = ({ list }: PageListType) => {
   console.log("PageList");

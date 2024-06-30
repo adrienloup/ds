@@ -30,7 +30,7 @@ export const TaskItem = ({
           value={task.text}
           cssClass={style.textfield}
           onChange={(e: { target: { value: string } }) => {
-            dispatch({
+            dispatch!({
               type: "changed",
               task: {
                 ...task,
@@ -66,7 +66,7 @@ export const TaskItem = ({
         id={uId}
         checked={task.done}
         onChange={(e: { target: { checked: boolean } }) => {
-          dispatch({
+          dispatch!({
             type: "changed",
             task: {
               ...task,
@@ -79,7 +79,7 @@ export const TaskItem = ({
       <Button
         cssClass={style.button}
         onClick={() => {
-          dispatch({
+          dispatch!({
             type: "deleted",
             id: task.id,
           });

@@ -6,7 +6,6 @@ import pages from "../../data/pages.json";
 
 export const CardSearchable = () => {
   // console.log("CardSearchable");
-
   const [value, setValue] = useState("");
   const [isNews, setNews] = useState(false);
 
