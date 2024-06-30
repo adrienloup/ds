@@ -1,10 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthContextProvider } from "./contexts/Auth";
-import { SettingsContextProvider } from "./contexts/Settings";
-import { MenuContextProvider } from "./contexts/Menu";
-import { AlertContextProvider } from "./contexts/Alert";
-import { TasksProvider } from "./contexts/Tasks";
-import { Loader } from "./components/Loader/Loader";
 import HomePage from "./pages/Home";
 import BadgePage from "./pages/Badge";
 import BreadcrumbsPage from "./pages/Breadcrumbs";
@@ -19,41 +13,30 @@ import StepperPage from "./pages/Stepper";
 import SwitchPage from "./pages/Switch";
 import TabsPage from "./pages/Tabs";
 import TagPage from "./pages/Tag";
-import TestPage from "./pages/Test";
+import UsagePage from "./pages/Usage";
 import "./App.scss";
 
 function App() {
   return (
-    <AuthContextProvider>
-      <SettingsContextProvider>
-        <MenuContextProvider>
-          <TasksProvider>
-            <AlertContextProvider>
-              <Loader />
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/ds/" element={<HomePage />} />
-                  <Route path="/ds/badge" element={<BadgePage />} />
-                  <Route path="/ds/breadcrumbs" element={<BreadcrumbsPage />} />
-                  <Route path="/ds/button" element={<ButtonPage />} />
-                  <Route path="/ds/fab" element={<FabPage />} />
-                  <Route path="/ds/login" element={<LoginPage />} />
-                  <Route path="/ds/modal" element={<ModalPage />} />
-                  <Route path="/ds/overview" element={<OverviewPage />} />
-                  <Route path="/ds/progress" element={<ProgressPage />} />
-                  <Route path="/ds/stepper" element={<StepperPage />} />
-                  <Route path="/ds/switch" element={<SwitchPage />} />
-                  <Route path="/ds/tabs" element={<TabsPage />} />
-                  <Route path="/ds/tag" element={<TagPage />} />
-                  <Route path="/ds/test" element={<TestPage />} />
-                  <Route path="/ds/*" element={<NotFound />} />
-                </Routes>
-              </BrowserRouter>
-            </AlertContextProvider>
-          </TasksProvider>
-        </MenuContextProvider>
-      </SettingsContextProvider>
-    </AuthContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/ds/" element={<HomePage />} />
+        <Route path="/ds/badge" element={<BadgePage />} />
+        <Route path="/ds/breadcrumbs" element={<BreadcrumbsPage />} />
+        <Route path="/ds/button" element={<ButtonPage />} />
+        <Route path="/ds/fab" element={<FabPage />} />
+        <Route path="/ds/login" element={<LoginPage />} />
+        <Route path="/ds/modal" element={<ModalPage />} />
+        <Route path="/ds/overview" element={<OverviewPage />} />
+        <Route path="/ds/progress" element={<ProgressPage />} />
+        <Route path="/ds/stepper" element={<StepperPage />} />
+        <Route path="/ds/switch" element={<SwitchPage />} />
+        <Route path="/ds/tabs" element={<TabsPage />} />
+        <Route path="/ds/tag" element={<TagPage />} />
+        <Route path="/ds/usage" element={<UsagePage />} />
+        <Route path="/ds/*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -7,7 +7,7 @@ import { Menu } from "../Menu/Menu";
 import style from "./Header.module.scss";
 
 export const Header = () => {
-  console.log("Header");
+  // console.log("Header");
 
   const [open, setOpen] = useState(false);
 

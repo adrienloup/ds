@@ -8,8 +8,8 @@ import { Navigation } from "../components/Navigation/Navigation";
 import { DsModal } from "design-system/src/components/Modal/Modal";
 
 function ModalPage() {
-  console.log("ModalPage");
-  useTitle("Modal Page");
+  // console.log("ModalPage");
+  useTitle("Modal");
 
   return (
     <>

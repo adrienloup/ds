@@ -9,8 +9,8 @@ import { Navigation } from "../components/Navigation/Navigation";
 import { DsStepper } from "design-system/src/components/Stepper/Stepper";
 
 function StepperPage() {
-  console.log("StepperPage");
-  useTitle("Stepper Page");
+  // console.log("StepperPage");
+  useTitle("Stepper");
 
   const [activeStepA, setActiveStepA] = useState(1);
   const [activeStepB, setActiveStepB] = useState(1);

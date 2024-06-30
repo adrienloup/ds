@@ -1,5 +1,5 @@
 import { CardType } from "../../models/Card";
-import { Card } from "./Card";
+import { CardItem } from "./CardItem";
 import style from "./Card.module.scss";
 
 interface CardListType {
@@ -7,13 +7,13 @@ interface CardListType {
 }
 
 export const CardList = ({ list }: CardListType) => {
-  console.log("CardList");
+  // console.log("CardList");
 
   return (
     <div className={style.cardlist}>
       {list.length > 0 ? (
         list.map((item: CardType, index) => (
-          <Card
+          <CardItem
             key={index}
             name={item.name}
             description={item.description}

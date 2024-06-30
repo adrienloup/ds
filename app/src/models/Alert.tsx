@@ -8,9 +8,3 @@ export type AlertType = {
   button?: boolean;
   handleRemove?: () => void;
 };
-
-export type AlertsType = {
-  alerts: AlertType[];
-  addAlert: (alert: AlertType) => string;
-  removeAlert: (id: string) => void;
-};

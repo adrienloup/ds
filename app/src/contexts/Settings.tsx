@@ -1,29 +1,34 @@
-import { createContext } from "react";
-import { SettingsType } from "../models/Settings";
+import { createContext, useEffect } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 import { SlotType } from "../models/Slot";
-import { useSettings } from "../hooks/useSettings";
+import style from "../scss/modes/dark.module.scss";
 
-export const SettingsContext = createContext<SettingsType>({
-  dataSettings: {
-    dir: "ltr",
-    mode: "dark",
-    open: false,
-  },
-  setDataSettings: (dataSettings: {
-    dir: string;
-    mode: string;
-    open: boolean;
-  }) => {
-    dataSettings;
+export const SettingsContext = createContext<{
+  settings: { dir: string; mode: string; open: boolean };
+  setSettings: (settings: { dir: string; mode: string; open: boolean }) => void;
+}>({
+  settings: { dir: "ltr", mode: "dark", open: false },
+  setSettings: (settings: { dir: string; mode: string; open: boolean }) => {
+    settings;
   },
 });
 
-export const SettingsContextProvider = ({ children }: SlotType) => {
-  const { dataSettings, setDataSettings } = useSettings();
+export function SettingsProvider({ children }: SlotType) {
+  const [settings, setSettings] = useLocalStorage("ds_y0y09_10_settings", {
+    dir: "ltr",
+    mode: "dark",
+    open: false,
+  });
+
+  useEffect(() => {
+    settings.mode === "dark"
+      ? document.body.classList.add(`${style.dark}`)
+      : document.body.classList.remove(`${style.dark}`);
+  }, [settings]);
 
   return (
-    <SettingsContext.Provider value={{ dataSettings, setDataSettings }}>
+    <SettingsContext.Provider value={{ settings, setSettings }}>
       {children}
     </SettingsContext.Provider>
   );
-};
+}

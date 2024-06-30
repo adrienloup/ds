@@ -8,8 +8,8 @@ import { Navigation } from "../components/Navigation/Navigation";
 import { DsProgress } from "design-system/src/components/Progress/Progress";
 
 function ProgressPage() {
-  console.log("ProgressPage");
-  useTitle("Progress Page");
+  // console.log("ProgressPage");
+  useTitle("Progress");
 
   return (
     <>

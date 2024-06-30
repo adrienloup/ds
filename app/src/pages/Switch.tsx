@@ -8,8 +8,8 @@ import { Navigation } from "../components/Navigation/Navigation";
 import { DsSwitch } from "design-system/src/components/Switch/Switch";
 
 function SwitchPage() {
-  console.log("SwitchPage");
-  useTitle("Switch Page");
+  // console.log("SwitchPage");
+  useTitle("Switch");
 
   return (
     <>

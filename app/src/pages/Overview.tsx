@@ -4,12 +4,12 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Promote } from "../components/Promote/Promote";
-import { CardsSearchable } from "../components/Card/CardsSearchable";
+import { CardSearchable } from "../components/Card/CardSearchable";
 import { Button } from "../components/Button/Button";
 
 function OverviewPage() {
-  console.log("OverviewPage");
-  useTitle("Overview Page");
+  // console.log("OverviewPage");
+  useTitle("Overview");
 
   return (
     <>
@@ -33,7 +33,7 @@ function OverviewPage() {
           }
           foot={<Button to={"/ds/"}>Library</Button>}
         />
-        <CardsSearchable />
+        <CardSearchable />
       </Main>
       <Footer />
       <ScrollToTop />

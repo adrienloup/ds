@@ -5,18 +5,14 @@ import style from "./ScrollTo.module.scss";
 export const ScrollTo = ({ top }: { top: number }) => {
   const [active, setActive] = useState(false);
 
-  const onScroll = () => {
-    setActive(window.scrollY >= window.innerHeight * 4);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
+    const handleResize = () => {
+      setActive(document.body.clientHeight > window.innerHeight);
     };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  useEffect(() => onScroll());
 
   return (
     <button

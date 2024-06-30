@@ -9,8 +9,8 @@ import { DsButton } from "design-system/src/components/Button/Button";
 import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function ButtonPage() {
-  console.log("ButtonPage");
-  useTitle("Button Page");
+  // console.log("ButtonPage");
+  useTitle("Button");
 
   return (
     <>

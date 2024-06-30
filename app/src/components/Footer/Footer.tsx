@@ -1,44 +1,40 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
-import { AuthContext } from "../../contexts/Auth";
+import { useAuth } from "../../hooks/useAuth";
 import { ScrollTo } from "../ScrollTo/ScrollTo";
-import { AuthType } from "../../models/Auth";
 import { Button } from "../Button/Button";
 import { Login } from "../Login/Login";
 import style from "./Footer.module.scss";
 
 export const Footer = () => {
-  console.log("Footer");
-
-  const { dataAuth } = useContext<AuthType>(AuthContext);
-  const [login, setLogin] = useState(false);
+  // console.log("Footer");
+  const { user } = useAuth();
+  const [showModalTask, setShowModalTask] = useState(false);
 
   return (
     <footer role="contentinfo" className={style.footer}>
       <div className={style.inner}>
         <ScrollTo top={0} />
-        {dataAuth.user ? (
-          <Button
-            ariaLabel={"Logout"}
-            cssClass={style.button}
-            to={"/ds/login/"}
-          >
-            Logout
+        <span className={style.text}>Logic of Atomic Design</span>
+        {user.name ? (
+          <Button cssClass={style.button} to={"/ds/login/"}>
+            Login page
           </Button>
         ) : (
           <Button
-            ariaLabel={"Login"}
             cssClass={style.button}
-            onClick={() => setLogin(!login)}
+            onClick={() => setShowModalTask(!showModalTask)}
           >
             Login
           </Button>
         )}
-        <span>Logic of Atomic Design</span>
       </div>
-      {login &&
+      {showModalTask &&
         createPortal(
-          <Login open={login} handleClick={() => setLogin(false)} />,
+          <Login
+            open={showModalTask}
+            handleClick={() => setShowModalTask(false)}
+          />,
           document.body
         )}
     </footer>

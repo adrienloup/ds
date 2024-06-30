@@ -22,7 +22,7 @@ export const Story = ({
   copy,
   css,
 }: StoryType) => {
-  console.log("Story");
+  // console.log("Story");
 
   const [expanded, setExpanded] = useState(true);
   const [animated, setAnimated] = useState(false);

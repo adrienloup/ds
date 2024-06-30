@@ -8,7 +8,7 @@ interface PromoteType {
 }
 
 export const Promote = ({ head, body, foot }: PromoteType) => {
-  console.log("promote");
+  // console.log("promote");
 
   return (
     <div className={style.promote}>

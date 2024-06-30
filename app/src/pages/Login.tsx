@@ -1,9 +1,6 @@
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
-import { AuthContext } from "../contexts/Auth";
-import { AuthType } from "../models/Auth";
-import { useUser } from "../hooks/useUser";
+import { useAuth } from "../hooks/useAuth";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
@@ -11,14 +8,13 @@ import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Button } from "../components/Button/Button";
 
 function LoginPage() {
-  console.log("LoginPage");
-  useTitle("Login Page");
+  // console.log("LoginPage");
+  useTitle("Login");
 
-  const { dataAuth } = useContext<AuthType>(AuthContext);
   const navigate = useNavigate();
-  const { logout } = useUser();
+  const { user, logout } = useAuth();
 
-  const handleLogout = () => {
+  const handleClick = () => {
     logout();
     navigate("/ds/");
   };
@@ -27,14 +23,14 @@ function LoginPage() {
     <>
       <Header />
       <Main>
-        {dataAuth.user ? (
+        tutu
+        {user.name ? (
           <>
             <h1>
               <span>Disconnect or</span> learn more about React{" "}
               <span>just for pleasure :)</span>
             </h1>
-            <Button onClick={handleLogout}>Logout</Button>
-            <Button to={"/ds/test"}>learning</Button>
+            <Button onClick={handleClick}>Logout</Button>
           </>
         ) : (
           <h1>

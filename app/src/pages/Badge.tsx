@@ -9,8 +9,8 @@ import { DsBadge } from "design-system/src/components/Badge/Badge";
 import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function BadgePage() {
-  console.log("BadgePage");
-  useTitle("Badge Page");
+  // console.log("BadgePage");
+  useTitle("Badge");
 
   return (
     <>

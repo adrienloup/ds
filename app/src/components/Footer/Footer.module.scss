@@ -7,17 +7,21 @@ $tablet-portrait: 769px;
 
 .inner {
   position: relative;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
-  padding-right: 1rem;
   border-top: 0.2rem solid var(--color-3);
+  color: var(--color-1);
+}
+
+.text {
+  margin-left: auto;
+  padding: 0 1rem;
   letter-spacing: 0.075rem;
   text-transform: uppercase;
   font-family: var(--font-text-bold);
   font-size: 1.5rem;
-  color: var(--color-1);
 
   @media (max-width: $tablet-portrait) {
     font-size: 1.25rem;
@@ -25,9 +29,12 @@ $tablet-portrait: 769px;
 }
 
 .button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 1rem;
   height: 1rem;
-  background: none;
+  background: transparent;
   border: none;
   font-size: 0;
 

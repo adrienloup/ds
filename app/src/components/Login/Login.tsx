@@ -10,14 +10,14 @@ interface LoginType {
 export const Login = ({ open, handleClick }: LoginType) => {
   const [height, setHeight] = useState(0);
 
-  const onResize = () => setHeight(document.body.offsetHeight);
+  const handleResize = () => setHeight(document.body.offsetHeight);
 
   useEffect(() => {
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   });
 
-  useEffect(() => onResize());
+  useEffect(() => handleResize());
 
   return (
     <div
@@ -28,7 +28,7 @@ export const Login = ({ open, handleClick }: LoginType) => {
       }}
     >
       <div className={style.content}>
-        <LoginForm />
+        <LoginForm onClick={handleClick} />
       </div>
       <div className={style.layer}></div>
       <div className={style.backdrop} onClick={handleClick}></div>

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import style from "./Loader.module.scss";
 
 export const Loader = () => {
-  console.log("Loader");
+  // console.log("Loader");
 
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);

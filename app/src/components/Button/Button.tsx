@@ -30,7 +30,7 @@ export const Button = memo(
     onFocus,
     onBlur,
   }: ButtonType) => {
-    console.log("Button");
+    // console.log("Button");
 
     const link = (
       <Link

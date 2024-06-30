@@ -1,13 +1,21 @@
 import { createContext, useState } from "react";
 import { createPortal } from "react-dom";
-import { AlertType, AlertsType } from "../models/Alert";
+import { AlertType } from "../models/Alert";
 import { SlotType } from "../models/Slot";
-import { Alerts } from "../components/Alerts/Alerts";
-import { Alert } from "../components/Alerts/Alert";
+import { Alerts } from "../components/Alert/Alerts";
+import { Alert } from "../components/Alert/Alert";
 
-export const AlertContext = createContext<AlertsType | null>(null);
+export const AlertContext = createContext<{
+  alerts: AlertType[];
+  addAlert: (alert: AlertType) => void;
+  removeAlert: (id: string) => void;
+}>({
+  alerts: [],
+  addAlert: (alert: AlertType) => alert,
+  removeAlert: (id: string) => id,
+});
 
-export const AlertContextProvider = ({ children }: SlotType) => {
+export const AlertProvider = ({ children }: SlotType) => {
   const [alerts, setAlerts] = useState<AlertType[]>([]);
 
   const addAlert = (alert: AlertType) => {
@@ -37,7 +45,7 @@ export const AlertContextProvider = ({ children }: SlotType) => {
               />
             ))}
           </Alerts>,
-          document.body,
+          document.body
         )}
       {children}
     </AlertContext.Provider>

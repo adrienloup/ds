@@ -9,8 +9,8 @@ import { DsTag } from "design-system/src/components/Tag/Tag";
 import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function TagPage() {
-  console.log("TagPage");
-  useTitle("Tag Page");
+  // console.log("TagPage");
+  useTitle("Tag");
 
   return (
     <>

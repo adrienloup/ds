@@ -5,8 +5,8 @@ import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 
 function NotFoundPage() {
-  console.log("NotFoundPage");
-  useTitle("Not Found Page");
+  // console.log("NotFoundPage");
+  useTitle("Not found");
 
   return (
     <>

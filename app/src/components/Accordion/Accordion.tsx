@@ -15,14 +15,14 @@ export const Accordion = ({
   expanded,
   onClick,
 }: AccordionProps) => {
-  console.log("Accordion");
+  // console.log("Accordion");
 
   const [animated, setAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const panelId = useId();
 
-  const onResize = () => {
+  const handleResize = () => {
     if (!ref.current) return;
     ref.current.style.marginTop = `${
       expanded ? 0 : -(ref.current.offsetHeight + 1)
@@ -34,11 +34,11 @@ export const Accordion = ({
   }, [expanded]);
 
   useEffect(() => {
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   });
 
-  useEffect(() => onResize());
+  useEffect(() => handleResize());
 
   return (
     <div

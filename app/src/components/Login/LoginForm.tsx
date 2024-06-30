@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../../hooks/useUser";
+import { useAuth } from "../../hooks/useAuth";
 import { TextField } from "../Forms/TextField/TextField";
 import { Button } from "../Button/Button";
 import style from "./Login.module.scss";
 
-export const LoginForm = () => {
+export const LoginForm = ({ onClick }: { onClick: () => void }) => {
+  // console.log('LoginForm');
   const navigate = useNavigate();
-  const { login } = useUser();
+  const { login } = useAuth();
   const [errorName, setErrorName] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [user, setUser] = useState({
@@ -23,7 +24,7 @@ export const LoginForm = () => {
   };
 
   const handleSubmit = () => {
-    const id = new Date().getTime().toString();
+    const id = new Date().getTime();
 
     if (user.name === "") {
       setErrorName("Name is empty");
@@ -42,11 +43,9 @@ export const LoginForm = () => {
     }
 
     if (user.name === "adrien" && user.password === "loup") {
-      login({
-        id: id,
-        name: user.name,
-      });
+      login({ id: id, name: user.name });
       navigate("/ds/login/");
+      onClick();
     }
   };
 

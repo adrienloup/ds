@@ -9,8 +9,8 @@ import { DsTabs } from "design-system/src/components/Tabs/Tabs";
 import { DsTabPanel } from "design-system/src/components/Tabs/TabPanel";
 
 function TabsPage() {
-  console.log("TabsPage");
-  useTitle("Tabs Page");
+  // console.log("TabsPage");
+  useTitle("Tabs");
 
   return (
     <>

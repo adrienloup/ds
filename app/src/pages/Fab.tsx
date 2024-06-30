@@ -9,8 +9,8 @@ import { DsIcon } from "design-system/src/components/Icon/Icon";
 import { DsFab } from "design-system/src/components/Fab/Fab";
 
 function FabPage() {
-  console.log("FabPage");
-  useTitle("Fab Page");
+  // console.log("FabPage");
+  useTitle("Fab");
 
   return (
     <>

@@ -8,8 +8,8 @@ import { Navigation } from "../components/Navigation/Navigation";
 import { DsBreadcrumbs } from "design-system/src/components/Breadcrumbs/Breadcrumbs";
 
 function BreadcrumbsPage() {
-  console.log("BreadcrumbsPage");
-  useTitle("Breadcrumbs Page");
+  // console.log("BreadcrumbsPage");
+  useTitle("Breadcrumbs");
 
   return (
     <>

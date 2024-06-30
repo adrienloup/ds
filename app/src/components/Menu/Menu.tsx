@@ -1,16 +1,18 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MenuContext } from "../../contexts/Menu";
-import { MenuType } from "../../models/Menu";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { Accordion } from "../Accordion/Accordion";
 import pages from "../../data/pages.json";
 import style from "./Menu.module.scss";
 
 export const Menu = ({ open }: { open: boolean }) => {
-  console.log("Menu");
+  // console.log("Menu");
 
-  const { dataMenu, setDataMenu } = useContext<MenuType>(MenuContext);
-  const [expanded, setExpanded] = useState<string | boolean>(dataMenu);
+  const [localCategory, setLocalCategory] = useLocalStorage(
+    "ds_y0y09_10_category",
+    ""
+  );
+  const [expanded, setExpanded] = useState<string | boolean>(localCategory);
 
   const categoryList = () => {
     const list = [];
@@ -38,8 +40,8 @@ export const Menu = ({ open }: { open: boolean }) => {
     });
   };
 
-  const onToggleExpanded = (category: string) => {
-    setDataMenu(expanded !== category ? category : "");
+  const handleExpandedChange = (category: string) => {
+    setLocalCategory(expanded !== category ? category : "");
     setExpanded(expanded !== category ? category : false);
   };
 
@@ -71,7 +73,7 @@ export const Menu = ({ open }: { open: boolean }) => {
               ))}
             </ul>
           }
-          onClick={() => onToggleExpanded(category)}
+          onClick={() => handleExpandedChange(category)}
           expanded={expanded === category}
         />
       ))}

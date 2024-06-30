@@ -32,8 +32,8 @@ $tablet-portrait: 769px;
 .inner {
   position: relative;
   z-index: 2;
+  max-width: 90rem;
   padding: 5rem;
-  background-color: var(--color-2);
 
   @media (max-width: $desktop) {
     padding: 2.5rem;
@@ -44,7 +44,6 @@ $tablet-portrait: 769px;
   }
 
   & > h1 {
-    max-width: 65rem;
     margin-bottom: 4rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -67,7 +66,6 @@ $tablet-portrait: 769px;
   }
 
   & > h2 {
-    max-width: 65rem;
     margin: 4rem 0;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -90,7 +88,6 @@ $tablet-portrait: 769px;
   }
 
   & > h3 {
-    max-width: 65rem;
     margin: 4rem 0;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -113,7 +110,6 @@ $tablet-portrait: 769px;
   }
 
   & > p {
-    max-width: 65rem;
     margin: 1.5rem 0;
     line-height: 1.25;
     font-size: 1.5rem;
@@ -133,7 +129,7 @@ $tablet-portrait: 769px;
     padding: 1.5rem;
     background-color: var(--color-yellow);
     border: 0;
-    line-height: 1.25;
+    line-height: 1;
     font-size: 1.5rem;
     color: var(--color-neutral-1);
 

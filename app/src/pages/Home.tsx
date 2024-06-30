@@ -3,21 +3,21 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
-import { Cards } from "../components/Card/Cards";
+import { CardGettingStarted } from "../components/Card/CardGettingStarted";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
 
 function HomePage() {
-  console.log("HomePage");
-  useTitle("Home Page");
+  // console.log("HomePage");
+  useTitle("Home");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          <span>A pretty good library of</span> React components{" "}
-          <span>for Web application's UI</span>
+          A pretty good library{" "}
+          <span>of React components for Web application's UI</span>
         </h1>
         <Promote
           head={<h2>Unlock the full power</h2>}
@@ -38,7 +38,7 @@ function HomePage() {
           Get started with DS library{" "}
           <span>today through some of these useful resources</span>
         </h2>
-        <Cards />
+        <CardGettingStarted />
       </Main>
       <Footer />
       <ScrollToTop />
