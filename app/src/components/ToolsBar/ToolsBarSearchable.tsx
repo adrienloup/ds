@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { PageType } from "../../models/Page";
 import { SearchBar } from "../SearchBar/SearchBar";
+import { Empty } from "../Empty/Empty";
 import pages from "../../data/pages.json";
 import style from "./ToolsBar.module.scss";
-import { Link } from "react-router-dom";
 
 export const ToolsBarSearchable = () => {
   // console.log("ToolsBarSearchable");
@@ -39,9 +40,10 @@ export const ToolsBarSearchable = () => {
           ))}
         </ul>
       ) : (
-        <p className={style.empty}>
-          Nothing matches your search but don't give up :)
-        </p>
+        <Empty
+          text="Nothing matches your search but don't give up :)"
+          cssClass={style.empty}
+        />
       )}
       <div
         className={style.backdrop}

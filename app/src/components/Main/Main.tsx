@@ -1,7 +1,7 @@
 import { SlotType } from "../../models/Slot";
 import { ToolsBar } from "../ToolsBar/ToolsBar";
 import { Settings } from "../Settings/Settings";
-import { Banner } from "../Banner/Banner";
+import { Banners } from "../Banner/Banners";
 import style from "./Main.module.scss";
 
 export const Main = ({ children }: SlotType) => {
@@ -11,7 +11,7 @@ export const Main = ({ children }: SlotType) => {
     <main role="main" className={style.main}>
       <ToolsBar />
       <Settings />
-      <Banner />
+      <Banners />
       <div className={style.inner}>{children}</div>
     </main>
   );

@@ -263,7 +263,7 @@ function ProgressPage() {
             "<DsProgress title='Loading' display='linear' value='{50}'/>\n<DsProgress title='Loading' display='circular' value='{50}'/>"
           }
         />
-        <Navigation prev="badge" next="tag" />
+        <Navigation prev="alert" next="tag" />
       </Main>
       <Footer />
       <ScrollToTop />

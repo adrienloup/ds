@@ -246,7 +246,7 @@ function BadgePage() {
           github={"Badge"}
           copy={"<DSBadge value={110}><Icon name={'delete'} /></DsBadge>"}
         />
-        <Navigation prev="alert" next="progress" />
+        <Navigation prev="avatar" next="typography" />
       </Main>
       <Footer />
       <ScrollToTop />

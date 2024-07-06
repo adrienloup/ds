@@ -7,8 +7,15 @@ $tablet-portrait: 769px;
   align-items: center;
   gap: 1rem;
   padding: 1rem 4.25rem 1rem 1.5rem;
-  background-color: var(--color-chartreuse);
   color: var(--color-neutral-1);
+
+  &.info {
+    background-color: var(--color-chartreuse);
+  }
+
+  &.warning {
+    background-color: var(--color-cyan);
+  }
 
   p {
     text-transform: uppercase;
@@ -40,7 +47,14 @@ $tablet-portrait: 769px;
 
   &:hover {
     background-color: var(--color-neutral-1);
-    color: var(--color-chartreuse);
+
+    .info & {
+      color: var(--color-chartreuse);
+    }
+
+    .warning & {
+      color: var(--color-cyan);
+    }
   }
 
   &:focus-visible {

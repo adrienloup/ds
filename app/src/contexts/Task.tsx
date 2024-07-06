@@ -11,6 +11,7 @@ const initialTask = [
 export const TaskContext = createContext<
   { id: number; text: string; done: boolean }[]
 >([]);
+
 export const TaskDispatchContext = createContext<
   Dispatch<{
     type: string;

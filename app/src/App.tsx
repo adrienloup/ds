@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Loader } from "./components/Loader/Loader";
 import HomePage from "./pages/Home";
+import AvatarPage from "./pages/Avatar";
 import BadgePage from "./pages/Badge";
 import BreadcrumbsPage from "./pages/Breadcrumbs";
 import ButtonPage from "./pages/Button";
@@ -23,6 +24,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/ds/" element={<HomePage />} />
+          <Route path="/ds/avatar" element={<AvatarPage />} />
           <Route path="/ds/badge" element={<BadgePage />} />
           <Route path="/ds/breadcrumbs" element={<BreadcrumbsPage />} />
           <Route path="/ds/button" element={<ButtonPage />} />

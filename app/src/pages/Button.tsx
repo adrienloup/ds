@@ -179,57 +179,25 @@ function ButtonPage() {
           }
           code={
             <>
-              &lt;<span style={{ color: "#00dc09" }}>DsButton</span>
-              <br />
-              {"   "}
+              &lt;<span style={{ color: "#00dc09" }}>DsButton</span>{" "}
               <span style={{ color: "#00caff" }}>variant</span>
-              ="<span style={{ color: "#ffeb3b" }}>contained</span>"
-              <br />
-              {"   "}
+              ="<span style={{ color: "#ffeb3b" }}>contained</span>"{" "}
               <span style={{ color: "#00caff" }}>size</span>
-              ="<span style={{ color: "#ffeb3b" }}>small</span>
-              "
-              <br />
-              &gt;
-              <br />
-              {"   "}Small
-              <br />
-              &lt;/
+              ="<span style={{ color: "#ffeb3b" }}>small</span>"&gt;Small&lt;/
               <span style={{ color: "#00dc09" }}>DsButton</span>&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsButton</span>
-              <br />
-              {"   "}
+              &lt;<span style={{ color: "#00dc09" }}>DsButton</span>{" "}
               <span style={{ color: "#00caff" }}>variant</span>
-              ="<span style={{ color: "#ffeb3b" }}>contained</span>"
-              <br />
-              {"   "}
+              ="<span style={{ color: "#ffeb3b" }}>contained</span>"{" "}
               <span style={{ color: "#00caff" }}>size</span>
-              ="<span style={{ color: "#ffeb3b" }}>medium</span>
-              "<br />
-              &gt;
-              <br />
-              {"   "}Medium
-              <br />
-              &lt;/
+              ="<span style={{ color: "#ffeb3b" }}>medium</span>"&gt;Medium&lt;/
               <span style={{ color: "#00dc09" }}>DsButton</span>&gt;
               <br />
-              &lt;<span style={{ color: "#00dc09" }}>DsButton</span>
-              <br />
-              {"   "}
+              &lt;<span style={{ color: "#00dc09" }}>DsButton</span>{" "}
               <span style={{ color: "#00caff" }}>variant</span>
-              ="<span style={{ color: "#ffeb3b" }}>contained</span>"
-              <br />
-              {"   "}
+              ="<span style={{ color: "#ffeb3b" }}>contained</span>"{" "}
               <span style={{ color: "#00caff" }}>size</span>
-              ="<span style={{ color: "#ffeb3b" }}>large</span>
-              "
-              <br />
-              &gt;
-              <br />
-              {"   "}Large
-              <br />
-              &lt;/
+              ="<span style={{ color: "#ffeb3b" }}>large</span>"&gt;Large&lt;/
               <span style={{ color: "#00dc09" }}>DsButton</span>&gt;
             </>
           }
@@ -455,11 +423,12 @@ function ButtonPage() {
               &lt;<span style={{ color: "#00dc09" }}>DsButton</span>{" "}
               <span style={{ color: "#00caff" }}>buttonProps</span>
               =&#123;&#123;
-              <br />
-              {"   "}
               <span style={{ color: "#ffeb3b" }}>'aria-label': 'Button A'</span>
+              &#125;&#125;&gt;
               <br />
-              &#125;&#125;&gt;Button&lt;/
+              {"   "}Button
+              <br />
+              &lt;/
               <span style={{ color: "#00dc09" }}>DsButton</span>&gt;
             </>
           }
@@ -469,7 +438,7 @@ function ButtonPage() {
             "<DsButton variant='contained' size='small'>Small</DsButton>\n<Button variant='contained' size='medium'>Medium</DsButton>\n<Button variant='contained' size='large'>Large</DsButton>\n<Button variant='outlined' size='small'>Small</DsButton>\n<Button variant='outlined' size='medium'>Medium</DsButton>\n<Button variant='outlined' size='large'>Large</DsButton>"
           }
         />
-        <Navigation next="fab" />
+        <Navigation prev="typography" next="fab" />
       </Main>
       <Footer />
       <ScrollToTop />

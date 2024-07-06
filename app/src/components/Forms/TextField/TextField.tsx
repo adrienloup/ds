@@ -1,4 +1,5 @@
 import { useId, useState } from "react";
+import { StatusType } from "../../../models/Status";
 import { FormField } from "../FormField/FormField";
 import { Icon } from "../../Icon/Icon";
 import style from "./TextField.module.scss";
@@ -13,7 +14,7 @@ type TextFieldType = {
   value?: string;
   prefix?: string;
   suffix?: string;
-  status?: "info" | "success" | "warning" | "error";
+  status?: StatusType;
   onChange: (e: { target: { value: string } }) => void;
 };
 

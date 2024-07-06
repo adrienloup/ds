@@ -1,8 +1,10 @@
+import { StatusType } from "./Status";
+
 export type AlertType = {
   text: string;
   id?: string;
   title?: string;
-  status?: "info" | "success" | "warning" | "error";
+  status?: StatusType;
   cssClass?: string;
   timeout?: number;
   button?: boolean;

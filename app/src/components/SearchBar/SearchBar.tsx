@@ -1,9 +1,10 @@
+import { StatusType } from "../../models/Status";
 import { TextField } from "../Forms/TextField/TextField";
 
 type SearchBarType = {
   cssClass?: string[];
   id?: string;
-  status?: "info" | "success" | "warning" | "error";
+  status?: StatusType;
   value: string;
   onChange: (e: { target: { value: string } }) => void;
 };

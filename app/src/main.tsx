@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { AuthProvider } from "./contexts/Auth";
 import { SettingsProvider } from "./contexts/Settings";
 import { AlertProvider } from "./contexts/Alert";
 import { TaskProvider } from "./contexts/Task";
-import { AuthProvider } from "./contexts/Auth";
+import { NotificationsProvider } from "./contexts/Notifications";
+import { BannerProvider } from "./contexts/Banner";
 
 ReactDOM.createRoot(document.getElementById("_ds_y0y09_10")!).render(
   <React.StrictMode>
@@ -12,7 +14,11 @@ ReactDOM.createRoot(document.getElementById("_ds_y0y09_10")!).render(
       <SettingsProvider>
         <AlertProvider>
           <TaskProvider>
-            <App />
+            <NotificationsProvider>
+              <BannerProvider>
+                <App />
+              </BannerProvider>
+            </NotificationsProvider>
           </TaskProvider>
         </AlertProvider>
       </SettingsProvider>

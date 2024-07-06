@@ -16,6 +16,30 @@
     "soon": false
   },
   {
+    "name": "avatar",
+    "description": "Avatars are found throughout material design with uses in everything from tables to dialog menus",
+    "path": "/ds/avatar",
+    "category": "data display",
+    "news": false,
+    "soon": false
+  },
+  {
+    "name": "badge",
+    "description": "Badge generates a small badge to the top-right of its child(ren)",
+    "path": "/ds/badge",
+    "category": "data display",
+    "news": false,
+    "soon": false
+  },
+  {
+    "name": "typography",
+    "description": "Use typography to present your design and content as clearly and efficiently as possible",
+    "path": "/ds/typography",
+    "category": "data display",
+    "news": false,
+    "soon": true
+  },
+  {
     "name": "button",
     "description": "Buttons allow users to take actions, and make choices, with a single tap",
     "path": "/ds/button",
@@ -38,14 +62,6 @@
     "category": "feedback",
     "news": false,
     "soon": true
-  },
-  {
-    "name": "badge",
-    "description": "Badge generates a small badge to the top-right of its child(ren)",
-    "path": "/ds/badge",
-    "category": "feedback",
-    "news": false,
-    "soon": false
   },
   {
     "name": "progress",

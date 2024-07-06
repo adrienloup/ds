@@ -110,17 +110,18 @@ $tablet-portrait: 769px;
 }
 
 .empty {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 2;
   width: 100%;
   padding: 0.75rem 1rem;
-  background-color: var(--color-red);
-  font-family: var(--font-text-regular);
-  font-size: 1.75rem;
-  color: var(--color-12);
-  animation: Swell 0.5s var(--easy-in-out-quad);
+  font-size: 1.25rem;
+
+  .open & {
+    display: block;
+  }
 }
 
 @keyframes Appear {
@@ -133,12 +134,5 @@ $tablet-portrait: 769px;
   0% {
     transform: translateY(-1rem);
     opacity: 0;
-  }
-}
-
-@keyframes Swell {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
   }
 }

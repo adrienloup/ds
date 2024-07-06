@@ -1,5 +1,6 @@
 import { CardType } from "../../models/Card";
 import { CardItem } from "./CardItem";
+import { Empty } from "../Empty/Empty";
 import style from "./Card.module.scss";
 
 type CardListType = {
@@ -21,9 +22,10 @@ export const CardList = ({ list }: CardListType) => {
           />
         ))
       ) : (
-        <p className={style.empty}>
-          Nothing matches your search but don't give up :)
-        </p>
+        <Empty
+          text="Nothing matches your search but don't give up :)"
+          cssClass={style.empty}
+        />
       )}
     </div>
   );

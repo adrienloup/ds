@@ -1,5 +1,6 @@
 import { useTask } from "../../hooks/useTask";
 import { TaskItem } from "./TaskItem";
+import { Empty } from "../Empty/Empty";
 import style from "./Task.module.scss";
 
 export const TaskList = () => {
@@ -17,7 +18,7 @@ export const TaskList = () => {
           ))}
         </ul>
       ) : (
-        <p className={style.empty}>No new but don't give up :)</p>
+        <Empty text="No new but don't give up :)" cssClass={style.empty} />
       )}
     </div>
   );

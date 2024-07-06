@@ -1,29 +1,29 @@
-import { useState } from "react";
+import { useBannerDispatch } from "../../hooks/useBanner";
+import { StatusType } from "../../models/Status";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import style from "./Banner.module.scss";
 
-export const Banner = () => {
-  // console.log("Banner");
-  const [hidden, setHidden] = useState(false);
+type BannerType = {
+  id: number;
+  text: string;
+  status?: StatusType;
+};
+
+export const Banner = ({
+  id,
+  text = "No text",
+  status = "info",
+}: BannerType) => {
+  const removeBanner = useBannerDispatch();
 
   return (
-    <>
-      {!hidden && (
-        <div className={style.banner}>
-          <Icon name="warning" cssClass={style.icon} />
-          <p>
-            The website is under construction, please be kind as some parts are
-            missing, check back soon :)
-          </p>
-          <Button
-            cssClass={[style.button, ` ${style.close}`].join("")}
-            onClick={() => setHidden(true)}
-          >
-            <Icon name="close" />
-          </Button>
-        </div>
-      )}
-    </>
+    <div className={[style.banner, ` ${style[status]}`].join("")}>
+      <Icon name={status} cssClass={style.icon} />
+      <p>{text}</p>
+      <Button cssClass={style.close} onClick={() => removeBanner(id)}>
+        <Icon name="close" />
+      </Button>
+    </div>
   );
 };

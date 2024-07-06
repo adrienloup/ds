@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
+import { StatusType } from "../../models/Status";
 import { AlertType } from "../../models/Alert";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import style from "./Alert.module.scss";
 
-const icon = (status: string) => {
+const icon = (status: StatusType) => {
   switch (status) {
     case "info":
       return "info";

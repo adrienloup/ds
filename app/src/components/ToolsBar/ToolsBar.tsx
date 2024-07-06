@@ -3,7 +3,9 @@ import { createPortal } from "react-dom";
 import { useSettings } from "../../hooks/useSettings";
 import { useTask } from "../../hooks/useTask";
 import { useAuth } from "../../hooks/useAuth";
+import { useNotifications } from "../../hooks/useNotifications";
 import { ToolsBarSearchable } from "./ToolsBarSearchable";
+import { Notifications } from "../Notifications/Notifications";
 import { TaskForm } from "../Task/TaskForm";
 import { TaskList } from "../Task/TaskList";
 import { Button } from "../Button/Button";
@@ -14,8 +16,10 @@ import style from "./ToolsBar.module.scss";
 
 export const ToolsBar = () => {
   // console.log("ToolsBar");
-  const [modalTask, setModalTask] = useState(false);
+  const [notificationModal, setNotificationModal] = useState(false);
+  const [taskModal, setTaskModal] = useState(false);
   const { settings, setSettings } = useSettings();
+  const { data } = useNotifications();
   const { user } = useAuth();
   const tasks = useTask();
 
@@ -26,6 +30,17 @@ export const ToolsBar = () => {
   return (
     <div className={style.toolsbar}>
       <ToolsBarSearchable />
+      {user.name && (
+        <Badge value={tasks.length} max={9} cssClass={style.badge}>
+          <Button
+            ariaLabel={"Tasks"}
+            cssClass={style.button}
+            onClick={() => setTaskModal(!taskModal)}
+          >
+            <Icon name={"task_alt"} />
+          </Button>
+        </Badge>
+      )}
       <Button
         href={"https://github.com/adrienloup/ds"}
         ariaLabel={"Github"}
@@ -38,11 +53,11 @@ export const ToolsBar = () => {
           ></path>
         </svg>
       </Button>
-      <Badge value={tasks!.length} max={9} cssClass={style.badge}>
+      <Badge value={data.length} max={9} cssClass={style.badge}>
         <Button
           ariaLabel={"Notifications"}
           cssClass={style.button}
-          onClick={() => setModalTask(!modalTask)}
+          onClick={() => setNotificationModal(!notificationModal)}
         >
           <Icon name="notifications" />
         </Button>
@@ -54,23 +69,40 @@ export const ToolsBar = () => {
       >
         <Icon name={"settings"} />
       </Button>
-      {modalTask &&
+      {notificationModal &&
         createPortal(
           <Modal
             head={
               <h3>
-                {tasks && tasks.length > 0 ? tasks.length + " " : ""}
                 Breaking <span>news</span>
+              </h3>
+            }
+            body={<Notifications />}
+            open={notificationModal}
+            onClick={() => setNotificationModal(false)}
+          />,
+          document.body
+        )}
+      {taskModal &&
+        createPortal(
+          <Modal
+            head={
+              <h3>
+                {tasks && tasks.length > 1
+                  ? tasks.length + " Tasks"
+                  : tasks.length === 1
+                    ? tasks.length + " Task"
+                    : "Task"}
               </h3>
             }
             body={
               <>
-                {user.name && <TaskForm />}
+                <TaskForm />
                 <TaskList />
               </>
             }
-            open={modalTask}
-            onClick={() => setModalTask(false)}
+            open={taskModal}
+            onClick={() => setTaskModal(false)}
           />,
           document.body
         )}

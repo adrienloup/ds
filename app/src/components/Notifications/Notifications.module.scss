@@ -1,0 +1,35 @@
+.notifications {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 0.2rem solid var(--color-3);
+  line-height: 1.25;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  p {
+    font-size: 1.15rem;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  span {
+    display: block;
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
