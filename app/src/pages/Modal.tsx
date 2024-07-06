@@ -187,7 +187,7 @@ function ModalPage() {
             height: "260px",
           }}
         />
-        <Navigation prev="alert" next="progress" />
+        <Navigation prev="tabs" next="button" />
       </Main>
       <Footer />
       <ScrollToTop />

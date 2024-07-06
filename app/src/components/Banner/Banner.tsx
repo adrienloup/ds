@@ -12,7 +12,10 @@ export const Banner = () => {
       {!hidden && (
         <div className={style.banner}>
           <Icon name="warning" cssClass={style.icon} />
-          <p>website is under construction come back soon :)</p>
+          <p>
+            The website is under construction, please be kind as some parts are
+            missing, check back soon :)
+          </p>
           <Button
             cssClass={[style.button, ` ${style.close}`].join("")}
             onClick={() => setHidden(true)}

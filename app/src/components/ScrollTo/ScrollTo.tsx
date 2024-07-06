@@ -7,7 +7,7 @@ export const ScrollTo = ({ top }: { top: number }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setActive(document.body.clientHeight > window.innerHeight);
+      setActive(document.body.clientHeight > window.innerHeight * 2);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
