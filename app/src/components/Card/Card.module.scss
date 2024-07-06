@@ -1,4 +1,6 @@
+$desktop: 1281px;
 $tablet-landscape: 1025px;
+$tablet-portrait: 769px;
 
 .cardlist {
   max-width: 65rem;
@@ -70,6 +72,34 @@ $tablet-landscape: 1025px;
   bottom: 0.25rem;
   font-size: 2rem;
   color: var(--color-1);
+}
+
+.searchbar {
+  max-width: 65rem;
+  margin-top: 2rem;
+
+  @media (max-width: $desktop) {
+    margin-top: 1rem;
+  }
+}
+
+.label {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: var(--font-text-bold);
+  font-size: 3.5rem;
+
+  @media (max-width: $desktop) {
+    font-size: 2rem;
+  }
+}
+
+.checkbox {
+  margin: 1rem 0 4rem;
+
+  @media (max-width: $desktop) {
+    margin: 1rem 0 2rem;
+  }
 }
 
 .empty {

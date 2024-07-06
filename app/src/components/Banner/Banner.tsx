@@ -1,11 +1,11 @@
-import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useState } from "react";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import style from "./Banner.module.scss";
 
 export const Banner = () => {
   // console.log("Banner");
-  const [hidden, setHidden] = useLocalStorage("ds_y0y09_10_banner", false);
+  const [hidden, setHidden] = useState(false);
 
   return (
     <>

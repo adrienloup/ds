@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { FormField } from "../FormField/FormField";
 import { Icon } from "../../Icon/Icon";
 import style from "./TextField.module.scss";
 
 type TextFieldType = {
   cssClass?: string;
+  id?: string;
   label?: string;
   placeholder?: string;
   helperText?: string;
@@ -18,6 +19,7 @@ type TextFieldType = {
 
 export const TextField = ({
   cssClass,
+  id,
   label,
   placeholder = "Placeholder",
   helperText,
@@ -28,6 +30,7 @@ export const TextField = ({
   status,
   onChange,
 }: TextFieldType) => {
+  const uId = useId();
   const [focus, setFocus] = useState(false);
 
   return (
@@ -47,6 +50,7 @@ export const TextField = ({
         {prefix && <Icon name={prefix} cssClass={style.icon} />}
         <input
           type="text"
+          id={id ? id : uId}
           className={style.input}
           placeholder={placeholder}
           value={value}

@@ -1,14 +1,17 @@
+$tablet-portrait: 769px;
+
 .textfield {
   overflow: hidden;
   display: flex;
   align-items: center;
+  height: 4rem;
   background-color: var(--color-2);
   border: 0.2rem solid var(--color-3);
   color: var(--color-1);
 
   &.focus {
     outline: 0.2rem solid var(--color-orange);
-    outline-offset: 0.125rem;
+    outline-offset: -0.25rem;
   }
 
   &.success {
@@ -26,7 +29,7 @@
   input {
     width: 100%;
     flex-grow: 1;
-    padding: 1rem 0.75rem;
+    padding: 0 0.75rem;
     background-color: transparent;
     border: 0;
     font-family: var(--font-text-regular);
@@ -42,6 +45,10 @@
     & + .icon {
       margin: 0 1rem 0 0;
     }
+  }
+
+  @media (max-width: $tablet-portrait) {
+    height: 3rem;
   }
 }
 
