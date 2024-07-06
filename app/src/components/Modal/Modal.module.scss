@@ -33,7 +33,7 @@ $mobile-landscape: 540px;
   }
 
   .open & {
-    animation: Swell 0.15s var(--easy-in-out-quad);
+    animation: Slide 0.15s var(--easy-in-out-quad);
   }
 }
 
@@ -96,7 +96,7 @@ $mobile-landscape: 540px;
   }
 }
 
-@keyframes Swell {
+@keyframes Slide {
   0% {
     transform: translateY(-1rem);
     opacity: 0;

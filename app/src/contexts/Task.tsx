@@ -3,9 +3,9 @@ import { tasksReducer } from "../reducers/Task";
 import { SlotType } from "../models/Slot";
 
 const initialTask = [
-  { id: 0, text: "Philosopher’s Path", done: false },
-  { id: 1, text: "Visit the temple", done: false },
-  { id: 2, text: "Drink matcha", done: false },
+  { id: 0, text: "Open Source UI components", done: false },
+  { id: 1, text: "Website mobile-friendly", done: false },
+  { id: 2, text: "Just for pleasure", done: false },
 ];
 
 export const TaskContext = createContext<

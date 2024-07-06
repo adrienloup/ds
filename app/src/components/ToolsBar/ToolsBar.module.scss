@@ -69,7 +69,7 @@ $tablet-portrait: 769px;
 
   .open & {
     display: block;
-    animation: Swell 0.15s var(--easy-in-out-quad);
+    animation: Slide 0.15s var(--easy-in-out-quad);
   }
 }
 
@@ -120,7 +120,7 @@ $tablet-portrait: 769px;
   font-family: var(--font-text-regular);
   font-size: 1.75rem;
   color: var(--color-12);
-  animation: Appear 0.5s var(--easy-in-out-quad);
+  animation: Swell 0.5s var(--easy-in-out-quad);
 }
 
 @keyframes Appear {
@@ -129,9 +129,16 @@ $tablet-portrait: 769px;
   }
 }
 
-@keyframes Swell {
+@keyframes Slide {
   0% {
     transform: translateY(-1rem);
     opacity: 0;
+  }
+}
+
+@keyframes Swell {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
   }
 }
