@@ -1,0 +1,50 @@
+@use "../../scss/index.scss" as *;
+
+.ds-avatar {
+  overflow: hidden;
+  border-radius: 50%;
+
+  span {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-purple);
+    color: var(--color-neutral-6);
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.ds-avatar {
+  &-small {
+    width: 2rem;
+    height: 2rem;
+
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  &-medium {
+    width: 2.75rem;
+    height: 2.75rem;
+
+    span {
+      font-size: 1.35rem;
+    }
+  }
+
+  &-large {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    span {
+      font-size: 1.75rem;
+    }
+  }
+}
