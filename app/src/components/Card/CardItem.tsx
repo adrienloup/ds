@@ -12,7 +12,7 @@ export const CardItem = ({ name, description, path, news }: PageType) => {
           {news && <span>new</span>}
         </div>
         <p className={style.description}>{description}</p>
-        <Icon name="trending_flat" cssClass={style.icon} />
+        <Icon name="link" cssClass={style.icon} />
       </Link>
     </div>
   );

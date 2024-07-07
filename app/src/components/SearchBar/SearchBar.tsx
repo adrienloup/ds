@@ -4,6 +4,7 @@ import { TextField } from "../Forms/TextField/TextField";
 type SearchBarType = {
   cssClass?: string[];
   id?: string;
+  placeholder?: string;
   status?: StatusType;
   value: string;
   onChange: (e: { target: { value: string } }) => void;
@@ -12,6 +13,7 @@ type SearchBarType = {
 export const SearchBar = ({
   cssClass,
   id,
+  placeholder,
   status,
   value,
   onChange,
@@ -24,7 +26,7 @@ export const SearchBar = ({
         id={id}
         value={value}
         onChange={onChange}
-        placeholder="UI components"
+        placeholder={placeholder}
         prefix="manage_search"
         status={status}
       />

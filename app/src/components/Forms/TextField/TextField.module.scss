@@ -28,7 +28,7 @@ $tablet-portrait: 769px;
 
   input {
     width: 100%;
-    flex-grow: 1;
+    height: 100%;
     padding: 0 0.75rem;
     background-color: transparent;
     border: 0;
@@ -38,7 +38,6 @@ $tablet-portrait: 769px;
     outline: 0;
 
     &::placeholder {
-      font-style: italic;
       color: var(--color-1);
     }
 

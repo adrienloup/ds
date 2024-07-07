@@ -2,12 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { Accordion } from "../Accordion/Accordion";
-import pages from "../../data/pages.json";
+import pages from "../../assets/pages.json";
 import style from "./Menu.module.scss";
 
 export const Menu = ({ open }: { open: boolean }) => {
   // console.log("Menu");
-
   const [localCategory, setLocalCategory] = useLocalStorage(
     "ds_y0y09_10_category",
     ""
@@ -22,7 +21,7 @@ export const Menu = ({ open }: { open: boolean }) => {
       if (page.category !== last) {
         list.push(page.category);
       }
-      last = page.category;
+      last = page.category!;
     }
 
     return list;
@@ -53,16 +52,16 @@ export const Menu = ({ open }: { open: boolean }) => {
           title={
             <>
               {category}
-              {newsPerCategory(category).length > 0 && (
+              {newsPerCategory(category!).length > 0 && (
                 <span className={style.new}>new</span>
               )}
             </>
           }
           panel={
             <ul className={style.list}>
-              {pageList(category).map((page, index) => (
+              {pageList(category!).map((page, index) => (
                 <li key={index}>
-                  <Link to={page.path} className={style.link}>
+                  <Link to={page.path!} className={style.link}>
                     {page.name}{" "}
                     {page.news && <span className={style.new}>new</span>}
                     {page.soon && (
@@ -73,7 +72,7 @@ export const Menu = ({ open }: { open: boolean }) => {
               ))}
             </ul>
           }
-          onClick={() => handleExpandedChange(category)}
+          onClick={() => handleExpandedChange(category!)}
           expanded={expanded === category}
         />
       ))}

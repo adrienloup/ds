@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
+import { ErrorResponse } from "react-router-dom";
 
-export function useFetch(
+export function useFetch<T>(
   url: string,
   options: { headers: HeadersInit | undefined } = { headers: {} }
 ) {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<{ id: 0; title: ""; body: "" }[]>([]);
-  const [errors, setErrors] = useState<{
-    status: number;
-    statusText: string;
-    data: undefined;
-  }>({
-    status: 0,
-    statusText: "",
-    data: undefined,
-  });
+  const [data, setData] = useState<T[]>([]);
+  const [errors, setErrors] = useState<ErrorResponse | null>(null);
 
   useEffect(() => {
     fetch(url, {
@@ -25,8 +18,8 @@ export function useFetch(
       },
     })
       .then((responce) => responce.json())
-      .then((data) => {
-        setData(data);
+      .then((data: T[]) => {
+        setData(data as T[]);
         setLoading(false);
       })
       .catch((e) => setErrors(e))

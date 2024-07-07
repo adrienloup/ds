@@ -30,12 +30,7 @@ function AvatarPage() {
           component.
         </p>
         <Story
-          demo={
-            <DsAvatar
-              alt="Jane Doe"
-              src="https://image.freepik.com/free-photo/friendly-brunette-looking-camera_23-2147774849.jpg"
-            />
-          }
+          demo={<DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.svg" />}
           code={
             <>
               &lt;<span style={{ color: "#00dc09" }}>DsAvatar</span>
@@ -48,7 +43,7 @@ function AvatarPage() {
               <span style={{ color: "#00caff" }}>src</span>
               ="
               <span style={{ color: "#ffeb3b" }}>
-                https://image.freepik.com/free-photo/Jane-Doe.jpg
+                https://image.freepik.com/Jane_Doe.svg
               </span>
               "
               <br />
@@ -58,7 +53,7 @@ function AvatarPage() {
           codepen={"WNWyqeK"}
           github={"Avatar"}
           copy={
-            "<DsAvatar alt='Jane Doe' src='https://image.freepik.com/free-photo/Jane-Doe.jpg' />"
+            "<DsAvatar alt='Jane Doe' src='https://image.freepik.com/Jane_Doe.svg' />"
           }
         />
         <h2>
@@ -95,21 +90,9 @@ function AvatarPage() {
                   gap: "1rem",
                 }}
               >
-                <DsAvatar
-                  alt="Jane Doe"
-                  src="https://image.freepik.com/free-photo/friendly-brunette-looking-camera_23-2147774849.jpg"
-                  size="small"
-                />
-                <DsAvatar
-                  alt="Jane Doe"
-                  src="https://image.freepik.com/free-photo/friendly-brunette-looking-camera_23-2147774849.jpg"
-                  size="medium"
-                />
-                <DsAvatar
-                  alt="Jane Doe"
-                  src="https://image.freepik.com/free-photo/friendly-brunette-looking-camera_23-2147774849.jpg"
-                  size="large"
-                />
+                <DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.svg" size="small" />
+                <DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.svg" size="medium" />
+                <DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.svg" size="large" />
               </div>
               <div
                 style={{
@@ -138,7 +121,7 @@ function AvatarPage() {
               <span style={{ color: "#00caff" }}>src</span>
               ="
               <span style={{ color: "#ffeb3b" }}>
-                https://image.freepik.com/free-photo/Jane-Doe.jpg
+                https://image.freepik.com/Jane_Doe.svg
               </span>
               "
               <br />
@@ -160,7 +143,7 @@ function AvatarPage() {
               <span style={{ color: "#00caff" }}>src</span>
               ="
               <span style={{ color: "#ffeb3b" }}>
-                https://image.freepik.com/free-photo/Jane-Doe.jpg
+                https://image.freepik.com/Jane_Doe.svg
               </span>
               "
               <br />
@@ -182,7 +165,7 @@ function AvatarPage() {
               <span style={{ color: "#00caff" }}>src</span>
               ="
               <span style={{ color: "#ffeb3b" }}>
-                https://image.freepik.com/free-photo/Jane-Doe.jpg
+                https://image.freepik.com/Jane_Doe.svg
               </span>
               "
               <br />

@@ -37,7 +37,7 @@
     "path": "/ds/typography",
     "category": "data display",
     "news": false,
-    "soon": true
+    "soon": false
   },
   {
     "name": "button",

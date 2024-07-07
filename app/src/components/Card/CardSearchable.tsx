@@ -3,7 +3,7 @@ import { PageType } from "../../models/Page";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Checkbox } from "../Forms/Checkbox/Checkbox";
 import { CardList } from "./CardList";
-import pages from "../../data/pages.json";
+import pages from "../../assets/pages.json";
 import style from "./Card.module.scss";
 
 export const CardSearchable = () => {
@@ -25,6 +25,7 @@ export const CardSearchable = () => {
       </label>
       <SearchBar
         cssClass={[style.searchbar]}
+        placeholder="UI components"
         id="c-id"
         value={value}
         onChange={(e) => setValue(e.target.value)}

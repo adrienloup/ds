@@ -11,10 +11,21 @@ export const Notifications = () => {
       {errors && <div>Failed to fetch</div>}
       {data &&
         data.map(
-          (notification: { id: number; title: string; body: string }) => (
+          (notification: {
+            id: number;
+            title: string;
+            body: string;
+            label: string;
+            url: string;
+          }) => (
             <div className={style.notification} key={notification.id}>
               <span>{notification.title}</span>
-              <p>{notification.body}</p>
+              <p>
+                {notification.body}{" "}
+                <a href={notification.url} target="_blank" rel="noopener">
+                  {notification.label}
+                </a>
+              </p>
             </div>
           )
         )}

@@ -5,7 +5,7 @@ import { Icon } from "../../components/Icon/Icon";
 import style from "./Story.module.scss";
 
 type StoryType = {
-  demo: ReactNode;
+  demo?: ReactNode;
   code?: ReactNode;
   codepen?: string;
   github?: string;
@@ -43,11 +43,11 @@ export const Story = ({
         animated ? ` ${style.animated}` : "",
       ].join("")}
     >
-      <div className={style.demo} style={css}>
-        {demo}
-      </div>
-      {code && (
+      {demo && (
         <>
+          <div className={style.demo} style={css}>
+            {demo}
+          </div>
           <div className={style.ToolsBar}>
             <Button
               cssClass={`${style.button} ${style.contained} ${style.small}`}
@@ -103,9 +103,9 @@ export const Story = ({
               </svg>
             </Button>
           </div>
-          <pre className={style.code}>{code}</pre>
         </>
       )}
+      {code && <pre className={style.code}>{code}</pre>}
     </div>
   );
 };

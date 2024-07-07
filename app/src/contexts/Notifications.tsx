@@ -1,18 +1,21 @@
 import { createContext } from "react";
+import { ErrorResponse } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import { SlotType } from "../models/Slot";
 
 export const NotificationsContext = createContext<{
   loading: boolean;
-  data: { id: number; title: string; body: string }[];
-  errors: {
-    status: number;
-    statusText: string;
-    data: undefined;
-  };
+  data: {
+    id: number;
+    title: string;
+    body: string;
+    label: string;
+    url: string;
+  }[];
+  errors: ErrorResponse | null;
 }>({
   loading: false,
-  data: [{ id: 0, title: "", body: "" }],
+  data: [{ id: 0, title: "", body: "", label: "", url: "" }],
   errors: {
     status: 0,
     statusText: "",
@@ -21,9 +24,13 @@ export const NotificationsContext = createContext<{
 });
 
 export function NotificationsProvider({ children }: SlotType) {
-  const { loading, data, errors } = useFetch(
-    "https://github.com/adrienloup/ds/blob/master/app/src/data/notifications.json"
-  );
+  const { loading, data, errors } = useFetch<{
+    id: number;
+    title: string;
+    body: string;
+    label: string;
+    url: string;
+  }>("/ds/notifications.json");
 
   return (
     <NotificationsContext.Provider value={{ loading, data, errors }}>

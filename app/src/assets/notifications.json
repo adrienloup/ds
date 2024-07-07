@@ -1,0 +1,26 @@
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "A pretty good library of react components for web application's UI",
+    "body": "DS is an open source React component library that provides a wide range of high-quality, customizable and accessible UI components for building modern web applications. DS is designed to simplify building user interfaces in React by offering a comprehensive set of components and utilities.",
+    "label": "Check out the details in our recent blog post.",
+    "url": "https://adrienloup.github.io/ds/"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "Is mobile-friendliness a Google ranking factor?",
+    "body": "Yes, mobile-friendliness is one of the ranking factors for Google search engine results. Google uses the mobile-friendly test to determine whether a webpage is optimized for viewing on mobile devices.",
+    "label": "Read more in this announcement.",
+    "url": "https://developers.google.com/search/blog/2016/05/a-new-mobile-friendly-testing-tool?hl=fr"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "Unlock the full power",
+    "body": "Asset uploading is a feature. As a PRO member, you can drag-and-drop upload files here to use as resources. Images, CSS frameworks JavaScript libraries, 3D models, JSON data... anything you want! You can even edit them anytime, like any other code.",
+    "label": "Check out the announcement blog post.",
+    "url": "https://uploadcare.com/blog/how-to-make-a-drag-and-drop-file-uploader/"
+  }
+]

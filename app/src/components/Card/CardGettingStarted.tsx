@@ -1,6 +1,6 @@
 import { PageType } from "../../models/Page";
 import { CardList } from "./CardList";
-import pages from "../../data/pages.json";
+import pages from "../../assets/pages.json";
 
 export const CardGettingStarted = () => {
   // console.log("CardGettingStarted");

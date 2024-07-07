@@ -4,4 +4,5 @@ export type PageType = {
   path?: string;
   category?: string;
   news?: boolean;
+  soon?: boolean;
 };

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { PageType } from "../../models/Page";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Empty } from "../Empty/Empty";
-import pages from "../../data/pages.json";
+import { Icon } from "../Icon/Icon";
+import pages from "../../assets/pages.json";
 import style from "./ToolsBar.module.scss";
 
 export const ToolsBarSearchable = () => {
@@ -26,6 +27,7 @@ export const ToolsBarSearchable = () => {
     >
       <SearchBar
         cssClass={[style.searchbar, style.textfield]}
+        placeholder="What are you looking for?"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
@@ -33,8 +35,12 @@ export const ToolsBarSearchable = () => {
         <ul className={style.list}>
           {list.map((item, index) => (
             <li key={index}>
-              <Link to={item.path} className={style.link}>
-                {item.name}
+              <Link to={item.path!} className={style.link}>
+                <span className={style.text}>
+                  <span className={style.name}>{item.name}</span>
+                  <span className={style.description}>{item.description}</span>
+                </span>
+                <Icon name="link" cssClass={style.icon} />
               </Link>
             </li>
           ))}

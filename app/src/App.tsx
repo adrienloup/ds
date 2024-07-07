@@ -15,6 +15,7 @@ import StepperPage from "./pages/Stepper";
 import SwitchPage from "./pages/Switch";
 import TabsPage from "./pages/Tabs";
 import TagPage from "./pages/Tag";
+import TypographyPage from "./pages/Typography";
 import "./App.scss";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/ds/switch" element={<SwitchPage />} />
           <Route path="/ds/tabs" element={<TabsPage />} />
           <Route path="/ds/tag" element={<TagPage />} />
+          <Route path="/ds/typography" element={<TypographyPage />} />
           <Route path="/ds/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
