@@ -10,14 +10,14 @@ import { DsTabPanel } from "design-system/src/components/Tabs/TabPanel";
 
 function TabsPage() {
   // console.log("TabsPage");
-  useTitle("Tabs");
+  useTitle("React Tabs component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          Tabs <span>Component</span>
+          Tabs <span>component</span>
         </h1>
         <p>
           Tabs make it easy to explore and switch between different views. Tabs

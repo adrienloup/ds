@@ -9,14 +9,14 @@ import { DsBreadcrumbs } from "design-system/src/components/Breadcrumbs/Breadcru
 
 function BreadcrumbsPage() {
   // console.log("BreadcrumbsPage");
-  useTitle("Breadcrumbs");
+  useTitle("React Breadcrumbs component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          Breadcrumbs <span>Component</span>
+          Breadcrumbs <span>component</span>
         </h1>
         <p>
           The Breadcrumbs component allows the user to locate the current page
@@ -126,7 +126,7 @@ function BreadcrumbsPage() {
             "<DsBreadcrumbs list='{[{title: 'Home', path: '/'},{title: 'Shopping Cart', path: '/cart'}{title: 'Payment', path: '/cart/payment'}{title: 'Confirmation', path: '/cart/payment/confirmation'}]}' />"
           }
         />
-        <Navigation prev="textfield" next="stepper" />
+        <Navigation prev="textfield" next="pagination" />
       </Main>
       <Footer />
       <ScrollToTop />

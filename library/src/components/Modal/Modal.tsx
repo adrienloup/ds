@@ -3,7 +3,7 @@ import { DsButton } from "../Button/Button";
 import { DsIcon } from "../Icon/Icon";
 import "./Modal.scss";
 
-type ModalProps = {
+interface ModalProps {
   children: ReactNode;
   open: boolean;
   cssClass?: string;
@@ -13,7 +13,7 @@ type ModalProps = {
   backdrop?: boolean;
   style?: CSSProperties;
   onClick: () => void;
-};
+}
 
 export const DsModal = ({
   children,

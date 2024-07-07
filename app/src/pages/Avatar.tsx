@@ -9,14 +9,14 @@ import { DsAvatar } from "design-system/src/components/Avatar/Avatar";
 
 function AvatarPage() {
   // console.log("AvatarPage");
-  useTitle("Avatar");
+  useTitle("React Avatar component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          Avatar <span>Component</span>
+          Avatar <span>component</span>
         </h1>
         <p>
           Avatars are found throughout material design with uses in everything

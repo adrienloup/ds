@@ -6,7 +6,7 @@ import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 
 function NotFoundPage() {
   // console.log("NotFoundPage");
-  useTitle("Not found");
+  useTitle("Not found page");
 
   return (
     <>

@@ -9,14 +9,14 @@ import { DsProgress } from "design-system/src/components/Progress/Progress";
 
 function ProgressPage() {
   // console.log("ProgressPage");
-  useTitle("Progress");
+  useTitle("React Progress component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          Progress <span>Component</span>
+          Progress <span>component</span>
         </h1>
         <p>
           Progress, not to be mixed with Loader, is a component used to indicate

@@ -1,4 +1,4 @@
-$mobile-landscape: 540px;
+$tablet-portrait: 769px;
 
 .modal {
   overflow: hidden;
@@ -17,16 +17,17 @@ $mobile-landscape: 540px;
 
 .content {
   position: absolute;
-  top: 15vh;
+  top: 5vh;
   left: 50%;
   z-index: 2;
-  width: 34rem;
+  width: 40rem;
   min-height: 2rem;
-  margin-left: -17rem;
+  margin-left: -20rem;
   padding: 2rem;
   background-color: var(--color-2);
 
-  @media (max-width: $mobile-landscape) {
+  @media (max-width: $tablet-portrait) {
+    top: 0;
     left: 0;
     width: 100%;
     margin-left: 0;
@@ -82,7 +83,7 @@ $mobile-landscape: 540px;
   right: 0;
   z-index: 1;
   background-color: var(--color-1);
-  opacity: 0.5;
+  opacity: 0.25;
   cursor: pointer;
 
   .open & {

@@ -10,6 +10,7 @@ import LoginPage from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import ModalPage from "./pages/Modal";
 import OverviewPage from "./pages/Overview";
+import PaginationPage from "./pages/Pagination";
 import ProgressPage from "./pages/Progress";
 import StepperPage from "./pages/Stepper";
 import SwitchPage from "./pages/Switch";
@@ -33,6 +34,7 @@ function App() {
           <Route path="/ds/login" element={<LoginPage />} />
           <Route path="/ds/modal" element={<ModalPage />} />
           <Route path="/ds/overview" element={<OverviewPage />} />
+          <Route path="/ds/pagination" element={<PaginationPage />} />
           <Route path="/ds/progress" element={<ProgressPage />} />
           <Route path="/ds/stepper" element={<StepperPage />} />
           <Route path="/ds/switch" element={<SwitchPage />} />

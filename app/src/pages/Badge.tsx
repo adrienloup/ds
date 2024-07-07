@@ -10,14 +10,14 @@ import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function BadgePage() {
   // console.log("BadgePage");
-  useTitle("Badge");
+  useTitle("React Badge component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          Badge <span>Component</span>
+          Badge <span>component</span>
         </h1>
         <p>Badge generates a small badge to the top-right of its child(ren).</p>
         <p>

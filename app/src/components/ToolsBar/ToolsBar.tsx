@@ -4,7 +4,6 @@ import { useSettings } from "../../hooks/useSettings";
 import { useTask } from "../../hooks/useTask";
 import { useAuth } from "../../hooks/useAuth";
 import { useNotifications } from "../../hooks/useNotifications";
-import { ToolsBarSearchable } from "./ToolsBarSearchable";
 import { Notifications } from "../Notifications/Notifications";
 import { TaskForm } from "../Task/TaskForm";
 import { TaskList } from "../Task/TaskList";
@@ -29,7 +28,6 @@ export const ToolsBar = () => {
 
   return (
     <div className={style.toolsbar}>
-      <ToolsBarSearchable />
       {user.name && (
         <Badge value={tasks.length} max={9} cssClass={style.badge}>
           <Button

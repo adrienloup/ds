@@ -120,6 +120,14 @@
     "soon": false
   },
   {
+    "name": "Pagination",
+    "description": "The Pagination component enables the user to select a specific page from a range of pages",
+    "path": "/ds/pagination",
+    "category": "navigation",
+    "news": false,
+    "soon": false
+  },
+  {
     "name": "stepper",
     "description": "Steppers convey progress through numbered steps. It provides a wizard-like workflow",
     "path": "/ds/stepper",

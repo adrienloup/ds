@@ -33,10 +33,11 @@ $tablet-portrait: 769px;
   position: relative;
   z-index: 2;
   max-width: 90rem;
-  padding: 5rem;
+  padding: 4rem;
+  background-color: var(--color-2);
 
   @media (max-width: $desktop) {
-    padding: 2.5rem;
+    padding: 2rem;
   }
 
   @media (max-width: $tablet-portrait) {

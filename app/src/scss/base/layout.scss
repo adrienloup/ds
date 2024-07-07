@@ -1,4 +1,4 @@
-$desktop: 1281px;
+$tablet-landscape: 1025px;
 $tablet-portrait: 769px;
 
 *,
@@ -39,7 +39,7 @@ body {
   transition: padding-top 0.35s var(--easy-in-out-quad);
   will-change: padding-top;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $tablet-landscape) {
     grid-template:
       "header main" minmax(auto, 1fr)
       "header footer" minmax(0, auto) / 14rem minmax(0, 1fr);

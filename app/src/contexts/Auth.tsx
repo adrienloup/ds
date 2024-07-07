@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 import { SlotType } from "../models/Slot";
 
 export const AuthContext = createContext<{
@@ -12,7 +13,7 @@ export const AuthContext = createContext<{
 });
 
 export const AuthProvider = ({ children }: SlotType) => {
-  const [user, setUser] = useState({
+  const [user, setUser] = useLocalStorage("ds_y0y09_10_auth", {
     id: 0,
     name: "",
   });

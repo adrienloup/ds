@@ -10,14 +10,14 @@ import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function TagPage() {
   // console.log("TagPage");
-  useTitle("Tag");
+  useTitle("React Tag component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          Tag <span>Component</span>
+          Tag <span>component</span>
         </h1>
         <p>
           Usage Tag, and it could be closable and customize close button by set

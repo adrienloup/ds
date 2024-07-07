@@ -6,10 +6,11 @@ import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { CardGettingStarted } from "../components/Card/CardGettingStarted";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
+import { Table } from "../components/Table/Table";
 
 function HomePage() {
   // console.log("HomePage");
-  useTitle("Home");
+  useTitle("Home page");
 
   return (
     <>
@@ -39,6 +40,14 @@ function HomePage() {
           <span>today through some of these useful resources</span>
         </h2>
         <CardGettingStarted />
+        <h2>
+          Released <span>versions</span>
+        </h2>
+        <p>
+          The most recent stable version (✓) is recommended for use in
+          production.
+        </p>
+        {/* <Table>table</Table> */}
       </Main>
       <Footer />
       <ScrollToTop />

@@ -10,7 +10,7 @@ import { DsStepper } from "design-system/src/components/Stepper/Stepper";
 
 function StepperPage() {
   // console.log("StepperPage");
-  useTitle("Stepper");
+  useTitle("React Stepper component");
 
   const [activeStepA, setActiveStepA] = useState(1);
   const [activeStepB, setActiveStepB] = useState(1);
@@ -25,7 +25,7 @@ function StepperPage() {
       <Header />
       <Main>
         <h1>
-          Stepper <span>Component</span>
+          Stepper <span>component</span>
         </h1>
         <p>
           Steppers convey progress through numbered steps. It provides a
@@ -116,7 +116,7 @@ function StepperPage() {
             "<DsStepper steps=\n'['Fill out your name', 'Confirmation', 'Done']\n' prev='Previous' next='Next' />"
           }
         />
-        <Navigation prev="breadcrumbs" next="tabs" />
+        <Navigation prev="pagination" next="tabs" />
       </Main>
       <Footer />
       <ScrollToTop />

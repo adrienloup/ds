@@ -9,14 +9,14 @@ import { DsModal } from "design-system/src/components/Modal/Modal";
 
 function ModalPage() {
   // console.log("ModalPage");
-  useTitle("Modal");
+  useTitle("React Modal component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          Modal <span>Component</span>
+          Modal <span>component</span>
         </h1>
         <p>
           The modal component provides a solid foundation for creating dialogs,

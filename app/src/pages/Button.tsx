@@ -10,14 +10,14 @@ import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function ButtonPage() {
   // console.log("ButtonPage");
-  useTitle("Button");
+  useTitle("React Button component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          Button <span>Component</span>
+          Button <span>component</span>
         </h1>
         <p>
           Buttons allow users to take actions, and make choices, with a single

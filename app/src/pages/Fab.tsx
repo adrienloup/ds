@@ -10,14 +10,14 @@ import { DsFab } from "design-system/src/components/Fab/Fab";
 
 function FabPage() {
   // console.log("FabPage");
-  useTitle("Fab");
+  useTitle("React Fab component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          FAB <span>Component</span>
+          FAB <span>component</span>
         </h1>
         <p>
           A Floating Action Button (FAB) performs the primary, or most common,

@@ -10,25 +10,25 @@ $tablet-portrait: 769px;
   padding: 1rem 4.25rem 1rem 1.5rem;
   color: var(--color-neutral-1);
 
+  @media (max-width: $tablet-landscape) {
+    padding: 1rem 4rem 1rem 1rem;
+  }
+
   &.info {
     background-color: var(--color-chartreuse);
   }
 
   &.warning {
-    background-color: var(--color-cyan);
+    background-color: var(--color-orange);
   }
 
   p {
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     font-family: var(--font-text-bold);
-    font-size: 2rem;
+    font-size: 1.75rem;
 
     @media (max-width: $tablet-landscape) {
-      font-size: 1.75rem;
-    }
-
-    @media (max-width: $tablet-portrait) {
       font-size: 1.5rem;
     }
   }
@@ -62,7 +62,7 @@ $tablet-portrait: 769px;
     }
 
     .warning & {
-      color: var(--color-cyan);
+      color: var(--color-orange);
     }
   }
 

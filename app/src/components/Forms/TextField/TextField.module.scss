@@ -11,7 +11,7 @@ $tablet-portrait: 769px;
 
   &.focus {
     outline: 0.2rem solid var(--color-orange);
-    outline-offset: -0.25rem;
+    outline-offset: -0.35rem;
   }
 
   &.success {
@@ -33,7 +33,7 @@ $tablet-portrait: 769px;
     background-color: transparent;
     border: 0;
     font-family: var(--font-text-regular);
-    font-size: 1.55rem;
+    font-size: 1.25rem;
     color: var(--color-1);
     outline: 0;
 

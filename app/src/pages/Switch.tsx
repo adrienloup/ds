@@ -9,14 +9,14 @@ import { DsSwitch } from "design-system/src/components/Switch/Switch";
 
 function SwitchPage() {
   // console.log("SwitchPage");
-  useTitle("Switch");
+  useTitle("React Switch component");
 
   return (
     <>
       <Header />
       <Main>
         <h1>
-          Switch <span>Component</span>
+          Switch <span>component</span>
         </h1>
         <p>Switches toggle the state of a single setting on or off.</p>
         <p>

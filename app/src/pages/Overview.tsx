@@ -9,7 +9,7 @@ import { Button } from "../components/Button/Button";
 
 function OverviewPage() {
   // console.log("OverviewPage");
-  useTitle("Overview");
+  useTitle("Overview page");
 
   return (
     <>

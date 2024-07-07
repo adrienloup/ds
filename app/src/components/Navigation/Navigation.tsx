@@ -14,6 +14,7 @@ export const Navigation = ({ prev, next }: NavigationType) => {
           cssClass={[`${style.button}`, ` ${style.prev}`].join("")}
           to={`/ds/${prev}`}
         >
+          <span>Previous page</span>
           {prev}
         </Button>
       )}
@@ -22,6 +23,7 @@ export const Navigation = ({ prev, next }: NavigationType) => {
           cssClass={[`${style.button}`, ` ${style.next}`].join("")}
           to={`/ds/${next}`}
         >
+          <span>Next page</span>
           {next}
         </Button>
       )}
