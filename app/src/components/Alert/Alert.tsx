@@ -1,24 +1,9 @@
 import { useEffect, useRef } from "react";
-import { StatusType } from "../../models/Status";
+import { setStatusIcon } from "../../utils/statusIcon";
 import { AlertType } from "../../models/Alert";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import style from "./Alert.module.scss";
-
-const icon = (status: StatusType) => {
-  switch (status) {
-    case "info":
-      return "info";
-    case "error":
-      return "error";
-    case "warning":
-      return "warning";
-    case "success":
-      return "check_circle";
-    default:
-      return "info";
-  }
-};
 
 export const Alert = ({
   text,
@@ -57,7 +42,7 @@ export const Alert = ({
           } as React.CSSProperties
         }
       >
-        <Icon cssClass={style.icon} name={`${icon(status)}`} />
+        <Icon cssClass={style.icon} name={`${setStatusIcon(status)}`} />
         <div className={style.inner}>
           {title && <span className={style.title}>{title}</span>}
           <p className={style.text}>{text}</p>

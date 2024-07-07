@@ -1,3 +1,4 @@
+import { setStatusIcon } from "../../utils/statusIcon";
 import { useBannerDispatch } from "../../hooks/useBanner";
 import { StatusType } from "../../models/Status";
 import { Button } from "../Button/Button";
@@ -19,7 +20,7 @@ export const Banner = ({
 
   return (
     <div className={[style.banner, ` ${style[status]}`].join("")}>
-      <Icon name={status} cssClass={style.icon} />
+      <Icon name={setStatusIcon(status)} cssClass={style.icon} />
       <p>{text}</p>
       <Button cssClass={style.close} onClick={() => removeBanner(id)}>
         <Icon name="close" />

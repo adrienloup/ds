@@ -76,7 +76,7 @@
     "description": "Used for marking and categorization",
     "path": "/ds/tag",
     "category": "feedback",
-    "news": false,
+    "news": true,
     "soon": false
   },
   {
@@ -92,7 +92,7 @@
     "description": "Switches toggle the state of a single setting on or off",
     "path": "/ds/switch",
     "category": "forms",
-    "news": true,
+    "news": false,
     "soon": false
   },
   {

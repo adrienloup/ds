@@ -1,5 +1,48 @@
-.icon {
-  fill: currentcolor;
-  text-transform: initial;
-  font-family: var(--font-icon);
+$tablet-landscape: 1025px;
+
+.table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+.caption {
+  margin: 1rem 0;
+  caption-side: top;
+  text-align: left;
+  letter-spacing: 0.1rem;
+  font-family: var(--font-text-bold);
+  text-transform: uppercase;
+  font-size: 1.75rem;
+}
+
+.thead {
+  display: table-header-group;
+}
+
+.tbody {
+  display: table-row-group;
+}
+
+.tr {
+  display: table-row;
+  vertical-align: middle;
+  color: inherit;
+  outline: 0px;
+}
+
+.th,
+.td {
+  padding: 2rem 2.5rem;
+  border: 0.2rem solid var(--color-3);
+  font-size: 1.5rem;
+
+  @media (max-width: $tablet-landscape) {
+    padding: 1rem;
+  }
+}
+
+.th {
+  font-family: var(--font-text-bold);
 }

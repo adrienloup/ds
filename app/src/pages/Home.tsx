@@ -7,10 +7,16 @@ import { CardGettingStarted } from "../components/Card/CardGettingStarted";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
 import { Table } from "../components/Table/Table";
+import { TableCaption } from "../components/Table/TableCaption";
+import { TableHead } from "../components/Table/TableHead";
+import { TableBody } from "../components/Table/TableBody";
+import { TableTr } from "../components/Table/TableTr";
+import { TableTh } from "../components/Table/TableTh";
+import { TableTd } from "../components/Table/TableTd";
 
 function HomePage() {
   // console.log("HomePage");
-  useTitle("Home page");
+  useTitle("Home");
 
   return (
     <>
@@ -47,7 +53,28 @@ function HomePage() {
           The most recent stable version (✓) is recommended for use in
           production.
         </p>
-        {/* <Table>table</Table> */}
+        <Table ariaLabel="Release schedule">
+          <TableCaption>Release schedule</TableCaption>
+          <TableHead>
+            <TableTr>
+              <TableTh scope="col">Date</TableTh>
+              <TableTh scope="col">Version</TableTh>
+              <TableTh scope="col">Status</TableTh>
+            </TableTr>
+          </TableHead>
+          <TableBody>
+            <TableTr>
+              <TableTd>Q4 2024</TableTd>
+              <TableTd>v0.3.0 ✓</TableTd>
+              <TableTd>Work started</TableTd>
+            </TableTr>
+            <TableTr>
+              <TableTd>Q2 2024</TableTd>
+              <TableTd>v0</TableTd>
+              <TableTd>Released</TableTd>
+            </TableTr>
+          </TableBody>
+        </Table>
       </Main>
       <Footer />
       <ScrollToTop />

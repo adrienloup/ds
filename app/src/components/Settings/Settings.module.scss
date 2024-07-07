@@ -9,6 +9,7 @@ $tablet-portrait: 769px;
   z-index: 1;
   width: 100vw;
   background-color: var(--color-2);
+  font-size: 0;
   transition-property: height, top, visibility;
   transition-duration: 0.35s, 0.35s, 0s;
   transition-timing-function: var(--easy-in-out-quad);
@@ -29,24 +30,37 @@ $tablet-portrait: 769px;
 .inner {
   display: flex;
   justify-content: center;
+  padding-right: 4rem;
 }
 
 .content {
+  height: 20rem;
   display: flex;
-  gap: 2rem;
   align-items: center;
-  height: 12rem;
+  justify-content: center;
+  gap: 2rem;
+  padding-bottom: 1rem;
 
   @media (max-width: $tablet-landscape) {
+    height: 16rem;
     gap: 1rem;
-    height: 10rem;
   }
 
   @media (max-width: $tablet-portrait) {
-    height: 14rem;
+    height: 24rem;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
+    padding-bottom: 0;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (max-width: $tablet-landscape) {
+    gap: 1rem;
   }
 }
 
@@ -57,6 +71,10 @@ $tablet-portrait: 769px;
   font-family: var(--font-text-bold);
   font-size: 1.25rem;
   color: var(--color-1);
+
+  @media (max-width: $tablet-landscape) {
+    font-size: 1rem;
+  }
 }
 
 .button {
@@ -78,16 +96,23 @@ $tablet-portrait: 769px;
 }
 
 .mode,
-.direction {
+.direction,
+.accessibility,
+.color {
   .button {
     gap: 0.75rem;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1.25rem 0.75rem 1rem;
     border: 0.2rem solid var(--color-3);
     font-size: 1.25rem;
 
     @media (max-width: $tablet-landscape) {
       padding: 0.5rem 0.75rem;
       font-size: 1rem;
+    }
+
+    &:nth-child(3):not(:last-child) {
+      border-right: 0;
+      border-left: 0;
     }
 
     &:focus-visible {
@@ -101,10 +126,6 @@ $tablet-portrait: 769px;
       background-color: var(--color-3);
       cursor: default;
     }
-
-    .icon {
-      font-size: 1.5rem;
-    }
   }
 }
 
@@ -115,6 +136,7 @@ $tablet-portrait: 769px;
   bottom: 0.7rem;
   z-index: 2;
   padding: 0.25rem 0.5rem;
+  background-color: var(--color-2);
   border: 0.2rem solid var(--color-3);
   font-size: 1.5rem;
 

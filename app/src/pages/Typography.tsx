@@ -207,7 +207,91 @@ function TypographyPage() {
               </div>
             </div>
           }
-          code={<></>}
+          code={
+            <>
+              &lt;<span style={{ color: "#00dc09" }}>DsTypography</span>{" "}
+              <span style={{ color: "#00caff" }}>variant</span>="
+              <span style={{ color: "#ffeb3b" }}>h1</span>"&gt;
+              <br />
+              {"   "}
+              h1. Heading
+              <br />
+              &lt;/
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+              <br />
+              &lt;<span style={{ color: "#00dc09" }}>DsTypography</span>{" "}
+              <span style={{ color: "#00caff" }}>variant</span>="
+              <span style={{ color: "#ffeb3b" }}>h2</span>"&gt;
+              <br />
+              {"   "}
+              h2. Heading
+              <br />
+              &lt;/
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+              <br />
+              &lt;<span style={{ color: "#00dc09" }}>DsTypography</span>{" "}
+              <span style={{ color: "#00caff" }}>variant</span>="
+              <span style={{ color: "#ffeb3b" }}>h3</span>"&gt;
+              <br />
+              {"   "}
+              h3. Heading
+              <br />
+              &lt;/
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+              <br />
+              &lt;<span style={{ color: "#00dc09" }}>DsTypography</span>{" "}
+              <span style={{ color: "#00caff" }}>variant</span>="
+              <span style={{ color: "#ffeb3b" }}>h4</span>"&gt;
+              <br />
+              {"   "}
+              h4. Heading
+              <br />
+              &lt;/
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+              <br />
+              &lt;<span style={{ color: "#00dc09" }}>DsTypography</span>{" "}
+              <span style={{ color: "#00caff" }}>variant</span>="
+              <span style={{ color: "#ffeb3b" }}>h5</span>"&gt;
+              <br />
+              {"   "}
+              h5. Heading
+              <br />
+              &lt;/
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+              <br />
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+              <br />
+              &lt;<span style={{ color: "#00dc09" }}>DsTypography</span>{" "}
+              <span style={{ color: "#00caff" }}>variant</span>="
+              <span style={{ color: "#ffeb3b" }}>h6</span>"&gt;
+              <br />
+              {"   "}
+              h6. Heading
+              <br />
+              &lt;/
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+              <br />
+              &lt;<span style={{ color: "#00dc09" }}>DsTypography</span>{" "}
+              <span style={{ color: "#00caff" }}>variant</span>="
+              <span style={{ color: "#ffeb3b" }}>body1</span>"&gt;
+              <br />
+              {"   "}
+              body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <br />
+              &lt;/
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+              <br />
+              &lt;<span style={{ color: "#00dc09" }}>DsTypography</span>{" "}
+              <span style={{ color: "#00caff" }}>variant</span>="
+              <span style={{ color: "#ffeb3b" }}>body2</span>"&gt;
+              <br />
+              {"   "}
+              body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <br />
+              &lt;/
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+            </>
+          }
           codepen={"WNWyqeK"}
           github={"Typography"}
           copy={""}
@@ -231,7 +315,22 @@ function TypographyPage() {
               h1. Heading
             </DsTypography>
           }
-          code={<></>}
+          code={
+            <>
+              &lt;<span style={{ color: "#00dc09" }}>DsTypography</span>{" "}
+              <span style={{ color: "#00caff" }}>variant</span>="
+              <span style={{ color: "#ffeb3b" }}>h1</span>"{" "}
+              <span style={{ color: "#00caff" }}>tag</span>="
+              <span style={{ color: "#ffeb3b" }}>h2</span>
+              "&gt;
+              <br />
+              {"   "}
+              h1. Heading
+              <br />
+              &lt;/
+              <span style={{ color: "#00dc09" }}>DsTypography</span>&gt;
+            </>
+          }
           codepen={"WNWyqeK"}
           github={"Typography"}
           copy={""}

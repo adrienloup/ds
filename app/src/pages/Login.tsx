@@ -9,7 +9,7 @@ import { Button } from "../components/Button/Button";
 
 function LoginPage() {
   // console.log("LoginPage");
-  useTitle("Login page");
+  useTitle("Login");
 
   const navigate = useNavigate();
   const { user, logout } = useAuth();

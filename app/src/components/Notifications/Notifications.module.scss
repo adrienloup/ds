@@ -7,7 +7,6 @@
   margin-bottom: 1.25rem;
   padding-bottom: 1.5rem;
   border-bottom: 0.2rem solid var(--color-3);
-  line-height: 1.25;
 
   &:last-child {
     margin-bottom: 0;
@@ -16,6 +15,7 @@
   }
 
   p {
+    line-height: 1.4;
     font-size: 1rem;
 
     &::first-letter {
@@ -26,6 +26,7 @@
   span {
     display: block;
     padding-bottom: 0.5rem;
+    line-height: 1.25;
     font-size: 1.5rem;
 
     &::first-letter {

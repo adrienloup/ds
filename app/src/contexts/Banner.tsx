@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 import { SlotType } from "../models/Slot";
 import { StatusType } from "../models/Status";
 
-const initialBanner = [
+const initialValue = [
   {
     id: 0,
     text: "The website is under construction, we apologize for the inconvenience caused :)",
@@ -10,12 +10,7 @@ const initialBanner = [
   },
   {
     id: 1,
-    text: "Recent developments require clearing your browser's local storage",
-    status: "warning" as StatusType,
-  },
-  {
-    id: 2,
-    text: "Many components coming, come back soon :)",
+    text: "If something is broken or if you need a reply to a problem you've encountered, please open an issue on GitHub",
     status: "info" as StatusType,
   },
 ];
@@ -29,7 +24,7 @@ export const BannerDispatchContext = createContext<(id: number) => void>(
 );
 
 export const BannerProvider = ({ children }: SlotType) => {
-  const [banners, setBanners] = useState(initialBanner);
+  const [banners, setBanners] = useState(initialValue);
 
   const removeBanner = (id: number) => {
     setBanners((prev) => prev.filter((banner) => banner.id !== id));

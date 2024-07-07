@@ -7,7 +7,7 @@ $tablet-portrait: 769px;
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 4.25rem 1rem 1.5rem;
+  padding: 1rem 4.5rem 1rem 1.5rem;
   color: var(--color-neutral-1);
 
   @media (max-width: $tablet-landscape) {
@@ -16,6 +16,10 @@ $tablet-portrait: 769px;
 
   &.info {
     background-color: var(--color-chartreuse);
+  }
+
+  &.success {
+    background-color: var(--color-cyan);
   }
 
   &.warning {

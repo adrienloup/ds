@@ -6,10 +6,8 @@ export function useLocalStorage<T>(
 ): [T, (n: T) => void] {
   const localValue = () => {
     try {
-      // console.log("key ", key);
       return JSON.parse(localStorage.getItem(key) ?? "") as T;
     } catch {
-      // console.log("initialValue", initialValue);
       return initialValue;
     }
   };

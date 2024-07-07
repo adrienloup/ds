@@ -35,7 +35,7 @@ export const ToolsBar = () => {
             cssClass={style.button}
             onClick={() => setTaskModal(!taskModal)}
           >
-            <Icon name={"task_alt"} />
+            <Icon name={"task_alt"} cssClass={style.icon} />
           </Button>
         </Badge>
       )}
@@ -57,7 +57,10 @@ export const ToolsBar = () => {
           cssClass={style.button}
           onClick={() => setNotificationModal(!notificationModal)}
         >
-          <Icon name="notifications" />
+          <Icon
+            name={data.length > 0 ? "notifications" : "notifications_off"}
+            cssClass={style.icon}
+          />
         </Button>
       </Badge>
       <Button
