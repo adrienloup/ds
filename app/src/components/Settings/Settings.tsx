@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useSettings } from "../../hooks/useSettings";
 import { useAlert } from "../../hooks/useAlert";
+import { useFontSize, useFontSizeDispatch } from "../../hooks/useFontSize";
 import { ModeType } from "../../models/Mode";
+import { ColorSwitcher } from "../ColorSwitcher/ColorSwitcher";
 import { Button } from "../Button/Button";
+import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
 import style from "./Settings.module.scss";
 
@@ -10,22 +14,20 @@ export const Settings = () => {
   // console.log("Settings");
   const asideRef = useRef<HTMLDivElement | null>(null);
   const innerRef = useRef<HTMLDivElement | null>(null);
-  const [fontSize, setFontSize] = useState(16);
+  const [colorModal, setColorModal] = useState(false);
+  const [fontSizeAlert, setFonSizeAlert] = useState(false);
   const { settings, setSettings } = useSettings();
   const { addAlert } = useAlert();
-
-  const increaseFontSize = () => {
-    setFontSize(fontSize + 2);
-    console.log(fontSize);
-  };
-
-  const decreaseFontSize = () => {
-    setFontSize(fontSize - 2);
-    console.log(fontSize);
-  };
+  const { decreaseFontSize, increaseFontSize } = useFontSizeDispatch();
+  const fontSize = useFontSize();
 
   const handleModeChange = (mode: ModeType) => {
     setSettings({ ...settings, mode });
+    addAlert({
+      text: mode === "system" ? "browser mode" : `${mode} mode`,
+      timeout: 1,
+      status: "success",
+    });
   };
 
   const handleOpenChange = () => {
@@ -45,10 +47,22 @@ export const Settings = () => {
         settings.open ? height : 0
       }px`;
     };
+
     handleResize();
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [settings]);
+
+  useEffect(() => {
+    if (!fontSizeAlert) return;
+    addAlert({
+      text: `${fontSize} pixels`,
+      timeout: 1,
+      status: "success",
+    });
+    setFonSizeAlert(false);
+  }, [fontSizeAlert]);
 
   return (
     <aside
@@ -103,11 +117,11 @@ export const Settings = () => {
             <div className={style.direction}>
               <div className={style.title}>Direction</div>
               <Button
-                cssClass={[`${style.button}`, ` ${style.active}`].join("")}
+                cssClass={style.button}
                 onClick={() => {
                   addAlert({
-                    text: "Error with the direction adjustment right to left",
-                    timeout: 2,
+                    text: "Error with the direction adjustment",
+                    timeout: 1,
                     status: "error",
                   });
                 }}
@@ -122,8 +136,8 @@ export const Settings = () => {
                 cssClass={style.button}
                 onClick={() => {
                   addAlert({
-                    text: "Error with the direction adjustment left to right",
-                    timeout: 2,
+                    text: "Error with the direction adjustment",
+                    timeout: 1,
                     status: "error",
                   });
                 }}
@@ -140,33 +154,49 @@ export const Settings = () => {
             <div className={style.accessibility}>
               <div className={style.title}>Accessibility</div>
               <Button
-                cssClass={[`${style.button}`, ` ${style.active}`].join("")}
-                onClick={increaseFontSize}
+                cssClass={[
+                  style.button,
+                  fontSize === 16 ? ` ${style.active}` : "",
+                ].join("")}
+                onClick={() => (decreaseFontSize(), setFonSizeAlert(true))}
+                ariaLabel="Decrease text size"
               >
-                A
+                <Icon cssClass={style.icon} name="remove_circle" /> A
               </Button>
-              <Button cssClass={style.button} onClick={decreaseFontSize}>
-                A
+              <Button
+                cssClass={[
+                  style.button,
+                  fontSize === 20 ? ` ${style.active}` : "",
+                ].join("")}
+                onClick={() => (increaseFontSize(), setFonSizeAlert(true))}
+                ariaLabel="Increase text size"
+              >
+                <Icon cssClass={style.icon} name="add_circle" /> A
               </Button>
             </div>
             <div className={style.color}>
               <div className={style.title}>Color</div>
               <Button
                 cssClass={style.button}
-                onClick={() => {
-                  addAlert({
-                    text: "Error with the color editing",
-                    timeout: 2,
-                    status: "error",
-                  });
-                }}
+                onClick={() => setColorModal(!colorModal)}
               >
+                <Icon cssClass={style.icon} name="format_paint" />
                 Edit documentation
               </Button>
             </div>
           </div>
         </div>
       </div>
+      {colorModal &&
+        createPortal(
+          <Modal
+            head={<h3>Edit</h3>}
+            body={<ColorSwitcher />}
+            open={colorModal}
+            onClick={() => setColorModal(false)}
+          />,
+          document.body
+        )}
     </aside>
   );
 };

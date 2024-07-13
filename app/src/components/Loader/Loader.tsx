@@ -7,6 +7,8 @@ export const Loader = () => {
   const ref = useRef<HTMLDivElement>(null);
   const percent = Math.round((count * 100) / 3);
 
+  window.scrollTo(0, 0);
+
   useEffect(() => {
     if (count >= 3) {
       document.documentElement.classList.add(`${style.loaded}`);

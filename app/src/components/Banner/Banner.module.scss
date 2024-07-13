@@ -5,7 +5,6 @@ $tablet-portrait: 769px;
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: center;
   gap: 1rem;
   padding: 1rem 4.5rem 1rem 1.5rem;
   color: var(--color-neutral-1);
@@ -30,10 +29,10 @@ $tablet-portrait: 769px;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     font-family: var(--font-text-bold);
-    font-size: 1.75rem;
+    font-size: 1.75em;
 
     @media (max-width: $tablet-landscape) {
-      font-size: 1.5rem;
+      font-size: 1.5em;
     }
   }
 }

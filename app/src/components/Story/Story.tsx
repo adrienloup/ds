@@ -32,6 +32,7 @@ export const Story = ({
     addAlert({
       text: "Copied",
       timeout: 1,
+      status: "success",
     });
   };
 

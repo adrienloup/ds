@@ -1,0 +1,52 @@
+$mobile-landscape: 541px;
+
+.colorswitcher {
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.25;
+    font-size: 1.5rem;
+  }
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+
+  div {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+  }
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+
+  &:hover {
+    background-color: var(--color-yellow-darked);
+  }
+}
+
+.purple {
+  background-color: var(--color-purple);
+
+  &:hover {
+    background-color: var(--color-purple-darked);
+  }
+}
+
+.magenta {
+  background-color: var(--color-magenta);
+
+  &:hover {
+    background-color: var(--color-magenta-darked);
+  }
+}
+
+.cyan {
+  background-color: var(--color-cyan);
+
+  &:hover {
+    background-color: var(--color-cyan-darked);
+  }
+}

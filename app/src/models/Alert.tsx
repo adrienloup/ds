@@ -7,6 +7,6 @@ export type AlertType = {
   status?: StatusType;
   cssClass?: string;
   timeout?: number;
-  button?: boolean;
+  close?: boolean;
   handleRemove?: () => void;
 };

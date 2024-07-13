@@ -11,7 +11,7 @@ export const Alert = ({
   status = "info",
   cssClass,
   timeout = 0,
-  button = false,
+  close = false,
   handleRemove = () => {},
 }: AlertType) => {
   // console.log("Alert");
@@ -47,7 +47,7 @@ export const Alert = ({
           {title && <span className={style.title}>{title}</span>}
           <p className={style.text}>{text}</p>
         </div>
-        {button && (
+        {close && (
           <Button cssClass={style.close} onClick={handleRemove}>
             <Icon name="close" />
           </Button>

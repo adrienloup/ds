@@ -6,7 +6,7 @@ $tablet-portrait: 769px;
   max-width: 65rem;
   margin: 4rem 0;
   padding: 2.5rem;
-  border: 0.5rem solid var(--color-yellow);
+  border: 0.5rem solid var(--color-primary);
 
   @media (max-width: $desktop) {
     margin: 2rem 0;
@@ -41,13 +41,13 @@ $tablet-portrait: 769px;
   a,
   button {
     padding: 1.5rem;
-    background-color: var(--color-yellow);
+    background-color: var(--color-primary);
     border: 0;
     font-size: 1.5rem;
     color: var(--color-neutral-1);
 
     &:hover {
-      background-color: var(--color-yellow-darked);
+      background-color: var(--color-primary-darked);
     }
 
     &:focus-visible {

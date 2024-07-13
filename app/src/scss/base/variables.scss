@@ -27,6 +27,8 @@
   --color-orange-darked: #cf5d00;
   --color-red: #ff1100;
   --color-red-darked: #cc0e00;
+  --color-primary: var(--color-yellow);
+  --color-primary-darked: var(--color-yellow-darked);
 }
 
 @mixin easings {

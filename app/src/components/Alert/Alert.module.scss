@@ -4,55 +4,32 @@ $tablet-portrait: 769px;
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 4;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   max-width: 40rem;
-
-  @media (max-width: $tablet-portrait) {
-    top: 0.25rem;
-    right: 0.25rem;
-  }
-
-  .alert {
-    margin: 1rem;
-
-    & + .alert {
-      margin-top: 0;
-    }
-  }
 }
 
 .alert {
   position: relative;
   display: flex;
-  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem;
   padding: 0.75rem;
-  background-color: var(--color-yellow);
+  color: var(--color-neutral-6);
+
+  & + & {
+    margin-top: 0;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    margin: 0 0 0.75rem;
+    padding: 0.5rem;
+  }
 
   &.animate {
     animation: Appear 0.5s var(--easy-in-out-quad);
-  }
-
-  .close {
-    position: relative;
-    z-index: 1;
-    padding: 0.25rem;
-    background-color: transparent;
-    border: 0;
-    border-radius: 0.5rem;
-    font-size: 1.5rem;
-    color: var(--color-neutral-1);
-
-    &:hover {
-      background-color: var(--color-yellow-darked);
-    }
-
-    &:focus-visible {
-      outline: 0.2rem solid var(--color-orange);
-      outline-offset: 0.125rem;
-    }
   }
 }
 
@@ -66,42 +43,86 @@ $tablet-portrait: 769px;
 }
 
 .title {
-  margin: 0.25rem 0 0.5rem;
+  text-transform: uppercase;
   font-size: 1.5rem;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    font-size: 1.25rem;
+  }
 }
 
 .text {
-  margin: 0.15rem 0 0;
   font-size: 1.25rem;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    font-size: 1rem;
+  }
 }
 
 .icon {
   position: relative;
   z-index: 1;
-  margin-right: 0.5rem;
   font-size: 1.5rem;
+
+  @media (max-width: $tablet-portrait) {
+    font-size: 1.15rem;
+  }
 }
 
 .progress {
   position: absolute;
-  bottom: -0.5rem;
+  bottom: -0.35rem;
   left: 0;
-  z-index: 2;
-  height: 0.5rem;
+  z-index: 3;
+  height: 0.35rem;
   animation: Progress var(--timeout) linear;
+}
+
+.close {
+  position: relative;
+  z-index: 1;
+  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  border: 0.2rem solid var(--color-neutral-6);
+  font-size: 1.5rem;
+  color: var(--color-neutral-6);
+
+  &:hover {
+    background-color: var(--color-neutral-6);
+
+    .info & {
+      color: var(--color-blue);
+    }
+
+    .success & {
+      color: var(--color-chartreuse);
+    }
+
+    .warning & {
+      color: var(--color-orange);
+    }
+
+    .error & {
+      color: var(--color-red);
+    }
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+    outline-offset: 0.03rem;
+  }
 }
 
 .info {
   background-color: var(--color-blue);
-  color: var(--color-neutral-6);
-
-  .close {
-    border-color: var(--color-blue-darked);
-
-    &:hover {
-      background-color: var(--color-blue-darked);
-    }
-  }
 
   .progress {
     background-color: var(--color-blue-darked);
@@ -110,15 +131,6 @@ $tablet-portrait: 769px;
 
 .success {
   background-color: var(--color-chartreuse);
-  color: var(--color-neutral-6);
-
-  .close {
-    border-color: var(--color-chartreuse-darked);
-
-    &:hover {
-      background-color: var(--color-chartreuse-darked);
-    }
-  }
 
   .progress {
     background-color: var(--color-chartreuse-darked);
@@ -126,33 +138,15 @@ $tablet-portrait: 769px;
 }
 
 .warning {
-  background-color: var(--color-yellow);
-  color: var(--color-neutral-1);
-
-  .close {
-    border-color: var(--color-yellow-darked);
-
-    &:hover {
-      background-color: var(--color-yellow-darked);
-    }
-  }
+  background-color: var(--color-orange);
 
   .progress {
-    background-color: var(--color-yellow-darked);
+    background-color: var(--color-orange-darked);
   }
 }
 
 .error {
   background-color: var(--color-red);
-  color: var(--color-neutral-6);
-
-  .close {
-    border-color: var(--color-red-darked);
-
-    &:hover {
-      background-color: var(--color-red-darked);
-    }
-  }
 
   .progress {
     background-color: var(--color-red-darked);

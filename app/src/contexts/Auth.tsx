@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import { useLocalStorage } from "../hooks/useLocalStorage";
 import { SlotType } from "../models/Slot";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const AuthContext = createContext<{
   user: { id: number; name: string };

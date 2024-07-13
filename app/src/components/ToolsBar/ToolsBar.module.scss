@@ -21,9 +21,9 @@ $tablet-portrait: 769px;
   color: var(--color-1);
 
   @media (max-width: $tablet-portrait) {
-    width: 4rem;
-    height: 3rem;
-    font-size: 1.5rem;
+    width: 2.75rem;
+    height: 2.25rem;
+    font-size: 1.35rem;
   }
 
   &:hover {
@@ -39,16 +39,7 @@ $tablet-portrait: 769px;
     width: 2rem;
 
     @media (max-width: $tablet-portrait) {
-      width: 1.5rem;
+      width: 1.35rem;
     }
   }
-}
-
-.badge {
-  width: 5rem;
-  height: 4rem;
-}
-
-.icon {
-  font-size: 2.25rem;
 }

@@ -2,18 +2,16 @@ $tablet-landscape: 1025px;
 $tablet-portrait: 769px;
 
 html {
-  overflow: hidden;
-
-  &.loaded {
-    overflow-y: auto;
-  }
+  overflow-x: hidden;
+  overflow-y: auto;
+  animation: Scroll 4s linear;
 }
 
 .loader {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 4;
+  z-index: 3;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -82,5 +80,11 @@ html {
     right: 1rem;
     font-family: var(--font-text-bold);
     font-size: 4rem;
+  }
+}
+
+@keyframes Scroll {
+  0% {
+    overflow: hidden;
   }
 }

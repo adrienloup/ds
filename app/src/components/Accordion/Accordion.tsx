@@ -16,10 +16,10 @@ export const Accordion = ({
   onClick,
 }: AccordionProps) => {
   // console.log("Accordion");
-  const [animated, setAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const panelId = useId();
+  const [animated, setAnimated] = useState(false);
 
   const handleResize = () => {
     if (!ref.current) return;

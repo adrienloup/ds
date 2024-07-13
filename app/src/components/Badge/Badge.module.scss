@@ -25,9 +25,10 @@ $tablet-portrait: 769px;
   pointer-events: none;
 
   @media (max-width: $tablet-portrait) {
-    top: 0.5rem;
-    right: 0.5rem;
-    padding: 0 0.05rem;
+    top: 0rem;
+    right: -0.15rem;
+    background-color: transparent;
     font-size: 0.75rem;
+    color: var(--color-red);
   }
 }
