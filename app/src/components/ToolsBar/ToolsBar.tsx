@@ -43,6 +43,7 @@ export const ToolsBar = () => {
         href={"https://github.com/adrienloup/ds"}
         ariaLabel={"Github"}
         cssClass={style.button}
+        data-cy="toolsbar-github"
       >
         <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24">
           <path
@@ -55,6 +56,7 @@ export const ToolsBar = () => {
         <Button
           ariaLabel={"Notifications"}
           cssClass={style.button}
+          data-cy="toolsbar-notifications"
           onClick={() => setNotificationModal(!notificationModal)}
         >
           <Icon
@@ -66,6 +68,7 @@ export const ToolsBar = () => {
       <Button
         ariaLabel={"Settings"}
         cssClass={style.button}
+        data-cy="toolsbar-settings"
         onClick={() => handleSettingsChange(!settings.open)}
       >
         <Icon name={"settings"} />
