@@ -10,7 +10,7 @@ export const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header role="banner" className={style.header}>
+    <header role="banner" data-cy="header" className={style.header}>
       <div className={style.inner}>
         <Logo />
         <Button cssClass={style.burger} onClick={() => setOpen(!open)}>

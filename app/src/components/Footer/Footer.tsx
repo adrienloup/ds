@@ -12,7 +12,7 @@ export const Footer = () => {
   const [showModalTask, setShowModalTask] = useState(false);
 
   return (
-    <footer role="contentinfo" className={style.footer}>
+    <footer role="contentinfo" data-cy="footer" className={style.footer}>
       <div className={style.inner}>
         <ScrollTo top={0} />
         <span className={style.text}>Logic of Atomic Design</span>
