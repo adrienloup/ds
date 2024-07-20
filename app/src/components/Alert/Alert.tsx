@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 import { setStatusIcon } from "../../utils/statusIcon";
 import { AlertType } from "../../models/Alert";
 import { Button } from "../Button/Button";
@@ -39,7 +39,7 @@ export const Alert = ({
         style={
           {
             "--timeout": `${timeout}ms`,
-          } as React.CSSProperties
+          } as CSSProperties
         }
       >
         <Icon cssClass={style.icon} name={`${setStatusIcon(status)}`} />
@@ -58,7 +58,7 @@ export const Alert = ({
             style={
               {
                 "--timeout": `${timeout}s`,
-              } as React.CSSProperties
+              } as CSSProperties
             }
           ></div>
         )}

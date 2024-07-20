@@ -19,7 +19,7 @@ export const Settings = () => {
   const { settings, setSettings } = useSettings();
   const { addAlert } = useAlert();
   const { decreaseFontSize, increaseFontSize } = useFontSizeDispatch();
-  const fontSize = useFontSize();
+  const { fontSize } = useFontSize();
 
   const handleModeChange = (mode: ModeType) => {
     setSettings({ ...settings, mode });
