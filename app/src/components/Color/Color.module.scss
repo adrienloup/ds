@@ -1,4 +1,4 @@
-$mobile-landscape: 541px;
+$tablet-portrait: 769px;
 
 .color {
   display: flex;
@@ -17,70 +17,88 @@ $mobile-landscape: 541px;
 }
 
 .item {
+  position: relative;
   width: 25%;
   height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-width: 0.2rem;
+  border-style: solid;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+  font-family: var(--font-text-bold);
   font-size: 1.25rem;
   cursor: pointer;
 
-  @media (max-width: $mobile-landscape) {
+  @media (max-width: $tablet-portrait) {
     width: 50%;
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+    z-index: 2;
   }
 }
 
+.icon {
+  position: absolute;
+  bottom: 0.35rem;
+  right: 0.35rem;
+  z-index: 2;
+  font-size: 1.5rem;
+}
+
 .active {
+  pointer-events: none;
   cursor: default;
 }
 
 .yellow {
-  background-color: var(--color-yellow);
-  color: var(--color-2);
+  border-color: var(--color-yellow);
 
-  &:hover {
-    background-color: var(--color-yellow-darked);
+  .icon {
+    color: var(--color-yellow);
   }
 
-  &.active {
-    background-color: var(--color-yellow-darked);
+  &:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-neutral-1);
   }
 }
 
 .purple {
-  background-color: var(--color-purple);
+  border-color: var(--color-purple);
 
-  &:hover {
-    background-color: var(--color-purple-darked);
+  .icon {
+    color: var(--color-purple);
   }
 
-  &.active {
-    background-color: var(--color-purple-darked);
+  &:hover {
+    background-color: var(--color-purple);
   }
 }
 
 .magenta {
-  background-color: var(--color-magenta);
+  border-color: var(--color-magenta);
 
-  &:hover {
-    background-color: var(--color-magenta-darked);
+  .icon {
+    color: var(--color-magenta);
   }
 
-  &.active {
-    background-color: var(--color-magenta-darked);
+  &:hover {
+    background-color: var(--color-magenta);
   }
 }
 
 .cyan {
-  background-color: var(--color-cyan);
+  border-color: var(--color-cyan);
 
-  &:hover {
-    background-color: var(--color-cyan-darked);
+  .icon {
+    color: var(--color-cyan);
   }
 
-  &.active {
-    background-color: var(--color-cyan-darked);
+  &:hover {
+    background-color: var(--color-cyan);
   }
 }

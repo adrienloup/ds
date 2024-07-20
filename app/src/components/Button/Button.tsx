@@ -1,8 +1,13 @@
-import { memo, ReactNode } from "react";
+import {
+  ButtonHTMLAttributes,
+  LinkHTMLAttributes,
+  memo,
+  ReactNode,
+} from "react";
 import { Link } from "react-router-dom";
 import style from "./Button.module.scss";
 
-type ButtonType = {
+interface ButtonType {
   children: ReactNode;
   cssClass?: string;
   type?: "button" | "submit" | "reset";
@@ -14,7 +19,7 @@ type ButtonType = {
   onMouseLeave?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
-};
+}
 
 export const Button = memo(
   ({
@@ -29,6 +34,7 @@ export const Button = memo(
     onMouseLeave,
     onFocus,
     onBlur,
+    ...rest
   }: ButtonType) => {
     // console.log("Button");
     const link = (
@@ -48,6 +54,7 @@ export const Button = memo(
         rel="noopener"
         aria-label={ariaLabel}
         className={[style.button, cssClass ? ` ${cssClass}` : ""].join("")}
+        {...(rest as LinkHTMLAttributes<HTMLAnchorElement>)}
       >
         {children}
       </a>
@@ -63,6 +70,7 @@ export const Button = memo(
         onMouseLeave={onMouseLeave}
         onFocus={onFocus}
         onBlur={onBlur}
+        {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}
       >
         {children}
       </button>

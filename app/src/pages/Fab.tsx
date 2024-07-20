@@ -10,7 +10,7 @@ import { DsFab } from "design-system/src/components/Fab/Fab";
 
 function FabPage() {
   // console.log("FabPage");
-  useTitle("React Fab component");
+  useTitle("Fab component");
 
   return (
     <>

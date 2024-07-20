@@ -1,6 +1,7 @@
 import { ColorType } from "../../models/Color";
 import { useSettings } from "../../hooks/useSettings";
 import { useAlert } from "../../hooks/useAlert";
+import { Icon } from "../Icon/Icon";
 import style from "./Color.module.scss";
 
 const colors: ColorType[] = ["yellow", "purple", "magenta", "cyan"];
@@ -32,9 +33,15 @@ export const Color = () => {
               ` ${style[color]}`,
               settings.color === color ? ` ${style.active}` : "",
             ].join("")}
+            tabIndex={0}
             onClick={() => handleColorChange(color)}
           >
-            {color}
+            <span className={style.label}>{color}</span>
+            {settings.color === color ? (
+              <Icon name="verified" cssClass={style.icon} />
+            ) : (
+              ""
+            )}
           </div>
         ))}
       </div>

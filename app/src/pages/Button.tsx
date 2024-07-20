@@ -10,7 +10,7 @@ import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function ButtonPage() {
   // console.log("ButtonPage");
-  useTitle("React Button component");
+  useTitle("Button component");
 
   return (
     <>
