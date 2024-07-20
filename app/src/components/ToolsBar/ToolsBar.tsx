@@ -27,7 +27,7 @@ export const ToolsBar = () => {
   };
 
   return (
-    <div className={style.toolsbar}>
+    <div className={style.toolsbar} data-cy="toolsbar">
       {user.name && (
         <Badge value={tasks.length} max={9} cssClass={style.badge}>
           <Button
