@@ -49,7 +49,8 @@ export const Menu = ({ open }: { open: boolean }) => {
       {categoryList().map((category, index) => (
         <Accordion
           key={index}
-          title={
+          data-cy={`accordion-${index}`}
+          trigger={
             <>
               {category}
               {newsPerCategory(category!).length > 0 && (
@@ -72,8 +73,8 @@ export const Menu = ({ open }: { open: boolean }) => {
               ))}
             </ul>
           }
-          onClick={() => handleExpandedChange(category!)}
           expanded={expanded === category}
+          onClick={() => handleExpandedChange(category!)}
         />
       ))}
     </div>

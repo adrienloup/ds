@@ -8,7 +8,7 @@ export const Main = ({ children }: SlotType) => {
   // console.log("Main");
 
   return (
-    <main role="main" className={style.main}>
+    <main role="main" data-cy="main" className={style.main}>
       <ToolsBar />
       <Settings />
       <Banners />
