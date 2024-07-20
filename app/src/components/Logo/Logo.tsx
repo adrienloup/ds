@@ -6,7 +6,7 @@ export const Logo = () => {
   // console.log("Logo");
 
   return (
-    <Link className={style.logo} to={"/ds/"}>
+    <Link className={style.logo} data-cy="logo" to={"/ds/"}>
       DS<span>v{version}</span>
     </Link>
   );

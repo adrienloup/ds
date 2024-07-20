@@ -3,6 +3,7 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
+import { Title } from "../components/Title/Title";
 import { CardGettingStarted } from "../components/Card/CardGettingStarted";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
@@ -22,10 +23,10 @@ function HomePage() {
     <>
       <Header />
       <Main>
-        <h1>
+        <Title>
           A pretty good library{" "}
           <span>of React components for Web application's UI</span>
-        </h1>
+        </Title>
         <Promote
           head={<h2>Unlock the full power</h2>}
           body={
