@@ -9,7 +9,7 @@ import { DsProgress } from "design-system/src/components/Progress/Progress";
 
 function ProgressPage() {
   // console.log("ProgressPage");
-  useTitle("React Progress component");
+  useTitle("Progress component");
 
   return (
     <>

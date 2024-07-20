@@ -10,7 +10,7 @@ import { DsPagination } from "design-system/src/components/Pagination/Pagination
 
 function PaginationPage() {
   // console.log("PaginationPage");
-  useTitle("React Pagination component");
+  useTitle("Pagination component");
 
   const totalItems = 100;
   const itemsPerPage = 10;

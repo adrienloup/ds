@@ -9,7 +9,7 @@ import { DsModal } from "design-system/src/components/Modal/Modal";
 
 function ModalPage() {
   // console.log("ModalPage");
-  useTitle("React Modal component");
+  useTitle("Modal component");
 
   return (
     <>

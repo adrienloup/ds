@@ -16,6 +16,14 @@
     "soon": false
   },
   {
+    "name": "support",
+    "description": "Learn how to get support for DS library components, including feature requests, bug fixes, and technical support from the team",
+    "path": "/ds/support",
+    "category": "getting started",
+    "news": false,
+    "soon": false
+  },
+  {
     "name": "avatar",
     "description": "Avatars are found throughout material design with uses in everything from tables to dialog menus",
     "path": "/ds/avatar",
