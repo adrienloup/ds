@@ -3,6 +3,7 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
+import { Title } from "../components/Title/Title";
 import { Promote } from "../components/Promote/Promote";
 import { CardSearchable } from "../components/Card/CardSearchable";
 import { Button } from "../components/Button/Button";
@@ -15,9 +16,9 @@ function OverviewPage() {
     <>
       <Header />
       <Main>
-        <h1>
+        <Title>
           An open-source <span>React component library for pleasure</span>
-        </h1>
+        </Title>
         <Promote
           head={<h2>Unlock the full power</h2>}
           body={
