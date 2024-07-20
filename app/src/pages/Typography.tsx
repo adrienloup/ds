@@ -9,7 +9,7 @@ import { DsTypography } from "design-system/src/components/Typography/Typography
 
 function TypographyPage() {
   // console.log("TypographyPage");
-  useTitle("React Typography component");
+  useTitle("Typography component");
 
   return (
     <>

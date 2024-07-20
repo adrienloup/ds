@@ -10,7 +10,7 @@ import { DsTabPanel } from "design-system/src/components/Tabs/TabPanel";
 
 function TabsPage() {
   // console.log("TabsPage");
-  useTitle("React Tabs component");
+  useTitle("Tabs component");
 
   return (
     <>

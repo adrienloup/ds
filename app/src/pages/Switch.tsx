@@ -9,7 +9,7 @@ import { DsSwitch } from "design-system/src/components/Switch/Switch";
 
 function SwitchPage() {
   // console.log("SwitchPage");
-  useTitle("React Switch component");
+  useTitle("Switch component");
 
   return (
     <>

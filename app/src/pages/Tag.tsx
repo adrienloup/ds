@@ -10,7 +10,7 @@ import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function TagPage() {
   // console.log("TagPage");
-  useTitle("React Tag component");
+  useTitle("Tag component");
 
   return (
     <>
