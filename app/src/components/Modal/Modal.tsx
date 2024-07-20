@@ -34,14 +34,18 @@ export const Modal = ({
       }}
     >
       <div className={style.content}>
-        <Button cssClass={style.close} onClick={onClick}>
+        <Button data-cy="modal-close" cssClass={style.close} onClick={onClick}>
           <Icon name="close" />
         </Button>
         {head && <div className={style.head}>{head}</div>}
         {body && <div className={style.body}>{body}</div>}
         {foot && <div className={style.foot}>{foot}</div>}
       </div>
-      <div className={style.backdrop} onClick={onClick}></div>
+      <div
+        data-cy="modal-backdrop"
+        className={style.backdrop}
+        onClick={onClick}
+      ></div>
     </div>
   );
 };

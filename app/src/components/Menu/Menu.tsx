@@ -45,11 +45,14 @@ export const Menu = ({ open }: { open: boolean }) => {
   };
 
   return (
-    <div className={[style.menu, open ? ` ${style.open}` : ""].join("")}>
+    <div
+      data-cy="menu"
+      className={[style.menu, open ? ` ${style.open}` : ""].join("")}
+    >
       {categoryList().map((category, index) => (
         <Accordion
           key={index}
-          data-cy={`accordion-${index}`}
+          data-cy={`menu-accordion-${index}`}
           trigger={
             <>
               {category}
