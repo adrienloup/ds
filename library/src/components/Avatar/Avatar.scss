@@ -20,29 +20,29 @@
 
 .ds-avatar {
   &-small {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
 
     span {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
   }
 
   &-medium {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 4rem;
+    height: 4rem;
 
     span {
-      font-size: 1.35rem;
+      font-size: 1.5rem;
     }
   }
 
   &-large {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 5rem;
+    height: 5rem;
 
     span {
-      font-size: 1.75rem;
+      font-size: 2rem;
     }
   }
 }
