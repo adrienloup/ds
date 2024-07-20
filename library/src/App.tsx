@@ -4,26 +4,21 @@ import { DsIcon } from "./components/Icon/Icon";
 import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   return (
-    <>
-      <div>
-        <DsButton
-          onClick={() => setCount((count) => count + 1)}
-          buttonProps={{
-            "aria-label": "Checkbox A",
-          }}
-        >
-          <DsIcon name="home" />
-          Button {count}
-        </DsButton>
-      </div>
-
-      <p className="read-the-docs">
-        Application to create DS library components
-      </p>
-    </>
+    <div>
+      <h1>Application to create DS library</h1>
+      <p>{count}</p>
+      <DsButton
+        onClick={() => setCount((count) => count + 1)}
+        buttonProps={{
+          "aria-label": "Checkbox A",
+        }}
+      >
+        <DsIcon name="add_circle" />
+      </DsButton>
+    </div>
   );
 }
 

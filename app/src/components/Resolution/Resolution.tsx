@@ -19,7 +19,7 @@ export const Resolution = () => {
     <>
       {show && (
         <div className={style.resolution}>
-          <p className={style.text}>Your screen size is too small :(</p>
+          <p className={style.text}>Your screen size is too small!</p>
         </div>
       )}
     </>

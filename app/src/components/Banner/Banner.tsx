@@ -21,7 +21,7 @@ export const Banner = ({
   return (
     <div className={[style.banner, ` ${style[status]}`].join("")}>
       <Icon name={setStatusIcon(status)} cssClass={style.icon} />
-      <p>{text}</p>
+      <p dangerouslySetInnerHTML={{ __html: text }}></p>
       <Button cssClass={style.close} onClick={() => removeBanner(id)}>
         <Icon name="close" />
       </Button>
