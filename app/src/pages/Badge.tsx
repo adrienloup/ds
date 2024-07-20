@@ -3,6 +3,7 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
+import { Title } from "../components/Title/Title";
 import { Story } from "../components/Story/Story";
 import { Navigation } from "../components/Navigation/Navigation";
 import { DsBadge } from "design-system/src/components/Badge/Badge";
@@ -16,9 +17,9 @@ function BadgePage() {
     <>
       <Header />
       <Main>
-        <h1>
+        <Title>
           Badge <span>component</span>
-        </h1>
+        </Title>
         <p>Badge generates a small badge to the top-right of its child(ren).</p>
         <p>
           Badges are components that draw the user's attention to a part of the

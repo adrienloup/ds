@@ -5,11 +5,11 @@ import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import style from "./Banner.module.scss";
 
-type BannerType = {
-  id: number;
+interface BannerType {
+  id: string;
   text: string;
   status?: StatusType;
-};
+}
 
 export const Banner = ({
   id,
@@ -19,7 +19,10 @@ export const Banner = ({
   const removeBanner = useBannerDispatch();
 
   return (
-    <div className={[style.banner, ` ${style[status]}`].join("")}>
+    <div
+      data-cy={`banner-${id}`}
+      className={[style.banner, ` ${style[status]}`].join("")}
+    >
       <Icon name={setStatusIcon(status)} cssClass={style.icon} />
       <p dangerouslySetInnerHTML={{ __html: text }}></p>
       <Button cssClass={style.close} onClick={() => removeBanner(id)}>

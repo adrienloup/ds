@@ -3,6 +3,7 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
+import { Title } from "../components/Title/Title";
 import { Story } from "../components/Story/Story";
 import { Navigation } from "../components/Navigation/Navigation";
 import { DsAvatar } from "design-system/src/components/Avatar/Avatar";
@@ -15,9 +16,9 @@ function AvatarPage() {
     <>
       <Header />
       <Main>
-        <h1>
+        <Title>
           Avatar <span>component</span>
-        </h1>
+        </Title>
         <p>
           Avatars are found throughout material design with uses in everything
           from tables to dialog menus.
