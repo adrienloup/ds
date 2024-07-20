@@ -27,48 +27,6 @@ $tablet-portrait: 769px;
   }
 }
 
-.name {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem 0.5rem;
-  border-bottom: 0.2rem solid var(--color-3);
-  line-height: 6rem;
-  letter-spacing: 0.2rem;
-  text-align: center;
-  text-decoration: none;
-  font-family: var(--font-text-bold);
-  font-size: 6rem;
-  color: var(--color-1);
-
-  @media (max-width: $tablet-portrait) {
-    height: 60px;
-    padding: 0 0.25rem;
-    line-height: 3rem;
-    font-size: 3rem;
-  }
-
-  span {
-    position: absolute;
-    right: 0.75rem;
-    bottom: 0.5rem;
-    z-index: 2;
-    letter-spacing: 0;
-    line-height: 1rem;
-    font-size: 1rem;
-  }
-
-  &:hover {
-    background-color: var(--color-3);
-  }
-
-  &:focus-visible {
-    outline: 0.2rem solid var(--color-orange);
-    outline-offset: -0.25rem;
-  }
-}
-
 .burger {
   display: none;
   position: absolute;

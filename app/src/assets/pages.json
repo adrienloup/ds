@@ -96,14 +96,6 @@
     "soon": false
   },
   {
-    "name": "textArea",
-    "description": "TextArea is a resizable input used to prompt the user for a parapraph of text",
-    "path": "/ds/textarea",
-    "category": "forms",
-    "news": false,
-    "soon": true
-  },
-  {
     "name": "textField",
     "description": "TextFields let users enter and edit text",
     "path": "/ds/textfield",

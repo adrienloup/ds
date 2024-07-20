@@ -4,7 +4,7 @@ import { useSettings } from "../../hooks/useSettings";
 import { useAlert } from "../../hooks/useAlert";
 import { useFontSize, useFontSizeDispatch } from "../../hooks/useFontSize";
 import { ModeType } from "../../models/Mode";
-import { ColorSwitcher } from "../ColorSwitcher/ColorSwitcher";
+import { Color } from "../Color/Color";
 import { Button } from "../Button/Button";
 import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
@@ -191,7 +191,7 @@ export const Settings = () => {
         createPortal(
           <Modal
             head={<h3>Edit</h3>}
-            body={<ColorSwitcher />}
+            body={<Color />}
             open={colorModal}
             onClick={() => setColorModal(false)}
           />,

@@ -113,7 +113,7 @@ function SwitchPage() {
           github={"Switch"}
           copy={"<DsSwitch label='Label' checked />"}
         />
-        <Navigation prev="select" next="textarea" />
+        <Navigation prev="select" next="textfield" />
       </Main>
       <Footer />
       <ScrollToTop />

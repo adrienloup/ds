@@ -30,7 +30,7 @@ function AvatarPage() {
           component.
         </p>
         <Story
-          demo={<DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.svg" />}
+          demo={<DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.jpg" />}
           code={
             <>
               &lt;<span style={{ color: "#00dc09" }}>DsAvatar</span>
@@ -42,9 +42,7 @@ function AvatarPage() {
               {"   "}
               <span style={{ color: "#00caff" }}>src</span>
               ="
-              <span style={{ color: "#ffeb3b" }}>
-                https://image.freepik.com/Jane_Doe.svg
-              </span>
+              <span style={{ color: "#ffeb3b" }}>/ds/Jane_Doe.jpg</span>
               "
               <br />
               /&gt;
@@ -52,9 +50,7 @@ function AvatarPage() {
           }
           codepen={"WNWyqeK"}
           github={"Avatar"}
-          copy={
-            "<DsAvatar alt='Jane Doe' src='https://image.freepik.com/Jane_Doe.svg' />"
-          }
+          copy={"<DsAvatar alt='Jane Doe' src='/ds/Jane_Doe.jpg' />"}
         />
         <h2>
           Letter <span>Avatar</span>
@@ -90,9 +86,9 @@ function AvatarPage() {
                   gap: "1rem",
                 }}
               >
-                <DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.svg" size="small" />
-                <DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.svg" size="medium" />
-                <DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.svg" size="large" />
+                <DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.jpg" size="small" />
+                <DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.jpg" size="medium" />
+                <DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.jpg" size="large" />
               </div>
               <div
                 style={{
@@ -120,9 +116,7 @@ function AvatarPage() {
               {"   "}
               <span style={{ color: "#00caff" }}>src</span>
               ="
-              <span style={{ color: "#ffeb3b" }}>
-                https://image.freepik.com/Jane_Doe.svg
-              </span>
+              <span style={{ color: "#ffeb3b" }}>/ds/Jane_Doe.jpg</span>
               "
               <br />
               {"   "}
@@ -142,9 +136,7 @@ function AvatarPage() {
               {"   "}
               <span style={{ color: "#00caff" }}>src</span>
               ="
-              <span style={{ color: "#ffeb3b" }}>
-                https://image.freepik.com/Jane_Doe.svg
-              </span>
+              <span style={{ color: "#ffeb3b" }}>/ds/Jane_Doe.jpg</span>
               "
               <br />
               {"   "}
@@ -164,9 +156,7 @@ function AvatarPage() {
               {"   "}
               <span style={{ color: "#00caff" }}>src</span>
               ="
-              <span style={{ color: "#ffeb3b" }}>
-                https://image.freepik.com/Jane_Doe.svg
-              </span>
+              <span style={{ color: "#ffeb3b" }}>/ds/Jane_Doe.jpg</span>
               "
               <br />
               {"   "}

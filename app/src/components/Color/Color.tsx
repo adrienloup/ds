@@ -1,11 +1,11 @@
 import { ColorType } from "../../models/Color";
 import { useSettings } from "../../hooks/useSettings";
 import { useAlert } from "../../hooks/useAlert";
-import style from "./ColorSwitcher.module.scss";
+import style from "./Color.module.scss";
 
 const colors: ColorType[] = ["yellow", "purple", "magenta", "cyan"];
 
-export const ColorSwitcher = () => {
+export const Color = () => {
   const { settings, setSettings } = useSettings();
   const { addAlert } = useAlert();
 
@@ -19,15 +19,23 @@ export const ColorSwitcher = () => {
   };
 
   return (
-    <div className={style.colorswitcher}>
-      <p>Change the Primary color of the documentation</p>
+    <div className={style.color}>
+      <p className={style.text}>
+        Change the Primary color of the documentation
+      </p>
       <div className={style.list}>
         {colors.map((color, index) => (
           <div
             key={index}
-            className={style[color]}
+            className={[
+              style.item,
+              ` ${style[color]}`,
+              settings.color === color ? ` ${style.active}` : "",
+            ].join("")}
             onClick={() => handleColorChange(color)}
-          ></div>
+          >
+            {color}
+          </div>
         ))}
       </div>
     </div>

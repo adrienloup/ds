@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Resolution } from "./components/Resolution/Resolution";
 import { Loader } from "./components/Loader/Loader";
 import HomePage from "./pages/Home";
 import AvatarPage from "./pages/Avatar";
@@ -22,6 +23,7 @@ import "./App.scss";
 function App() {
   return (
     <>
+      <Resolution />
       <Loader />
       <BrowserRouter>
         <Routes>

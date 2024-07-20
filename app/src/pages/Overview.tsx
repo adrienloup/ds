@@ -31,7 +31,7 @@ function OverviewPage() {
               </p>
             </>
           }
-          foot={<Button to={"/ds/"}>Library</Button>}
+          foot={<Button to={"/ds/"}>Get Started</Button>}
         />
         <CardSearchable />
       </Main>

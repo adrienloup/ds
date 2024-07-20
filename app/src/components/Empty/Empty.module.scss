@@ -1,5 +1,6 @@
 .empty {
-  background-color: var(--color-cyan);
+  display: inline-block;
+  background-color: var(--color-primary);
   font-family: var(--font-text-bold);
   color: var(--color-neutral-1);
   animation: Appear 0.5s var(--easy-in-out-quad);
