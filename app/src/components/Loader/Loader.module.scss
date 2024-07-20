@@ -15,7 +15,7 @@ html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: var(--color-1);
+  background-color: var(--color-primary);
   color: var(--color-2);
   transition: transform 1s var(--easy-in-out-expo) 1s;
   will-change: transform;
@@ -37,9 +37,10 @@ html {
   justify-content: center;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  font-size: 5rem;
-  opacity: 1;
   font-family: var(--font-text-bold);
+  font-size: 5rem;
+  color: var(--color-neutral-1);
+  opacity: 1;
   transition: transform 1s var(--easy-in-out-expo) 1s;
   will-change: transform;
 
@@ -57,7 +58,7 @@ html {
   }
 
   span {
-    -webkit-text-stroke: 0.08rem var(--color-2);
+    -webkit-text-stroke: 0.125rem var(--color-neutral-1);
     color: transparent;
   }
 
@@ -71,6 +72,7 @@ html {
   bottom: 1%;
   right: 0;
   z-index: 2;
+  color: var(--color-neutral-1);
   transition: bottom 1s var(--easy-in-out-quint);
   will-change: transform;
 
