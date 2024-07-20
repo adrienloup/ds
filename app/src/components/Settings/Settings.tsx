@@ -72,7 +72,7 @@ export const Settings = () => {
         ""
       )}
     >
-      <div ref={innerRef} className={style.inner}>
+      <div ref={innerRef} data-cy="settings" className={style.inner}>
         <Button
           cssClass={[style.button, ` ${style.close}`].join("")}
           onClick={() => handleOpenChange()}
@@ -84,6 +84,7 @@ export const Settings = () => {
             <div className={style.mode}>
               <div className={style.title}>Mode</div>
               <Button
+                data-cy="settings-light-mode"
                 cssClass={[
                   `${style.button}`,
                   settings.mode === "light" ? ` ${style.active}` : "",
@@ -94,6 +95,7 @@ export const Settings = () => {
                 Light
               </Button>
               <Button
+                data-cy="settings-system-mode"
                 cssClass={[
                   `${style.button}`,
                   settings.mode === "system" ? ` ${style.active}` : "",
@@ -104,6 +106,7 @@ export const Settings = () => {
                 System
               </Button>
               <Button
+                data-cy="settings-dark-mode"
                 cssClass={[
                   `${style.button}`,
                   settings.mode === "dark" ? ` ${style.active}` : "",
