@@ -14,6 +14,7 @@ import OverviewPage from "./pages/Overview";
 import PaginationPage from "./pages/Pagination";
 import ProgressPage from "./pages/Progress";
 import StepperPage from "./pages/Stepper";
+import SupportPage from "./pages/Support";
 import SwitchPage from "./pages/Switch";
 import TabsPage from "./pages/Tabs";
 import TagPage from "./pages/Tag";
@@ -39,6 +40,7 @@ function App() {
           <Route path="/ds/pagination" element={<PaginationPage />} />
           <Route path="/ds/progress" element={<ProgressPage />} />
           <Route path="/ds/stepper" element={<StepperPage />} />
+          <Route path="/ds/support" element={<SupportPage />} />
           <Route path="/ds/switch" element={<SwitchPage />} />
           <Route path="/ds/tabs" element={<TabsPage />} />
           <Route path="/ds/tag" element={<TagPage />} />
