@@ -21,7 +21,7 @@ export const Alert = ({
     if (timeout > 0 && handleRemove) {
       timerRef.current = setTimeout(() => {
         handleRemove();
-      }, timeout * 1e3);
+      }, timeout * 1e3) as unknown as number;
     }
     return () => clearTimeout(timerRef.current);
   }, []);
