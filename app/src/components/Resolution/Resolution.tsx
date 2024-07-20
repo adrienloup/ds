@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import style from "./Resolution.module.scss";
 
 export const Resolution = () => {
@@ -17,11 +18,13 @@ export const Resolution = () => {
 
   return (
     <>
-      {show && (
-        <div className={style.resolution}>
-          <p className={style.text}>Your screen size is too small!</p>
-        </div>
-      )}
+      {show &&
+        createPortal(
+          <div className={style.resolution}>
+            <p className={style.text}>Your screen size is too small</p>
+          </div>,
+          document.body
+        )}
     </>
   );
 };

@@ -49,7 +49,7 @@ export const Story = ({
           <div className={style.demo} style={css}>
             {demo}
           </div>
-          <div className={style.ToolsBar}>
+          <div className={style.toolsbar}>
             <Button
               cssClass={`${style.button} ${style.contained} ${style.small}`}
               ariaLabel={"Code Source"}

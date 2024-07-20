@@ -33,9 +33,10 @@ $tablet-portrait: 769px;
   }
 }
 
-.ToolsBar {
+.toolsbar {
   display: flex;
   justify-content: flex-end;
+  background-color: var(--color-2);
   border-right: 0.2rem solid var(--color-3);
   border-bottom: 0.2rem solid var(--color-3);
   border-left: 0.2rem solid var(--color-3);
@@ -86,6 +87,5 @@ $tablet-portrait: 769px;
 @keyframes Appear {
   0% {
     opacity: 0;
-    transform: translate3d(0, -0.25rem, 0);
   }
 }
