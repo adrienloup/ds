@@ -1,16 +1,11 @@
-# Compiled output
 **/dist
 **/tmp
 **/out-tsc
 **/bazel-out
-
-# Node
 **/node_modules
 **/npm-debug.log
 **/yarn-error.log
 **/.npmrc
-
-# IDEs and editors
 **/.idea
 **/.project
 **/.classpath
@@ -18,16 +13,10 @@
 **/*.launch
 **/.settings
 **/*.sublime-workspace
-
-# Visual Studio Code
 **/.vscode
 **/.history
-
-# Generated
 **/generated
 **/_generated
-
-# Miscellaneous
 **/.angular/cache
 **/.sass-cache/
 **/connect.lock
@@ -35,8 +24,6 @@
 **/libpeerconnection.log
 **/testem.log
 **/typings
-
-# System files
 **/.DS_Store
 **/Thumbs.db
 **/.tmp
