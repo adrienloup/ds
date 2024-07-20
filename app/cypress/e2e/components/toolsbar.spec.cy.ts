@@ -1,16 +1,16 @@
 describe("Toolsbar component spec", () => {
   it("Renders the toolsbar", () => {
     cy.visit("");
-
+    cy.wait(4e3);
     cy.get('[data-cy="toolsbar"]').should("exist");
   });
 
-  it("Click on each button", () => {
+  it("Click on each button on the toolsbar", () => {
     cy.visit("");
-
-    cy.get('a[aria-label="Github"]').click();
-    cy.get('button[aria-label="Notifications"]').click();
-    cy.get("div._backdrop_2ksq4_73").click({ force: true });
-    cy.get('button[aria-label="Settings"]').click();
+    cy.wait(4e3);
+    cy.get('[data-cy="toolsbar-github"]').click();
+    cy.get('[data-cy="toolsbar-notifications"]').click();
+    cy.get('[data-cy="modal-close"]').click({ force: true });
+    cy.get('[data-cy="toolsbar-settings"]').click();
   });
 });
