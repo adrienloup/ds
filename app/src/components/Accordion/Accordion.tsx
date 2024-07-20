@@ -1,23 +1,31 @@
-import { ReactNode, useEffect, useRef, useState, useId } from "react";
+import {
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+  useId,
+  HTMLAttributes,
+} from "react";
 import { Icon } from "../Icon/Icon";
 import style from "./Accordion.module.scss";
 
-type AccordionProps = {
-  title: ReactNode;
+interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
+  trigger: ReactNode;
   panel: ReactNode;
   expanded: boolean;
   onClick: () => void;
-};
+}
 
 export const Accordion = ({
-  title,
+  trigger,
   panel,
   expanded,
   onClick,
+  ...rest
 }: AccordionProps) => {
   // console.log("Accordion");
   const ref = useRef<HTMLDivElement>(null);
-  const titleId = useId();
+  const triggerId = useId();
   const panelId = useId();
   const [animated, setAnimated] = useState(false);
 
@@ -44,15 +52,16 @@ export const Accordion = ({
       className={[style.accordion, expanded ? ` ${style.expanded}` : ""].join(
         ""
       )}
+      {...rest}
     >
       <button
-        id={titleId}
+        id={triggerId}
         type="button"
         aria-controls={panelId}
-        className={style.title}
+        className={style.trigger}
         onClick={() => (onClick(), setAnimated(true))}
       >
-        {title}
+        {trigger}
         <Icon
           cssClass={style.icon}
           name={expanded ? "arrow_drop_up" : "arrow_drop_down"}
@@ -62,7 +71,7 @@ export const Accordion = ({
         ref={ref}
         id={panelId}
         role="region"
-        aria-labelledby={titleId}
+        aria-labelledby={triggerId}
         className={[
           style.panel,
           expanded || animated ? ` ${style.animated}` : "",
