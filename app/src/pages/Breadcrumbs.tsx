@@ -9,7 +9,7 @@ import { DsBreadcrumbs } from "design-system/src/components/Breadcrumbs/Breadcru
 
 function BreadcrumbsPage() {
   // console.log("BreadcrumbsPage");
-  useTitle("React Breadcrumbs component");
+  useTitle("Breadcrumbs component");
 
   return (
     <>

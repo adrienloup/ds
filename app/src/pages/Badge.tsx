@@ -11,7 +11,7 @@ import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function BadgePage() {
   // console.log("BadgePage");
-  useTitle("React Badge component");
+  useTitle("Badge component");
 
   return (
     <>

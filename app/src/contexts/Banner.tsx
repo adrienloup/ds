@@ -3,14 +3,14 @@ import { SlotType } from "../models/Slot";
 import { StatusType } from "../models/Status";
 
 const initialValue = [
-  {
-    id: "0",
-    text: "The website is under construction, come back later :)",
-    status: "warning" as StatusType,
-  },
+  // {
+  //   id: "0",
+  //   text: "The website is under construction",
+  //   status: "warning" as StatusType,
+  // },
   {
     id: "1",
-    text: "If you need an answer to a problem you have encountered, please open an issue on <a href=‘https://github.com/adrienloup/ds' target='_blank' rel='noopener'>GitHub</a>",
+    text: "If you need an answer to a problem you have encountered, please open an issue on <a href=‘https://github.com/adrienloup/ds' target='_blank' rel='noopener'>GitHub</a> :)",
     status: "info" as StatusType,
   },
 ];

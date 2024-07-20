@@ -10,7 +10,7 @@ import { DsAvatar } from "design-system/src/components/Avatar/Avatar";
 
 function AvatarPage() {
   // console.log("AvatarPage");
-  useTitle("React Avatar component");
+  useTitle("Avatar component");
 
   return (
     <>
