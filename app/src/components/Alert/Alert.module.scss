@@ -161,8 +161,11 @@ $tablet-portrait: 769px;
 }
 
 .out {
-  transition: opacity 0.15s var(--easy-in-out-quad);
+  transition-property: opacity, transform;
+  transition-duration: 0.15s;
+  transition-timing-function: var(--easy-in-out-quad);
   opacity: 0;
+  transform: translateY(-0.5rem);
 }
 
 @keyframes Appear {

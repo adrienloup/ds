@@ -39,6 +39,11 @@ $tablet-portrait: 769px;
 
   a {
     color: var(--color-neutral-1);
+
+    &:focus-visible {
+      outline: 0.2rem solid var(--color-orange);
+      outline-offset: 0.03rem;
+    }
   }
 }
 
