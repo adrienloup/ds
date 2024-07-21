@@ -1,5 +1,11 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-import { ComponentProps, ComponentType, FC } from "react";
+import {
+  ComponentPropsWithoutRef,
+  ComponentType,
+  FC,
+  FunctionComponent,
+  ReactNode,
+} from "react";
 import { AuthProvider } from "../contexts/Auth";
 import { SettingsProvider } from "../contexts/Settings";
 import { FontSizeProvider } from "../contexts/FontSize";
@@ -7,28 +13,28 @@ import { AlertProvider } from "../contexts/Alert";
 import { TaskProvider } from "../contexts/Task";
 import { NotificationsProvider } from "../contexts/Notifications";
 import { BannerProvider } from "../contexts/Banner";
+import { SlotType } from "../models/Slot";
 
-type Providers = [ComponentType<any>, ComponentProps<any>?][];
+type Providers = [ComponentType<SlotType>, ComponentPropsWithoutRef<any>?][];
 
 const combineProviders = (providers: Providers): FC =>
   providers.reduce(
     (AccumulatedProviders, [Provider, props = {}]) =>
       ({ children }) => (
         <AccumulatedProviders>
-          <Provider {...props}>
-            <>{children}</>
-          </Provider>
+          <Provider {...props}>{children}</Provider>
         </AccumulatedProviders>
       ),
     ({ children }: any) => <>{children}</>
   );
 
-export const AllProviders: any = combineProviders([
-  [AuthProvider],
-  [SettingsProvider],
-  [FontSizeProvider],
-  [AlertProvider],
-  [TaskProvider],
-  [NotificationsProvider],
-  [BannerProvider],
-]);
+export const AllProviders: FunctionComponent<{ children: ReactNode }> =
+  combineProviders([
+    [AuthProvider],
+    [SettingsProvider],
+    [FontSizeProvider],
+    [AlertProvider],
+    [TaskProvider],
+    [NotificationsProvider],
+    [BannerProvider],
+  ]);
