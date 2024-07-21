@@ -3,6 +3,6 @@ import { version } from "./../../package.json";
 
 export const useTitle = (title: string) => {
   useEffect(() => {
-    document.title = `${title} | DS Library v${version}`;
+    document.title = `${title} - Design system ${version}`;
   }, [title]);
 };

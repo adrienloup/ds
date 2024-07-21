@@ -1,14 +1,19 @@
 $tablet-portrait: 769px;
 
 .alerts {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  z-index: 3;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   max-width: 40rem;
+}
+
+.inner {
+  position: sticky;
+  top: 0;
 }
 
 .alert {
@@ -32,12 +37,11 @@ $tablet-portrait: 769px;
   }
 }
 
-.inner {
+.content {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  padding-right: 0.75rem;
   line-height: 1.2;
 }
 
@@ -154,6 +158,11 @@ $tablet-portrait: 769px;
   .progress {
     background-color: var(--color-red-darked);
   }
+}
+
+.out {
+  transition: opacity 0.15s var(--easy-in-out-quad);
+  opacity: 0;
 }
 
 @keyframes Appear {

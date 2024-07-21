@@ -29,7 +29,7 @@
   opacity: 0;
 
   &:checked + .label .check {
-    background-color: var(--color-yellow);
+    background-color: var(--color-primary);
   }
 
   &:focus-visible + .label {

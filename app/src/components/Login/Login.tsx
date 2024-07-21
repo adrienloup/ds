@@ -10,14 +10,12 @@ type LoginType = {
 export const Login = ({ open, handleClick }: LoginType) => {
   const [height, setHeight] = useState(0);
 
-  const handleResize = () => setHeight(document.body.offsetHeight);
-
   useEffect(() => {
+    const handleResize = () => setHeight(document.body.offsetHeight);
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  });
-
-  useEffect(() => handleResize());
+  }, []);
 
   return (
     <div
@@ -27,10 +25,12 @@ export const Login = ({ open, handleClick }: LoginType) => {
         height: `${height}px`,
       }}
     >
-      <div className={style.content}>
-        <LoginForm onClick={handleClick} />
+      <div className={style.inner}>
+        <div className={style.content}>
+          <LoginForm onClick={handleClick} />
+        </div>
+        <div className={style.layer}></div>
       </div>
-      <div className={style.layer}></div>
       <div className={style.backdrop} onClick={handleClick}></div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import style from "./Modal.module.scss";
@@ -21,6 +21,14 @@ export const Modal = ({
   onClick,
 }: ModalType) => {
   // console.log("Modal");
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setHeight(document.body.offsetHeight);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div
@@ -30,7 +38,7 @@ export const Modal = ({
         open ? ` ${style.open}` : "",
       ].join("")}
       style={{
-        height: `${document.body.offsetHeight}px`,
+        height: `${height}px`,
       }}
     >
       <div className={style.content}>

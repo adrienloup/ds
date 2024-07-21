@@ -1,4 +1,4 @@
-import { CSSProperties, useEffect, useRef } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 import { setStatusIcon } from "../../utils/statusIcon";
 import { AlertType } from "../../models/Alert";
 import { Button } from "../Button/Button";
@@ -15,15 +15,27 @@ export const Alert = ({
   handleRemove = () => {},
 }: AlertType) => {
   // console.log("Alert");
-  const timerRef = useRef(0);
+  const outTimer = useRef(0);
+  const removeTimer = useRef(0);
+  const [out, setOut] = useState(false);
 
   useEffect(() => {
-    if (timeout > 0 && handleRemove) {
-      timerRef.current = setTimeout(() => {
-        handleRemove();
+    if (timeout > 0) {
+      outTimer.current = setTimeout(() => {
+        setOut(true);
       }, timeout * 1e3) as unknown as number;
+
+      removeTimer.current = setTimeout(
+        () => {
+          handleRemove();
+        },
+        timeout * 1e3 + 150
+      ) as unknown as number;
     }
-    return () => clearTimeout(timerRef.current);
+    return () => {
+      clearTimeout(outTimer.current);
+      clearTimeout(removeTimer.current);
+    };
   }, []);
 
   return (
@@ -34,6 +46,7 @@ export const Alert = ({
           style.alert,
           ` ${style[status]}`,
           timeout > 0 ? ` ${style.animate}` : "",
+          out ? ` ${style.out}` : "",
           cssClass ? ` ${cssClass}` : "",
         ].join("")}
         style={
@@ -43,7 +56,7 @@ export const Alert = ({
         }
       >
         <Icon cssClass={style.icon} name={`${setStatusIcon(status)}`} />
-        <div className={style.inner}>
+        <div className={style.content}>
           {title && <span className={style.title}>{title}</span>}
           <p className={style.text}>{text}</p>
         </div>

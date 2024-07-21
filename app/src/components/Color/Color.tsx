@@ -26,14 +26,13 @@ export const Color = () => {
       </p>
       <div className={style.list}>
         {colors.map((color, index) => (
-          <div
+          <button
             key={index}
             className={[
               style.item,
               ` ${style[color]}`,
               settings.color === color ? ` ${style.active}` : "",
             ].join("")}
-            tabIndex={0}
             onClick={() => handleColorChange(color)}
           >
             <span className={style.label}>{color}</span>
@@ -42,7 +41,7 @@ export const Color = () => {
             ) : (
               ""
             )}
-          </div>
+          </button>
         ))}
       </div>
     </div>

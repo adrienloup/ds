@@ -124,7 +124,7 @@ export const Settings = () => {
                 onClick={() => {
                   addAlert({
                     text: "Error with the direction adjustment",
-                    timeout: 1,
+                    timeout: 2,
                     status: "error",
                   });
                 }}
@@ -140,7 +140,7 @@ export const Settings = () => {
                 onClick={() => {
                   addAlert({
                     text: "Error with the direction adjustment",
-                    timeout: 1,
+                    timeout: 2,
                     status: "error",
                   });
                 }}
