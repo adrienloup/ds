@@ -27,9 +27,16 @@ npm run build
 npm run preview
 ```
 
-## Code Quality Check
+## Checking Code Quality
 
 ```bash
 npm run lint
 npm run lint:fix
+```
+
+## Checking Code Tests
+
+```bash
+npm run cy
+npm run cy:open
 ```
