@@ -1,0 +1,71 @@
+{
+  "generic": {
+    "category": {
+      "category1": "getting started",
+      "category2": "data display",
+      "category3": "action",
+      "category4": "feedback",
+      "category5": "forms",
+      "category6": "navigation",
+      "category7": "pattern"
+    }
+  },
+  "component": {
+    "banner": {
+      "banner0": "The site is under construction, come back later :)",
+      "banner1": "If you need an answer to a problem you have encountered, please open an issue on {{link}} :)"
+    },
+    "footer": "Logic of Atomic Design",
+    "loader": "<0>Design System using the logic of</0> Atomic Design",
+    "navigation": {
+      "previous": "Previous page",
+      "next": "Next page"
+    }
+  },
+  "page": {
+    "home": {
+      "document": "Welcome",
+      "title": "A pretty good library <1>of React components for Web application's UI</1>",
+      "subtitle1": "Get started with DS library today with <1>some of these useful resources</1>",
+      "subtitle2": "Released <1>versions</1>",
+      "text": "La version stable la plus récente (✓) est recommandée pour une utilisation en production.",
+      "promote": {
+        "title": "Unlock the full power",
+        "text": "It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box, and features a suite of customization options that make it easy to implement your own custom design system on top of our components.",
+        "button": "Overview"
+      }
+    },
+    "overview": {
+      "document": "Overview",
+      "name": "overview",
+      "description": "It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box, and features a suite of customization options"
+    },
+    "usage": {
+      "name": "usage",
+      "description": "Since DS library components are built to function in isolation, they don't require any kind of globally scoped styles"
+    },
+    "support": {
+      "name": "support",
+      "description": "Learn how to get support for DS library components, including feature requests, bug fixes, and technical support from the team"
+    },
+    "avatar": {
+      "document": "Avatar",
+      "name": "avatar",
+      "description": "Avatars are found throughout material design with uses in everything from tables to dialog menus",
+      "title": "Avatar <1>component</1>",
+      "subtitle1": "Image <1>Avatar</1>",
+      "subtitle2": "Letter <1>Avatar</1>",
+      "subtitle3": "Sizes <1>Button</1>",
+      "text1": "Avatars are found throughout material design with uses in everything from tables to dialog menus.",
+      "text2": "Image avatars can be created by passing standard img props src to the component.",
+      "text3": "Avatars containing simple characters can be created by passing a string as children.",
+      "text4": "For larger or smaller Avatar, use the size prop."
+    },
+    "badge": {
+      "document": "Badge",
+      "name": "badge",
+      "description": "Badge generates a small badge to the top-right of its children",
+      "title": "Badge <1>component</1>"
+    }
+  }
+}

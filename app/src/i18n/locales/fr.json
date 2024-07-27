@@ -1,0 +1,71 @@
+{
+  "generic": {
+    "category": {
+      "category1": "démarrer",
+      "category2": "rédaction",
+      "category3": "action",
+      "category4": "information",
+      "category5": "formulaire",
+      "category6": "navigation",
+      "category7": "modèle"
+    }
+  },
+  "component": {
+    "banner": {
+      "banner0": "Le site est en construction, revenez plus tard :)",
+      "banner1": "Si vous avez besoin d'une réponse à un problème que vous avez rencontré, veuillez ouvrir un ticket sur {{link}} :)"
+    },
+    "footer": "Atomique Design",
+    "loader": "<0>Le Desin system utilise la logique</0> Atomic Design",
+    "navigation": {
+      "previous": "Page précédente",
+      "next": "Page suivante"
+    }
+  },
+  "page": {
+    "home": {
+      "document": "Bienvenue",
+      "title": "Une bibliothèque <1>de composants React pour les applications</1>",
+      "subtitle1": "Commencez dès aujourd'hui avec la bibliothèque DS <1>grâce à certaines de ces ressources utiles</1>",
+      "subtitle2": "<1>Version</1> publiée",
+      "text": "Commencez dès aujourd'hui avec la bibliothèque DS <1>grâce à certaines de ces ressources utiles</1>",
+      "promote": {
+        "title": "Libérez toute la puissance",
+        "text": "Il comprend une collection complète de composants prédéfinis prêts à être utilisés en production dès la sortie de la boîte, et propose une suite d'options de personnalisation qui facilitent la mise en œuvre de votre propre système de conception personnalisé au-dessus de nos composants.",
+        "button": "Présentation"
+      }
+    },
+    "overview": {
+      "document": "Présentation",
+      "name": "présentation",
+      "description": "Il comprend une collection complète de composants prédéfinis prêts à être utilisés en production dès la sortie de la boîte, et propose une suite d'options de personnalisation"
+    },
+    "usage": {
+      "name": "usage",
+      "description": "Étant donné que les composants de la bibliothèque DS sont conçus pour fonctionner de manière isolée, ils ne nécessitent aucun type de styles de portée globale"
+    },
+    "support": {
+      "name": "support",
+      "description": "Découvrez comment obtenir de l'aide pour les composants de la bibliothèque DS, notamment des demandes de fonctionnalités, des corrections de bugs et une assistance technique de la part de l'équipe"
+    },
+    "avatar": {
+      "document": "Avatar",
+      "name": "avatar",
+      "description": "Les avatars se retrouvent dans toute la conception matérielle et sont utilisés dans tout, des tableaux aux menus de dialogue.",
+      "title": "<1>Composant</1> Avatar",
+      "subtitle1": "Image <1>Avatar</1>",
+      "subtitle2": "Lettre <1>Avatar</1>",
+      "subtitle3": "Tailles <1>Avatar</1>",
+      "text1": "Les avatars se retrouvent dans toute la conception matérielle et sont utilisés dans tout, des tableaux aux menus de dialogue.",
+      "text2": "Des avatars d'image peuvent être créés en transmettant les img props src standard au composant.",
+      "text3": "Les avatars contenant des caractères simples peuvent être créés en passant une chaîne en tant qu'enfants.",
+      "text4": "Pour un avatar plus grand ou plus petit, utilisez l'accessoire de taille."
+    },
+    "badge": {
+      "document": "Badge",
+      "name": "badge",
+      "description": "Badge génère un petit badge en haut à droite de ses enfants",
+      "title": "<1>Composant</1> Badge"
+    }
+  }
+}
