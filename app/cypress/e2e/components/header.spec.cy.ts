@@ -1,7 +1,8 @@
-describe("Header component spec", () => {
-  it("Renders the logo and menu on the header", () => {
+describe("Header", () => {
+  it("Renders logo and menu, and click on each accordion", () => {
     cy.visit("");
     cy.wait(4e3);
+
     cy.get('[data-cy="logo"]').should("exist");
     cy.get('[data-cy="menu"]').should("exist");
     cy.get('[data-cy="menu-accordion-0"]').should("exist");
@@ -11,11 +12,7 @@ describe("Header component spec", () => {
     cy.get('[data-cy="menu-accordion-4"]').should("exist");
     cy.get('[data-cy="menu-accordion-5"]').should("exist");
     cy.get('[data-cy="menu-accordion-6"]').should("exist");
-  });
 
-  it("Click on each accordion on the menu", () => {
-    cy.visit("");
-    cy.wait(4e3);
     cy.get('[data-cy="menu-accordion-0"] button').click();
     cy.wait(5e2);
     cy.get('[data-cy="menu-accordion-1"] button').click();
