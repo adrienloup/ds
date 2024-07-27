@@ -6,9 +6,9 @@ import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Title } from "../components/Title/Title";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
+import { Separator } from "../components/Separator/Separator";
 
 function SupportPage() {
-  // console.log("SupportPage");
   useTitle("Support");
 
   return (
@@ -35,6 +35,7 @@ function SupportPage() {
             <Button href={"https://github.com/adrienloup/ds"}>GitHub</Button>
           }
         />
+        <Separator name="face_3" />
         <h2>
           New issue <span>guidelines</span>
         </h2>
@@ -50,13 +51,50 @@ function SupportPage() {
           doesn't help move the issue forward. Use GitHub reactions instead
           (👍).
         </p>
+        <Separator name="face_5" />
         <h2>
-          Bug <span>reproductions</span>
+          Bug <span>report</span>
         </h2>
         <p>
           We require bug reports to be accompanied by a minimal reproduction. It
           significantly increases the odds of fixing the problem. You have a few
           possible options to provide it.
+        </p>
+        <p>
+          You can use a starter React template to build a reproduction case with
+          JavaScript or TypeScript.
+        </p>
+        <Separator name="support_agent" />
+        <h2>
+          Technical <span>support</span>
+        </h2>
+        <p>
+          We do not offer paid support for Core libraries like DS library. But
+          you might want to read the{" "}
+          <a
+            href="https://github.com/adrienloup/ds"
+            target="_blank"
+            rel="noopener"
+          >
+            technical support offered
+          </a>{" "}
+          on MUI X components.
+        </p>
+        <p>
+          We use Stack Overflow for how-to questions. Answers are crowdsourced
+          from expert developers in the DS library community as well as DS
+          library maintainers.
+        </p>
+        <p>
+          If you can't find your answer,{" "}
+          <a
+            href="https://github.com/adrienloup/ds"
+            target="_blank"
+            rel="noopener"
+          >
+            ask a new question
+          </a>{" "}
+          using the relevant tags.
         </p>
       </Main>
       <Footer />

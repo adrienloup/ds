@@ -11,12 +11,13 @@ import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
 import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
+import { Like } from "../Like/Like";
 import style from "./ToolsBar.module.scss";
 
 export const ToolsBar = () => {
-  // console.log("ToolsBar");
   const [notificationModal, setNotificationModal] = useState(false);
   const [taskModal, setTaskModal] = useState(false);
+  const [like, setLike] = useState(false);
   const { settings, setSettings } = useSettings();
   const { data } = useNotifications();
   const { user } = useAuth();
@@ -40,6 +41,14 @@ export const ToolsBar = () => {
         </Badge>
       )}
       <Button
+        ariaLabel={"I like a lot"}
+        cssClass={[style.button, ` ${style.like}`].join("")}
+        data-cy="toolsbar-like"
+        onClick={() => setLike(!like)}
+      >
+        <Like active={like} />
+      </Button>
+      <Button
         href={"https://github.com/adrienloup/ds"}
         ariaLabel={"Github"}
         cssClass={style.button}
@@ -60,7 +69,9 @@ export const ToolsBar = () => {
           onClick={() => setNotificationModal(!notificationModal)}
         >
           <Icon
-            name={data.length > 0 ? "notifications" : "notifications_off"}
+            name={
+              data.length > 0 ? "notifications_active" : "notifications_off"
+            }
             cssClass={style.icon}
           />
         </Button>

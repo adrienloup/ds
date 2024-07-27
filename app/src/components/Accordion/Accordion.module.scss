@@ -13,7 +13,7 @@ $tablet-portrait: 769px;
   padding: 0.75rem 1rem;
   background-color: var(--color-2);
   border: 0;
-  line-height: 1.25;
+  line-height: 1.2;
   text-align: left;
   text-transform: capitalize;
   font-family: var(--font-text-regular);
@@ -40,7 +40,7 @@ $tablet-portrait: 769px;
 }
 
 .panel {
-  transition-delay: 0s, 0.35s;
+  transition-delay: 0s, 0.25s;
   visibility: hidden;
 
   .expanded & {
@@ -50,7 +50,7 @@ $tablet-portrait: 769px;
 
   &.animated {
     transition-property: margin-top, visibility;
-    transition-duration: 0.35s, 0s;
+    transition-duration: 0.25s, 0s;
     transition-timing-function: var(--easy-in-out-quad);
     will-change: margin-top;
   }

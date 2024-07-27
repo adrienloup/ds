@@ -1,0 +1,58 @@
+$tablet-portrait: 769px;
+
+.help {
+  backface-visibility: hidden;
+  width: 100%;
+
+  &.active {
+    &::before {
+      content: " ";
+      display: block;
+      width: 100%;
+      height: var(--height);
+      background-color: var(--color-3);
+    }
+  }
+}
+
+.inner {
+  backface-visibility: hidden;
+  padding: 2rem 2.5rem;
+  background-color: var(--color-1);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: var(--font-text-bold);
+  font-size: 3rem;
+  color: var(--color-2);
+
+  @media (max-width: $tablet-portrait) {
+    padding: 1rem 1.5rem;
+  }
+
+  .active & {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+
+    @media (max-width: $tablet-portrait) {
+      top: 60px;
+    }
+  }
+
+  span:first-of-type {
+    span {
+      -webkit-text-stroke: 0.08rem var(--color-2);
+      color: transparent;
+    }
+
+    .active & {
+      display: none;
+    }
+  }
+}

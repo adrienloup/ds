@@ -1,6 +1,5 @@
 $desktop: 1281px;
 $tablet-landscape: 1025px;
-$tablet-portrait: 769px;
 
 .cardlist {
   max-width: 65rem;
@@ -92,12 +91,15 @@ $tablet-portrait: 769px;
 }
 
 .label {
+  display: block;
+  margin: 4rem 0 2rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   font-family: var(--font-text-bold);
   font-size: 3.5rem;
 
   @media (max-width: $desktop) {
+    margin: 2rem 0;
     font-size: 2rem;
   }
 }

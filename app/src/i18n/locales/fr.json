@@ -53,7 +53,7 @@
       "description": "Découvrez comment obtenir de l'aide pour les composants de la bibliothèque DS, notamment des demandes de fonctionnalités, des corrections de bugs et une assistance technique de la part de l'équipe"
     },
     "avatar": {
-      "document": "Avatar",
+      "document": "Composant Avatar",
       "name": "avatar",
       "description": "Les avatars se retrouvent dans toute la conception matérielle et sont utilisés dans tout, des tableaux aux menus de dialogue.",
       "title": "<1>Composant</1> Avatar",
@@ -66,7 +66,7 @@
       "text4": "Pour un avatar plus grand ou plus petit, utilisez l'accessoire de taille."
     },
     "badge": {
-      "document": "Badge",
+      "document": "Composant Badge",
       "name": "badge",
       "description": "Badge génère un petit badge en haut à droite de ses enfants",
       "title": "<1>Composant</1> Badge"

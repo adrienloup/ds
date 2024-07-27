@@ -13,7 +13,6 @@ import { DsIcon } from "design-system/src/components/Icon/Icon";
 function BadgePage() {
   // console.log("BadgePage");
   const { t } = useTranslation();
-
   useTitle(t("page.badge.document"));
 
   return (

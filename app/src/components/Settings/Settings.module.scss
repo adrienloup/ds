@@ -11,9 +11,9 @@ $tablet-portrait: 769px;
   background-color: var(--color-2);
   font-size: 0;
   transition-property: height, top, visibility;
-  transition-duration: 0.45s, 0.45s, 0s;
+  transition-duration: 0.5s, 0.5s, 0s;
   transition-timing-function: var(--easy-in-out-quad);
-  transition-delay: 0s, 0s, 0.45s;
+  transition-delay: 0s, 0s, 0.5s;
   will-change: height, top;
 
   @media (max-width: $tablet-portrait) {
@@ -39,7 +39,6 @@ $tablet-portrait: 769px;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding-bottom: 1rem;
 
   @media (max-width: $tablet-landscape) {
     height: 14rem;
@@ -57,7 +56,7 @@ $tablet-portrait: 769px;
 .column {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 
   @media (max-width: $tablet-landscape) {
     gap: 1rem;
@@ -86,7 +85,7 @@ $tablet-portrait: 769px;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   font-family: var(--font-text-bold);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--color-1);
 
   @media (max-width: $tablet-landscape) {
@@ -119,10 +118,10 @@ $tablet-portrait: 769px;
 .mode {
   .button {
     gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
+    padding: 0.5rem 1rem;
     border: 0.2rem solid var(--color-3);
     line-height: 1.5;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
 
     @media (max-width: $tablet-landscape) {
       padding: 0.5rem 0.75rem;

@@ -53,7 +53,7 @@
       "description": "Learn how to get support for DS library components, including feature requests, bug fixes, and technical support from the team"
     },
     "avatar": {
-      "document": "Avatar",
+      "document": "Avatar component",
       "name": "avatar",
       "description": "Avatars are found throughout material design with uses in everything from tables to dialog menus",
       "title": "Avatar <1>component</1>",
@@ -66,7 +66,7 @@
       "text4": "For larger or smaller Avatar, use the size prop."
     },
     "badge": {
-      "document": "Badge",
+      "document": "Badge component",
       "name": "badge",
       "description": "Badge generates a small badge to the top-right of its children",
       "title": "Badge <1>component</1>"

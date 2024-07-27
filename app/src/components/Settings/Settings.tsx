@@ -30,7 +30,7 @@ export const Settings = () => {
     setSettings({ ...settings, mode });
     addAlert({
       text: `${mode}`,
-      timeout: 1,
+      timeout: 2,
       status: "success",
     });
   };
@@ -39,7 +39,7 @@ export const Settings = () => {
     setSettings({ ...settings, lang });
     addAlert({
       text: lang === "en" ? "English" : "Français",
-      timeout: 1,
+      timeout: 2,
       status: "success",
     });
   };
@@ -68,7 +68,7 @@ export const Settings = () => {
     if (!fontSizeAlert) return;
     addAlert({
       text: `${fontSize} pixels`,
-      timeout: 1,
+      timeout: 2,
       status: "success",
     });
     setFonSizeAlert(false);

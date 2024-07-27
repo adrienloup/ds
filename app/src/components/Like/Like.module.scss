@@ -1,0 +1,200 @@
+.like {
+  width: 3.5rem;
+  overflow: visible;
+}
+
+.heart {
+  fill: var(--color-1);
+  transform-origin: center;
+}
+
+.circ1 {
+  fill: #e2264d;
+  opacity: 0;
+  transform-origin: 29px 29px;
+}
+
+.active {
+  .heart {
+    transform: scale(0.2);
+    fill: #ff1100;
+    animation: Bounce 0.3s linear forwards 0.25s;
+  }
+
+  .circ1 {
+    transition: all 2s;
+    animation: Wave 0.3s linear forwards;
+    opacity: 1;
+  }
+
+  .grp1 {
+    opacity: 1;
+    transition: 0.1s all 0.3s;
+  }
+
+  .grp1 .circ2 {
+    transform: scale(0) translate(0, -30px);
+    transform-origin: 0 0 0;
+    transition: 0.5s transform 0.3s;
+  }
+
+  .grp1 .circ3 {
+    transform: scale(0) translate(10px, -50px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform 0.3s;
+  }
+
+  .grp2 {
+    opacity: 1;
+    transition: 0.1s all 0.3s;
+  }
+
+  .grp2 .circ2 {
+    transform: scale(0) translate(30px, -15px);
+    transform-origin: 0 0 0;
+    transition: 0.5s transform 0.3s;
+  }
+
+  .grp2 .circ3 {
+    transform: scale(0) translate(60px, -15px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform 0.3s;
+  }
+
+  .grp3 {
+    opacity: 1;
+    transition: 0.1s all 0.3s;
+  }
+
+  .grp3 .circ2 {
+    transform: scale(0) translate(30px, 0px);
+    transform-origin: 0 0 0;
+    transition: 0.5s transform 0.3s;
+  }
+
+  .grp3 .circ3 {
+    transform: scale(0) translate(60px, 10px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform 0.3s;
+  }
+
+  .grp4 {
+    opacity: 1;
+    transition: 0.1s all 0.3s;
+  }
+
+  .grp4 .circ2 {
+    transform: scale(0) translate(30px, 15px);
+    transform-origin: 0 0 0;
+    transition: 0.5s transform 0.3s;
+  }
+
+  .grp4 .circ3 {
+    transform: scale(0) translate(40px, 50px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform 0.3s;
+  }
+
+  .grp5 {
+    opacity: 1;
+    transition: 0.1s all 0.3s;
+  }
+
+  .grp5 .circ2 {
+    transform: scale(0) translate(-10px, 20px);
+    transform-origin: 0 0 0;
+    transition: 0.5s transform 0.3s;
+  }
+
+  .grp5 .circ3 {
+    transform: scale(0) translate(-60px, 30px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform 0.3s;
+  }
+
+  .grp6 {
+    opacity: 1;
+    transition: 0.1s all 0.3s;
+  }
+
+  .grp6 .circ2 {
+    transform: scale(0) translate(-30px, 0px);
+    transform-origin: 0 0 0;
+    transition: 0.5s transform 0.3s;
+  }
+
+  .grp6 .circ3 {
+    transform: scale(0) translate(-60px, -5px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform 0.3s;
+  }
+
+  .grp7 {
+    opacity: 1;
+    transition: 0.1s all 0.3s;
+  }
+
+  .grp7 .circ2 {
+    transform: scale(0) translate(-30px, -15px);
+    transform-origin: 0 0 0;
+    transition: 0.5s transform 0.3s;
+  }
+
+  .grp7 .circ3 {
+    transform: scale(0) translate(-55px, -30px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform 0.3s;
+  }
+
+  .grp2,
+  .grp3,
+  .grp4,
+  .grp5,
+  .grp6,
+  .grp7 {
+    opacity: 1;
+    transition: 0.1s opacity 0.3s;
+  }
+}
+
+@keyframes Wave {
+  40% {
+    transform: scale(10);
+    opacity: 1;
+    fill: #ba14d7;
+  }
+
+  65% {
+    transform: scale(12);
+    opacity: 1;
+    fill: #ba14d7;
+  }
+
+  85% {
+    transform: scale(17);
+    opacity: 1;
+    fill: transparent;
+    stroke: #ba14d7;
+    stroke-width: 0.2;
+  }
+
+  100% {
+    transform: scale(20);
+    opacity: 1;
+    fill: transparent;
+    stroke: #ba14d7;
+    stroke-width: 0;
+  }
+}
+
+@keyframes Bounce {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

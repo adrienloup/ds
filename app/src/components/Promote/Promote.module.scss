@@ -6,10 +6,15 @@ $tablet-portrait: 769px;
   max-width: 65rem;
   margin: 4rem 0;
   padding: 2.5rem;
+  background-color: var(--color-2);
   border: 0.5rem solid var(--color-primary);
 
   @media (max-width: $desktop) {
     margin: 2rem 0;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    padding: 1.5rem;
   }
 }
 

@@ -37,7 +37,7 @@ body {
     "header main" minmax(auto, 1fr)
     "header footer" minmax(0, auto) / 18rem minmax(0, 1fr);
   padding-top: 0;
-  transition: padding-top 0.45s var(--easy-in-out-quad);
+  transition: padding-top 0.5s var(--easy-in-out-quad);
   will-change: padding-top;
 
   @media (max-width: $tablet-landscape) {

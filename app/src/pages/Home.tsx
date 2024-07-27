@@ -15,11 +15,11 @@ import { TableBody } from "../components/Table/TableBody";
 import { TableTr } from "../components/Table/TableTr";
 import { TableTh } from "../components/Table/TableTh";
 import { TableTd } from "../components/Table/TableTd";
+import { Help } from "../components/Help/Help";
 
 function HomePage() {
   // console.log("HomePage");
   const { t } = useTranslation();
-
   useTitle(t("page.home.document"));
 
   return (
@@ -39,6 +39,7 @@ function HomePage() {
             <Button to={"/ds/overview"}>{t("page.home.promote.button")}</Button>
           }
         />
+        <Help />
         <h2>
           <Trans i18nKey="page.home.subtitle1">
             Get started with DS library
