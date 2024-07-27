@@ -23,12 +23,16 @@ export const Banner = ({
     <>
       {!hidden && (
         <div
-          data-cy={`banner-${id}`}
+          data-cy={id}
           className={[style.banner, ` ${style[status]}`].join("")}
         >
           <Icon name={setStatusIcon(status)} cssClass={style.icon} />
           <p dangerouslySetInnerHTML={{ __html: text }}></p>
-          <Button cssClass={style.close} onClick={handleClick}>
+          <Button
+            data-cy="banner-close"
+            cssClass={style.close}
+            onClick={handleClick}
+          >
             <Icon name="close" />
           </Button>
         </div>

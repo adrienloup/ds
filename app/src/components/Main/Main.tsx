@@ -13,12 +13,12 @@ export const Main = ({ children }: SlotType) => {
       <ToolsBar />
       <Settings />
       <Banner
-        id="_ds_b0b08_0"
+        id="banner0"
         status="warning"
         text={i18n.t("component.banner.banner0")}
       />
       <Banner
-        id="_ds_b0b08_1"
+        id="banner1"
         text={i18n.t("component.banner.banner1", {
           link: "<a href='https://github.com/adrienloup/ds' target='_blank' rel='noopener'>GitHub</a>",
         })}

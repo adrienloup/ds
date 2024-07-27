@@ -43,7 +43,7 @@ body {
   @media (max-width: $tablet-landscape) {
     grid-template:
       "header main" minmax(auto, 1fr)
-      "header footer" minmax(0, auto) / 14rem minmax(0, 1fr);
+      "header footer" minmax(0, auto) / 16rem minmax(0, 1fr);
   }
 
   @media (max-width: $tablet-portrait) {

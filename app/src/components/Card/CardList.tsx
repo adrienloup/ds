@@ -19,6 +19,7 @@ export const CardList = ({ list }: CardListType) => {
             description={item.description}
             path={item.path}
             news={item.news}
+            soon={item.soon}
           />
         ))
       ) : (

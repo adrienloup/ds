@@ -7,4 +7,5 @@ export type CardType = {
     value: string;
   };
   news?: boolean;
+  soon?: boolean;
 };
