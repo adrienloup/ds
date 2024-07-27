@@ -26,6 +26,7 @@ $tablet-portrait: 769px;
   }
 
   p {
+    line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
     font-family: var(--font-text-bold);
@@ -51,8 +52,12 @@ $tablet-portrait: 769px;
   font-size: 4rem;
   color: var(--color-neutral-1);
 
+  @media (max-width: $tablet-landscape) {
+    font-size: 3rem;
+  }
+
   @media (max-width: $tablet-portrait) {
-    font-size: 3.25rem;
+    display: none;
   }
 }
 

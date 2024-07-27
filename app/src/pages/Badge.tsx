@@ -1,3 +1,4 @@
+import { Trans, useTranslation } from "react-i18next";
 import { useTitle } from "../hooks/useTitle";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
@@ -11,14 +12,18 @@ import { DsIcon } from "design-system/src/components/Icon/Icon";
 
 function BadgePage() {
   // console.log("BadgePage");
-  useTitle("Badge component");
+  const { t } = useTranslation();
+
+  useTitle(t("page.badge.document"));
 
   return (
     <>
       <Header />
       <Main>
         <Title>
-          Badge <span>component</span>
+          <Trans i18nKey="page.avatar.title">
+            Badge <span>component</span>
+          </Trans>
         </Title>
         <p>Badge generates a small badge to the top-right of its child(ren).</p>
         <p>

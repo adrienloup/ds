@@ -1,3 +1,4 @@
+import { Trans, useTranslation } from "react-i18next";
 import { useTitle } from "../hooks/useTitle";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
@@ -10,26 +11,26 @@ import { DsAvatar } from "design-system/src/components/Avatar/Avatar";
 
 function AvatarPage() {
   // console.log("AvatarPage");
-  useTitle("Avatar component");
+  const { t } = useTranslation();
+
+  useTitle(t("page.avatar.document"));
 
   return (
     <>
       <Header />
       <Main>
         <Title>
-          Avatar <span>component</span>
+          <Trans i18nKey="page.avatar.title">
+            Avatar <span>component</span>
+          </Trans>
         </Title>
-        <p>
-          Avatars are found throughout material design with uses in everything
-          from tables to dialog menus.
-        </p>
+        <p>{t("page.avatar.text1")}</p>
         <h2>
-          Image <span>Avatar</span>
+          <Trans i18nKey="page.avatar.subtitle1">
+            Image <span>Avatar</span>
+          </Trans>
         </h2>
-        <p>
-          Image avatars can be created by passing standard img props src to the
-          component.
-        </p>
+        <p>{t("page.avatar.text2")}</p>
         <Story
           demo={<DsAvatar alt="Jane Doe" src="/ds/Jane_Doe.jpg" />}
           code={
@@ -54,12 +55,11 @@ function AvatarPage() {
           copy={"<DsAvatar alt='Jane Doe' src='/ds/Jane_Doe.jpg' />"}
         />
         <h2>
-          Letter <span>Avatar</span>
+          <Trans i18nKey="page.avatar.subtitle2">
+            Letter <span>Avatar</span>
+          </Trans>
         </h2>
-        <p>
-          Avatars containing simple characters can be created by passing a
-          string as children.
-        </p>
+        <p>{t("page.avatar.text3")}</p>
         <Story
           demo={<DsAvatar>JD</DsAvatar>}
           code={
@@ -73,9 +73,11 @@ function AvatarPage() {
           copy={""}
         />
         <h2>
-          Sizes <span>Button</span>
+          <Trans i18nKey="page.avatar.subtitle3">
+            Sizes <span>Avatar</span>
+          </Trans>
         </h2>
-        <p>For larger or smaller Avatar, use the size prop.</p>
+        <p>{t("page.avatar.text4")}</p>
         <Story
           demo={
             <div>

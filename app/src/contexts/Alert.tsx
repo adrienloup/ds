@@ -27,7 +27,7 @@ export const AlertProvider = ({ children }: SlotType) => {
   };
 
   const removeAlert = (id: string) => {
-    setAlerts((prev) => prev.filter((alert: AlertType) => alert.id !== id));
+    setAlerts((prev) => prev.filter((alert) => alert.id !== id));
   };
 
   return (
