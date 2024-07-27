@@ -12,7 +12,6 @@ import { FontSizeProvider } from "../contexts/FontSize";
 import { AlertProvider } from "../contexts/Alert";
 import { TaskProvider } from "../contexts/Task";
 import { NotificationsProvider } from "../contexts/Notifications";
-import { BannerProvider } from "../contexts/Banner";
 import { SlotType } from "../models/Slot";
 
 type Providers = [ComponentType<SlotType>, ComponentPropsWithoutRef<any>?][];
@@ -36,5 +35,4 @@ export const AllProviders: FunctionComponent<{ children: ReactNode }> =
     [AlertProvider],
     [TaskProvider],
     [NotificationsProvider],
-    [BannerProvider],
   ]);

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Resolution } from "./components/Resolution/Resolution";
 import { Loader } from "./components/Loader/Loader";
 import HomePage from "./pages/Home";
@@ -22,10 +23,12 @@ import TypographyPage from "./pages/Typography";
 import "./App.scss";
 
 function App() {
+  useTranslation();
+
   return (
     <>
-      <Resolution />
       <Loader />
+      <Resolution />
       <BrowserRouter>
         <Routes>
           <Route path="/ds/" element={<HomePage />} />
