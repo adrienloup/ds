@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Trans } from "react-i18next";
 import style from "./Loader.module.scss";
 
 export const Loader = () => {
@@ -7,9 +8,8 @@ export const Loader = () => {
   const ref = useRef<HTMLDivElement>(null);
   const percent = Math.round((count * 100) / 3);
 
-  window.scrollTo(0, 0);
-
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (count >= 3) {
       document.documentElement.classList.add(`${style.loaded}`);
       return;
@@ -22,7 +22,9 @@ export const Loader = () => {
     <div ref={ref} className={style.loader}>
       <div className={style.label}>
         <div>
-          <span>The design system using the logic of</span> Atomic Design
+          <Trans i18nKey="component.loader">
+            <span>Design System using the logic of</span> Atomic Design
+          </Trans>
         </div>
       </div>
       <div className={style.percent} style={{ bottom: `${percent * 0.9}%` }}>

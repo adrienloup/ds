@@ -1,12 +1,13 @@
+import { useData } from "../../hooks/useData";
 import { PageType } from "../../models/Page";
 import { CardList } from "./CardList";
-import pages from "../../assets/pages.json";
 
 export const CardGettingStarted = () => {
   // console.log("CardGettingStarted");
+  const { pagesData } = useData();
 
-  const list = pages.filter(
-    (page: PageType) => page.category === "getting started"
+  const list = pagesData.filter(
+    (page: PageType) => page.category!.value === "getting-started"
   );
 
   return <CardList list={list} />;

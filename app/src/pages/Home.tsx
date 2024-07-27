@@ -1,3 +1,4 @@
+import { Trans, useTranslation } from "react-i18next";
 import { useTitle } from "../hooks/useTitle";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
@@ -17,43 +18,40 @@ import { TableTd } from "../components/Table/TableTd";
 
 function HomePage() {
   // console.log("HomePage");
-  useTitle("Home");
+  const { t } = useTranslation();
+
+  useTitle(t("page.home.document"));
 
   return (
     <>
       <Header />
       <Main>
         <Title>
-          A pretty good library{" "}
-          <span>of React components for Web application's UI</span>
+          <Trans i18nKey="page.home.title">
+            A pretty good library
+            <span>of React components for Web application's UI</span>
+          </Trans>
         </Title>
         <Promote
-          head={<h2>Unlock the full power</h2>}
-          body={
-            <>
-              <p>
-                It includes a comprehensive collection of prebuilt components
-                that are ready for use in production right out of the box, and
-                features a suite of customization options that make it easy to
-                implement your own custom design system on top of our
-                components.
-              </p>
-            </>
+          head={<h2>{t("page.home.promote.title")}</h2>}
+          body={<p>{t("page.home.promote.text")}</p>}
+          foot={
+            <Button to={"/ds/overview"}>{t("page.home.promote.button")}</Button>
           }
-          foot={<Button to={"/ds/overview"}>Overview</Button>}
         />
         <h2>
-          Get started with DS library{" "}
-          <span>today through some of these useful resources</span>
+          <Trans i18nKey="page.home.subtitle1">
+            Get started with DS library
+            <span>today through some of these useful resources</span>
+          </Trans>
         </h2>
         <CardGettingStarted />
         <h2>
-          Released <span>versions</span>
+          <Trans i18nKey="page.home.subtitle2">
+            Released <span>versions</span>
+          </Trans>
         </h2>
-        <p>
-          The most recent stable version (✓) is recommended for use in
-          production.
-        </p>
+        <p>{t("page.home.promote.text")}</p>
         <Table ariaLabel="Release schedule">
           <TableCaption>Release schedule</TableCaption>
           <TableHead>

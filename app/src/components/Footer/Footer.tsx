@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 import { useAuth } from "../../hooks/useAuth";
 import { ScrollTo } from "../ScrollTo/ScrollTo";
 import { Button } from "../Button/Button";
@@ -8,6 +9,7 @@ import style from "./Footer.module.scss";
 
 export const Footer = () => {
   // console.log("Footer");
+  const { t } = useTranslation();
   const { user } = useAuth();
   const [showModalTask, setShowModalTask] = useState(false);
 
@@ -15,7 +17,7 @@ export const Footer = () => {
     <footer role="contentinfo" data-cy="footer" className={style.footer}>
       <div className={style.inner}>
         <ScrollTo top={0} />
-        <span className={style.text}>Logic of Atomic Design</span>
+        <span className={style.text}>{t("component.footer")}</span>
         {user.name ? (
           <Button cssClass={style.button} to={"/ds/login/"}>
             Login page

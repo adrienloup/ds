@@ -13,7 +13,7 @@ export const Color = () => {
   const handleColorChange = (color: ColorType) => {
     setSettings({ ...settings, color: `${color}` });
     addAlert({
-      text: `${color} color`,
+      text: `${color}`,
       timeout: 1,
       status: "success",
     });

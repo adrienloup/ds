@@ -28,6 +28,10 @@ $tablet-portrait: 769px;
   border: 0.2rem solid var(--color-3);
   text-decoration: none;
 
+  @media (max-width: $desktop) {
+    padding: 1.5rem;
+  }
+
   @media (max-width: $tablet-landscape) {
     padding: 1rem;
   }
