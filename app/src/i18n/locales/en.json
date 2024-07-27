@@ -8,6 +8,10 @@
       "category5": "forms",
       "category6": "navigation",
       "category7": "pattern"
+    },
+    "mention": {
+      "new": "new",
+      "soon": "coming soon"
     }
   },
   "component": {

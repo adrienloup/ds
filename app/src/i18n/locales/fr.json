@@ -8,6 +8,10 @@
       "category5": "formulaire",
       "category6": "navigation",
       "category7": "modèle"
+    },
+    "mention": {
+      "new": "nouveau",
+      "soon": "à venir"
     }
   },
   "component": {
