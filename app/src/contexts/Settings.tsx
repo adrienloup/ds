@@ -1,30 +1,41 @@
 import { createContext, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { SlotType } from "../models/Slot";
-import { DirectionType } from "../models/Direction";
-import { ModeType } from "../models/Mode";
 import { ColorType } from "../models/Color";
+import { DirectionType } from "../models/Direction";
+import { LangType } from "../models/Lang";
+import { ModeType } from "../models/Mode";
 import style from "../scss/modes/dark.module.scss";
 
 export const SettingsContext = createContext<{
   settings: {
-    direction: DirectionType;
-    mode: ModeType;
     color: ColorType;
+    direction: DirectionType;
+    lang: LangType;
+    mode: ModeType;
     open: boolean;
   };
   setSettings: (settings: {
-    direction: DirectionType;
-    mode: ModeType;
     color: ColorType;
+    direction: DirectionType;
+    lang: LangType;
+    mode: ModeType;
     open: boolean;
   }) => void;
 }>({
-  settings: { direction: "ltr", mode: "dark", color: "yellow", open: false },
+  settings: {
+    color: "yellow",
+    direction: "ltr",
+    lang: "en",
+    mode: "dark",
+    open: false,
+  },
   setSettings: (settings: {
-    direction: DirectionType;
-    mode: ModeType;
     color: ColorType;
+    direction: DirectionType;
+    lang: LangType;
+    mode: ModeType;
     open: boolean;
   }) => {
     settings;
@@ -32,10 +43,12 @@ export const SettingsContext = createContext<{
 });
 
 export function SettingsProvider({ children }: SlotType) {
+  const { i18n } = useTranslation();
   const [settings, setSettings] = useLocalStorage("ds_y0y09_10_settings", {
-    direction: "ltr" as DirectionType,
-    mode: "dark" as ModeType,
     color: "yellow" as ColorType,
+    direction: "ltr" as DirectionType,
+    lang: "en" as LangType,
+    mode: "dark" as ModeType,
     open: false,
   });
 
@@ -56,6 +69,8 @@ export function SettingsProvider({ children }: SlotType) {
       "--color-primary-darked",
       `var(--color-${settings?.color}-darked)`
     );
+
+    i18n.changeLanguage(settings?.lang);
 
     const handleChange = (event: { matches: boolean }) =>
       settings?.mode === "dark" ||
