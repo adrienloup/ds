@@ -1,46 +1,30 @@
-import { CSSProperties, useEffect, useRef, useState } from "react";
-import { getPosition } from "../../utils/getPosition";
+import { useState } from "react";
 import style from "./Help.module.scss";
+import { createPortal } from "react-dom";
+import { Modal } from "../Modal/Modal";
 
-export const Help = () => {
-  const [active, setActive] = useState(false);
-  const [height, setHeight] = useState(0);
-  const help = useRef<HTMLDivElement>(null);
-  const inner = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!inner.current && !help.current) return;
-
-      const scrollTop = document.documentElement.scrollTop;
-      const offsetTop = getPosition(help.current!);
-
-      if (scrollTop >= offsetTop.top) {
-        if (!active) {
-          setHeight(inner.current!.clientHeight);
-          setActive(true);
-        }
-      } else {
-        if (active) setActive(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+export const Help = ({ active }: { active?: boolean }) => {
+  // console.log("Help");
+  const [searchModal, setSearchModal] = useState(false);
 
   return (
-    <div
-      ref={help}
-      className={[style.help, active ? ` ${style.active}` : ""].join("")}
-      style={{ "--height": `${height}px` } as CSSProperties}
-    >
-      <div ref={inner} className={style.inner}>
+    <div className={[style.help, active ? ` ${style.active}` : ""].join("")}>
+      <div onClick={() => setSearchModal(!searchModal)} className={style.inner}>
         <span>
-          <span>Help us keep running</span>
-        </span>{" "}
+          You are looking for something? Searching the site is simple{" "}
+        </span>
         Thank you
       </div>
+      {searchModal &&
+        createPortal(
+          <Modal
+            head={<h3>Edit</h3>}
+            body={<>search</>}
+            open={searchModal}
+            onClick={() => setSearchModal(false)}
+          />,
+          document.body
+        )}
     </div>
   );
 };

@@ -47,14 +47,14 @@ export const Story = ({
           <div className={style.toolsbar}>
             <Button
               cssClass={`${style.button} ${style.contained} ${style.small}`}
-              ariaLabel={"Code Source"}
+              aria-label={"Code Source"}
               onClick={() => setExpanded(!expanded)}
             >
               <Icon name={expanded ? "code" : "code_off"} />
             </Button>
             <Button
               cssClass={`${style.button} ${style.contained} ${style.small}`}
-              ariaLabel={"Code Source"}
+              aria-label={"Code Source"}
               onClick={copyCode}
             >
               <svg
@@ -69,7 +69,7 @@ export const Story = ({
             <Button
               cssClass={`${style.button} ${style.contained} ${style.small}`}
               href={`https://codepen.io/adrienloup/pen/${codepen}`}
-              ariaLabel={"Code Source"}
+              aria-label={"Code Source"}
             >
               <svg
                 focusable="false"
@@ -89,7 +89,7 @@ export const Story = ({
             <Button
               cssClass={`${style.button} ${style.contained} ${style.small}`}
               href={`https://github.com/adrienloup/ds/tree/master/library/src/components/${github}`}
-              ariaLabel={"Code Source"}
+              aria-label={"Code Source"}
             >
               <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24">
                 <path

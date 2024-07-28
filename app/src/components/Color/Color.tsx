@@ -7,6 +7,8 @@ import style from "./Color.module.scss";
 const colors: ColorType[] = ["yellow", "purple", "magenta", "cyan"];
 
 export const Color = () => {
+  console.log("Color");
+
   const { settings, setSettings } = useSettings();
   const { addAlert } = useAlert();
 

@@ -1,0 +1,49 @@
+$desktop: 1281px;
+$tablet-landscape: 1025px;
+$tablet-portrait: 769px;
+
+.sticky {
+  backface-visibility: hidden;
+  width: 100%;
+  margin: 4rem 0 2rem;
+
+  @media (max-width: $desktop) {
+    margin: 2rem 0;
+  }
+
+  &.active {
+    &::before {
+      content: " ";
+      display: block;
+      width: 100%;
+      height: var(--height);
+      background-color: var(--color-3);
+    }
+  }
+}
+
+.inner {
+  backface-visibility: hidden;
+
+  .active & {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    left: 18rem;
+    transition: opacity 0.25s var(--easy-in-out-quad);
+
+    @media (max-width: $tablet-landscape) {
+      left: 16rem;
+    }
+
+    @media (max-width: $tablet-portrait) {
+      top: 3.75rem;
+      left: 0;
+    }
+  }
+
+  .hidden & {
+    opacity: 0;
+  }
+}

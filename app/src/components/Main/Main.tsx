@@ -6,17 +6,15 @@ import i18n from "../../i18n";
 import style from "./Main.module.scss";
 
 export const Main = ({ children }: SlotType) => {
-  // console.log("Main");
-
   return (
     <main role="main" data-cy="main" className={style.main}>
       <ToolsBar />
       <Settings />
-      <Banner
+      {/* <Banner
         id="banner0"
         status="warning"
         text={i18n.t("component.banner.banner0")}
-      />
+      /> */}
       <Banner
         id="banner1"
         text={i18n.t("component.banner.banner1", {

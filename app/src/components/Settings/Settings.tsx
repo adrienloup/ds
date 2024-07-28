@@ -12,15 +12,14 @@ import { Icon } from "../Icon/Icon";
 import style from "./Settings.module.scss";
 
 export const Settings = () => {
-  // console.log("Settings");
-  const asideRef = useRef<HTMLDivElement | null>(null);
-  const innerRef = useRef<HTMLDivElement | null>(null);
   const [colorModal, setColorModal] = useState(false);
   const [fontSizeAlert, setFonSizeAlert] = useState(false);
   const { settings, setSettings } = useSettings();
   const { addAlert } = useAlert();
   const { decreaseFontSize, increaseFontSize } = useFontSizeDispatch();
   const { fontSize } = useFontSize();
+  const asideRef = useRef<HTMLDivElement | null>(null);
+  const innerRef = useRef<HTMLDivElement | null>(null);
 
   const handleOpenChange = () => {
     setSettings({ ...settings, open: false });
@@ -52,14 +51,12 @@ export const Settings = () => {
 
       asideRef.current.style.height = height + "px";
       asideRef.current.style.top = `-${settings.open ? height : height / 2}px`;
-
       document.getElementById("_ds_y0y09_10")!.style.paddingTop = `${
         settings.open ? height : 0
       }px`;
     };
 
     handleResize();
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [settings]);
@@ -91,79 +88,6 @@ export const Settings = () => {
         </Button>
         <div className={style.content}>
           <div className={style.column}>
-            <div className={style.mode}>
-              <div className={style.title}>Mode</div>
-              <Button
-                data-cy="settings-light-mode"
-                cssClass={[
-                  `${style.button}`,
-                  settings.mode === "light" ? ` ${style.active}` : "",
-                ].join("")}
-                onClick={() => handleModeChange("light")}
-              >
-                <Icon name="light_mode" cssClass={style.icon} />
-                Light
-              </Button>
-              <Button
-                data-cy="settings-system-mode"
-                cssClass={[
-                  `${style.button}`,
-                  settings.mode === "system" ? ` ${style.active}` : "",
-                ].join("")}
-                onClick={() => handleModeChange("system")}
-              >
-                <Icon name="contrast" cssClass={style.icon} />
-                System
-              </Button>
-              <Button
-                data-cy="settings-dark-mode"
-                cssClass={[
-                  `${style.button}`,
-                  settings.mode === "dark" ? ` ${style.active}` : "",
-                ].join("")}
-                onClick={() => handleModeChange("dark")}
-              >
-                <Icon name="dark_mode" cssClass={style.icon} />
-                Dark
-              </Button>
-            </div>
-            <div className={style.direction}>
-              <div className={style.title}>Direction</div>
-              <Button
-                cssClass={style.button}
-                onClick={() => {
-                  addAlert({
-                    text: "Error with the direction adjustment",
-                    timeout: 2,
-                    status: "error",
-                  });
-                }}
-              >
-                <Icon
-                  cssClass={style.icon}
-                  name="format_textdirection_l_to_r"
-                />
-                Right to Left
-              </Button>
-              <Button
-                cssClass={style.button}
-                onClick={() => {
-                  addAlert({
-                    text: "Error with the direction adjustment",
-                    timeout: 2,
-                    status: "error",
-                  });
-                }}
-              >
-                <Icon
-                  cssClass={style.icon}
-                  name="format_textdirection_r_to_l"
-                />
-                Left to Right
-              </Button>
-            </div>
-          </div>
-          <div className={style.column}>
             <div className={style.row}>
               <div className={style.accessibility}>
                 <div className={style.title}>Accessibility</div>
@@ -173,7 +97,7 @@ export const Settings = () => {
                     fontSize === 16 ? ` ${style.active}` : "",
                   ].join("")}
                   onClick={() => (decreaseFontSize(), setFonSizeAlert(true))}
-                  ariaLabel="Decrease text size"
+                  aria-label="Decrease text size"
                 >
                   <Icon cssClass={style.icon} name="remove_circle" /> A
                 </Button>
@@ -183,7 +107,7 @@ export const Settings = () => {
                     fontSize === 20 ? ` ${style.active}` : "",
                   ].join("")}
                   onClick={() => (increaseFontSize(), setFonSizeAlert(true))}
-                  ariaLabel="Increase text size"
+                  aria-label="Increase text size"
                 >
                   <Icon cssClass={style.icon} name="add_circle" /> A
                 </Button>
@@ -306,6 +230,79 @@ export const Settings = () => {
               >
                 <Icon cssClass={style.icon} name="format_paint" />
                 Edit documentation
+              </Button>
+            </div>
+          </div>
+          <div className={style.column}>
+            <div className={style.mode}>
+              <div className={style.title}>Mode</div>
+              <Button
+                data-cy="settings-light-mode"
+                cssClass={[
+                  `${style.button}`,
+                  settings.mode === "light" ? ` ${style.active}` : "",
+                ].join("")}
+                onClick={() => handleModeChange("light")}
+              >
+                <Icon name="light_mode" cssClass={style.icon} />
+                Light
+              </Button>
+              <Button
+                data-cy="settings-system-mode"
+                cssClass={[
+                  `${style.button}`,
+                  settings.mode === "system" ? ` ${style.active}` : "",
+                ].join("")}
+                onClick={() => handleModeChange("system")}
+              >
+                <Icon name="contrast" cssClass={style.icon} />
+                System
+              </Button>
+              <Button
+                data-cy="settings-dark-mode"
+                cssClass={[
+                  `${style.button}`,
+                  settings.mode === "dark" ? ` ${style.active}` : "",
+                ].join("")}
+                onClick={() => handleModeChange("dark")}
+              >
+                <Icon name="dark_mode" cssClass={style.icon} />
+                Dark
+              </Button>
+            </div>
+            <div className={style.direction}>
+              <div className={style.title}>Direction</div>
+              <Button
+                cssClass={style.button}
+                onClick={() => {
+                  addAlert({
+                    text: "Error with the direction adjustment",
+                    timeout: 2,
+                    status: "error",
+                  });
+                }}
+              >
+                <Icon
+                  cssClass={style.icon}
+                  name="format_textdirection_l_to_r"
+                />
+                Right to Left
+              </Button>
+              <Button
+                cssClass={style.button}
+                onClick={() => {
+                  addAlert({
+                    text: "Error with the direction adjustment",
+                    timeout: 2,
+                    status: "error",
+                  });
+                }}
+              >
+                <Icon
+                  cssClass={style.icon}
+                  name="format_textdirection_r_to_l"
+                />
+                Left to Right
               </Button>
             </div>
           </div>

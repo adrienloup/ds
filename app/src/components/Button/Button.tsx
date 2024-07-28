@@ -1,5 +1,6 @@
 import {
   ButtonHTMLAttributes,
+  ForwardedRef,
   LinkHTMLAttributes,
   memo,
   ReactNode,
@@ -7,18 +8,18 @@ import {
 import { Link } from "react-router-dom";
 import style from "./Button.module.scss";
 
-interface ButtonType {
+type HTMLAttributes<A> = ButtonHTMLAttributes<A> & LinkHTMLAttributes<A>;
+
+interface Button<F>
+  extends HTMLAttributes<HTMLButtonElement & HTMLAnchorElement> {
   children: ReactNode;
   cssClass?: string;
   type?: "button" | "submit" | "reset";
-  ariaLabel?: string;
+  disabled?: boolean;
+  innerRef?: ForwardedRef<F>;
   href?: string;
   to?: string;
-  onClick?: () => void;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
-  onFocus?: () => void;
-  onBlur?: () => void;
+  tabIndex?: number;
 }
 
 export const Button = memo(
@@ -26,21 +27,19 @@ export const Button = memo(
     children,
     cssClass,
     type = "button",
-    ariaLabel,
+    disabled,
+    innerRef,
     href,
     to,
-    onClick,
-    onMouseEnter,
-    onMouseLeave,
-    onFocus,
-    onBlur,
+    tabIndex,
     ...rest
-  }: ButtonType) => {
+  }: Button<HTMLButtonElement & HTMLAnchorElement>) => {
     // console.log("Button");
+
     const link = (
       <Link
+        ref={innerRef}
         to={to as string}
-        aria-label={ariaLabel}
         className={[style.button, cssClass ? ` ${cssClass}` : ""].join("")}
       >
         {children}
@@ -49,12 +48,13 @@ export const Button = memo(
 
     const a = (
       <a
+        ref={innerRef}
         href={href}
         target="_blank"
         rel="noopener"
-        aria-label={ariaLabel}
+        tabIndex={tabIndex}
         className={[style.button, cssClass ? ` ${cssClass}` : ""].join("")}
-        {...(rest as LinkHTMLAttributes<HTMLAnchorElement>)}
+        {...rest}
       >
         {children}
       </a>
@@ -62,15 +62,11 @@ export const Button = memo(
 
     const button = (
       <button
+        ref={innerRef}
         type={type}
-        aria-label={ariaLabel}
+        tabIndex={tabIndex}
         className={[style.button, cssClass ? ` ${cssClass}` : ""].join("")}
-        onClick={onClick}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}
+        {...rest}
       >
         {children}
       </button>

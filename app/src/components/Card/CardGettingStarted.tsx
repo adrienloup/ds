@@ -3,7 +3,7 @@ import { PageType } from "../../models/Page";
 import { CardList } from "./CardList";
 
 export const CardGettingStarted = () => {
-  // console.log("CardGettingStarted");
+  console.log("CardGettingStarted");
   const { pagesData } = useData();
 
   const list = pagesData.filter(

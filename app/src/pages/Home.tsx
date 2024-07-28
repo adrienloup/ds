@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useTitle } from "../hooks/useTitle";
 import { Header } from "../components/Header/Header";
@@ -15,16 +16,17 @@ import { TableBody } from "../components/Table/TableBody";
 import { TableTr } from "../components/Table/TableTr";
 import { TableTh } from "../components/Table/TableTh";
 import { TableTd } from "../components/Table/TableTd";
+import { Sticky } from "../components/Sticky/Sticky";
 import { Help } from "../components/Help/Help";
 
 function HomePage() {
-  // console.log("HomePage");
+  console.log("HomePage");
   const { t } = useTranslation();
   useTitle(t("page.home.document"));
 
   return (
     <>
-      <Header />
+      <HeaderMemo />
       <Main>
         <Title>
           <Trans i18nKey="page.home.title">
@@ -39,14 +41,16 @@ function HomePage() {
             <Button to={"/ds/overview"}>{t("page.home.promote.button")}</Button>
           }
         />
-        <Help />
+        <Sticky>
+          <HelpMemo />
+        </Sticky>
         <h2>
           <Trans i18nKey="page.home.subtitle1">
             Get started with DS library
             <span>today through some of these useful resources</span>
           </Trans>
         </h2>
-        <CardGettingStarted />
+        <CardGettingStartedMemo />
         <h2>
           <Trans i18nKey="page.home.subtitle2">
             Released <span>versions</span>
@@ -81,5 +85,9 @@ function HomePage() {
     </>
   );
 }
+
+const HeaderMemo = memo(Header);
+const CardGettingStartedMemo = memo(CardGettingStarted);
+const HelpMemo = memo(Help);
 
 export default HomePage;

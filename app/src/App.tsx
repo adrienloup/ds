@@ -20,6 +20,7 @@ import SwitchPage from "./pages/Switch";
 import TabsPage from "./pages/Tabs";
 import TagPage from "./pages/Tag";
 import TypographyPage from "./pages/Typography";
+import UsagePage from "./pages/Usage";
 import "./App.scss";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           <Route path="/ds/tabs" element={<TabsPage />} />
           <Route path="/ds/tag" element={<TagPage />} />
           <Route path="/ds/typography" element={<TypographyPage />} />
+          <Route path="/ds/usage" element={<UsagePage />} />
           <Route path="/ds/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

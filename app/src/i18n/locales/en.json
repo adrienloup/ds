@@ -34,7 +34,7 @@
       "subtitle2": "Released <1>versions</1>",
       "text": "La version stable la plus récente (✓) est recommandée pour une utilisation en production.",
       "promote": {
-        "title": "Unlock the full power",
+        "title": "Ready to use DS library components",
         "text": "It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box, and features a suite of customization options that make it easy to implement your own custom design system on top of our components.",
         "button": "Overview"
       }

@@ -1,5 +1,8 @@
-export function getPosition<T extends HTMLElement>(node: T): { top: number } {
-  const root = document as unknown as Element;
+export function getPosition<
+  T extends HTMLElement,
+  U extends Document | Element | undefined,
+>(node: T, scope: U): { top: number } {
+  const root = scope || (document as U | unknown);
   let offsetTop = node.offsetTop;
 
   while (

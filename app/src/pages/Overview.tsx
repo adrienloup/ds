@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useTitle } from "../hooks/useTitle";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
@@ -9,8 +10,8 @@ import { CardSearchable } from "../components/Card/CardSearchable";
 import { Button } from "../components/Button/Button";
 
 function OverviewPage() {
-  // console.log("OverviewPage");
-  useTitle("Overview");
+  const { t } = useTranslation();
+  useTitle(t("page.overview.document"));
 
   return (
     <>
@@ -22,15 +23,12 @@ function OverviewPage() {
         <Promote
           head={<h2>Unlock the full power</h2>}
           body={
-            <>
-              <p>
-                Asset uploading is a feature. As a PRO member, you can
-                drag-and-drop upload files here to use as resources. Images, CSS
-                frameworks JavaScript libraries, 3D models, JSON data...
-                anything you want! You can even edit them anytime, like any
-                other code.
-              </p>
-            </>
+            <p>
+              Asset uploading is a feature. As a PRO member, you can
+              drag-and-drop upload files here to use as resources. Images, CSS
+              frameworks JavaScript libraries, 3D models, JSON data... anything
+              you want! You can even edit them anytime, like any other code.
+            </p>
           }
           foot={<Button to={"/ds/"}>Get Started</Button>}
         />

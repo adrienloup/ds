@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { PositionType } from "../../models/Position";
 import style from "./Tooltip.module.scss";
 
-interface TooltipType {
+interface TooltipProps {
   children: ReactNode;
   title?: string;
   text?: string;
@@ -14,9 +14,9 @@ export const Tooltip = ({
   text,
   position = "top",
   children,
-}: TooltipType) => {
+}: TooltipProps) => {
   return (
-    <div className={style.tooltip} tabIndex={0}>
+    <div role="tooltip" tabIndex={0} className={style.tooltip}>
       {children}
       <div className={[style.box, ` ${style[position]}`].join("")}>
         {title && <div className={style.title}>{title}</div>}
