@@ -22,12 +22,12 @@ export const Alert = ({
   useEffect(() => {
     if (timeout > 0) {
       outTimer.current = setTimeout(() => {
-        // setOut(true);
+        setOut(true);
       }, timeout * 1e3) as unknown as number;
 
       removeTimer.current = setTimeout(
         () => {
-          // handleRemove();
+          handleRemove();
         },
         timeout * 1e3 + 150
       ) as unknown as number;

@@ -15,7 +15,6 @@ interface Button<F>
   children: ReactNode;
   cssClass?: string;
   type?: "button" | "submit" | "reset";
-  disabled?: boolean;
   innerRef?: ForwardedRef<F>;
   href?: string;
   to?: string;
@@ -27,7 +26,6 @@ export const Button = memo(
     children,
     cssClass,
     type = "button",
-    disabled,
     innerRef,
     href,
     to,
