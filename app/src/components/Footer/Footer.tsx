@@ -8,7 +8,7 @@ import { Login } from "../Login/Login";
 import style from "./Footer.module.scss";
 
 export const Footer = () => {
-  // console.log("Footer");
+  console.log("Footer");
   const { t } = useTranslation();
   const { user } = useAuth();
   const [showModalTask, setShowModalTask] = useState(false);

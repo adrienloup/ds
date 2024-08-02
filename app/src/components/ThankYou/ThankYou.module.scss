@@ -1,0 +1,76 @@
+$desktop: 1281px;
+$tablet-landscape: 1025px;
+$tablet-portrait: 769px;
+
+.thankyou {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.inner {
+  flex: 1;
+  padding: 2.5rem;
+  background-color: var(--color-2);
+  border: 0.2rem solid var(--color-3);
+  line-height: 1.1;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: var(--font-text-bold);
+  font-size: 3.5rem;
+  color: var(--color-1);
+  pointer-events: initial;
+  cursor: pointer;
+
+  @media (max-width: $desktop) {
+    padding: 2rem;
+    font-size: 3rem;
+  }
+
+  @media (max-width: $tablet-landscape) {
+    padding: 1rem;
+  }
+
+  @media (max-width: $tablet-portrait) {
+    font-size: 2.5rem;
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+  }
+
+  .active & {
+    flex: none;
+    padding: 0.15rem 0.25rem;
+    background-color: var(--color-1);
+    border-color: var(--color-1);
+    font-size: 1.15rem;
+    color: var(--color-2);
+  }
+
+  div {
+    display: none;
+
+    .active & {
+      display: block;
+    }
+  }
+
+  p {
+    display: inline;
+
+    span {
+      -webkit-text-stroke: 0.08rem var(--color-1);
+      color: transparent;
+    }
+
+    .active & {
+      display: none;
+    }
+  }
+}
+
+.icon {
+  font-size: 1rem;
+}

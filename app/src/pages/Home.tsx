@@ -17,10 +17,10 @@ import { TableTr } from "../components/Table/TableTr";
 import { TableTh } from "../components/Table/TableTh";
 import { TableTd } from "../components/Table/TableTd";
 import { Sticky } from "../components/Sticky/Sticky";
-import { Help } from "../components/Help/Help";
+import { ThankYou } from "../components/ThankYou/ThankYou";
 
 function HomePage() {
-  console.log("HomePage");
+  // console.log("HomePage");
   const { t } = useTranslation();
   useTitle(t("page.home.document"));
 
@@ -42,7 +42,7 @@ function HomePage() {
           }
         />
         <Sticky>
-          <HelpMemo />
+          <ThankYouMemo />
         </Sticky>
         <h2>
           <Trans i18nKey="page.home.subtitle1">
@@ -73,6 +73,16 @@ function HomePage() {
               <TableTd>Work started</TableTd>
             </TableTr>
             <TableTr>
+              <TableTd>Q3 2024</TableTd>
+              <TableTd>v0.2.0</TableTd>
+              <TableTd>Released</TableTd>
+            </TableTr>
+            <TableTr>
+              <TableTd>Q3 2024</TableTd>
+              <TableTd>v0.1.0</TableTd>
+              <TableTd>Released</TableTd>
+            </TableTr>
+            <TableTr>
               <TableTd>Q2 2024</TableTd>
               <TableTd>v0</TableTd>
               <TableTd>Released</TableTd>
@@ -88,6 +98,6 @@ function HomePage() {
 
 const HeaderMemo = memo(Header);
 const CardGettingStartedMemo = memo(CardGettingStarted);
-const HelpMemo = memo(Help);
+const ThankYouMemo = memo(ThankYou);
 
 export default HomePage;

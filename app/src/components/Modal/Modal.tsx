@@ -22,9 +22,13 @@ export const Modal = ({
 }: ModalType) => {
   // console.log("Modal");
   const [height, setHeight] = useState(0);
+  const [top, setTop] = useState(0);
 
   useEffect(() => {
-    const handleResize = () => setHeight(document.body.offsetHeight);
+    const handleResize = () => {
+      setHeight(document.body.offsetHeight);
+      setTop(document.documentElement.scrollTop);
+    };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -41,7 +45,12 @@ export const Modal = ({
         height: `${height}px`,
       }}
     >
-      <div className={style.content}>
+      <div
+        className={style.content}
+        style={{
+          top: `${top}px`,
+        }}
+      >
         <Button data-cy="modal-close" cssClass={style.close} onClick={onClick}>
           <Icon name="close" />
         </Button>

@@ -16,7 +16,7 @@ $tablet-portrait: 769px;
 
 .content {
   position: absolute;
-  top: 5vh;
+  top: 0;
   left: 50%;
   z-index: 2;
   width: 48rem;
@@ -26,7 +26,6 @@ $tablet-portrait: 769px;
   background-color: var(--color-2);
 
   @media (max-width: $tablet-portrait) {
-    top: 0;
     left: 0;
     width: 100%;
     margin-left: 0;
@@ -98,7 +97,7 @@ $tablet-portrait: 769px;
 
 @keyframes Slide {
   0% {
-    transform: translateY(-1rem);
+    transform: translateY(-2rem);
     opacity: 0;
   }
 }

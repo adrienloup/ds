@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { KeyboardEvent, ReactNode } from "react";
 import { PositionType } from "../../models/Position";
 import style from "./Tooltip.module.scss";
 
@@ -7,6 +7,7 @@ interface TooltipProps {
   title?: string;
   text?: string;
   position?: PositionType;
+  onKeyDown?: () => void;
 }
 
 export const Tooltip = ({
@@ -14,9 +15,19 @@ export const Tooltip = ({
   text,
   position = "top",
   children,
+  onKeyDown = () => {},
 }: TooltipProps) => {
+  const handleOnKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.code === "Enter") onKeyDown();
+  };
+
   return (
-    <div role="tooltip" tabIndex={0} className={style.tooltip}>
+    <div
+      role="tooltip"
+      tabIndex={0}
+      className={style.tooltip}
+      onKeyDown={(e) => handleOnKeyDown(e)}
+    >
       {children}
       <div className={[style.box, ` ${style[position]}`].join("")}>
         {title && <div className={style.title}>{title}</div>}

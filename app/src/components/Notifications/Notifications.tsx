@@ -12,20 +12,14 @@ export const Notifications = () => {
       {data &&
         data.map(
           (notification: {
+            userId: number;
             id: number;
             title: string;
             body: string;
-            label: string;
-            url: string;
           }) => (
             <div className={style.notification} key={notification.id}>
               <span>{notification.title}</span>
-              <p>
-                {notification.body}{" "}
-                <a href={notification.url} target="_blank" rel="noopener">
-                  {notification.label}
-                </a>
-              </p>
+              <p>{notification.body} [...]</p>
             </div>
           )
         )}

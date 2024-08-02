@@ -34,14 +34,14 @@ $tablet-portrait: 769px;
 }
 
 .content {
-  height: 18rem;
+  height: 20rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
 
   @media (max-width: $tablet-landscape) {
-    height: 14rem;
+    height: 16rem;
     gap: 1rem;
   }
 

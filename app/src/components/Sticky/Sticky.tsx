@@ -26,8 +26,9 @@ export const Sticky = ({ children }: SlotType) => {
 
       const scrollTop = document.documentElement.scrollTop;
       const offsetTop = getPosition(sticky.current!, document);
+      const offsetHeight = sticky.current!.clientHeight;
 
-      if (scrollTop >= offsetTop.top) {
+      if (scrollTop >= offsetTop.top + offsetHeight) {
         if (!active) {
           setHeight(inner.current!.clientHeight);
           setActive(true);
@@ -36,13 +37,8 @@ export const Sticky = ({ children }: SlotType) => {
         if (active) setActive(false);
       }
 
-      if (
-        scrollTop >=
-        document.querySelector("main")!.clientHeight - window.innerHeight
-      ) {
-        if (!hidden) {
-          setHidden(true);
-        }
+      if (scrollTop >= document.body.clientHeight - window.innerHeight - 60) {
+        if (!hidden) setHidden(true);
       } else {
         if (hidden) setHidden(false);
       }

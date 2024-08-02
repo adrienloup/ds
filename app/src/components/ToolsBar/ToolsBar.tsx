@@ -28,6 +28,10 @@ export const ToolsBar = () => {
     setSettings({ ...settings, open });
   };
 
+  const handleOpenNewTab = (url: string) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <div className={style.toolsbar} data-cy="toolsbar">
       {user.name && (
@@ -41,7 +45,11 @@ export const ToolsBar = () => {
           </Button>
         </Badge>
       )}
-      <Tooltip text="I like a lot" position="bottom">
+      <Tooltip
+        text="I like a lot"
+        position="bottom"
+        onKeyDown={() => setLike(!like)}
+      >
         <Button
           tabIndex={-1}
           aria-label={"I like a lot"}
@@ -52,11 +60,15 @@ export const ToolsBar = () => {
           <Like active={like} />
         </Button>
       </Tooltip>
-      <Tooltip text="GitHub repository" position="bottom">
+      <Tooltip
+        text="GitHub repository"
+        position="bottom"
+        onKeyDown={() => handleOpenNewTab("https://github.com/adrienloup/ds")}
+      >
         <Button
           tabIndex={-1}
           href={"https://github.com/adrienloup/ds"}
-          aria-label={"GitHub"}
+          aria-label={"GitHub repository"}
           cssClass={style.button}
           data-cy="toolsbar-github"
         >
@@ -68,7 +80,11 @@ export const ToolsBar = () => {
           </svg>
         </Button>
       </Tooltip>
-      <Tooltip text="Notifications" position="bottom">
+      <Tooltip
+        text="Notifications"
+        position="bottom"
+        onKeyDown={() => setNotificationModal(!notificationModal)}
+      >
         <Badge value={data.length} max={9} cssClass={style.badge}>
           <Button
             tabIndex={-1}
@@ -86,7 +102,11 @@ export const ToolsBar = () => {
           </Button>
         </Badge>
       </Tooltip>
-      <Tooltip text="Settings" position="bottom-end">
+      <Tooltip
+        text="Settings"
+        position="bottom-end"
+        onKeyDown={() => handleSettingsChange(!settings.open)}
+      >
         <Button
           tabIndex={-1}
           aria-label={"Settings"}

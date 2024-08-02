@@ -1,5 +1,5 @@
 $desktop: 1281px;
-$tablet-portrait: 769px;
+$tablet-landscape: 1025px;
 
 .promote {
   position: relative;
@@ -13,7 +13,7 @@ $tablet-portrait: 769px;
     margin: 2rem 0;
   }
 
-  @media (max-width: $tablet-portrait) {
+  @media (max-width: $tablet-landscape) {
     padding: 1rem;
   }
 }

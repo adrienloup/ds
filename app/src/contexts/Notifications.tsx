@@ -6,16 +6,15 @@ import { SlotType } from "../models/Slot";
 export const NotificationsContext = createContext<{
   loading: boolean;
   data: {
+    userId: number;
     id: number;
     title: string;
     body: string;
-    label: string;
-    url: string;
   }[];
   errors: ErrorResponse | null;
 }>({
   loading: false,
-  data: [{ id: 0, title: "", body: "", label: "", url: "" }],
+  data: [{ userId: 0, id: 0, title: "", body: "" }],
   errors: {
     status: 0,
     statusText: "",
@@ -25,12 +24,11 @@ export const NotificationsContext = createContext<{
 
 export function NotificationsProvider({ children }: SlotType) {
   const { loading, data, errors } = useFetch<{
+    userId: number;
     id: number;
     title: string;
     body: string;
-    label: string;
-    url: string;
-  }>("/ds/notifications.json");
+  }>("https://jsonplaceholder.typicode.com/posts?_limit=3&delay=2000");
 
   return (
     <NotificationsContext.Provider value={{ loading, data, errors }}>
