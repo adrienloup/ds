@@ -55,7 +55,7 @@ export const LoginForm = ({ onClick }: { onClick: () => void }) => {
         <TextField
           placeholder="Name"
           onChange={(e) => handleUpdate("name", e.target.value)}
-          cssClass={styles.textfield}
+          cssClass={[styles.textfield]}
           errorMessage={errorName}
         />
       </div>
@@ -63,7 +63,7 @@ export const LoginForm = ({ onClick }: { onClick: () => void }) => {
         <TextField
           placeholder="Password"
           onChange={(e) => handleUpdate("password", e.target.value)}
-          cssClass={styles.textfield}
+          cssClass={[styles.textfield]}
           errorMessage={errorPassword}
         />
       </div>

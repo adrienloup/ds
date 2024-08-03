@@ -15,7 +15,7 @@ export const TaskForm = () => {
       <TextField
         placeholder="Add task"
         value={text}
-        cssClass={styles.textfield}
+        cssClass={[styles.textfield]}
         onChange={(e) => setText(e.target.value)}
       />
       {text.length > 0 && (
