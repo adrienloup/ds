@@ -5,7 +5,7 @@ $tablet-portrait: 769px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 5rem;
+  margin-top: 4rem;
   border: 0.2rem solid var(--color-3);
 
   @media (max-width: $desktop) {

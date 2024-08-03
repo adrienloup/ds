@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useTitle } from "../hooks/useTitle";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
@@ -6,13 +7,15 @@ import { ScrollToTop } from "../components/ScrollToTop/ScrollToTop";
 import { Title } from "../components/Title/Title";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
+import { Sticky } from "../components/Sticky/Sticky";
+import { Search } from "../components/Search/Search";
 
 function UsagePage() {
   useTitle("Usage");
 
   return (
     <>
-      <Header />
+      <HeaderMemo />
       <Main>
         <Title>
           Learn the basics of working <span>with DS library components</span>
@@ -29,6 +32,9 @@ function UsagePage() {
           }
           foot={<Button to={"/ds/"}>Get Started</Button>}
         />
+        <Sticky>
+          <SearchMemo />
+        </Sticky>
         <h2>
           Advantages <span>of DS library</span>
         </h2>
@@ -127,5 +133,8 @@ function UsagePage() {
     </>
   );
 }
+
+const HeaderMemo = memo(Header);
+const SearchMemo = memo(Search);
 
 export default UsagePage;

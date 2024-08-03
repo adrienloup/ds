@@ -127,5 +127,9 @@ $tablet-portrait: 769px;
         outline-offset: 0.125rem;
       }
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

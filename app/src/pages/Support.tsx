@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useTitle } from "../hooks/useTitle";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
@@ -7,13 +8,15 @@ import { Title } from "../components/Title/Title";
 import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
 import { Separator } from "../components/Separator/Separator";
+import { Sticky } from "../components/Sticky/Sticky";
+import { Search } from "../components/Search/Search";
 
 function SupportPage() {
   useTitle("Support");
 
   return (
     <>
-      <Header />
+      <HeaderMemo />
       <Main>
         <Title>
           <span>Learn how to get support for</span> library components
@@ -35,6 +38,9 @@ function SupportPage() {
             <Button href={"https://github.com/adrienloup/ds"}>GitHub</Button>
           }
         />
+        <Sticky>
+          <SearchMemo />
+        </Sticky>
         <Separator name="face_3" />
         <h2>
           New issue <span>guidelines</span>
@@ -102,5 +108,8 @@ function SupportPage() {
     </>
   );
 }
+
+const HeaderMemo = memo(Header);
+const SearchMemo = memo(Search);
 
 export default SupportPage;
