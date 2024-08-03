@@ -44,7 +44,7 @@ export const Modal = ({
     (e: {
       keyCode: number;
       shiftKey: boolean;
-      target: HTMLElement;
+      target: EventTarget;
       preventDefault: () => void;
     }) => {
       if (!content.current) return;
