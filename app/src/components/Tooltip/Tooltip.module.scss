@@ -38,6 +38,11 @@
   transform: translateX(-50%);
 }
 
+.top-start {
+  bottom: 100%;
+  left: 0;
+}
+
 .top-end {
   bottom: 100%;
   right: 0;
@@ -53,6 +58,11 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.bottom-start {
+  top: 100%;
+  left: 0;
 }
 
 .bottom-end {
