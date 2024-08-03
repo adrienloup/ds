@@ -73,7 +73,7 @@ html {
   z-index: 2;
   color: var(--color-neutral-1);
   transition: bottom 1s var(--easy-in-out-quint);
-  will-change: transform;
+  will-change: bottom;
 
   div {
     position: absolute;

@@ -1,13 +1,13 @@
 import { useId } from "react";
-import style from "./Checkbox.module.scss";
+import styles from "./Checkbox.module.scss";
 
-type CheckboxType = {
+interface CheckboxProps {
   cssClass?: string;
   id?: string;
   checked: boolean;
   label?: string;
   onChange: (e: { target: { checked: boolean } }) => void;
-};
+}
 
 export const Checkbox = ({
   cssClass,
@@ -15,20 +15,20 @@ export const Checkbox = ({
   checked = false,
   label,
   onChange,
-}: CheckboxType) => {
+}: CheckboxProps) => {
   const uId = useId();
 
   return (
-    <div className={[style.checkbox, cssClass ? ` ${cssClass}` : ""].join("")}>
+    <div className={[styles.checkbox, cssClass ? ` ${cssClass}` : ""].join("")}>
       <input
         id={id ? id : uId}
         type="checkbox"
-        className={style.input}
+        className={styles.input}
         checked={checked}
         onChange={onChange}
       />
-      <label htmlFor={id ? id : uId} className={style.label}>
-        <span className={style.check}></span>
+      <label htmlFor={id ? id : uId} className={styles.label}>
+        <span className={styles.check}></span>
         {label}
       </label>
     </div>

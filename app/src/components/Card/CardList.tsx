@@ -1,16 +1,16 @@
 import { CardType } from "../../models/Card";
 import { CardItem } from "./CardItem";
 import { Empty } from "../Empty/Empty";
-import style from "./Card.module.scss";
+import styles from "./Card.module.scss";
 
-type CardListType = {
+interface CardListProps {
   list: CardType[];
-};
+}
 
-export const CardList = ({ list }: CardListType) => {
+export const CardList = ({ list }: CardListProps) => {
   // console.log("CardList");
   return (
-    <div className={style.cardlist}>
+    <div className={styles.cardlist}>
       {list.length > 0 ? (
         list.map((item: CardType, index) => (
           <CardItem
@@ -25,7 +25,7 @@ export const CardList = ({ list }: CardListType) => {
       ) : (
         <Empty
           text="Nothing matches your search but don't give up :)"
-          cssClass={style.empty}
+          cssClass={styles.empty}
         />
       )}
     </div>

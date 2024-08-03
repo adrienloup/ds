@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useSettings } from "../../hooks/useSettings";
 import { useTask } from "../../hooks/useTask";
@@ -13,7 +13,7 @@ import { Badge } from "../Badge/Badge";
 import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
 import { Like } from "../Like/Like";
-import style from "./ToolsBar.module.scss";
+import styles from "./ToolsBar.module.scss";
 
 export const ToolsBar = () => {
   const [notificationModal, setNotificationModal] = useState(false);
@@ -23,6 +23,8 @@ export const ToolsBar = () => {
   const { data } = useNotifications();
   const { user } = useAuth();
   const tasks = useTask();
+  const notificationRef = useRef<HTMLDivElement>(null);
+  const taskRef = useRef<HTMLButtonElement>(null);
 
   const handleSettingsChange = (open: boolean) => {
     setSettings({ ...settings, open });
@@ -33,15 +35,16 @@ export const ToolsBar = () => {
   };
 
   return (
-    <div className={style.toolsbar} data-cy="toolsbar">
+    <div className={styles.toolsbar} data-cy="toolsbar">
       {user.name && (
-        <Badge value={tasks.length} max={9} cssClass={style.badge}>
+        <Badge value={tasks.length} max={9} cssClass={styles.badge}>
           <Button
+            innerRef={taskRef}
             aria-label={"Tasks"}
-            cssClass={style.button}
+            cssClass={styles.button}
             onClick={() => setTaskModal(!taskModal)}
           >
-            <Icon name={"task_alt"} cssClass={style.icon} />
+            <Icon name={"task_alt"} cssClass={styles.icon} />
           </Button>
         </Badge>
       )}
@@ -53,7 +56,7 @@ export const ToolsBar = () => {
         <Button
           tabIndex={-1}
           aria-label={"I like a lot"}
-          cssClass={[style.button, ` ${style.like}`].join("")}
+          cssClass={[styles.button, ` ${styles.like}`].join("")}
           data-cy="toolsbar-like"
           onClick={() => setLike(!like)}
         >
@@ -69,7 +72,7 @@ export const ToolsBar = () => {
           tabIndex={-1}
           href={"https://github.com/adrienloup/ds"}
           aria-label={"GitHub repository"}
-          cssClass={style.button}
+          cssClass={styles.button}
           data-cy="toolsbar-github"
         >
           <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24">
@@ -81,15 +84,16 @@ export const ToolsBar = () => {
         </Button>
       </Tooltip>
       <Tooltip
+        innerRef={notificationRef}
         text="Notifications"
         position="bottom"
         onKeyDown={() => setNotificationModal(!notificationModal)}
       >
-        <Badge value={data.length} max={9} cssClass={style.badge}>
+        <Badge value={data.length} max={9} cssClass={styles.badge}>
           <Button
             tabIndex={-1}
             aria-label={"Notifications"}
-            cssClass={style.button}
+            cssClass={styles.button}
             data-cy="toolsbar-notifications"
             onClick={() => setNotificationModal(!notificationModal)}
           >
@@ -97,7 +101,7 @@ export const ToolsBar = () => {
               name={
                 data.length > 0 ? "notifications_active" : "notifications_off"
               }
-              cssClass={style.icon}
+              cssClass={styles.icon}
             />
           </Button>
         </Badge>
@@ -110,7 +114,7 @@ export const ToolsBar = () => {
         <Button
           tabIndex={-1}
           aria-label={"Settings"}
-          cssClass={style.button}
+          cssClass={styles.button}
           data-cy="toolsbar-settings"
           onClick={() => handleSettingsChange(!settings.open)}
         >
@@ -120,6 +124,7 @@ export const ToolsBar = () => {
       {notificationModal &&
         createPortal(
           <Modal
+            targetRef={notificationRef}
             head={
               <h3>
                 Breaking <span>news</span>
@@ -134,6 +139,7 @@ export const ToolsBar = () => {
       {taskModal &&
         createPortal(
           <Modal
+            targetRef={taskRef}
             head={
               <h3>
                 {tasks && tasks.length > 1

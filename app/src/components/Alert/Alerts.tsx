@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { SlotType } from "../../models/Slot";
-import style from "./Alert.module.scss";
+import styles from "./Alert.module.scss";
 
 export const Alerts = ({ children }: SlotType) => {
   // console.log("Alerts");
@@ -15,12 +15,12 @@ export const Alerts = ({ children }: SlotType) => {
 
   return (
     <div
-      className={style.alerts}
+      className={styles.alerts}
       style={{
         height: `${height}px`,
       }}
     >
-      <div className={style.inner}>{children}</div>
+      <div className={styles.inner}>{children}</div>
     </div>
   );
 };

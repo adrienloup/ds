@@ -4,7 +4,7 @@ import { useSessionStorage } from "../../hooks/useSessionStorage";
 import { BannerType } from "../../models/Banner";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
-import style from "./Banner.module.scss";
+import styles from "./Banner.module.scss";
 
 export const Banner = ({
   id,
@@ -24,13 +24,13 @@ export const Banner = ({
       {!hidden && (
         <div
           data-cy={id}
-          className={[style.banner, ` ${style[status]}`].join("")}
+          className={[styles.banner, ` ${styles[status]}`].join("")}
         >
-          <Icon name={setStatusIcon(status)} cssClass={style.icon} />
+          <Icon name={setStatusIcon(status)} cssClass={styles.icon} />
           <p dangerouslySetInnerHTML={{ __html: text }}></p>
           <Button
             data-cy="banner-close"
-            cssClass={style.close}
+            cssClass={styles.close}
             onClick={handleClick}
           >
             <Icon name="close" />

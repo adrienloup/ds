@@ -4,7 +4,7 @@ import { PageType } from "../../models/Page";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Checkbox } from "../Forms/Checkbox/Checkbox";
 import { CardList } from "./CardList";
-import style from "./Card.module.scss";
+import styles from "./Card.module.scss";
 
 export const CardSearchable = () => {
   // console.log("CardSearchable");
@@ -21,11 +21,11 @@ export const CardSearchable = () => {
 
   return (
     <>
-      <label htmlFor="c-id" className={style.label}>
+      <label htmlFor="c-id" className={styles.label}>
         {list.length} React component{list.length > 1 ? "s" : ""}
       </label>
       <SearchBar
-        cssClass={[style.searchbar]}
+        cssClass={[styles.formfield]}
         placeholder="UI components"
         id="c-id"
         value={value}
@@ -33,7 +33,7 @@ export const CardSearchable = () => {
         status={list.length === 0 ? "error" : undefined}
       />
       <Checkbox
-        cssClass={style.checkbox}
+        cssClass={styles.checkbox}
         checked={isNews}
         onChange={(e) => setNews(e.target.checked)}
         label="Only show new components"

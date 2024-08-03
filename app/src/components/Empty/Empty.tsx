@@ -1,14 +1,14 @@
-import style from "./Empty.module.scss";
+import styles from "./Empty.module.scss";
 
-type EmptyType = {
+interface EmptyProps {
   text: string;
   tag?: keyof JSX.IntrinsicElements;
   cssClass?: string;
-};
+}
 
-export const Empty = ({ text, tag: Tag = "div", cssClass }: EmptyType) => {
+export const Empty = ({ text, tag: Tag = "div", cssClass }: EmptyProps) => {
   return (
-    <Tag className={[style.empty, cssClass ? ` ${cssClass}` : ""].join("")}>
+    <Tag className={[styles.empty, cssClass ? ` ${cssClass}` : ""].join("")}>
       {text}
     </Tag>
   );

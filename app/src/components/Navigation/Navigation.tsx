@@ -1,18 +1,18 @@
 import { Button } from "../Button/Button";
 import i18n from "../../i18n";
-import style from "./Navigation.module.scss";
+import styles from "./Navigation.module.scss";
 
-type NavigationType = {
+interface NavigationProps {
   prev?: string;
   next?: string;
-};
+}
 
-export const Navigation = ({ prev, next }: NavigationType) => {
+export const Navigation = ({ prev, next }: NavigationProps) => {
   return (
-    <nav className={style.navigation}>
+    <nav className={styles.navigation}>
       {prev && (
         <Button
-          cssClass={[`${style.button}`, ` ${style.prev}`].join("")}
+          cssClass={[`${styles.button}`, ` ${styles.prev}`].join("")}
           to={`/ds/${prev}`}
         >
           <span>{i18n.t("component.navigation.previous")}</span>
@@ -21,7 +21,7 @@ export const Navigation = ({ prev, next }: NavigationType) => {
       )}
       {next && (
         <Button
-          cssClass={[`${style.button}`, ` ${style.next}`].join("")}
+          cssClass={[`${styles.button}`, ` ${styles.next}`].join("")}
           to={`/ds/${next}`}
         >
           <span>{i18n.t("component.navigation.next")}</span>

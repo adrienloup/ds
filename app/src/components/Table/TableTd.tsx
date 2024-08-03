@@ -1,13 +1,14 @@
+import { AlignmentType } from "../../models/Alignment";
 import { SlotType } from "../../models/Slot";
-import style from "./Table.module.scss";
+import styles from "./Table.module.scss";
 
 interface TableTdType extends SlotType {
-  align?: "left" | "center" | "right" | "justify" | "char";
+  align?: AlignmentType;
 }
 
-export const TableTd = ({ children, align }: TableTdType) => {
+export const TableTd = ({ children, align = "left" }: TableTdType) => {
   return (
-    <td align={align} className={style.td}>
+    <td align={align} className={styles.td}>
       {children}
     </td>
   );

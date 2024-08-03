@@ -2,10 +2,10 @@ import { CSSProperties, ReactNode, useState } from "react";
 import { useAlert } from "../../hooks/useAlert";
 import { Button } from "../../components/Button/Button";
 import { Icon } from "../../components/Icon/Icon";
-import style from "./Story.module.scss";
+import styles from "./Story.module.scss";
 import { Tooltip } from "../Tooltip/Tooltip";
 
-type StoryType = {
+interface StoryProps {
   demo?: ReactNode;
   code?: ReactNode;
   codepen?: string;
@@ -13,7 +13,7 @@ type StoryType = {
   story?: string;
   copy?: string;
   css?: CSSProperties;
-};
+}
 
 export const Story = ({
   demo,
@@ -22,7 +22,7 @@ export const Story = ({
   github,
   copy,
   css,
-}: StoryType) => {
+}: StoryProps) => {
   // console.log("Story");
   const [expanded, setExpanded] = useState(true);
   const { addAlert } = useAlert();
@@ -42,14 +42,14 @@ export const Story = ({
 
   return (
     <div
-      className={[style.story, expanded ? ` ${style.expanded}` : ""].join("")}
+      className={[styles.story, expanded ? ` ${styles.expanded}` : ""].join("")}
     >
       {demo && (
         <>
-          <div className={style.demo} style={css}>
+          <div className={styles.demo} style={css}>
             {demo}
           </div>
-          <div className={style.toolsbar}>
+          <div className={styles.toolsbar}>
             <Tooltip
               text="Source code"
               position="top"
@@ -58,7 +58,7 @@ export const Story = ({
               <Button
                 tabIndex={-1}
                 aria-label={"Source code"}
-                cssClass={`${style.button} ${style.contained} ${style.small}`}
+                cssClass={`${styles.button} ${styles.contained} ${styles.small}`}
                 onClick={() => setExpanded(!expanded)}
               >
                 <Icon name={expanded ? "code" : "code_off"} />
@@ -71,7 +71,7 @@ export const Story = ({
             >
               <Button
                 tabIndex={-1}
-                cssClass={`${style.button} ${style.contained} ${style.small}`}
+                cssClass={`${styles.button} ${styles.contained} ${styles.small}`}
                 aria-label={"Copy the source"}
                 onClick={() => copyCode()}
               >
@@ -94,7 +94,7 @@ export const Story = ({
             >
               <Button
                 tabIndex={-1}
-                cssClass={`${style.button} ${style.contained} ${style.small}`}
+                cssClass={`${styles.button} ${styles.contained} ${styles.small}`}
                 href={`https://codepen.io/adrienloup/pen/${codepen}`}
                 aria-label={"Edit in Codepen"}
               >
@@ -124,7 +124,7 @@ export const Story = ({
               }
             >
               <Button
-                cssClass={`${style.button} ${style.contained} ${style.small}`}
+                cssClass={`${styles.button} ${styles.contained} ${styles.small}`}
                 href={`https://github.com/adrienloup/ds/tree/master/library/src/components/${github}`}
                 aria-label={"GitHub repository"}
               >
@@ -139,7 +139,7 @@ export const Story = ({
           </div>
         </>
       )}
-      {code && <pre className={style.code}>{code}</pre>}
+      {code && <pre className={styles.code}>{code}</pre>}
     </div>
   );
 };

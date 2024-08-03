@@ -1,12 +1,13 @@
-import { KeyboardEvent, ReactNode } from "react";
+import { ForwardedRef, KeyboardEvent, ReactNode } from "react";
 import { PositionType } from "../../models/Position";
-import style from "./Tooltip.module.scss";
+import styles from "./Tooltip.module.scss";
 
 interface TooltipProps {
   children: ReactNode;
   title?: string;
   text?: string;
   position?: PositionType;
+  innerRef?: ForwardedRef<HTMLDivElement>;
   onKeyDown?: () => void;
 }
 
@@ -15,6 +16,7 @@ export const Tooltip = ({
   text,
   position = "top",
   children,
+  innerRef,
   onKeyDown = () => {},
 }: TooltipProps) => {
   const handleOnKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -24,14 +26,15 @@ export const Tooltip = ({
   return (
     <div
       role="tooltip"
+      ref={innerRef}
       tabIndex={0}
-      className={style.tooltip}
+      className={styles.tooltip}
       onKeyDown={(e) => handleOnKeyDown(e)}
     >
       {children}
-      <div className={[style.box, ` ${style[position]}`].join("")}>
-        {title && <div className={style.title}>{title}</div>}
-        {text && <div className={style.text}>{text}</div>}
+      <div className={[styles.box, ` ${styles[position]}`].join("")}>
+        {title && <div className={styles.title}>{title}</div>}
+        {text && <div className={styles.text}>{text}</div>}
       </div>
     </div>
   );

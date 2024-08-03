@@ -1,16 +1,23 @@
-import { ReactNode, useEffect, useState } from "react";
+import {
+  ReactNode,
+  RefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Button } from "../Button/Button";
-import { Icon } from "../Icon/Icon";
-import style from "./Modal.module.scss";
+import styles from "./Modal.module.scss";
 
-type ModalType = {
+interface ModalProps {
   head?: ReactNode;
   body?: ReactNode;
   foot?: ReactNode;
   open: boolean;
   cssClass?: string;
+  targetRef?: RefObject<HTMLElement>;
   onClick: () => void;
-};
+}
 
 export const Modal = ({
   head,
@@ -18,11 +25,76 @@ export const Modal = ({
   foot,
   open,
   cssClass,
+  targetRef,
   onClick,
-}: ModalType) => {
+}: ModalProps) => {
   // console.log("Modal");
   const [height, setHeight] = useState(0);
   const [top, setTop] = useState(0);
+  const content = useRef<HTMLDivElement>(null);
+  const button = useRef<HTMLButtonElement>(null);
+  const focusableElements = useRef<HTMLElement[]>([]);
+
+  const handleClick = () => {
+    onClick();
+    targetRef?.current?.focus();
+  };
+
+  const handleKenDownContent = useCallback(
+    (e: {
+      keyCode: number;
+      shiftKey: boolean;
+      target: {};
+      preventDefault: () => void;
+    }) => {
+      if (!content.current) return;
+
+      const list = focusableElements.current;
+
+      if (e.keyCode === 9) {
+        if (e.shiftKey) {
+          if (e.target === list[0]) {
+            e.preventDefault();
+            list[list.length - 1].focus();
+          }
+        } else {
+          if (e.target === list[list.length - 1]) {
+            e.preventDefault();
+            list[0].focus();
+          }
+        }
+      }
+
+      if (e.keyCode === 27) {
+        onClick();
+        targetRef?.current?.focus();
+      }
+    },
+    []
+  );
+
+  const handleKeyDownButton = useCallback(
+    (e: { keyCode: number; preventDefault: () => void }) => {
+      if (!button.current) return;
+      if (e.keyCode === 13 || e.keyCode === 32) {
+        e.preventDefault();
+        onClick();
+        targetRef?.current?.focus();
+      }
+    },
+    []
+  );
+
+  useEffect(() => {
+    if (open && content.current) {
+      focusableElements.current = Array.from(
+        content.current.querySelectorAll("button, a")
+      );
+      if (focusableElements.current.length > 0) {
+        setTimeout(() => focusableElements.current[0].focus());
+      }
+    }
+  }, [open]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,31 +109,39 @@ export const Modal = ({
   return (
     <div
       className={[
-        style.modal,
+        styles.modal,
         cssClass ? ` ${cssClass}` : "",
-        open ? ` ${style.open}` : "",
+        open ? ` ${styles.open}` : "",
       ].join("")}
       style={{
         height: `${height}px`,
       }}
     >
       <div
-        className={style.content}
+        ref={content}
+        className={styles.content}
+        onKeyDown={handleKenDownContent}
         style={{
           top: `${top}px`,
         }}
       >
-        <Button data-cy="modal-close" cssClass={style.close} onClick={onClick}>
-          <Icon name="close" />
+        <Button
+          innerRef={button}
+          data-cy="modal-close"
+          cssClass={styles.close}
+          onClick={() => handleClick()}
+          onKeyDown={handleKeyDownButton}
+        >
+          esc
         </Button>
-        {head && <div className={style.head}>{head}</div>}
-        {body && <div className={style.body}>{body}</div>}
-        {foot && <div className={style.foot}>{foot}</div>}
+        {head && <div className={styles.head}>{head}</div>}
+        {body && <div className={styles.body}>{body}</div>}
+        {foot && <div className={styles.foot}>{foot}</div>}
       </div>
       <div
         data-cy="modal-backdrop"
-        className={style.backdrop}
-        onClick={onClick}
+        className={styles.backdrop}
+        onClick={() => handleClick()}
       ></div>
     </div>
   );

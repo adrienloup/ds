@@ -6,11 +6,11 @@ import {
   ReactNode,
 } from "react";
 import { Link } from "react-router-dom";
-import style from "./Button.module.scss";
+import styles from "./Button.module.scss";
 
 type HTMLAttributes<A> = ButtonHTMLAttributes<A> & LinkHTMLAttributes<A>;
 
-interface Button<F>
+interface ButtonProps<F>
   extends HTMLAttributes<HTMLButtonElement & HTMLAnchorElement> {
   children: ReactNode;
   cssClass?: string;
@@ -31,14 +31,14 @@ export const Button = memo(
     to,
     tabIndex,
     ...rest
-  }: Button<HTMLButtonElement & HTMLAnchorElement>) => {
+  }: ButtonProps<HTMLButtonElement | HTMLAnchorElement>) => {
     // console.log("Button");
 
     const link = (
       <Link
-        ref={innerRef}
+        ref={innerRef as ForwardedRef<HTMLAnchorElement>}
         to={to as string}
-        className={[style.button, cssClass ? ` ${cssClass}` : ""].join("")}
+        className={[styles.button, cssClass ? ` ${cssClass}` : ""].join("")}
       >
         {children}
       </Link>
@@ -46,12 +46,12 @@ export const Button = memo(
 
     const a = (
       <a
-        ref={innerRef}
+        ref={innerRef as ForwardedRef<HTMLAnchorElement>}
         href={href}
         target="_blank"
         rel="noopener"
         tabIndex={tabIndex}
-        className={[style.button, cssClass ? ` ${cssClass}` : ""].join("")}
+        className={[styles.button, cssClass ? ` ${cssClass}` : ""].join("")}
         {...rest}
       >
         {children}
@@ -60,10 +60,10 @@ export const Button = memo(
 
     const button = (
       <button
-        ref={innerRef}
+        ref={innerRef as ForwardedRef<HTMLButtonElement>}
         type={type}
         tabIndex={tabIndex}
-        className={[style.button, cssClass ? ` ${cssClass}` : ""].join("")}
+        className={[styles.button, cssClass ? ` ${cssClass}` : ""].join("")}
         {...rest}
       >
         {children}

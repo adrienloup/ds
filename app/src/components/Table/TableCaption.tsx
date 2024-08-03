@@ -1,6 +1,6 @@
 import { SlotType } from "../../models/Slot";
-import style from "./Table.module.scss";
+import styles from "./Table.module.scss";
 
 export const TableCaption = ({ children }: SlotType) => {
-  return <caption className={style.caption}>{children}</caption>;
+  return <caption className={styles.caption}>{children}</caption>;
 };

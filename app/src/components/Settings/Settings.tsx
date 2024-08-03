@@ -9,7 +9,7 @@ import { Color } from "../Color/Color";
 import { Button } from "../Button/Button";
 import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
-import style from "./Settings.module.scss";
+import styles from "./Settings.module.scss";
 
 export const Settings = () => {
   const [colorModal, setColorModal] = useState(false);
@@ -75,50 +75,50 @@ export const Settings = () => {
     <aside
       role="complementary"
       ref={asideRef}
-      className={[style.settings, settings.open ? ` ${style.open}` : ""].join(
+      className={[styles.settings, settings.open ? ` ${styles.open}` : ""].join(
         ""
       )}
     >
-      <div ref={innerRef} data-cy="settings" className={style.inner}>
+      <div ref={innerRef} data-cy="settings" className={styles.inner}>
         <Button
-          cssClass={[style.button, ` ${style.close}`].join("")}
+          cssClass={[styles.button, ` ${styles.close}`].join("")}
           onClick={() => handleOpenChange()}
         >
           <Icon name="close" />
         </Button>
-        <div className={style.content}>
-          <div className={style.column}>
-            <div className={style.row}>
-              <div className={style.accessibility}>
-                <div className={style.title}>Accessibility</div>
+        <div className={styles.content}>
+          <div className={styles.column}>
+            <div className={styles.row}>
+              <div className={styles.accessibility}>
+                <div className={styles.title}>Accessibility</div>
                 <Button
                   cssClass={[
-                    style.button,
-                    fontSize === 16 ? ` ${style.active}` : "",
+                    styles.button,
+                    fontSize === 16 ? ` ${styles.active}` : "",
                   ].join("")}
                   onClick={() => (decreaseFontSize(), setFonSizeAlert(true))}
                   aria-label="Decrease text size"
                 >
-                  <Icon cssClass={style.icon} name="remove_circle" /> A
+                  <Icon cssClass={styles.icon} name="remove_circle" /> A
                 </Button>
                 <Button
                   cssClass={[
-                    style.button,
-                    fontSize === 20 ? ` ${style.active}` : "",
+                    styles.button,
+                    fontSize === 20 ? ` ${styles.active}` : "",
                   ].join("")}
                   onClick={() => (increaseFontSize(), setFonSizeAlert(true))}
                   aria-label="Increase text size"
                 >
-                  <Icon cssClass={style.icon} name="add_circle" /> A
+                  <Icon cssClass={styles.icon} name="add_circle" /> A
                 </Button>
               </div>
-              <div className={style.lang}>
-                <div className={style.title}>Language</div>
+              <div className={styles.lang}>
+                <div className={styles.title}>Language</div>
                 <Button
                   data-cy="settings-en-lang"
                   cssClass={[
-                    `${style.button}`,
-                    settings.lang === "en" ? ` ${style.active}` : "",
+                    `${styles.button}`,
+                    settings.lang === "en" ? ` ${styles.active}` : "",
                   ].join("")}
                   onClick={() => handleLangChange("en")}
                 >
@@ -192,8 +192,8 @@ export const Settings = () => {
                 <Button
                   data-cy="settings-en-lang"
                   cssClass={[
-                    `${style.button}`,
-                    settings.lang === "fr" ? ` ${style.active}` : "",
+                    `${styles.button}`,
+                    settings.lang === "fr" ? ` ${styles.active}` : "",
                   ].join("")}
                   onClick={() => handleLangChange("fr")}
                 >
@@ -222,58 +222,58 @@ export const Settings = () => {
                 </Button>
               </div>
             </div>
-            <div className={style.color}>
-              <div className={style.title}>Color</div>
+            <div className={styles.color}>
+              <div className={styles.title}>Color</div>
               <Button
-                cssClass={style.button}
+                cssClass={styles.button}
                 onClick={() => setColorModal(!colorModal)}
               >
-                <Icon cssClass={style.icon} name="format_paint" />
+                <Icon cssClass={styles.icon} name="format_paint" />
                 Edit documentation
               </Button>
             </div>
           </div>
-          <div className={style.column}>
-            <div className={style.mode}>
-              <div className={style.title}>Mode</div>
+          <div className={styles.column}>
+            <div className={styles.mode}>
+              <div className={styles.title}>Mode</div>
               <Button
                 data-cy="settings-light-mode"
                 cssClass={[
-                  `${style.button}`,
-                  settings.mode === "light" ? ` ${style.active}` : "",
+                  `${styles.button}`,
+                  settings.mode === "light" ? ` ${styles.active}` : "",
                 ].join("")}
                 onClick={() => handleModeChange("light")}
               >
-                <Icon name="light_mode" cssClass={style.icon} />
+                <Icon name="light_mode" cssClass={styles.icon} />
                 Light
               </Button>
               <Button
                 data-cy="settings-system-mode"
                 cssClass={[
-                  `${style.button}`,
-                  settings.mode === "system" ? ` ${style.active}` : "",
+                  `${styles.button}`,
+                  settings.mode === "system" ? ` ${styles.active}` : "",
                 ].join("")}
                 onClick={() => handleModeChange("system")}
               >
-                <Icon name="contrast" cssClass={style.icon} />
+                <Icon name="contrast" cssClass={styles.icon} />
                 System
               </Button>
               <Button
                 data-cy="settings-dark-mode"
                 cssClass={[
-                  `${style.button}`,
-                  settings.mode === "dark" ? ` ${style.active}` : "",
+                  `${styles.button}`,
+                  settings.mode === "dark" ? ` ${styles.active}` : "",
                 ].join("")}
                 onClick={() => handleModeChange("dark")}
               >
-                <Icon name="dark_mode" cssClass={style.icon} />
+                <Icon name="dark_mode" cssClass={styles.icon} />
                 Dark
               </Button>
             </div>
-            <div className={style.direction}>
-              <div className={style.title}>Direction</div>
+            <div className={styles.direction}>
+              <div className={styles.title}>Direction</div>
               <Button
-                cssClass={style.button}
+                cssClass={styles.button}
                 onClick={() => {
                   addAlert({
                     text: "Error with the direction adjustment",
@@ -283,13 +283,13 @@ export const Settings = () => {
                 }}
               >
                 <Icon
-                  cssClass={style.icon}
+                  cssClass={styles.icon}
                   name="format_textdirection_l_to_r"
                 />
                 Right to Left
               </Button>
               <Button
-                cssClass={style.button}
+                cssClass={styles.button}
                 onClick={() => {
                   addAlert({
                     text: "Error with the direction adjustment",
@@ -299,7 +299,7 @@ export const Settings = () => {
                 }}
               >
                 <Icon
-                  cssClass={style.icon}
+                  cssClass={styles.icon}
                   name="format_textdirection_r_to_l"
                 />
                 Left to Right

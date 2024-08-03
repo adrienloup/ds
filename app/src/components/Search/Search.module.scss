@@ -2,20 +2,22 @@ $desktop: 1281px;
 $tablet-landscape: 1025px;
 $tablet-portrait: 769px;
 
-.thankyou {
+.search {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   pointer-events: none;
 }
 
-.inner {
+.button {
+  position: relative;
   flex: 1;
-  padding: 2.5rem;
+  padding: 2rem 2.5rem;
   background-color: var(--color-2);
   border: 0.2rem solid var(--color-3);
   line-height: 1.1;
   letter-spacing: 0.1rem;
+  text-align: left;
   text-transform: uppercase;
   font-family: var(--font-text-bold);
   font-size: 3.5rem;
@@ -24,12 +26,12 @@ $tablet-portrait: 769px;
   cursor: pointer;
 
   @media (max-width: $desktop) {
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     font-size: 3rem;
   }
 
   @media (max-width: $tablet-landscape) {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
 
   @media (max-width: $tablet-portrait) {
@@ -38,22 +40,26 @@ $tablet-portrait: 769px;
 
   &:focus-visible {
     outline: 0.2rem solid var(--color-orange);
+    outline-offset: 0.125rem;
   }
 
   .active & {
     flex: none;
     padding: 0.15rem 0.25rem;
-    background-color: var(--color-1);
-    border-color: var(--color-1);
-    font-size: 1.15rem;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    letter-spacing: 0;
+    font-size: 1rem;
     color: var(--color-2);
-  }
 
-  div {
-    display: none;
+    &:hover {
+      background-color: var(--color-1);
+      border-color: var(--color-1);
+      color: var(--color-2);
+    }
 
-    .active & {
-      display: block;
+    &:focus-visible {
+      outline-offset: -0.2rem;
     }
   }
 
@@ -64,13 +70,12 @@ $tablet-portrait: 769px;
       -webkit-text-stroke: 0.08rem var(--color-1);
       color: transparent;
     }
-
-    .active & {
-      display: none;
-    }
   }
 }
 
 .icon {
-  font-size: 1rem;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.25rem;
+  font-size: 2rem;
 }

@@ -1,14 +1,15 @@
+import { AlignmentType } from "../../models/Alignment";
 import { SlotType } from "../../models/Slot";
-import style from "./Table.module.scss";
+import styles from "./Table.module.scss";
 
 interface TableThType extends SlotType {
   scope?: string;
-  align?: "left" | "center" | "right" | "justify" | "char";
+  align?: AlignmentType;
 }
 
-export const TableTh = ({ children, scope, align }: TableThType) => {
+export const TableTh = ({ children, scope, align = "left" }: TableThType) => {
   return (
-    <td scope={scope} align={align} className={style.th}>
+    <td scope={scope} align={align} className={styles.th}>
       {children}
     </td>
   );

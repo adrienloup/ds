@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import { TextField } from "../Forms/TextField/TextField";
 import { Button } from "../Button/Button";
-import style from "./Login.module.scss";
+import styles from "./Login.module.scss";
 
 export const LoginForm = ({ onClick }: { onClick: () => void }) => {
   // console.log('LoginForm');
@@ -50,12 +50,12 @@ export const LoginForm = ({ onClick }: { onClick: () => void }) => {
   };
 
   return (
-    <form id="" action="" name="" className={style.form}>
+    <form id="" action="" name="" className={styles.form}>
       <div>
         <TextField
           placeholder="Name"
           onChange={(e) => handleUpdate("name", e.target.value)}
-          cssClass={style.textfield}
+          cssClass={styles.textfield}
           errorMessage={errorName}
         />
       </div>
@@ -63,12 +63,12 @@ export const LoginForm = ({ onClick }: { onClick: () => void }) => {
         <TextField
           placeholder="Password"
           onChange={(e) => handleUpdate("password", e.target.value)}
-          cssClass={style.textfield}
+          cssClass={styles.textfield}
           errorMessage={errorPassword}
         />
       </div>
       <div>
-        <Button onClick={() => handleSubmit()} cssClass={style.button}>
+        <Button onClick={() => handleSubmit()} cssClass={styles.button}>
           Connection
         </Button>
       </div>

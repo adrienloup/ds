@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { LoginForm } from "./LoginForm";
-import style from "./Login.module.scss";
+import styles from "./Login.module.scss";
 
-type LoginType = {
+interface LoginProps {
   open: boolean;
   handleClick: () => void;
-};
+}
 
-export const Login = ({ open, handleClick }: LoginType) => {
+export const Login = ({ open, handleClick }: LoginProps) => {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -20,18 +20,18 @@ export const Login = ({ open, handleClick }: LoginType) => {
   return (
     <div
       role="presentation"
-      className={[style.login, open ? ` ${style.open}` : ""].join("")}
+      className={[styles.login, open ? ` ${styles.open}` : ""].join("")}
       style={{
         height: `${height}px`,
       }}
     >
-      <div className={style.inner}>
-        <div className={style.content}>
+      <div className={styles.inner}>
+        <div className={styles.content}>
           <LoginForm onClick={handleClick} />
         </div>
-        <div className={style.layer}></div>
+        <div className={styles.layer}></div>
       </div>
-      <div className={style.backdrop} onClick={handleClick}></div>
+      <div className={styles.backdrop} onClick={handleClick}></div>
     </div>
   );
 };

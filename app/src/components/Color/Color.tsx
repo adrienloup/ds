@@ -2,13 +2,12 @@ import { ColorType } from "../../models/Color";
 import { useSettings } from "../../hooks/useSettings";
 import { useAlert } from "../../hooks/useAlert";
 import { Icon } from "../Icon/Icon";
-import style from "./Color.module.scss";
+import styles from "./Color.module.scss";
 
 const colors: ColorType[] = ["yellow", "purple", "magenta", "cyan"];
 
 export const Color = () => {
-  console.log("Color");
-
+  // console.log("Color");
   const { settings, setSettings } = useSettings();
   const { addAlert } = useAlert();
 
@@ -22,24 +21,24 @@ export const Color = () => {
   };
 
   return (
-    <div className={style.color}>
-      <p className={style.text}>
+    <div className={styles.color}>
+      <p className={styles.text}>
         Change the Primary color of the documentation
       </p>
-      <div className={style.list}>
+      <div className={styles.list}>
         {colors.map((color, index) => (
           <button
             key={index}
             className={[
-              style.item,
-              ` ${style[color]}`,
-              settings.color === color ? ` ${style.active}` : "",
+              styles.item,
+              ` ${styles[color]}`,
+              settings.color === color ? ` ${styles.active}` : "",
             ].join("")}
             onClick={() => handleColorChange(color)}
           >
-            <span className={style.label}>{color}</span>
+            <span className={styles.label}>{color}</span>
             {settings.color === color ? (
-              <Icon name="verified" cssClass={style.icon} />
+              <Icon name="verified" cssClass={styles.icon} />
             ) : (
               ""
             )}

@@ -2,10 +2,10 @@ import { useId, useState } from "react";
 import { StatusType } from "../../../models/Status";
 import { FormField } from "../FormField/FormField";
 import { Icon } from "../../Icon/Icon";
-import style from "./TextField.module.scss";
+import styles from "./TextField.module.scss";
 
-type TextFieldType = {
-  cssClass?: string;
+interface TextFieldProps {
+  cssClass?: string[];
   id?: string;
   label?: string;
   placeholder?: string;
@@ -16,7 +16,7 @@ type TextFieldType = {
   suffix?: string;
   status?: StatusType;
   onChange: (e: { target: { value: string } }) => void;
-};
+}
 
 export const TextField = ({
   cssClass,
@@ -30,7 +30,7 @@ export const TextField = ({
   suffix,
   status,
   onChange,
-}: TextFieldType) => {
+}: TextFieldProps) => {
   const uId = useId();
   const [focus, setFocus] = useState(false);
 
@@ -39,27 +39,32 @@ export const TextField = ({
       label={label}
       helperText={helperText}
       errorMessage={errorMessage}
+      cssClass={cssClass && cssClass![0]?.length > 0 ? ` ${cssClass![0]}` : ""}
     >
       <div
         className={[
-          style.textfield,
-          cssClass ? ` ${cssClass}` : "",
-          focus ? ` ${style.focus}` : "",
-          status ? ` ${style[status]}` : errorMessage ? ` ${style.error}` : "",
+          styles.textfield,
+          cssClass && cssClass![1]?.length > 0 ? ` ${cssClass![1]}` : "",
+          focus ? ` ${styles.focus}` : "",
+          status
+            ? ` ${styles[status]}`
+            : errorMessage
+              ? ` ${styles.error}`
+              : "",
         ].join("")}
       >
-        {prefix && <Icon name={prefix} cssClass={style.icon} />}
+        {prefix && <Icon name={prefix} cssClass={styles.icon} />}
         <input
           type="text"
           id={id ? id : uId}
-          className={style.input}
+          className={styles.input}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
         />
-        {suffix && <Icon name={suffix} cssClass={style.icon} />}
+        {suffix && <Icon name={suffix} cssClass={styles.icon} />}
       </div>
     </FormField>
   );

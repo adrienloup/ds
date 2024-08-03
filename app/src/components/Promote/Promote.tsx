@@ -1,20 +1,20 @@
 import { ReactNode } from "react";
-import style from "./Promote.module.scss";
+import styles from "./Promote.module.scss";
 
-type PromoteType = {
+interface PromoteProps {
   head?: ReactNode;
   body?: ReactNode;
   foot?: ReactNode;
-};
+}
 
-export const Promote = ({ head, body, foot }: PromoteType) => {
+export const Promote = ({ head, body, foot }: PromoteProps) => {
   // console.log("promote");
 
   return (
-    <div className={style.promote}>
-      {head && <div className={style.head}>{head}</div>}
-      {body && <div className={style.body}>{body}</div>}
-      {foot && <div className={style.foot}>{foot}</div>}
+    <div className={styles.promote}>
+      {head && <div className={styles.head}>{head}</div>}
+      {body && <div className={styles.body}>{body}</div>}
+      {foot && <div className={styles.foot}>{foot}</div>}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { useTaskDispatch } from "../../hooks/useTask";
 import { TextField } from "../Forms/TextField/TextField";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
-import style from "./Task.module.scss";
+import styles from "./Task.module.scss";
 
 export const TaskForm = () => {
   // console.log("TaskForm");
@@ -11,16 +11,16 @@ export const TaskForm = () => {
   const [text, setText] = useState("");
 
   return (
-    <div className={style.form}>
+    <div className={styles.form}>
       <TextField
         placeholder="Add task"
         value={text}
-        cssClass={style.textfield}
+        cssClass={styles.textfield}
         onChange={(e) => setText(e.target.value)}
       />
       {text.length > 0 && (
         <Button
-          cssClass={style.button}
+          cssClass={styles.button}
           onClick={() => {
             setText("");
             dispatch!({
@@ -30,7 +30,7 @@ export const TaskForm = () => {
             });
           }}
         >
-          <Icon cssClass={style.icon} name="queue" />
+          <Icon cssClass={styles.icon} name="queue" />
         </Button>
       )}
     </div>

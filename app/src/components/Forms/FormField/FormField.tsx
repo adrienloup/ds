@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
-import style from "./FormField.module.scss";
+import styles from "./FormField.module.scss";
 
-type FormFieldType = {
+interface FormFieldProps {
   children: ReactNode;
   label?: string;
   helperText?: string;
   errorMessage?: string;
   cssClass?: string;
-};
+}
 
 export const FormField = ({
   children,
@@ -15,15 +15,17 @@ export const FormField = ({
   helperText,
   errorMessage,
   cssClass,
-}: FormFieldType) => {
+}: FormFieldProps) => {
   return (
-    <div className={[style.formfield, cssClass ? ` ${cssClass}` : ""].join("")}>
-      {label && <div className={style.label}>{label}</div>}
+    <div
+      className={[styles.formfield, cssClass ? ` ${cssClass}` : ""].join("")}
+    >
+      {label && <div className={styles.label}>{label}</div>}
       {children}
       {errorMessage ? (
-        <div className={style.errormessage}>{errorMessage}</div>
+        <div className={styles.errormessage}>{errorMessage}</div>
       ) : helperText ? (
-        <div className={style.helpertext}>{helperText}</div>
+        <div className={styles.helpertext}>{helperText}</div>
       ) : null}
     </div>
   );

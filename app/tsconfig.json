@@ -21,6 +21,6 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true
   },
-  "include": ["src", "cypress"],
+  "include": ["src", "cypress", "src/components/PageList/.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -4,7 +4,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useData } from "../../hooks/useData";
 import { Accordion } from "../Accordion/Accordion";
 import i18n from "../../i18n";
-import style from "./Menu.module.scss";
+import styles from "./Menu.module.scss";
 
 export const Menu = ({ open }: { open: boolean }) => {
   const { pagesData } = useData();
@@ -48,7 +48,7 @@ export const Menu = ({ open }: { open: boolean }) => {
   return (
     <div
       data-cy="menu"
-      className={[style.menu, open ? ` ${style.open}` : ""].join("")}
+      className={[styles.menu, open ? ` ${styles.open}` : ""].join("")}
     >
       {categoryList().map((category, index) => (
         <Accordion
@@ -58,25 +58,25 @@ export const Menu = ({ open }: { open: boolean }) => {
             <>
               {category!.name}
               {newsPerCategory(category!.value!).length > 0 && (
-                <span className={style.new}>
+                <span className={styles.new}>
                   {i18n.t("generic.mention.new")}
                 </span>
               )}
             </>
           }
           panel={
-            <ul className={style.list}>
+            <ul className={styles.list}>
               {pageList(category!.value!).map((page, index) => (
                 <li key={index}>
-                  <Link to={page.path!} className={style.link}>
+                  <Link to={page.path!} className={styles.link}>
                     {page.name}{" "}
                     {page.news && (
-                      <span className={style.new}>
+                      <span className={styles.new}>
                         {i18n.t("generic.mention.new")}
                       </span>
                     )}
                     {page.soon && (
-                      <span className={style.soon}>
+                      <span className={styles.soon}>
                         {i18n.t("generic.mention.soon")}
                       </span>
                     )}

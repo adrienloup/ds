@@ -17,7 +17,7 @@ import { TableTr } from "../components/Table/TableTr";
 import { TableTh } from "../components/Table/TableTh";
 import { TableTd } from "../components/Table/TableTd";
 import { Sticky } from "../components/Sticky/Sticky";
-import { ThankYou } from "../components/ThankYou/ThankYou";
+import { Search } from "../components/Search/Search";
 
 function HomePage() {
   // console.log("HomePage");
@@ -42,7 +42,7 @@ function HomePage() {
           }
         />
         <Sticky>
-          <ThankYouMemo />
+          <SearchMemo />
         </Sticky>
         <h2>
           <Trans i18nKey="page.home.subtitle1">
@@ -84,7 +84,7 @@ function HomePage() {
             </TableTr>
             <TableTr>
               <TableTd>Q2 2024</TableTd>
-              <TableTd>v0</TableTd>
+              <TableTd>v0.0.1</TableTd>
               <TableTd>Released</TableTd>
             </TableTr>
           </TableBody>
@@ -98,6 +98,6 @@ function HomePage() {
 
 const HeaderMemo = memo(Header);
 const CardGettingStartedMemo = memo(CardGettingStarted);
-const ThankYouMemo = memo(ThankYou);
+const SearchMemo = memo(Search);
 
 export default HomePage;

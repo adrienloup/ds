@@ -7,7 +7,7 @@ import {
   HTMLAttributes,
 } from "react";
 import { Icon } from "../Icon/Icon";
-import style from "./Accordion.module.scss";
+import styles from "./Accordion.module.scss";
 
 interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   trigger: ReactNode;
@@ -49,7 +49,7 @@ export const Accordion = ({
 
   return (
     <div
-      className={[style.accordion, expanded ? ` ${style.expanded}` : ""].join(
+      className={[styles.accordion, expanded ? ` ${styles.expanded}` : ""].join(
         ""
       )}
       {...rest}
@@ -58,12 +58,12 @@ export const Accordion = ({
         id={triggerId}
         type="button"
         aria-controls={panelId}
-        className={style.trigger}
+        className={styles.trigger}
         onClick={() => (onClick(), setAnimated(true))}
       >
         {trigger}
         <Icon
-          cssClass={style.icon}
+          cssClass={styles.icon}
           name={expanded ? "arrow_drop_up" : "arrow_drop_down"}
         />
       </button>
@@ -73,8 +73,8 @@ export const Accordion = ({
         role="region"
         aria-labelledby={triggerId}
         className={[
-          style.panel,
-          expanded || animated ? ` ${style.animated}` : "",
+          styles.panel,
+          expanded || animated ? ` ${styles.animated}` : "",
         ].join("")}
       >
         {panel}

@@ -5,7 +5,7 @@ import { TextField } from "../Forms/TextField/TextField";
 import { Checkbox } from "../Forms/Checkbox/Checkbox";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
-import style from "./Task.module.scss";
+import styles from "./Task.module.scss";
 
 export const TaskItem = ({
   task,
@@ -28,7 +28,7 @@ export const TaskItem = ({
       <>
         <TextField
           value={task.text}
-          cssClass={style.textfield}
+          cssClass={styles.textfield}
           onChange={(e: { target: { value: string } }) => {
             dispatch!({
               type: "changed",
@@ -39,20 +39,20 @@ export const TaskItem = ({
             });
           }}
         />
-        <Button cssClass={style.button} onClick={() => setIsEditing(false)}>
-          <Icon cssClass={style.icon} name="save" />
+        <Button cssClass={styles.button} onClick={() => setIsEditing(false)}>
+          <Icon cssClass={styles.icon} name="save" />
         </Button>
       </>
     );
   } else {
     taskContent = (
       <>
-        <label htmlFor={uId} className={style.label}>
+        <label htmlFor={uId} className={styles.label}>
           {task.text}
         </label>
         {user.name && (
-          <Button cssClass={style.button} onClick={() => setIsEditing(true)}>
-            <Icon cssClass={style.icon} name="edit" />
+          <Button cssClass={styles.button} onClick={() => setIsEditing(true)}>
+            <Icon cssClass={styles.icon} name="edit" />
           </Button>
         )}
       </>
@@ -60,9 +60,9 @@ export const TaskItem = ({
   }
 
   return (
-    <div className={style.task}>
+    <div className={styles.task}>
       <Checkbox
-        cssClass={style.checkbox}
+        cssClass={styles.checkbox}
         id={uId}
         checked={task.done}
         onChange={(e: { target: { checked: boolean } }) => {
@@ -77,7 +77,7 @@ export const TaskItem = ({
       />
       {taskContent}
       <Button
-        cssClass={style.button}
+        cssClass={styles.button}
         onClick={() => {
           dispatch!({
             type: "deleted",
@@ -85,7 +85,7 @@ export const TaskItem = ({
           });
         }}
       >
-        <Icon cssClass={style.icon} name="delete" />
+        <Icon cssClass={styles.icon} name="delete" />
       </Button>
     </div>
   );

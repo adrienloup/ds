@@ -1,15 +1,15 @@
-import style from "./Icon.module.scss";
+import styles from "./Icon.module.scss";
 
-type IconType = {
+interface IconProps {
   name: string;
   cssClass?: string;
-};
+}
 
-export const Icon = ({ name, cssClass }: IconType) => {
+export const Icon = ({ name, cssClass }: IconProps) => {
   return (
     <span
       aria-hidden={false}
-      className={[style.icon, cssClass ? ` ${cssClass}` : ""].join("")}
+      className={[styles.icon, cssClass ? ` ${cssClass}` : ""].join("")}
     >
       {name}
     </span>

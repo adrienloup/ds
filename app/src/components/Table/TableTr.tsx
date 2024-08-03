@@ -1,6 +1,6 @@
 import { SlotType } from "../../models/Slot";
-import style from "./Table.module.scss";
+import styles from "./Table.module.scss";
 
 export const TableTr = ({ children }: SlotType) => {
-  return <tr className={style.tr}>{children}</tr>;
+  return <tr className={styles.tr}>{children}</tr>;
 };

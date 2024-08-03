@@ -10,10 +10,10 @@ import {
 } from "react";
 import { getPosition } from "../../utils/getPosition";
 import { SlotType } from "../../models/Slot";
-import style from "./Sticky.module.scss";
+import styles from "./Sticky.module.scss";
 
 export const Sticky = ({ children }: SlotType) => {
-  console.log("Sticky");
+  // console.log("Sticky");
   const [active, setActive] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [height, setHeight] = useState(0);
@@ -59,13 +59,13 @@ export const Sticky = ({ children }: SlotType) => {
     <div
       ref={sticky}
       className={[
-        style.sticky,
-        active ? ` ${style.active}` : "",
-        hidden ? ` ${style.hidden}` : "",
+        styles.sticky,
+        active ? ` ${styles.active}` : "",
+        hidden ? ` ${styles.hidden}` : "",
       ].join("")}
       style={{ "--height": `${height}px` } as CSSProperties}
     >
-      <div ref={inner} className={style.inner}>
+      <div ref={inner} className={styles.inner}>
         {childrenWithProps}
       </div>
     </div>

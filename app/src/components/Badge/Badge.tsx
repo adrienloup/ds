@@ -1,26 +1,26 @@
 import { ReactNode } from "react";
-import style from "./Badge.module.scss";
+import styles from "./Badge.module.scss";
 
-type BadgeType = {
+interface BadgeProps {
   children: ReactNode;
   cssClass?: string;
   max?: number;
   value?: number;
-};
+}
 
 export const Badge = ({
   children,
   cssClass,
   max = 99,
   value = 0,
-}: BadgeType) => {
+}: BadgeProps) => {
   const valueMax = (value: number, max: number) =>
     value > max ? `${max}+` : `${value}`;
 
   return (
-    <div className={[style.badge, cssClass ? ` ${cssClass}` : ""].join("")}>
+    <div className={[styles.badge, cssClass ? ` ${cssClass}` : ""].join("")}>
       {value > 0 && (
-        <span className={style.content}>{valueMax(value, max)}</span>
+        <span className={styles.content}>{valueMax(value, max)}</span>
       )}
       {children}
     </div>

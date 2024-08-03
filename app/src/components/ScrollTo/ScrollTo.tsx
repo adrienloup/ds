@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Icon } from "../Icon/Icon";
-import style from "./ScrollTo.module.scss";
+import styles from "./ScrollTo.module.scss";
 
 export const ScrollTo = ({ top }: { top: number }) => {
   const [active, setActive] = useState(false);
@@ -16,7 +16,7 @@ export const ScrollTo = ({ top }: { top: number }) => {
 
   return (
     <button
-      className={[style.scrollto, active ? ` ${style.active}` : ""].join("")}
+      className={[styles.scrollto, active ? ` ${styles.active}` : ""].join("")}
       onClick={() => {
         window.scrollTo({
           top: top,

@@ -1,12 +1,27 @@
-.list {
-  max-width: 65rem;
+.pagelist {
   display: flex;
-  flex-flow: row wrap;
-  margin: -1rem;
+  flex-direction: column;
+}
+
+.category {
+  margin-bottom: 0.5rem;
+  padding: 1rem 0 0.5rem;
+  border-bottom: 0.2rem solid var(--color-3);
+  text-transform: capitalize;
+  font-size: 1.15rem;
+}
+
+.page {
+  padding: 0.25rem 0;
+  text-transform: capitalize;
+  font-size: 1.15rem;
+  color: var(--color-1);
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-orange);
+  }
 }
 
 .empty {
-  margin: 1rem;
-  padding: 0.75rem 1rem;
-  font-size: 1.75rem;
+  padding: 0.5rem;
 }
