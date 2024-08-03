@@ -20,7 +20,7 @@ export const SearchModal = () => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <PageList list={list} />
+      {value && value.length > 0 ? <PageList list={list} /> : null}
     </>
   );
 };
