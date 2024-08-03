@@ -1,9 +1,18 @@
 import { useEffect, useState } from "react";
+import { PositionType } from "../../models/Position";
 import { Icon } from "../Icon/Icon";
-import styles from "./ScrollTo.module.scss";
 import { Tooltip } from "../Tooltip/Tooltip";
+import styles from "./ScrollTo.module.scss";
 
-export const ScrollTo = ({ top }: { top: number }) => {
+export const ScrollTo = ({
+  top,
+  text,
+  position,
+}: {
+  top: number;
+  text: string;
+  position: PositionType;
+}) => {
   const [active, setActive] = useState(false);
 
   const handleClick = () => {
@@ -23,11 +32,7 @@ export const ScrollTo = ({ top }: { top: number }) => {
   }, []);
 
   return (
-    <Tooltip
-      text="Top of the page"
-      position="top-start"
-      onKeyDown={() => handleClick()}
-    >
+    <Tooltip text={text} position={position} onKeyDown={() => handleClick()}>
       <button
         tabIndex={-1}
         className={[styles.scrollto, active ? ` ${styles.active}` : ""].join(

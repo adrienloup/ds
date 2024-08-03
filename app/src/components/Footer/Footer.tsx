@@ -16,7 +16,7 @@ export const Footer = () => {
   return (
     <footer role="contentinfo" data-cy="footer" className={styles.footer}>
       <div className={styles.inner}>
-        <ScrollTo top={0} />
+        <ScrollTo top={0} text="Top of page" position="top-start" />
         <span className={styles.text}>{t("component.footer")}</span>
         {user.name ? (
           <Button cssClass={styles.button} to={"/ds/login/"}>
