@@ -1,11 +1,5 @@
-import {
-  ReactNode,
-  RefObject,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { RefType } from "../../models/Ref";
 import { Button } from "../Button/Button";
 import styles from "./Modal.module.scss";
 
@@ -15,7 +9,7 @@ interface ModalProps {
   foot?: ReactNode;
   open: boolean;
   cssClass?: string;
-  targetRef?: RefObject<HTMLElement>;
+  targetRef?: RefType<HTMLDivElement | HTMLButtonElement>;
   onClick: () => void;
 }
 
@@ -31,25 +25,23 @@ export const Modal = ({
   // console.log("Modal");
   const [height, setHeight] = useState(0);
   const [top, setTop] = useState(0);
-  const content = useRef<HTMLDivElement>(null);
-  const button = useRef<HTMLButtonElement>(null);
-  const focusableElements = useRef<HTMLElement[]>([]);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const focusableElementsRef = useRef<HTMLElement[]>([]);
 
   const handleClick = () => {
     onClick();
     targetRef?.current?.focus();
   };
 
-  const handleKenDownContent = useCallback(
+  const contentKeyDown = useCallback(
     (e: {
       keyCode: number;
       shiftKey: boolean;
       target: EventTarget;
       preventDefault: () => void;
     }) => {
-      if (!content.current) return;
-
-      const list = focusableElements.current;
+      const list = focusableElementsRef.current;
 
       if (e.keyCode === 9) {
         if (e.shiftKey) {
@@ -73,9 +65,9 @@ export const Modal = ({
     []
   );
 
-  const handleKeyDownButton = useCallback(
+  const buttonKeyDown = useCallback(
     (e: { keyCode: number; preventDefault: () => void }) => {
-      if (!button.current) return;
+      if (!buttonRef.current) return;
       if (e.keyCode === 13 || e.keyCode === 32) {
         e.preventDefault();
         onClick();
@@ -86,12 +78,12 @@ export const Modal = ({
   );
 
   useEffect(() => {
-    if (open && content.current) {
-      focusableElements.current = Array.from(
-        content.current.querySelectorAll("button, a")
+    if (open && contentRef.current) {
+      focusableElementsRef.current = Array.from(
+        contentRef.current.querySelectorAll("button, a, input")
       );
-      if (focusableElements.current.length > 0) {
-        setTimeout(() => focusableElements.current[0].focus());
+      if (focusableElementsRef.current.length > 0) {
+        setTimeout(() => focusableElementsRef.current[0].focus());
       }
     }
   }, [open]);
@@ -118,19 +110,19 @@ export const Modal = ({
       }}
     >
       <div
-        ref={content}
+        ref={contentRef}
         className={styles.content}
-        onKeyDown={handleKenDownContent}
+        onKeyDown={contentKeyDown}
         style={{
           top: `${top}px`,
         }}
       >
         <Button
-          innerRef={button}
+          innerRef={buttonRef}
           data-cy="modal-close"
           cssClass={styles.close}
           onClick={() => handleClick()}
-          onKeyDown={handleKeyDownButton}
+          onKeyDown={buttonKeyDown}
         >
           esc
         </Button>

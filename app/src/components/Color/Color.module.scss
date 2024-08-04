@@ -39,7 +39,7 @@ $tablet-portrait: 769px;
   }
 
   &:focus-visible {
-    outline: 0.2rem solid var(--color-orange);
+    outline: 0.2rem solid var(--color-outline);
     z-index: 2;
   }
 }

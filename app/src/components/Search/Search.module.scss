@@ -12,7 +12,7 @@ $tablet-portrait: 769px;
 .button {
   position: relative;
   flex: 1;
-  padding: 2rem 2.5rem;
+  padding: 2rem 3.5rem 2rem 2.5rem;
   background-color: var(--color-2);
   border: 0.2rem solid var(--color-3);
   line-height: 1.1;
@@ -26,12 +26,12 @@ $tablet-portrait: 769px;
   cursor: pointer;
 
   @media (max-width: $desktop) {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 3.5rem 1.5rem 2rem;
     font-size: 3rem;
   }
 
   @media (max-width: $tablet-landscape) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 3.5rem 0.5rem 1rem;
   }
 
   @media (max-width: $tablet-portrait) {
@@ -43,7 +43,7 @@ $tablet-portrait: 769px;
   }
 
   &:focus-visible {
-    outline: 0.2rem solid var(--color-orange);
+    outline: 0.2rem solid var(--color-outline);
     outline-offset: 0.125rem;
   }
 
@@ -55,6 +55,7 @@ $tablet-portrait: 769px;
     letter-spacing: 0;
     font-size: 1rem;
     color: var(--color-neutral-2);
+    animation: Appear 0.35s var(--easy-in-out-quad);
 
     &:hover {
       background-color: var(--color-1);
@@ -81,5 +82,11 @@ $tablet-portrait: 769px;
   position: absolute;
   right: 0.5rem;
   bottom: 0.25rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
+}
+
+@keyframes Appear {
+  0% {
+    transform: translateY(-2rem);
+  }
 }

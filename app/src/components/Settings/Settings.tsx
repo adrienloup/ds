@@ -1,31 +1,41 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { ModeType } from "../../models/Mode";
+import { LangType } from "../../models/Lang";
+import { RefType } from "../../models/Ref";
 import { useSettings } from "../../hooks/useSettings";
 import { useAlert } from "../../hooks/useAlert";
 import { useFontSize, useFontSizeDispatch } from "../../hooks/useFontSize";
-import { ModeType } from "../../models/Mode";
-import { LangType } from "../../models/Lang";
 import { Color } from "../Color/Color";
 import { Button } from "../Button/Button";
 import { Modal } from "../Modal/Modal";
 import { Icon } from "../Icon/Icon";
 import styles from "./Settings.module.scss";
 
-export const Settings = () => {
-  const [colorModal, setColorModal] = useState(false);
-  const [fontSizeAlert, setFonSizeAlert] = useState(false);
+export const Settings = ({
+  targetRef,
+}: {
+  targetRef?: RefType<HTMLDivElement | HTMLButtonElement>;
+}) => {
+  // console.log("Settings");
   const { settings, setSettings } = useSettings();
   const { addAlert } = useAlert();
   const { decreaseFontSize, increaseFontSize } = useFontSizeDispatch();
   const { fontSize } = useFontSize();
-  const asideRef = useRef<HTMLDivElement | null>(null);
-  const innerRef = useRef<HTMLDivElement | null>(null);
+  const [colorModal, setColorModal] = useState(false);
+  const [fontSizeAlert, setFonSizeAlert] = useState(false);
+  const colorRef = useRef<HTMLButtonElement>(null);
+  const asideRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const focusableElements = useRef<HTMLElement[]>([]);
 
-  const handleOpenChange = () => {
+  const openChange = () => {
     setSettings({ ...settings, open: false });
+    targetRef?.current?.focus();
   };
 
-  const handleModeChange = (mode: ModeType) => {
+  const modeChange = (mode: ModeType) => {
     setSettings({ ...settings, mode });
     addAlert({
       text: `${mode}`,
@@ -34,7 +44,7 @@ export const Settings = () => {
     });
   };
 
-  const handleLangChange = (lang: LangType) => {
+  const langChange = (lang: LangType) => {
     setSettings({ ...settings, lang });
     addAlert({
       text: lang === "en" ? "English" : "Français",
@@ -42,6 +52,60 @@ export const Settings = () => {
       status: "success",
     });
   };
+
+  const innerKeyDown = useCallback(
+    (e: {
+      keyCode: number;
+      shiftKey: boolean;
+      target: EventTarget;
+      preventDefault: () => void;
+    }) => {
+      const list = focusableElements.current;
+
+      if (e.keyCode === 9) {
+        if (e.shiftKey) {
+          if (e.target === list[0]) {
+            e.preventDefault();
+            list[list.length - 1].focus();
+          }
+        } else {
+          if (e.target === list[list.length - 1]) {
+            e.preventDefault();
+            list[0].focus();
+          }
+        }
+      }
+
+      if (e.keyCode === 27) {
+        openChange();
+        targetRef?.current?.focus();
+      }
+    },
+    []
+  );
+
+  const buttonKeyDown = useCallback(
+    (e: { keyCode: number; preventDefault: () => void }) => {
+      if (!buttonRef.current) return;
+      if (e.keyCode === 13 || e.keyCode === 32) {
+        e.preventDefault();
+        openChange();
+        targetRef?.current?.focus();
+      }
+    },
+    []
+  );
+
+  useEffect(() => {
+    if (settings.open && innerRef.current) {
+      focusableElements.current = Array.from(
+        innerRef.current.querySelectorAll("button")
+      );
+      if (focusableElements.current.length > 0) {
+        setTimeout(() => focusableElements.current[0].focus());
+      }
+    }
+  }, [settings]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -55,8 +119,8 @@ export const Settings = () => {
         settings.open ? height : 0
       }px`;
     };
-
     handleResize();
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [settings]);
@@ -79,16 +143,23 @@ export const Settings = () => {
         ""
       )}
     >
-      <div ref={innerRef} data-cy="settings" className={styles.inner}>
+      <div
+        ref={innerRef}
+        onKeyDown={innerKeyDown}
+        data-cy="settings"
+        className={styles.inner}
+      >
         <Button
+          innerRef={buttonRef}
           cssClass={[styles.button, ` ${styles.close}`].join("")}
-          onClick={() => handleOpenChange()}
+          onClick={() => openChange()}
+          onKeyDown={buttonKeyDown}
         >
           <Icon name="close" />
         </Button>
         <div className={styles.content}>
-          <div className={styles.column}>
-            <div className={styles.row}>
+          <div className={styles.row}>
+            <div className={styles.column}>
               <div className={styles.accessibility}>
                 <div className={styles.title}>Accessibility</div>
                 <Button
@@ -120,7 +191,7 @@ export const Settings = () => {
                     `${styles.button}`,
                     settings.lang === "en" ? ` ${styles.active}` : "",
                   ].join("")}
-                  onClick={() => handleLangChange("en")}
+                  onClick={() => langChange("en")}
                 >
                   <svg
                     focusable="false"
@@ -195,7 +266,7 @@ export const Settings = () => {
                     `${styles.button}`,
                     settings.lang === "fr" ? ` ${styles.active}` : "",
                   ].join("")}
-                  onClick={() => handleLangChange("fr")}
+                  onClick={() => langChange("fr")}
                 >
                   <svg
                     focusable="false"
@@ -221,54 +292,6 @@ export const Settings = () => {
                   FR
                 </Button>
               </div>
-            </div>
-            <div className={styles.color}>
-              <div className={styles.title}>Color</div>
-              <Button
-                cssClass={styles.button}
-                onClick={() => setColorModal(!colorModal)}
-              >
-                <Icon cssClass={styles.icon} name="format_paint" />
-                Edit documentation
-              </Button>
-            </div>
-          </div>
-          <div className={styles.column}>
-            <div className={styles.mode}>
-              <div className={styles.title}>Mode</div>
-              <Button
-                data-cy="settings-light-mode"
-                cssClass={[
-                  `${styles.button}`,
-                  settings.mode === "light" ? ` ${styles.active}` : "",
-                ].join("")}
-                onClick={() => handleModeChange("light")}
-              >
-                <Icon name="light_mode" cssClass={styles.icon} />
-                Light
-              </Button>
-              <Button
-                data-cy="settings-system-mode"
-                cssClass={[
-                  `${styles.button}`,
-                  settings.mode === "system" ? ` ${styles.active}` : "",
-                ].join("")}
-                onClick={() => handleModeChange("system")}
-              >
-                <Icon name="contrast" cssClass={styles.icon} />
-                System
-              </Button>
-              <Button
-                data-cy="settings-dark-mode"
-                cssClass={[
-                  `${styles.button}`,
-                  settings.mode === "dark" ? ` ${styles.active}` : "",
-                ].join("")}
-                onClick={() => handleModeChange("dark")}
-              >
-                <Icon name="dark_mode" cssClass={styles.icon} />
-                Dark
-              </Button>
             </div>
             <div className={styles.direction}>
               <div className={styles.title}>Direction</div>
@@ -306,11 +329,72 @@ export const Settings = () => {
               </Button>
             </div>
           </div>
+          <div className={styles.row}>
+            <div className={styles.color}>
+              <div className={styles.title}>Color</div>
+              <Button
+                innerRef={colorRef}
+                cssClass={styles.button}
+                onClick={() => setColorModal(!colorModal)}
+              >
+                <Icon cssClass={styles.icon} name="format_paint" />
+                Edit documentation
+              </Button>
+            </div>
+            <div className={styles.mode}>
+              <div className={styles.title}>Mode</div>
+              <Button
+                data-cy="settings-light-mode"
+                cssClass={[
+                  `${styles.button}`,
+                  settings.mode === "light" ? ` ${styles.active}` : "",
+                ].join("")}
+                onClick={() => modeChange("light")}
+              >
+                <Icon name="light_mode" cssClass={styles.icon} />
+                Light
+              </Button>
+              <Button
+                data-cy="settings-dark-mode"
+                cssClass={[
+                  `${styles.button}`,
+                  settings.mode === "dark" ? ` ${styles.active}` : "",
+                ].join("")}
+                onClick={() => modeChange("dark")}
+              >
+                <Icon name="dark_mode" cssClass={styles.icon} />
+                Dark
+              </Button>
+              <Button
+                data-cy="settings-system-mode"
+                cssClass={[
+                  `${styles.button}`,
+                  settings.mode === "system" ? ` ${styles.active}` : "",
+                ].join("")}
+                onClick={() => modeChange("system")}
+              >
+                <Icon name="dns" cssClass={styles.icon} />
+                System
+              </Button>
+              <Button
+                data-cy="settings-contrast-mode"
+                cssClass={[
+                  `${styles.button}`,
+                  settings.mode === "contrast" ? ` ${styles.active}` : "",
+                ].join("")}
+                onClick={() => modeChange("contrast")}
+              >
+                <Icon name="contrast" cssClass={styles.icon} />
+                Contrast
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
       {colorModal &&
         createPortal(
           <Modal
+            targetRef={colorRef}
             head={<h3>Edit</h3>}
             body={<Color />}
             open={colorModal}

@@ -11,6 +11,9 @@
   --color-neutral-4: #c3c3c3;
   --color-neutral-5: #eee;
   --color-neutral-6: #fff;
+  --color-contrast-1: #b6bec9;
+  --color-contrast-2: #0f1214;
+  --color-contrast-3: #171d24;
   --color-purple: #ba14d7;
   --color-purple-darked: #a310bd;
   --color-magenta: #f4008f;
@@ -27,8 +30,6 @@
   --color-orange-darked: #cf5d00;
   --color-red: #ff1100;
   --color-red-darked: #cc0e00;
-  --color-primary: var(--color-yellow);
-  --color-primary-darked: var(--color-yellow-darked);
 }
 
 @mixin easings {

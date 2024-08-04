@@ -42,7 +42,7 @@
     "overview": {
       "document": "Présentation",
       "name": "présentation",
-      "description": "Il comprend une collection complète de composants prédéfinis prêts à être utilisés en production dès la sortie de la boîte, et propose une suite d'options de personnalisation"
+      "description": "Il comprend une collection complète de composants prédéfinis prêts à être utilisés en production dès la sortie de la boîte"
     },
     "usage": {
       "name": "usage",

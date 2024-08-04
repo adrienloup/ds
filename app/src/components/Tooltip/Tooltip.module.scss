@@ -1,19 +1,28 @@
+$tablet-portrait: 769px;
+
 .tooltip {
   position: relative;
   display: inline-block;
-
-  &:hover .box,
-  &:focus .box {
-    opacity: 1;
-    visibility: visible;
-  }
 
   &:focus {
     outline: none;
   }
 
+  &:hover,
   &:focus-visible {
-    outline: 0.2rem solid var(--color-orange);
+    .box {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    button,
+    a {
+      background-color: var(--color-3);
+    }
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-outline);
     outline-offset: -0.25rem;
   }
 }
@@ -29,7 +38,7 @@
   font-family: var(--font-text-bold);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s var(--easy-in-out-quad);
+  transition: opacity 0.15s var(--easy-in-out-quad);
 }
 
 .top {
@@ -79,8 +88,16 @@
 .title {
   margin-bottom: 1rem;
   font-size: 1.25rem;
+
+  @media (max-width: $tablet-portrait) {
+    font-size: 1rem;
+  }
 }
 
 .text {
   font-size: 1rem;
+
+  @media (max-width: $tablet-portrait) {
+    font-size: 0.75rem;
+  }
 }

@@ -1,25 +1,39 @@
-.pagelist {
+.list {
   display: flex;
   flex-direction: column;
+  padding-top: 0.25rem;
 }
 
-.category {
-  margin-bottom: 0.5rem;
-  padding: 1rem 0 0.5rem;
-  border-bottom: 0.2rem solid var(--color-3);
+.item {
+  display: flex;
+  align-items: center;
+  margin: 0.25rem 0;
+  padding: 0.5rem 1rem;
+  border: 0.2rem solid var(--color-3);
   text-transform: capitalize;
-  font-size: 1.15rem;
-}
-
-.page {
-  padding: 0.25rem 0;
-  text-transform: capitalize;
+  text-decoration: none;
   font-size: 1.15rem;
   color: var(--color-1);
 
-  &:focus-visible {
-    outline: 0.2rem solid var(--color-orange);
+  &:hover {
+    background-color: var(--color-3);
   }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-outline);
+    outline-offset: -0.35rem;
+  }
+}
+
+.page {
+  span {
+    color: var(--color-3);
+  }
+}
+
+.icon {
+  margin-left: auto;
+  font-size: 1.75rem;
 }
 
 .empty {

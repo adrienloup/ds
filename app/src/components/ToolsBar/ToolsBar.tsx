@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
+import { RefType } from "../../models/Ref";
 import { useSettings } from "../../hooks/useSettings";
 import { useTask } from "../../hooks/useTask";
 import { useAuth } from "../../hooks/useAuth";
@@ -11,42 +13,54 @@ import { TaskList } from "../Task/TaskList";
 import { Button } from "../Button/Button";
 import { Badge } from "../Badge/Badge";
 import { Modal } from "../Modal/Modal";
+import { Login } from "../Login/Login";
 import { Icon } from "../Icon/Icon";
 import { Like } from "../Like/Like";
 import styles from "./ToolsBar.module.scss";
 
-export const ToolsBar = () => {
+export const ToolsBar = ({
+  targetRef,
+}: {
+  targetRef: RefType<HTMLDivElement>;
+}) => {
+  // console.log("ToolsBar");
+  const navigate = useNavigate();
   const [notificationModal, setNotificationModal] = useState(false);
   const [taskModal, setTaskModal] = useState(false);
   const [like, setLike] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
   const { settings, setSettings } = useSettings();
   const { data } = useNotifications();
   const { user } = useAuth();
   const tasks = useTask();
   const notificationRef = useRef<HTMLDivElement>(null);
-  const taskRef = useRef<HTMLButtonElement>(null);
+  const taskRef = useRef<HTMLDivElement>(null);
+  const loginRef = useRef<HTMLDivElement>(null);
 
-  const handleSettingsChange = (open: boolean) => {
+  const settingsChange = (open: boolean) => {
     setSettings({ ...settings, open });
-  };
-
-  const handleOpenNewTab = (url: string) => {
-    window.open(url, "_blank");
   };
 
   return (
     <div className={styles.toolsbar} data-cy="toolsbar">
       {user.name && (
-        <Badge value={tasks.length} max={9} cssClass={styles.badge}>
-          <Button
-            innerRef={taskRef}
-            aria-label={"Tasks"}
-            cssClass={styles.button}
-            onClick={() => setTaskModal(!taskModal)}
-          >
-            <Icon name={"task_alt"} cssClass={styles.icon} />
-          </Button>
-        </Badge>
+        <Tooltip
+          innerRef={taskRef}
+          text="Tasks"
+          position="bottom"
+          onKeyDown={() => setTaskModal(!taskModal)}
+        >
+          <Badge value={tasks.length} max={9} cssClass={styles.badge}>
+            <Button
+              tabIndex={-1}
+              aria-label={"Tasks"}
+              cssClass={styles.button}
+              onClick={() => setTaskModal(!taskModal)}
+            >
+              <Icon name={"task_alt"} cssClass={styles.icon} />
+            </Button>
+          </Badge>
+        </Tooltip>
       )}
       <Tooltip
         text="I like a lot"
@@ -66,7 +80,9 @@ export const ToolsBar = () => {
       <Tooltip
         text="GitHub repository"
         position="bottom"
-        onKeyDown={() => handleOpenNewTab("https://github.com/adrienloup/ds")}
+        onKeyDown={() =>
+          window.open("https://github.com/adrienloup/ds", "_blank")
+        }
       >
         <Button
           tabIndex={-1}
@@ -98,29 +114,63 @@ export const ToolsBar = () => {
             onClick={() => setNotificationModal(!notificationModal)}
           >
             <Icon
-              name={
-                data.length > 0 ? "notifications_active" : "notifications_off"
-              }
+              name={data.length > 0 ? "notifications" : "notifications_off"}
               cssClass={styles.icon}
             />
           </Button>
         </Badge>
       </Tooltip>
       <Tooltip
+        innerRef={targetRef}
         text="Settings"
-        position="bottom-end"
-        onKeyDown={() => handleSettingsChange(!settings.open)}
+        position="bottom"
+        onKeyDown={() => settingsChange(!settings.open)}
       >
         <Button
           tabIndex={-1}
           aria-label={"Settings"}
           cssClass={styles.button}
           data-cy="toolsbar-settings"
-          onClick={() => handleSettingsChange(!settings.open)}
+          onClick={() => settingsChange(!settings.open)}
         >
-          <Icon name={"settings"} />
+          <Icon name={"tune"} />
         </Button>
       </Tooltip>
+      {user.name ? (
+        <Tooltip
+          innerRef={loginRef}
+          text="Your account"
+          position="bottom-end"
+          onKeyDown={() => navigate("/ds/login/")}
+        >
+          <Button
+            tabIndex={-1}
+            aria-label={"Your account"}
+            cssClass={styles.button}
+            data-cy="toolsbar-account"
+            to={"/ds/login/"}
+          >
+            <Icon name={"account_circle"} />
+          </Button>
+        </Tooltip>
+      ) : (
+        <Tooltip
+          innerRef={loginRef}
+          text="Sign in"
+          position="bottom-end"
+          onKeyDown={() => setLoginModal(!loginModal)}
+        >
+          <Button
+            tabIndex={-1}
+            aria-label={"Sign in"}
+            cssClass={styles.button}
+            data-cy="toolsbar-signin"
+            onClick={() => setLoginModal(!loginModal)}
+          >
+            <Icon name={"no_accounts"} />
+          </Button>
+        </Tooltip>
+      )}
       {notificationModal &&
         createPortal(
           <Modal
@@ -157,6 +207,15 @@ export const ToolsBar = () => {
             }
             open={taskModal}
             onClick={() => setTaskModal(false)}
+          />,
+          document.body
+        )}
+      {loginModal &&
+        createPortal(
+          <Login
+            targetRef={loginRef}
+            open={loginModal}
+            onClick={() => setLoginModal(false)}
           />,
           document.body
         )}

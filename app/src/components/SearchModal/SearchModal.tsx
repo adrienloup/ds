@@ -15,12 +15,12 @@ export const SearchModal = () => {
   return (
     <>
       <SearchBar
-        cssClass={["", styles.textfield]}
+        cssClass={styles.textfield}
         placeholder="What are you looking for?"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      {value && value.length > 0 ? <PageList list={list} /> : null}
+      <PageList list={list} />
     </>
   );
 };

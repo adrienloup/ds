@@ -11,6 +11,7 @@ export const Banner = ({
   text = "No text",
   status = "info",
 }: BannerType) => {
+  // console.log("Banner");
   const [banner, setBanner] = useSessionStorage(id, "");
   const [hidden, setHidden] = useState(!!banner);
 

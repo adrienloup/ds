@@ -42,7 +42,7 @@
     "overview": {
       "document": "Overview",
       "name": "overview",
-      "description": "It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box, and features a suite of customization options"
+      "description": "DS library is an open-source React component library that implements Google's Material Design"
     },
     "usage": {
       "name": "usage",

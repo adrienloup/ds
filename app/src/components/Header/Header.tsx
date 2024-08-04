@@ -1,4 +1,5 @@
 import { memo, useState } from "react";
+import { ProgressBar } from "../ProgressBar/ProgressBar";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import { Menu } from "../Menu/Menu";
@@ -12,6 +13,7 @@ export const Header = () => {
   return (
     <header role="banner" data-cy="header" className={styles.header}>
       <div className={styles.inner}>
+        <ProgressBar />
         <LogoMemo />
         <Button cssClass={styles.burger} onClick={() => setOpen(!open)}>
           <Icon name={open ? "menu_open" : "menu"} />

@@ -9,6 +9,7 @@ import { Promote } from "../components/Promote/Promote";
 import { Button } from "../components/Button/Button";
 import { Sticky } from "../components/Sticky/Sticky";
 import { Search } from "../components/Search/Search";
+import { Separator } from "../components/Separator/Separator";
 
 function UsagePage() {
   useTitle("Usage");
@@ -44,8 +45,8 @@ function UsagePage() {
           the time it would take to build from scratch.
         </p>
         <p>
-          Expand on the power of MUI Core: MUI X components work seamlessly with
-          MUI Core libraries like Material UI, delivering more advanced
+          Expand on the power of DS Core: DS X components work seamlessly with
+          DS Core libraries like DS library, delivering more advanced
           functionality, but can also be used standalone.
         </p>
         <p>
@@ -54,7 +55,7 @@ function UsagePage() {
           technical support.
         </p>
         <p>
-          Dedicated maintenance: MUI X is maintained by a full-time staff of
+          Dedicated maintenance: DS X is maintained by a full-time staff of
           engineers, so you can rest assured that any issues will be addressed
           in a timely manner.
         </p>
@@ -63,6 +64,7 @@ function UsagePage() {
           support from our team as well as priority for bug fixes and feature
           requests.
         </p>
+        <Separator name="mark_unread_chat_alt" />
         <h2>
           40+ building block components{" "}
           <span>A meticulous implementation of DS library</span>
@@ -76,6 +78,7 @@ function UsagePage() {
           Material Design or use the advanced theming feature to easily tailor
           the components to your needs.
         </p>
+        <Separator name="3p" />
         <h2>
           A delightful experience&nbsp;
           <span>for you and your users</span>
@@ -96,6 +99,7 @@ function UsagePage() {
           We believe in building for everyone. That's why accessibility is one
           of our highest priorities with every new feature we ship.
         </p>
+        <Separator name="sms_failed" />
         <h2>
           Beautiful and powerful <span>right out of the box</span>
         </h2>
@@ -110,6 +114,7 @@ function UsagePage() {
           comes to complex use cases, DS library has it all under one roof which
           is a huge help for our small team.
         </p>
+        <Separator name="rate_review" />
         <h2>
           Supported by thousands <span>of developers and designers</span>
         </h2>
@@ -126,6 +131,32 @@ function UsagePage() {
         <p>
           We're extremely grateful to the team for the time and effort spent
           maintaining the project.
+        </p>
+        <Separator name="mark_chat_read" />
+        <h2>
+          You <span>make this possible</span>
+        </h2>
+        <p>
+          Find out why DS library's tools are trusted by thousands of
+          open-source developers and teams around the world.
+        </p>
+        <p>
+          The development of these open-source tools is accelerated by our
+          generous sponsors.
+        </p>
+        <p>
+          After much research on React component libraries, we decided to ditch
+          our in-house library for DS library, using its powerful customization
+          system to implement our Design System.
+        </p>
+        <p>
+          This simple move did a rare thing in engineering: it lowered our
+          maintenance costs while enhancing both developer and customer
+          experience.
+        </p>
+        <p>
+          All of this was done without sacrificing the organization's branding
+          and visual identity.
         </p>
       </Main>
       <Footer />

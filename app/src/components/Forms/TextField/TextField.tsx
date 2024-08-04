@@ -5,7 +5,7 @@ import { Icon } from "../../Icon/Icon";
 import styles from "./TextField.module.scss";
 
 interface TextFieldProps {
-  cssClass?: string[];
+  cssClass?: string;
   id?: string;
   label?: string;
   placeholder?: string;
@@ -39,18 +39,17 @@ export const TextField = ({
       label={label}
       helperText={helperText}
       errorMessage={errorMessage}
-      cssClass={cssClass && cssClass![0]?.length > 0 ? ` ${cssClass![0]}` : ""}
     >
       <div
         className={[
           styles.textfield,
-          cssClass && cssClass![1]?.length > 0 ? ` ${cssClass![1]}` : "",
           focus ? ` ${styles.focus}` : "",
           status
             ? ` ${styles[status]}`
             : errorMessage
               ? ` ${styles.error}`
               : "",
+          cssClass ? ` ${cssClass}` : "",
         ].join("")}
       >
         {prefix && <Icon name={prefix} cssClass={styles.icon} />}

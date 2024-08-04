@@ -6,7 +6,8 @@ import { ColorType } from "../models/Color";
 import { DirectionType } from "../models/Direction";
 import { LangType } from "../models/Lang";
 import { ModeType } from "../models/Mode";
-import styles from "../scss/modes/dark.module.scss";
+import darkStyles from "../scss/modes/dark.module.scss";
+import contrastStyles from "../scss/modes/contrast.module.scss";
 
 export const SettingsContext = createContext<{
   settings: {
@@ -57,8 +58,15 @@ export function SettingsProvider({ children }: SlotType) {
     (settings?.mode === "system" &&
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ? document.body.classList.add(`${styles.dark}`)
-      : document.body.classList.remove(`${styles.dark}`);
+      ? (document.body.classList.add(`${darkStyles.dark}`),
+        document.body.classList.remove(`${contrastStyles.contrast}`))
+      : settings?.mode === "contrast"
+        ? (document.body.classList.add(`${contrastStyles.contrast}`),
+          document.body.classList.remove(`${darkStyles.dark}`))
+        : document.body.classList.remove(
+            `${darkStyles.dark}`,
+            `${contrastStyles.contrast}`
+          );
 
     document.body.style.setProperty(
       "--color-primary",
@@ -75,8 +83,15 @@ export function SettingsProvider({ children }: SlotType) {
     const handleChange = (event: { matches: boolean }) =>
       settings?.mode === "dark" ||
       (settings?.mode === "system" && event.matches)
-        ? document.body.classList.add(`${styles.dark}`)
-        : document.body.classList.remove(`${styles.dark}`);
+        ? (document.body.classList.add(`${darkStyles.dark}`),
+          document.body.classList.remove(`${contrastStyles.contrast}`))
+        : settings?.mode === "contrast"
+          ? (document.body.classList.add(`${contrastStyles.contrast}`),
+            document.body.classList.remove(`${darkStyles.dark}`))
+          : document.body.classList.remove(
+              `${darkStyles.dark}`,
+              `${contrastStyles.contrast}`
+            );
 
     window
       .matchMedia("(prefers-color-scheme: dark)")

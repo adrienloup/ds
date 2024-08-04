@@ -9,7 +9,6 @@ interface PromoteProps {
 
 export const Promote = ({ head, body, foot }: PromoteProps) => {
   // console.log("promote");
-
   return (
     <div className={styles.promote}>
       {head && <div className={styles.head}>{head}</div>}

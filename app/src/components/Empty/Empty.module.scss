@@ -3,7 +3,7 @@
   background-color: var(--color-primary);
   font-family: var(--font-text-bold);
   color: var(--color-neutral-1);
-  animation: Appear 0.5s var(--easy-in-out-quad);
+  animation: Appear 0.25s var(--easy-in-out-quad);
 }
 
 @keyframes Appear {

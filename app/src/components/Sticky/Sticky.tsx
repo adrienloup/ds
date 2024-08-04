@@ -25,10 +25,13 @@ export const Sticky = ({ children }: SlotType) => {
       if (!inner.current && !sticky.current) return;
 
       const scrollTop = document.documentElement.scrollTop;
-      const offsetTop = getPosition(sticky.current!, document);
-      const offsetHeight = sticky.current!.clientHeight;
+      const offsetTop = getPosition<HTMLElement>(
+        sticky.current!,
+        document.documentElement
+      );
+      const delta = window.innerWidth <= 769 ? 60 : 0;
 
-      if (scrollTop >= offsetTop.top + offsetHeight) {
+      if (scrollTop >= offsetTop.top + sticky.current!.clientHeight - delta) {
         if (!active) {
           setHeight(inner.current!.clientHeight);
           setActive(true);

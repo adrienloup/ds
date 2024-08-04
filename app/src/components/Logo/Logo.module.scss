@@ -5,9 +5,8 @@ $tablet-portrait: 769px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0 0.25rem;
   border-bottom: 0.2rem solid var(--color-3);
-  line-height: 4rem;
   letter-spacing: 0.2rem;
   text-align: center;
   text-decoration: none;
@@ -17,9 +16,8 @@ $tablet-portrait: 769px;
 
   @media (max-width: $tablet-portrait) {
     height: 3.75rem;
-    padding: 0;
-    line-height: 2rem;
-    font-size: 3rem;
+    padding: 0.5rem 0 0;
+    font-size: 2.5rem;
   }
 
   span {
@@ -37,7 +35,7 @@ $tablet-portrait: 769px;
   }
 
   &:focus-visible {
-    outline: 0.2rem solid var(--color-orange);
+    outline: 0.2rem solid var(--color-outline);
     outline-offset: -0.25rem;
   }
 }

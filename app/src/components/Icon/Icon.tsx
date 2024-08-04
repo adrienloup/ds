@@ -6,6 +6,7 @@ interface IconProps {
 }
 
 export const Icon = ({ name, cssClass }: IconProps) => {
+  // console.log("Icon");
   return (
     <span
       aria-hidden={false}

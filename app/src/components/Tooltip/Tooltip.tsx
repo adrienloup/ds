@@ -1,5 +1,6 @@
-import { ForwardedRef, KeyboardEvent, ReactNode } from "react";
+import { KeyboardEvent, ReactNode } from "react";
 import { PositionType } from "../../models/Position";
+import { RefType } from "../../models/Ref";
 import styles from "./Tooltip.module.scss";
 
 interface TooltipProps {
@@ -7,7 +8,7 @@ interface TooltipProps {
   title?: string;
   text?: string;
   position?: PositionType;
-  innerRef?: ForwardedRef<HTMLDivElement>;
+  innerRef?: RefType<HTMLDivElement>;
   onKeyDown?: () => void;
 }
 

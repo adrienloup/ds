@@ -2,7 +2,7 @@ import { StatusType } from "../../models/Status";
 import { TextField } from "../Forms/TextField/TextField";
 
 interface SearchBarProps {
-  cssClass?: string[];
+  cssClass?: string;
   id?: string;
   placeholder?: string;
   status?: StatusType;
@@ -21,10 +21,7 @@ export const SearchBar = ({
   // console.log("SearchBar");
   return (
     <TextField
-      cssClass={[
-        cssClass && cssClass![0]?.length > 0 ? cssClass![0] : "",
-        cssClass && cssClass![1]?.length > 0 ? ` ${cssClass![1]}` : "",
-      ]}
+      cssClass={cssClass ? `${cssClass}` : ""}
       id={id}
       value={value}
       onChange={onChange}
