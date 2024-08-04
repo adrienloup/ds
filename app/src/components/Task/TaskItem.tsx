@@ -28,7 +28,7 @@ export const TaskItem = ({
       <>
         <TextField
           value={task.text}
-          cssClass={[styles.textfield]}
+          cssClass={styles.textfield}
           onChange={(e: { target: { value: string } }) => {
             dispatch!({
               type: "changed",

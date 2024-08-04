@@ -25,7 +25,7 @@ export const CardSearchable = () => {
         {list.length} React component{list.length > 1 ? "s" : ""}
       </label>
       <SearchBar
-        cssClass={[styles.formfield]}
+        cssClass={styles.formfield}
         placeholder="UI components"
         id="c-id"
         value={value}
