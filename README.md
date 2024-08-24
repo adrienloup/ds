@@ -1,6 +1,6 @@
 # React Design System
 
-[Demo Preview](https://adrienloup.github.io/ds/)
+[Demo](https://adrienloup.github.io/ds/)
 
 ## Requirements
 
