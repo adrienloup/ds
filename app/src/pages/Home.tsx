@@ -21,7 +21,7 @@ import { Search } from "../components/Search/Search";
 import { Separator } from "../components/Separator/Separator";
 
 function HomePage() {
-  console.log("HomePage");
+  // console.log("HomePage");
   const { t } = useTranslation();
   useTitle(t("page.home.document"));
 
